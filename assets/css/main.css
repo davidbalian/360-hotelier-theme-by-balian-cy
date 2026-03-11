@@ -1,0 +1,288 @@
+/* ==========================================================================
+   Site Header & Branding
+   ========================================================================== */
+
+.site-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.site-branding a {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.site-branding img {
+    max-height: 50px;
+    width: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   Primary Navigation
+   ========================================================================== */
+
+.primary-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+    color: #007cba;
+}
+
+/* Mobile menu toggle — hidden on desktop */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle-bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #1a1a1a;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    padding: 40px 0;
+    margin-top: auto;
+}
+
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.site-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.875rem;
+}
+
+.site-info a {
+    color: #ccc;
+}
+
+.site-info a:hover {
+    color: #fff;
+}
+
+.footer-nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav-menu a {
+    font-size: 0.875rem;
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-nav-menu a:hover {
+    color: #fff;
+}
+
+/* ==========================================================================
+   Post Cards (index loop)
+   ========================================================================== */
+
+.posts-loop {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.post-card {
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+}
+
+.post-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.post-thumbnail img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.post-content-wrap {
+    padding: 1.5rem;
+}
+
+.entry-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.entry-title a {
+    color: #1a1a1a;
+}
+
+.entry-title a:hover {
+    color: #007cba;
+}
+
+.entry-meta {
+    font-size: 0.8125rem;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.entry-summary {
+    font-size: 0.9375rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #007cba;
+}
+
+.read-more:hover {
+    color: #005a87;
+}
+
+/* ==========================================================================
+   Page Content
+   ========================================================================== */
+
+.entry-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.entry-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================================================================
+   404 & No Results
+   ========================================================================== */
+
+.error-404,
+.no-results {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.error-404 .page-title,
+.no-results .page-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   Post Navigation
+   ========================================================================== */
+
+.post-navigation,
+.posts-navigation {
+    padding: 2rem 0;
+    border-top: 1px solid #e8e8e8;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media ( max-width: 768px ) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-top: 1px solid #e8e8e8;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 1rem 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .nav-menu.is-open {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
