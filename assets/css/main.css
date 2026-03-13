@@ -335,7 +335,10 @@
 
 .front-hero__cta {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
+    padding-top: .75rem;
+    padding-right: 1.25rem;
+    padding-bottom: .75rem;
+    padding-left: 1.25rem;
     font-weight: 600;
     text-decoration: none;
     border-radius: 4px;
@@ -432,7 +435,10 @@
 
 .front-cta-button {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
+    padding-top: .75rem;
+    padding-right: 1.25rem;
+    padding-bottom: .75rem;
+    padding-left: 1.25rem;
     background: var(--color-orange);
     color: #fff;
     font-weight: 600;
@@ -479,7 +485,10 @@
 
 .front-featured-banner__cta {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
+    padding-top: .75rem;
+    padding-right: 1.25rem;
+    padding-bottom: .75rem;
+    padding-left: 1.25rem;
     background: var(--color-orange);
     color: #fff;
     font-weight: 600;
@@ -595,7 +604,10 @@
 
 .front-contact__cta {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
+    padding-top: .75rem;
+    padding-right: 1.25rem;
+    padding-bottom: .75rem;
+    padding-left: 1.25rem;
     background: var(--color-orange);
     color: #fff;
     font-weight: 600;
