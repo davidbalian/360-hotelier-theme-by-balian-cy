@@ -50,7 +50,7 @@
                     printf(
                         /* translators: %s: agency link */
                         esc_html__( 'Designed by %s', '360-hotelier' ),
-                        '<a href="https://balianwebdev.com" rel="noopener noreferrer" target="_blank">Balian Web Development Co.</a>'
+                        '<a href="https://balian.cy/" rel="noopener noreferrer" target="_blank">Balian Web Development Co.</a>'
                     );
                     ?>
                 </span>
