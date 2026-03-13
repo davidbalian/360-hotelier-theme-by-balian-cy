@@ -54,8 +54,21 @@ function hotelier_theme_setup() {
     // Add support for editor styles.
     add_theme_support( 'editor-styles' );
     add_editor_style( array( 'style.css', 'assets/css/editor-style.css' ) );
+
+    // Add support for site icon (favicon).
+    add_theme_support( 'site-icon' );
 }
 add_action( 'after_setup_theme', 'hotelier_theme_setup' );
+
+/**
+ * Output default favicon when no site icon is set in Customizer.
+ */
+function hotelier_favicon() {
+    if ( ! has_site_icon() ) {
+        echo '<link rel="icon" href="' . esc_url( home_url( '/wp-content/uploads/2026/03/360-hotelier-favi-on.png' ) ) . '" type="image/png">' . "\n";
+    }
+}
+add_action( 'wp_head', 'hotelier_favicon', 1 );
 
 /**
  * Create default pages on theme activation.
