@@ -96,7 +96,41 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.footer-navigation {
+    flex: 1 1 100%;
+}
+
+.footer-social,
+.footer-legal {
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-social a,
+.footer-legal a {
+    font-size: 0.875rem;
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-social a:hover,
+.footer-legal a:hover {
+    color: #fff;
+}
+
+.footer-social a + a::before,
+.footer-legal a + a::before {
+    content: " | ";
+    margin-right: 0.25rem;
+    color: #888;
 }
 
 .site-info {
@@ -247,6 +281,427 @@
    Responsive
    ========================================================================== */
 
+/* ==========================================================================
+   Front Page Sections
+   ========================================================================== */
+
+.front-page-main {
+    padding: 0;
+}
+
+.front-section__title {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.front-section__subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: #555;
+}
+
+/* Hero */
+.front-hero {
+    padding: 4rem 0;
+    background: linear-gradient( 135deg, #f8f9fa 0%, #e9ecef 100% );
+}
+
+.front-hero__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.front-hero__subheadline {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.front-hero__intro {
+    margin-bottom: 2rem;
+    max-width: 700px;
+}
+
+.front-hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.front-hero__cta {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: opacity 0.2s ease;
+}
+
+.front-hero__cta--primary {
+    background: #007cba;
+    color: #fff;
+}
+
+.front-hero__cta--primary:hover {
+    opacity: 0.9;
+}
+
+.front-hero__cta--secondary {
+    background: transparent;
+    color: #007cba;
+    border: 2px solid #007cba;
+}
+
+.front-hero__cta--secondary:hover {
+    opacity: 0.85;
+}
+
+/* Why Choose */
+.front-why-choose {
+    padding: 4rem 0;
+}
+
+.front-why-choose__grid {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax( 240px, 1fr ) );
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.front-why-choose__box {
+    padding: 1.5rem;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.front-why-choose__box-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.front-why-choose__box-text {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: #555;
+}
+
+/* Services Overview */
+.front-services-overview {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.front-services-overview__grid {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax( 260px, 1fr ) );
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.front-services-overview__card {
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid #e8e8e8;
+}
+
+.front-services-overview__card-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.front-services-overview__card-text {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: #555;
+}
+
+.front-services-overview__cta,
+.front-cta-button {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.front-cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #007cba;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: opacity 0.2s ease;
+}
+
+.front-cta-button:hover {
+    opacity: 0.9;
+    color: #fff;
+}
+
+.front-cta-button--secondary {
+    background: transparent;
+    color: #007cba;
+    border: 2px solid #007cba;
+    margin-left: 0.5rem;
+}
+
+.front-cta-button--secondary:hover {
+    color: #007cba;
+}
+
+/* Featured Banner */
+.front-featured-banner {
+    padding: 3rem 0;
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+}
+
+.front-featured-banner__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #fff;
+}
+
+.front-featured-banner__text {
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+.front-featured-banner__cta {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #007cba;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: opacity 0.2s ease;
+}
+
+.front-featured-banner__cta:hover {
+    opacity: 0.9;
+    color: #fff;
+}
+
+/* Founder */
+.front-founder {
+    padding: 4rem 0;
+}
+
+.front-founder__inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.front-founder__image-placeholder {
+    min-height: 280px;
+    background: #e9ecef;
+    border-radius: 6px;
+}
+
+.front-founder__points {
+    margin: 1rem 0;
+    padding-left: 1.25rem;
+}
+
+/* Approach */
+.front-approach {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.front-approach__steps {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax( 220px, 1fr ) );
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.front-approach__step {
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid #e8e8e8;
+}
+
+.front-approach__step-title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.front-approach__step-text {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: #555;
+}
+
+/* Results */
+.front-results {
+    padding: 4rem 0;
+}
+
+.front-results__list {
+    max-width: 500px;
+    margin: 1.5rem auto;
+    padding-left: 1.25rem;
+}
+
+.front-results__trust {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 1.5rem;
+}
+
+.front-results__logos-placeholder {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #888;
+}
+
+/* Contact */
+.front-contact {
+    padding: 4rem 0;
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+}
+
+.front-contact__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #fff;
+}
+
+.front-contact__text {
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+.front-contact__cta {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #007cba;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    transition: opacity 0.2s ease;
+}
+
+.front-contact__cta:hover {
+    opacity: 0.9;
+    color: #fff;
+}
+
+.front-contact__or {
+    margin-bottom: 0.5rem;
+    color: #999;
+}
+
+.front-contact__details {
+    font-size: 0.9375rem;
+}
+
+.front-contact__details a {
+    color: #fff;
+}
+
+.front-contact__details a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Page Templates
+   ========================================================================== */
+
+.page-about__content,
+.page-services,
+.page-portfolio,
+.page-contact,
+.page-founder__content,
+.page-service-single__content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.page-about__title,
+.page-services__title,
+.page-portfolio__title,
+.page-contact__title,
+.page-founder__title,
+.page-service-single__title {
+    margin-bottom: 1rem;
+}
+
+.page-about__cta,
+.page-services__cta,
+.page-founder__cta,
+.page-service-single__cta {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e8e8e8;
+}
+
+.page-services__grid {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax( 300px, 1fr ) );
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.page-services__card {
+    padding: 1.5rem;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+}
+
+.page-services__link {
+    font-weight: 600;
+    color: #007cba;
+}
+
+.page-portfolio__list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.page-portfolio__item {
+    margin-bottom: 1rem;
+}
+
+.page-portfolio__item a {
+    color: #007cba;
+}
+
+.page-contact__details p {
+    margin-bottom: 0.5rem;
+}
+
+.page-founder__image-placeholder {
+    min-height: 300px;
+    background: #e9ecef;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+}
+
+.page-founder__subtitle {
+    font-size: 1.125rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
 @media ( max-width: 768px ) {
     .menu-toggle {
         display: flex;
@@ -284,5 +739,13 @@
     .footer-inner {
         flex-direction: column;
         text-align: center;
+    }
+
+    .front-founder__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .front-hero__ctas {
+        flex-direction: column;
     }
 }

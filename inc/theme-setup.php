@@ -56,3 +56,104 @@ function hotelier_theme_setup() {
     add_editor_style( 'assets/css/editor-style.css' );
 }
 add_action( 'after_setup_theme', 'hotelier_theme_setup' );
+
+/**
+ * Create default pages on theme activation.
+ */
+function hotelier_create_default_pages() {
+    if ( get_option( 'hotelier_pages_created' ) ) {
+        return;
+    }
+
+    $pages = array(
+        array(
+            'title'    => 'Home',
+            'slug'     => 'home',
+            'template' => 'default',
+            'front'    => true,
+        ),
+        array(
+            'title'    => 'About Us',
+            'slug'     => 'about-us',
+            'template' => 'page-templates/template-about.php',
+        ),
+        array(
+            'title'    => 'Services',
+            'slug'     => 'services',
+            'template' => 'page-templates/template-services.php',
+        ),
+        array(
+            'title'    => 'Revenue Management',
+            'slug'     => 'revenue-management',
+            'template' => 'page-templates/template-service-single.php',
+            'parent'   => 'services',
+        ),
+        array(
+            'title'    => 'Online Sales & Distribution',
+            'slug'     => 'online-sales-distribution',
+            'template' => 'page-templates/template-service-single.php',
+            'parent'   => 'services',
+        ),
+        array(
+            'title'    => 'Digital Marketing',
+            'slug'     => 'digital-marketing',
+            'template' => 'page-templates/template-service-single.php',
+            'parent'   => 'services',
+        ),
+        array(
+            'title'    => 'Tour Operator Contracting',
+            'slug'     => 'tour-operator-contracting',
+            'template' => 'page-templates/template-service-single.php',
+            'parent'   => 'services',
+        ),
+        array(
+            'title'    => 'Portfolio',
+            'slug'     => 'portfolio',
+            'template' => 'page-templates/template-portfolio.php',
+        ),
+        array(
+            'title'    => 'Contact',
+            'slug'     => 'contact',
+            'template' => 'page-templates/template-contact.php',
+        ),
+        array(
+            'title'    => 'Founder',
+            'slug'     => 'founder',
+            'template' => 'page-templates/template-founder.php',
+        ),
+    );
+
+    $parent_ids = array();
+
+    foreach ( $pages as $page_data ) {
+        $parent_id = 0;
+        if ( ! empty( $page_data['parent'] ) && isset( $parent_ids[ $page_data['parent'] ] ) ) {
+            $parent_id = $parent_ids[ $page_data['parent'] ];
+        }
+
+        $page = get_page_by_path( $page_data['slug'] );
+        if ( ! $page ) {
+            $page_id = wp_insert_post( array(
+                'post_title'   => $page_data['title'],
+                'post_name'    => $page_data['slug'],
+                'post_status'  => 'publish',
+                'post_type'    => 'page',
+                'post_parent'  => $parent_id,
+                'post_content' => '',
+            ) );
+            if ( $page_id && ! is_wp_error( $page_id ) ) {
+                if ( ! empty( $page_data['template'] ) && 'default' !== $page_data['template'] ) {
+                    update_post_meta( $page_id, '_wp_page_template', $page_data['template'] );
+                }
+                $parent_ids[ $page_data['slug'] ] = $page_id;
+                if ( ! empty( $page_data['front'] ) ) {
+                    update_option( 'show_on_front', 'page' );
+                    update_option( 'page_on_front', $page_id );
+                }
+            }
+        }
+    }
+
+    update_option( 'hotelier_pages_created', true );
+}
+add_action( 'after_switch_theme', 'hotelier_create_default_pages' );

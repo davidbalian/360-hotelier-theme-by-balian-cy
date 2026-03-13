@@ -9,25 +9,41 @@
     <footer id="colophon" class="site-footer">
         <div class="site-container footer-inner">
 
-            <?php if ( has_nav_menu( 'footer' ) ) : ?>
-                <nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', '360-hotelier' ); ?>">
-                    <?php wp_nav_menu( array(
+            <nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', '360-hotelier' ); ?>">
+                <?php
+                if ( has_nav_menu( 'footer' ) ) {
+                    wp_nav_menu( array(
                         'theme_location' => 'footer',
                         'menu_id'        => 'footer-menu',
                         'menu_class'     => 'footer-nav-menu',
                         'container'      => false,
                         'depth'          => 1,
                         'fallback_cb'    => false,
-                    ) ); ?>
-                </nav>
-            <?php endif; ?>
+                    ) );
+                } else {
+                    hotelier_default_nav_fallback( array(
+                        'menu_class' => 'footer-nav-menu',
+                        'menu_id'   => 'footer-menu',
+                    ) );
+                }
+                ?>
+            </nav>
+
+            <div class="footer-social">
+                <a href="#" rel="noopener noreferrer" target="_blank" aria-label="<?php esc_attr_e( 'Facebook', '360-hotelier' ); ?>"><?php esc_html_e( 'Facebook', '360-hotelier' ); ?></a>
+                <a href="#" rel="noopener noreferrer" target="_blank" aria-label="<?php esc_attr_e( 'LinkedIn', '360-hotelier' ); ?>"><?php esc_html_e( 'LinkedIn', '360-hotelier' ); ?></a>
+                <a href="#" rel="noopener noreferrer" target="_blank" aria-label="<?php esc_attr_e( 'Instagram', '360-hotelier' ); ?>"><?php esc_html_e( 'Instagram', '360-hotelier' ); ?></a>
+            </div>
+
+            <div class="footer-legal">
+                <a href="#"><?php esc_html_e( 'Privacy Policy', '360-hotelier' ); ?></a>
+                <a href="#"><?php esc_html_e( 'Cookie Policy', '360-hotelier' ); ?></a>
+                <a href="#"><?php esc_html_e( 'Terms', '360-hotelier' ); ?></a>
+            </div>
 
             <div class="site-info">
                 <span class="copyright">
-                    &copy; <?php echo esc_html( gmdate( 'Y' ) ); ?>
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                        <?php bloginfo( 'name' ); ?>
-                    </a>
+                    &copy; 2026 360° Hotelier Consulting. <?php esc_html_e( 'All Rights Reserved.', '360-hotelier' ); ?>
                 </span>
                 <span class="credit">
                     <?php
