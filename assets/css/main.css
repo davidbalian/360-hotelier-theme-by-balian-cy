@@ -327,8 +327,24 @@
 
 /* Hero */
 .front-hero {
+    position: relative;
     padding: 4rem 0;
-    background: linear-gradient( 135deg, var(--color-white) 0%, var(--color-sand) 100% );
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.front-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient( 135deg, rgba(255,255,255,0.88) 0%, rgba(242,230,217,0.82) 100% );
+    z-index: 1;
+}
+
+.front-hero__content {
+    position: relative;
+    z-index: 2;
 }
 
 .front-hero__title {
@@ -490,10 +506,26 @@
 
 /* Featured Banner */
 .front-featured-banner {
+    position: relative;
     padding: 3rem 0;
-    background: var(--color-purple);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #fff;
     text-align: center;
+    overflow: hidden;
+}
+
+.front-featured-banner__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(90, 42, 130, 0.85);
+    z-index: 1;
+}
+
+.front-featured-banner__content {
+    position: relative;
+    z-index: 2;
 }
 
 .front-featured-banner__title {
@@ -540,10 +572,12 @@
     align-items: start;
 }
 
-.front-founder__image-placeholder {
-    min-height: 280px;
-    background: var(--color-sand);
+.front-founder__photo {
+    width: 100%;
+    height: auto;
     border-radius: var(--radius-card);
+    display: block;
+    object-fit: cover;
 }
 
 .front-founder__points {
@@ -602,20 +636,49 @@
     margin-top: 1.5rem;
 }
 
-.front-results__logos-placeholder {
-    display: block;
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 0.875rem;
-    color: var(--color-charcoal);
+.front-results__logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.front-results__logos img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.front-results__logos img:hover {
+    opacity: 1;
 }
 
 /* Contact */
 .front-contact {
+    position: relative;
     padding: 4rem 0;
-    background: var(--color-purple);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #fff;
     text-align: center;
+    overflow: hidden;
+}
+
+.front-contact__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(90, 42, 130, 0.85);
+    z-index: 1;
+}
+
+.front-contact__content {
+    position: relative;
+    z-index: 2;
 }
 
 .front-contact__title {

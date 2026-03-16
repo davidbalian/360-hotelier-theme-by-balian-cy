@@ -5,8 +5,9 @@
  * @package 360-hotelier
  */
 ?>
-<section class="front-hero">
-    <div class="site-container">
+<section class="front-hero" style="background-image: url('<?php echo esc_url( content_url( '/uploads/2026/03/360-hotelier-consulting-cyprus-hero.webp' ) ); ?>');">
+    <div class="front-hero__overlay"></div>
+    <div class="site-container front-hero__content">
         <h1 class="front-hero__title"><?php esc_html_e( 'Revenue, Distribution & Digital Growth for Hotels in Cyprus', '360-hotelier' ); ?></h1>
         <p class="front-hero__subheadline"><?php esc_html_e( 'We help hotels increase revenue, optimize online sales and strengthen their digital presence through expert revenue management, B2B distribution strategy, e-commerce optimization and tour-operator contracting.', '360-hotelier' ); ?></p>
         <p class="front-hero__intro"><?php esc_html_e( "360° Hotelier Consulting is a hotel sales, revenue and digital distribution agency based in Cyprus. We act as your hotel's extended commercial team - driving performance, improving visibility and transforming your profit potential.", '360-hotelier' ); ?></p>

@@ -16,7 +16,13 @@
         </ul>
         <p class="front-results__trust"><?php esc_html_e( 'Trusted by hotels across Cyprus & Greece.', '360-hotelier' ); ?></p>
         <div class="front-results__logos">
-            <span class="front-results__logos-placeholder"><?php esc_html_e( 'Hotel logos placeholder', '360-hotelier' ); ?></span>
+            <img src="<?php echo esc_url( content_url( '/uploads/2026/03/pendeli-resort-hotel-cyprus-logo-white.svg' ) ); ?>" alt="<?php esc_attr_e( 'Pendeli Resort Hotel Cyprus', '360-hotelier' ); ?>" loading="lazy" />
+            <img src="<?php echo esc_url( content_url( '/uploads/2026/03/cap-st-georges-hotel-resort-logo-cyprus.svg' ) ); ?>" alt="<?php esc_attr_e( 'Cap St Georges Hotel & Resort Cyprus', '360-hotelier' ); ?>" loading="lazy" />
+            <img src="<?php echo esc_url( content_url( '/uploads/2026/03/tsanotel-cyprus-logo-white.webp' ) ); ?>" alt="<?php esc_attr_e( 'Tsanotel Cyprus', '360-hotelier' ); ?>" loading="lazy" />
+            <img src="<?php echo esc_url( content_url( '/uploads/2026/03/serbellas-boutique-hotel-logo-transparent.webp' ) ); ?>" alt="<?php esc_attr_e( 'Serbellas Boutique Hotel', '360-hotelier' ); ?>" loading="lazy" />
+            <img src="<?php echo esc_url( content_url( '/uploads/2026/03/petit-palais-platres-hotel-logo-color-cyprus.webp' ) ); ?>" alt="<?php esc_attr_e( 'Petit Palais Hotel Platres Cyprus', '360-hotelier' ); ?>" loading="lazy" />
+            <img src="<?php echo esc_url( content_url( '/uploads/2026/03/chic-centre-suites-athens-hotel-logo.webp' ) ); ?>" alt="<?php esc_attr_e( 'Chic Centre Suites Athens', '360-hotelier' ); ?>" loading="lazy" />
+            <img src="<?php echo esc_url( content_url( '/uploads/2026/03/napa-jay-hotel-ayia-napa-cyprus-logo-transparent.png' ) ); ?>" alt="<?php esc_attr_e( 'Napa Jay Hotel Ayia Napa Cyprus', '360-hotelier' ); ?>" loading="lazy" />
         </div>
     </div>
 </section>
