@@ -9,12 +9,13 @@
     top: var(--wp-admin-bar-offset, 0);
     z-index: 100;
     transition: padding 0.15s ease, height 0.15s ease;
+    padding: 0; /* Overriding style.css padding to fix mobile menu positioning */
 }
 
 /* WP Admin Bar Handling */
 :root {
     --wp-admin-bar-offset: 0px;
-    --header-height: 56px;
+    --header-height: 72px; /* Set a default height that includes previous padding */
 }
 
 .admin-bar {
@@ -40,7 +41,7 @@
 }
 
 .site-header.is-scrolled .header-inner {
-    --header-height: 48px; /* Slightly smaller header height on scroll */
+    --header-height: 60px; /* Slightly smaller header height on scroll */
 }
 
 .site-branding a {
@@ -1088,6 +1089,14 @@
 @media ( max-width: 768px ) {
     .menu-toggle {
         display: flex;
+    }
+
+    .site-branding img {
+        height: 35px;
+    }
+
+    .site-header.is-scrolled .site-branding img {
+        height: 30px;
     }
 
     .nav-menu {
