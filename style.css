@@ -44,6 +44,9 @@ Text Domain: 360-hotelier
     --color-blue: #2c6e91;
     --color-blue-hover: #245a77;
     --color-border: #e5d9cc;
+    --radius-card: 16px;
+    --radius-large: 24px;
+    --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 /* ==========================================================================
