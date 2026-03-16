@@ -323,7 +323,7 @@
    ========================================================================== */
 
 .front-page-main {
-    padding: 3rem 40px;
+    padding: 0 40px 3rem;
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -366,6 +366,8 @@
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .front-hero__overlay {
