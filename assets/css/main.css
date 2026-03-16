@@ -399,6 +399,13 @@
     overflow: hidden;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    border-bottom-left-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+}
+
+.front-hero .site-container {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 @media (max-width: 768px) {
