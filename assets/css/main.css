@@ -88,8 +88,10 @@
     background-color: #1a1a1a;
     color: #ccc;
     padding: 40px 0;
-    margin: auto 20px 20px;
-    border-radius: var(--radius-large);
+    max-width: 1200px;
+    margin: 0 auto 1.5rem;
+    margin-inline: max(20px, calc((100% - 1200px) / 2));
+    border-radius: 2rem;
 }
 
 .footer-inner {
@@ -1021,7 +1023,8 @@
     }
 
     .site-footer {
-        margin: auto 12px 12px;
+        margin-inline: 12px;
+        margin-bottom: 1rem;
     }
 
     .footer-inner {
