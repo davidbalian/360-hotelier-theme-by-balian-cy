@@ -21,6 +21,21 @@
         menu.classList.toggle( 'is-open' );
     } );
 
+    // Handle scroll for logo shrink
+    var header = document.querySelector( '.site-header' );
+    var scrollThreshold = 10;
+
+    function handleScroll() {
+        if ( window.scrollY > scrollThreshold ) {
+            header.classList.add( 'is-scrolled' );
+        } else {
+            header.classList.remove( 'is-scrolled' );
+        }
+    }
+
+    window.addEventListener( 'scroll', handleScroll );
+    handleScroll(); // Initial check
+
     // Close menu when clicking outside of it
     document.addEventListener( 'click', function ( event ) {
         if ( ! event.target.closest( '#primary-navigation' ) ) {
