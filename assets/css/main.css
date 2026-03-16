@@ -5,7 +5,9 @@
 .site-header {
     background-color: transparent;
     border-bottom: none;
-    position: sticky;
+    position: fixed; /* Switch to fixed for hero underlap */
+    left: 0;
+    right: 0;
     top: var(--wp-admin-bar-offset, 0);
     z-index: 100;
     transition: padding 0.15s ease, height 0.15s ease, background-color 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
@@ -1113,6 +1115,10 @@
 }
 
 @media ( max-width: 768px ) {
+    .site-header {
+        padding: 0 12px; /* Reduced padding on mobile to match sections */
+    }
+
     .menu-toggle {
         display: flex;
     }
