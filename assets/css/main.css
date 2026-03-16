@@ -288,7 +288,25 @@
    ========================================================================== */
 
 .front-page-main {
-    padding: 0;
+    padding: 1.5rem 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.front-hero,
+.front-why-choose,
+.front-services-overview,
+.front-featured-banner,
+.front-founder,
+.front-approach,
+.front-results,
+.front-contact {
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2rem;
 }
 
 .front-section__title {
@@ -309,7 +327,6 @@
 .front-hero {
     padding: 4rem 0;
     background: linear-gradient( 135deg, var(--color-white) 0%, var(--color-sand) 100% );
-    border-radius: 0 0 var(--radius-large) var(--radius-large);
 }
 
 .front-hero__title {
@@ -370,6 +387,7 @@
 /* Why Choose */
 .front-why-choose {
     padding: 4rem 0;
+    background: var(--color-white);
 }
 
 .front-why-choose__grid {
@@ -510,6 +528,7 @@
 /* Founder */
 .front-founder {
     padding: 4rem 0;
+    background: var(--color-white);
 }
 
 .front-founder__inner {
@@ -566,6 +585,7 @@
 /* Results */
 .front-results {
     padding: 4rem 0;
+    background: var(--color-white);
 }
 
 .front-results__list {
@@ -993,6 +1013,11 @@
         display: block;
         padding: 0.75rem 0;
         border-bottom: 1px solid var(--color-border);
+    }
+
+    .front-page-main {
+        padding: 1rem 12px;
+        gap: 1rem;
     }
 
     .site-footer {

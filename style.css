@@ -70,7 +70,7 @@ body {
     font-family: var(--font-satoshi);
     line-height: 1.6;
     color: var(--color-charcoal);
-    background-color: var(--color-white);
+    background-color: #f2f2f2;
 }
 
 /* ==========================================================================
