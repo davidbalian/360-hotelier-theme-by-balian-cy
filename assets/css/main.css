@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 70px;
+    height: 56px;
 }
 
 .site-branding a {
@@ -87,10 +87,10 @@
 .site-footer {
     background-color: #1a1a1a;
     color: #ccc;
-    padding: 40px 0;
-    max-width: 1200px;
+    padding: 80px 0;
+    max-width: 1700px;
     margin: 0 auto 1.5rem;
-    margin-inline: max(20px, calc((100% - 1200px) / 2));
+    margin-inline: max(20px, calc((100% - 1700px) / 2));
     border-radius: 2rem;
 }
 
@@ -290,10 +290,10 @@
    ========================================================================== */
 
 .front-page-main {
-    padding: 1.5rem 20px;
+    padding: 3rem 40px;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 3rem;
 }
 
 .front-hero,
@@ -304,7 +304,7 @@
 .front-approach,
 .front-results,
 .front-contact {
-    max-width: 1200px;
+    max-width: 1700px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -328,7 +328,7 @@
 /* Hero */
 .front-hero {
     position: relative;
-    padding: 4rem 0;
+    padding: 8rem 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -404,7 +404,7 @@
 
 /* Why Choose */
 .front-why-choose {
-    padding: 4rem 0;
+    padding: 8rem 0;
     background: var(--color-white);
 }
 
@@ -416,7 +416,7 @@
 }
 
 .front-why-choose__box {
-    padding: 2rem;
+    padding: 4rem;
     border: none;
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-card);
@@ -437,7 +437,7 @@
 
 /* Services Overview */
 .front-services-overview {
-    padding: 4rem 0;
+    padding: 8rem 0;
     background: var(--color-sand);
 }
 
@@ -449,7 +449,7 @@
 }
 
 .front-services-overview__card {
-    padding: 2rem;
+    padding: 4rem;
     background: var(--color-white);
     border-radius: var(--radius-card);
     border: none;
@@ -507,7 +507,7 @@
 /* Featured Banner */
 .front-featured-banner {
     position: relative;
-    padding: 3rem 0;
+    padding: 6rem 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -561,7 +561,7 @@
 
 /* Founder */
 .front-founder {
-    padding: 4rem 0;
+    padding: 8rem 0;
     background: var(--color-white);
 }
 
@@ -587,7 +587,7 @@
 
 /* Approach */
 .front-approach {
-    padding: 4rem 0;
+    padding: 8rem 0;
     background: var(--color-sand);
 }
 
@@ -599,7 +599,7 @@
 }
 
 .front-approach__step {
-    padding: 2rem;
+    padding: 4rem;
     background: var(--color-white);
     border-radius: var(--radius-card);
     border: none;
@@ -620,7 +620,7 @@
 
 /* Results */
 .front-results {
-    padding: 4rem 0;
+    padding: 8rem 0;
     background: var(--color-white);
 }
 
@@ -660,7 +660,7 @@
 /* Contact */
 .front-contact {
     position: relative;
-    padding: 4rem 0;
+    padding: 8rem 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1054,7 +1054,7 @@
     .nav-menu {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 56px;
         left: 0;
         right: 0;
         background: var(--color-white);
@@ -1081,8 +1081,8 @@
     }
 
     .front-page-main {
-        padding: 1rem 12px;
-        gap: 1rem;
+        padding: 2rem 12px;
+        gap: 2rem;
     }
 
     .site-footer {
