@@ -387,7 +387,11 @@
 /* Hero */
 .front-hero {
     position: relative;
-    padding: 8rem 0;
+    min-height: calc(100vh - 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 8rem 0 6rem;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
