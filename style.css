@@ -135,20 +135,20 @@ body {
 .site-container {
     max-width: 1700px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 2rem;
 }
 
 .site-header {
-    padding: 10px 0;
+    padding: 0.5rem 0;
 }
 
 .site-footer {
-    padding: 20px 0;
+    padding: 1rem 0;
 }
 
 .site-main {
     min-height: 400px;
-    padding: 40px 0;
+    padding: 2rem 0;
 }
 
 /* ==========================================================================
