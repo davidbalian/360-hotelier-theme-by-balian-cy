@@ -100,7 +100,11 @@
     font-weight: 500;
     color: #fff; /* Initial state: White */
     text-decoration: none;
-    transition: color 0.3s ease;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 150ms ease;
 }
 
 .site-header.is-scrolled .nav-menu a {
@@ -109,11 +113,7 @@
 
 .nav-menu a:hover,
 .nav-menu a:focus {
-    color: var(--color-blue);
-}
-
-.site-header.is-scrolled .nav-menu a:hover {
-    color: var(--color-blue);
+    background-size: 100% 1px;
 }
 
 /* Mobile menu toggle — hidden on desktop */
@@ -180,12 +180,16 @@
     font-size: 0.875rem;
     color: #ccc;
     text-decoration: none;
-    transition: color 0.2s ease;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 150ms ease;
 }
 
 .footer-social a:hover,
 .footer-legal a:hover {
-    color: #fff;
+    background-size: 100% 1px;
 }
 
 .footer-social a + a::before,
@@ -204,10 +208,16 @@
 
 .site-info a {
     color: #ccc;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 150ms ease;
 }
 
 .site-info a:hover {
-    color: #fff;
+    background-size: 100% 1px;
 }
 
 .footer-nav-menu {
@@ -223,11 +233,15 @@
     font-size: 0.875rem;
     color: #ccc;
     text-decoration: none;
-    transition: color 0.2s ease;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 150ms ease;
 }
 
 .footer-nav-menu a:hover {
-    color: #fff;
+    background-size: 100% 1px;
 }
 
 /* ==========================================================================
@@ -362,12 +376,12 @@
     border: 2px solid transparent;
     cursor: pointer;
     min-height: 48px;
-    transition: opacity 0.2s ease, transform 0.1s ease;
+    transition: opacity 150ms ease, transform 150ms ease;
     white-space: nowrap;
 }
 
 .btn:active {
-    transform: scale(0.96);
+    transform: scale(0.98);
 }
 
 /* Primary — orange fill */
