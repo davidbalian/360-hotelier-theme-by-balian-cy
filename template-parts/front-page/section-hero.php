@@ -14,7 +14,6 @@
         </div>
         <div class="front-hero__ctas">
             <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary btn--lg"><?php esc_html_e( 'Start Your Free Hotel Strategy Session', '360-hotelier' ); ?></a>
-            <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="btn btn--outline btn--lg"><?php esc_html_e( 'Explore Our Hotel Consulting Services', '360-hotelier' ); ?></a>
         </div>
     </div>
 </section>
