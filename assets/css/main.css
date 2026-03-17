@@ -148,7 +148,7 @@
     color: #ccc;
     padding: 4rem 0 2rem;
     max-width: 1700px;
-    margin: 0 auto 2rem;
+    margin-block-end: 2rem;
     margin-inline: max(1rem, calc((100% - 1700px) / 2));
     border-radius: 2rem;
 }
@@ -429,9 +429,7 @@
 .front-results,
 .front-contact {
     max-width: 1700px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: max(1rem, calc((100% - 1700px) / 2));
     border-radius: 2rem;
 }
 
