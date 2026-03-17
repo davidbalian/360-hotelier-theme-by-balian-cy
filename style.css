@@ -180,6 +180,7 @@ p {
 a {
     color: var(--color-blue);
     text-decoration: none;
+    display: inline-block;
     background-image: linear-gradient(currentColor, currentColor);
     background-position: 0% 100%;
     background-repeat: no-repeat;
