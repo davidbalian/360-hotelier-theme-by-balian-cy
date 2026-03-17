@@ -180,12 +180,34 @@ p {
 a {
     color: var(--color-blue);
     text-decoration: none;
-    transition: color 0.3s ease;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 150ms ease, transform 150ms ease;
 }
 
 a:hover,
 a:focus {
-    color: var(--color-blue-hover);
+    background-size: 100% 1px;
+}
+
+a:active {
+    transform: scale(0.98);
+}
+
+/* Buttons override — no underline effect */
+.btn,
+.btn:hover,
+.btn:focus,
+.btn:active {
+    background-image: none;
+    background-size: auto;
+    transform: none;
+}
+
+.btn:active {
+    transform: scale(0.98);
 }
 
 /* ==========================================================================

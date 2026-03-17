@@ -100,20 +100,10 @@
     font-weight: 500;
     color: #fff; /* Initial state: White */
     text-decoration: none;
-    background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 0% 1px;
-    transition: background-size 150ms ease;
 }
 
 .site-header.is-scrolled .nav-menu a {
     color: var(--color-charcoal); /* Scrolled state: Charcoal */
-}
-
-.nav-menu a:hover,
-.nav-menu a:focus {
-    background-size: 100% 1px;
 }
 
 /* Mobile menu toggle — hidden on desktop */
@@ -180,24 +170,8 @@
     font-size: 0.875rem;
     color: #ccc;
     text-decoration: none;
-    background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 0% 1px;
-    transition: background-size 150ms ease;
 }
 
-.footer-social a:hover,
-.footer-legal a:hover {
-    background-size: 100% 1px;
-}
-
-.footer-social a + a::before,
-.footer-legal a + a::before {
-    content: " | ";
-    margin-right: 0.25rem;
-    color: #888;
-}
 
 .site-info {
     display: flex;
@@ -209,15 +183,6 @@
 .site-info a {
     color: #ccc;
     text-decoration: none;
-    background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 0% 1px;
-    transition: background-size 150ms ease;
-}
-
-.site-info a:hover {
-    background-size: 100% 1px;
 }
 
 .footer-nav-menu {
@@ -233,15 +198,6 @@
     font-size: 0.875rem;
     color: #ccc;
     text-decoration: none;
-    background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 0% 1px;
-    transition: background-size 150ms ease;
-}
-
-.footer-nav-menu a:hover {
-    background-size: 100% 1px;
 }
 
 /* ==========================================================================
