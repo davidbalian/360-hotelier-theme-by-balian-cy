@@ -484,6 +484,12 @@
     z-index: 1;
 }
 
+@media (min-width: 769px) {
+    .front-hero__overlay {
+        background: linear-gradient(135deg, rgba(30, 10, 50, 0.80) 0%, rgba(60, 20, 90, 0.60) 100%);
+    }
+}
+
 .front-hero__content {
     position: relative;
     z-index: 2;
