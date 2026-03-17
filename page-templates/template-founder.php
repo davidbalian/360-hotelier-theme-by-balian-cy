@@ -15,7 +15,7 @@ get_header(); ?>
             <p class="page-founder__subtitle"><?php esc_html_e( 'Founder & Hospitality Consultant', '360-hotelier' ); ?></p>
 
             <div class="page-founder__image">
-                <div class="page-founder__image-placeholder" role="img" aria-label="<?php esc_attr_e( 'Giorgos Peyiazis, founder of 360 Hotelier Consulting', '360-hotelier' ); ?>"></div>
+                <div class="page-founder__image-placeholder card-border" role="img" aria-label="<?php esc_attr_e( 'Giorgos Peyiazis, founder of 360 Hotelier Consulting', '360-hotelier' ); ?>"></div>
             </div>
 
             <p><?php esc_html_e( 'Giorgos Peyiazis is the Founder of 360° Hotelier Consulting, a hospitality sales and e-commerce consultancy based in Cyprus. With over fifteen years of experience in hotel sales, contracting, and digital distribution, Giorgos specialises in helping hotels and tourism businesses maximise their online performance and profitability.', '360-hotelier' ); ?></p>

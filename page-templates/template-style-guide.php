@@ -274,7 +274,7 @@ get_header();
                     <h3>Post Card</h3>
                     <p>Used in blog listings and archive pages.</p>
                     <div class="sg-card-grid">
-                        <article class="post-card">
+                        <article class="post-card card-border">
                             <div class="post-thumbnail">
                                 <div class="sg-image-placeholder" style="height: 200px;"></div>
                             </div>
@@ -285,7 +285,7 @@ get_header();
                                 <a href="#" class="read-more">Read more &rarr;</a>
                             </div>
                         </article>
-                        <article class="post-card">
+                        <article class="post-card card-border">
                             <div class="post-thumbnail">
                                 <div class="sg-image-placeholder" style="height: 200px;"></div>
                             </div>

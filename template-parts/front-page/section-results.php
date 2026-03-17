@@ -5,7 +5,7 @@
  * @package 360-hotelier
  */
 ?>
-<section class="front-results">
+<section class="front-results card-border">
     <div class="site-container">
         <h2 class="front-section__title"><?php esc_html_e( 'Proven Impact for Hotels in Cyprus', '360-hotelier' ); ?></h2>
         <ul class="front-results__list">

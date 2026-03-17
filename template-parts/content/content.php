@@ -6,7 +6,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-card' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( array( 'post-card', 'card-border' ) ); ?>>
 
     <?php if ( has_post_thumbnail() ) : ?>
         <div class="post-thumbnail">

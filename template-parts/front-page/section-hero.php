@@ -5,7 +5,7 @@
  * @package 360-hotelier
  */
 ?>
-<section class="front-hero" style="background-image: url('<?php echo esc_url( content_url( '/uploads/2026/03/360-hotelier-consulting-cyprus-hero.webp' ) ); ?>');">
+<section class="front-hero card-border" style="background-image: url('<?php echo esc_url( content_url( '/uploads/2026/03/360-hotelier-consulting-cyprus-hero.webp' ) ); ?>');">
     <div class="front-hero__overlay"></div>
     <div class="site-container front-hero__content">
         <h1 class="front-hero__title"><?php esc_html_e( 'Revenue, Distribution &', '360-hotelier' ); ?><br><?php esc_html_e( 'Digital Growth for Hotels in Cyprus', '360-hotelier' ); ?></h1>
