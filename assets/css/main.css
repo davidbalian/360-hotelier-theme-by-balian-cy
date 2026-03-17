@@ -143,6 +143,7 @@
     margin: 0 auto 2rem;
     margin-inline: max(1rem, calc((100% - 1700px) / 2));
     border-radius: 2rem;
+    outline: 1px solid rgba(0, 0, 0, 0.07);
 }
 
 /* Footer columns */
