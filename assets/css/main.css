@@ -246,11 +246,12 @@
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-card);
     overflow: hidden;
-    transition: box-shadow 0.2s ease;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .post-card:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
 }
 
 .post-thumbnail img {
@@ -466,9 +467,13 @@
     font-weight: 700;
     text-decoration: none;
     border-radius: 100px;
-    transition: all 0.3s ease;
+    transition: opacity 0.2s ease, transform 0.1s ease;
     text-align: center;
     min-height: 56px;
+}
+
+.front-hero__cta:active {
+    transform: scale(0.96);
 }
 
 .front-hero__cta--primary {
@@ -509,6 +514,12 @@
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-card);
     background: var(--color-white);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.front-why-choose__box:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
 }
 
 .front-why-choose__box-title {
@@ -542,6 +553,12 @@
     border-radius: var(--radius-card);
     border: none;
     box-shadow: var(--shadow-card);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.front-services-overview__card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
 }
 
 .front-services-overview__card-title {
@@ -573,12 +590,16 @@
     font-weight: 600;
     text-decoration: none;
     border-radius: 100px;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.1s ease;
 }
 
 .front-cta-button:hover {
     opacity: 0.9;
     color: #fff;
+}
+
+.front-cta-button:active {
+    transform: scale(0.96);
 }
 
 .front-cta-button--secondary {
@@ -639,12 +660,16 @@
     font-weight: 600;
     text-decoration: none;
     border-radius: 100px;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.1s ease;
 }
 
 .front-featured-banner__cta:hover {
     opacity: 0.9;
     color: #fff;
+}
+
+.front-featured-banner__cta:active {
+    transform: scale(0.96);
 }
 
 /* Founder */
@@ -666,6 +691,7 @@
     border-radius: var(--radius-card);
     display: block;
     object-fit: cover;
+    outline: 1px solid rgba(0, 0, 0, 0.07);
 }
 
 .front-founder__points {
@@ -692,6 +718,12 @@
     border-radius: var(--radius-card);
     border: none;
     box-shadow: var(--shadow-card);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.front-approach__step:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
 }
 
 .front-approach__step-title {
@@ -793,12 +825,16 @@
     text-decoration: none;
     border-radius: 100px;
     margin-bottom: 1.5rem;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.1s ease;
 }
 
 .front-contact__cta:hover {
     opacity: 0.9;
     color: #fff;
+}
+
+.front-contact__cta:active {
+    transform: scale(0.96);
 }
 
 .front-contact__or {
