@@ -7,45 +7,58 @@
 ?>
 
     <footer id="colophon" class="site-footer">
-        <div class="site-container footer-inner">
+        <div class="site-container">
 
-            <nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', '360-hotelier' ); ?>">
-                <?php
-                if ( has_nav_menu( 'footer' ) ) {
-                    wp_nav_menu( array(
-                        'theme_location' => 'footer',
-                        'menu_id'        => 'footer-menu',
-                        'menu_class'     => 'footer-nav-menu',
-                        'container'      => false,
-                        'depth'          => 1,
-                        'fallback_cb'    => false,
-                    ) );
-                } else {
-                    hotelier_default_nav_fallback( array(
-                        'menu_class' => 'footer-nav-menu',
-                        'menu_id'   => 'footer-menu',
-                    ) );
-                }
-                ?>
-            </nav>
+            <div class="footer-cols">
 
-            <div class="footer-social">
-                <a href="#" rel="noopener noreferrer" target="_blank" aria-label="<?php esc_attr_e( 'Facebook', '360-hotelier' ); ?>"><?php esc_html_e( 'Facebook', '360-hotelier' ); ?></a>
-                <a href="#" rel="noopener noreferrer" target="_blank" aria-label="<?php esc_attr_e( 'LinkedIn', '360-hotelier' ); ?>"><?php esc_html_e( 'LinkedIn', '360-hotelier' ); ?></a>
-                <a href="#" rel="noopener noreferrer" target="_blank" aria-label="<?php esc_attr_e( 'Instagram', '360-hotelier' ); ?>"><?php esc_html_e( 'Instagram', '360-hotelier' ); ?></a>
-            </div>
+                <div class="footer-col">
+                    <h4 class="footer-col__heading"><?php esc_html_e( 'Navigation', '360-hotelier' ); ?></h4>
+                    <nav aria-label="<?php esc_attr_e( 'Footer Menu', '360-hotelier' ); ?>">
+                        <?php
+                        if ( has_nav_menu( 'footer' ) ) {
+                            wp_nav_menu( array(
+                                'theme_location' => 'footer',
+                                'menu_id'        => 'footer-menu',
+                                'menu_class'     => 'footer-nav-menu',
+                                'container'      => false,
+                                'depth'          => 1,
+                                'fallback_cb'    => false,
+                            ) );
+                        } else {
+                            hotelier_default_nav_fallback( array(
+                                'menu_class' => 'footer-nav-menu',
+                                'menu_id'   => 'footer-menu',
+                            ) );
+                        }
+                        ?>
+                    </nav>
+                </div>
 
-            <div class="footer-legal">
-                <a href="#"><?php esc_html_e( 'Privacy Policy', '360-hotelier' ); ?></a>
-                <a href="#"><?php esc_html_e( 'Cookie Policy', '360-hotelier' ); ?></a>
-                <a href="#"><?php esc_html_e( 'Terms', '360-hotelier' ); ?></a>
-            </div>
+                <div class="footer-col">
+                    <h4 class="footer-col__heading"><?php esc_html_e( 'Follow Us', '360-hotelier' ); ?></h4>
+                    <ul class="footer-social">
+                        <li><a href="#" rel="noopener noreferrer" target="_blank"><?php esc_html_e( 'Facebook', '360-hotelier' ); ?></a></li>
+                        <li><a href="#" rel="noopener noreferrer" target="_blank"><?php esc_html_e( 'LinkedIn', '360-hotelier' ); ?></a></li>
+                        <li><a href="#" rel="noopener noreferrer" target="_blank"><?php esc_html_e( 'Instagram', '360-hotelier' ); ?></a></li>
+                    </ul>
+                </div>
 
-            <div class="site-info">
-                <span class="copyright">
-                    &copy; 2026 360° Hotelier Consulting. <?php esc_html_e( 'All Rights Reserved.', '360-hotelier' ); ?>
+                <div class="footer-col">
+                    <h4 class="footer-col__heading"><?php esc_html_e( 'Legal', '360-hotelier' ); ?></h4>
+                    <ul class="footer-legal">
+                        <li><a href="#"><?php esc_html_e( 'Privacy Policy', '360-hotelier' ); ?></a></li>
+                        <li><a href="#"><?php esc_html_e( 'Cookie Policy', '360-hotelier' ); ?></a></li>
+                        <li><a href="#"><?php esc_html_e( 'Terms', '360-hotelier' ); ?></a></li>
+                    </ul>
+                </div>
+
+            </div><!-- .footer-cols -->
+
+            <div class="footer-bottom">
+                <span class="footer-copyright">
+                    &copy; <?php echo esc_html( date( 'Y' ) ); ?> 360&deg; Hotelier Consulting. <?php esc_html_e( 'All Rights Reserved.', '360-hotelier' ); ?>
                 </span>
-                <span class="credit">
+                <span class="footer-credit">
                     <?php
                     printf(
                         /* translators: %s: agency link */
@@ -54,9 +67,9 @@
                     );
                     ?>
                 </span>
-            </div>
+            </div><!-- .footer-bottom -->
 
-        </div>
+        </div><!-- .site-container -->
     </footer>
 
 </div><!-- #page -->
