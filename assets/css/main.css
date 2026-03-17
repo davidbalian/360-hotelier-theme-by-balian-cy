@@ -176,6 +176,12 @@
     opacity: 0.85;
 }
 
+@media (min-width: 769px) {
+    .footer-col--logo img {
+        height: 86px;
+    }
+}
+
 .footer-col__heading {
     font-size: 0.75rem;
     font-weight: 600;
@@ -678,6 +684,14 @@
 .front-founder__points {
     margin: 1rem 0;
     padding-left: 1rem;
+}
+
+@media (min-width: 769px) {
+    .front-founder__content {
+        position: sticky;
+        top: calc(var(--wp-admin-bar-offset, 0px) + 4rem);
+        align-self: start;
+    }
 }
 
 /* Approach */
