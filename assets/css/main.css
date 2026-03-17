@@ -503,15 +503,6 @@
 .front-hero__content {
     position: relative;
     z-index: 2;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
-    align-items: end;
-    width: 100%;
-}
-
-.front-hero__text {
-    min-width: 0;
 }
 
 .front-hero__title {
@@ -1215,13 +1206,8 @@
         grid-template-columns: 1fr;
     }
 
-    .front-hero__content {
-        grid-template-columns: 1fr;
-    }
-
-    .front-hero__ctas {
-        flex-direction: row;
-        flex-wrap: wrap;
+    .front-hero__ctas .btn {
+        width: 100%;
     }
 
     .sg-columns {
