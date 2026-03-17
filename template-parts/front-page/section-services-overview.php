@@ -29,7 +29,7 @@ $services_url = home_url( '/services/' );
             </div>
         </div>
         <p class="front-services-overview__cta">
-            <a href="<?php echo esc_url( $services_url ); ?>" class="front-cta-button"><?php esc_html_e( 'Explore Our Hotel Consulting Services', '360-hotelier' ); ?></a>
+            <a href="<?php echo esc_url( $services_url ); ?>" class="btn btn--primary"><?php esc_html_e( 'Explore Our Hotel Consulting Services', '360-hotelier' ); ?></a>
         </p>
     </div>
 </section>

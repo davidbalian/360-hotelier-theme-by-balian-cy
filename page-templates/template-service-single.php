@@ -34,8 +34,8 @@ if ( ! $content ) {
             </ul>
 
             <p class="page-service-single__cta">
-                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="front-cta-button"><?php esc_html_e( 'Get in Touch', '360-hotelier' ); ?></a>
-                <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="front-cta-button front-cta-button--secondary"><?php esc_html_e( 'All Services', '360-hotelier' ); ?></a>
+                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Get in Touch', '360-hotelier' ); ?></a>
+                <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="btn btn--outline"><?php esc_html_e( 'All Services', '360-hotelier' ); ?></a>
             </p>
         </article>
 

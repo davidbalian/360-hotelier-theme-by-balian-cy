@@ -39,7 +39,7 @@ get_header(); ?>
             <p><strong><?php esc_html_e( 'Giorgos Peyiazis — Founder & Hotel Consultant', '360-hotelier' ); ?></strong></p>
             <p><?php esc_html_e( 'Giorgos Peyiazis is the Founder of 360° Hotelier Consulting and an experienced hotel consultant in Cyprus, with a professional background spanning more than 15 years in hotel revenue management, online distribution, digital marketing and commercial strategy.', '360-hotelier' ); ?></p>
             <p><?php esc_html_e( 'Giorgos has worked closely with independent hotels, boutique properties and international hospitality platforms, supporting hotels in improving revenue performance, strengthening online sales channels and negotiating effective B2B and tour-operator agreements.', '360-hotelier' ); ?></p>
-            <p><a href="<?php echo esc_url( home_url( '/founder/' ) ); ?>" class="front-cta-button"><?php esc_html_e( 'Read Full Bio', '360-hotelier' ); ?></a></p>
+            <p><a href="<?php echo esc_url( home_url( '/founder/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Read Full Bio', '360-hotelier' ); ?></a></p>
 
             <h2><?php esc_html_e( 'Our Philosophy', '360-hotelier' ); ?></h2>
             <p><?php esc_html_e( 'At 360° Hotelier Consulting, we believe that successful hotel consulting is built on partnership, trust and long-term collaboration.', '360-hotelier' ); ?></p>
@@ -59,8 +59,8 @@ get_header(); ?>
                 <h2><?php esc_html_e( 'Looking for a Reliable Hotel Consultant in Cyprus?', '360-hotelier' ); ?></h2>
                 <p><?php esc_html_e( "Let's discuss how 360° Hotelier Consulting can support your hotel's revenue, distribution and digital growth.", '360-hotelier' ); ?></p>
                 <p>
-                    <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="front-cta-button"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
-                    <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="front-cta-button front-cta-button--secondary"><?php esc_html_e( 'Explore Our Services', '360-hotelier' ); ?></a>
+                    <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
+                    <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="btn btn--outline"><?php esc_html_e( 'Explore Our Services', '360-hotelier' ); ?></a>
                 </p>
             </div>
         </article>

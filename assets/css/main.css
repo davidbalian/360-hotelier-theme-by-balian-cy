@@ -346,6 +346,82 @@
    ========================================================================== */
 
 /* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-satoshi);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 100px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    min-height: 48px;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+    white-space: nowrap;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+/* Primary — orange fill */
+.btn--primary {
+    background: var(--color-orange);
+    color: #fff;
+    border-color: var(--color-orange);
+}
+
+.btn--primary:hover {
+    opacity: 0.9;
+    color: #fff;
+}
+
+/* Outline — transparent with orange border */
+.btn--outline {
+    background: transparent;
+    color: var(--color-orange);
+    border-color: var(--color-orange);
+}
+
+.btn--outline:hover {
+    opacity: 0.85;
+    color: var(--color-orange);
+}
+
+/* Ghost — for use on dark/coloured backgrounds */
+.btn--ghost {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn--ghost:hover {
+    border-color: #fff;
+    color: #fff;
+    opacity: 0.85;
+}
+
+/* Size modifiers */
+.btn--lg {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    min-height: 56px;
+}
+
+.btn--sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    min-height: 36px;
+}
+
+/* ==========================================================================
    Front Page Sections
    ========================================================================== */
 
@@ -459,41 +535,6 @@
     gap: 1rem;
 }
 
-.front-hero__cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 2rem;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 100px;
-    transition: opacity 0.2s ease, transform 0.1s ease;
-    text-align: center;
-    min-height: 56px;
-}
-
-.front-hero__cta:active {
-    transform: scale(0.96);
-}
-
-.front-hero__cta--primary {
-    background: var(--color-orange);
-    color: #fff;
-}
-
-.front-hero__cta--primary:hover {
-    opacity: 0.9;
-}
-
-.front-hero__cta--secondary {
-    background: transparent;
-    color: var(--color-orange);
-    border: 2px solid var(--color-orange);
-}
-
-.front-hero__cta--secondary:hover {
-    opacity: 0.85;
-}
 
 /* Why Choose */
 .front-why-choose {
@@ -573,44 +614,9 @@
     color: var(--color-charcoal);
 }
 
-.front-services-overview__cta,
-.front-cta-button {
+.front-services-overview__cta {
     text-align: center;
     margin-top: 2rem;
-}
-
-.front-cta-button {
-    display: inline-block;
-    padding-top: .75rem;
-    padding-right: 1.25rem;
-    padding-bottom: .75rem;
-    padding-left: 1.25rem;
-    background: var(--color-orange);
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 100px;
-    transition: opacity 0.2s ease, transform 0.1s ease;
-}
-
-.front-cta-button:hover {
-    opacity: 0.9;
-    color: #fff;
-}
-
-.front-cta-button:active {
-    transform: scale(0.96);
-}
-
-.front-cta-button--secondary {
-    background: transparent;
-    color: var(--color-orange);
-    border: 2px solid var(--color-orange);
-    margin-left: 0.5rem;
-}
-
-.front-cta-button--secondary:hover {
-    color: var(--color-orange);
 }
 
 /* Featured Banner */
@@ -649,28 +655,6 @@
     opacity: 0.9;
 }
 
-.front-featured-banner__cta {
-    display: inline-block;
-    padding-top: .75rem;
-    padding-right: 1.25rem;
-    padding-bottom: .75rem;
-    padding-left: 1.25rem;
-    background: var(--color-orange);
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 100px;
-    transition: opacity 0.2s ease, transform 0.1s ease;
-}
-
-.front-featured-banner__cta:hover {
-    opacity: 0.9;
-    color: #fff;
-}
-
-.front-featured-banner__cta:active {
-    transform: scale(0.96);
-}
 
 /* Founder */
 .front-founder {
@@ -814,27 +798,7 @@
 }
 
 .front-contact__cta {
-    display: inline-block;
-    padding-top: .75rem;
-    padding-right: 1.25rem;
-    padding-bottom: .75rem;
-    padding-left: 1.25rem;
-    background: var(--color-orange);
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 100px;
     margin-bottom: 1.5rem;
-    transition: opacity 0.2s ease, transform 0.1s ease;
-}
-
-.front-contact__cta:hover {
-    opacity: 0.9;
-    color: #fff;
-}
-
-.front-contact__cta:active {
-    transform: scale(0.96);
 }
 
 .front-contact__or {

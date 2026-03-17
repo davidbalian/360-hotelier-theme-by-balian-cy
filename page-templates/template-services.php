@@ -40,7 +40,7 @@ get_header(); ?>
         </div>
 
         <p class="page-services__cta">
-            <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="front-cta-button"><?php esc_html_e( 'Explore All Services', '360-hotelier' ); ?></a>
+            <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Explore All Services', '360-hotelier' ); ?></a>
         </p>
 
     </div>

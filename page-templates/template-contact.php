@@ -13,7 +13,7 @@ get_header(); ?>
         <h1 class="page-contact__title"><?php esc_html_e( "Ready to Boost Your Hotel's Revenue & Distribution?", '360-hotelier' ); ?></h1>
         <p class="page-contact__text"><?php esc_html_e( "Let's discuss your property and explore how we can support your commercial growth.", '360-hotelier' ); ?></p>
 
-        <a href="#" class="front-cta-button page-contact__cta"><?php esc_html_e( 'Start Your Free Hotel Strategy Session', '360-hotelier' ); ?></a>
+        <a href="#" class="btn btn--primary"><?php esc_html_e( 'Start Your Free Hotel Strategy Session', '360-hotelier' ); ?></a>
 
         <p class="page-contact__or"><?php esc_html_e( 'Or contact us directly:', '360-hotelier' ); ?></p>
         <div class="page-contact__details">

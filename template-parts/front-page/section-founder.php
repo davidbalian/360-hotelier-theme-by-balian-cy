@@ -22,7 +22,7 @@ $about_url = home_url( '/about-us/' );
                 <li><?php esc_html_e( 'Proven track record in driving RevPAR and direct bookings', '360-hotelier' ); ?></li>
                 <li><?php esc_html_e( 'Trusted advisor to boutique, resort and independent hotels', '360-hotelier' ); ?></li>
             </ul>
-            <a href="<?php echo esc_url( $about_url ); ?>" class="front-cta-button"><?php esc_html_e( 'About 360° Hotelier Consulting', '360-hotelier' ); ?></a>
+            <a href="<?php echo esc_url( $about_url ); ?>" class="btn btn--primary"><?php esc_html_e( 'About 360° Hotelier Consulting', '360-hotelier' ); ?></a>
         </div>
     </div>
 </section>

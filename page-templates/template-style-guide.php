@@ -101,27 +101,53 @@ get_header();
                 <h2>Buttons</h2>
 
                 <div class="sg-subsection">
-                    <h3>Primary Button</h3>
-                    <p>Used for main calls-to-action. Orange background with white text.</p>
+                    <h3>Primary <code>.btn .btn--primary</code></h3>
+                    <p>Main call-to-action. Orange fill, white text.</p>
                     <div class="sg-button-row">
-                        <a href="#" class="front-cta-button">Primary Button</a>
+                        <a href="#" class="btn btn--primary">Primary Button</a>
                     </div>
                 </div>
 
                 <div class="sg-subsection">
-                    <h3>Secondary Button</h3>
-                    <p>Used for alternative actions. Transparent with an orange border.</p>
+                    <h3>Outline <code>.btn .btn--outline</code></h3>
+                    <p>Secondary action. Transparent with an orange border.</p>
                     <div class="sg-button-row">
-                        <a href="#" class="front-cta-button front-cta-button--secondary">Secondary Button</a>
+                        <a href="#" class="btn btn--outline">Outline Button</a>
+                    </div>
+                </div>
+
+                <div class="sg-subsection">
+                    <h3>Ghost <code>.btn .btn--ghost</code></h3>
+                    <p>For use on dark or coloured backgrounds.</p>
+                    <div class="sg-button-row" style="background: var(--color-purple); padding: 1.5rem; border-radius: var(--radius-card);">
+                        <a href="#" class="btn btn--ghost">Ghost Button</a>
+                    </div>
+                </div>
+
+                <div class="sg-subsection">
+                    <h3>Large <code>.btn .btn--primary .btn--lg</code></h3>
+                    <p>Used in hero sections and high-emphasis CTAs.</p>
+                    <div class="sg-button-row">
+                        <a href="#" class="btn btn--primary btn--lg">Large Primary</a>
+                        <a href="#" class="btn btn--outline btn--lg">Large Outline</a>
+                    </div>
+                </div>
+
+                <div class="sg-subsection">
+                    <h3>Small <code>.btn .btn--primary .btn--sm</code></h3>
+                    <p>Used for compact UI contexts.</p>
+                    <div class="sg-button-row">
+                        <a href="#" class="btn btn--primary btn--sm">Small Primary</a>
+                        <a href="#" class="btn btn--outline btn--sm">Small Outline</a>
                     </div>
                 </div>
 
                 <div class="sg-subsection">
                     <h3>Button Pair</h3>
-                    <p>Primary and secondary buttons used together.</p>
+                    <p>Primary and outline buttons used together.</p>
                     <div class="sg-button-row">
-                        <a href="#" class="front-cta-button">Get Started</a>
-                        <a href="#" class="front-cta-button front-cta-button--secondary">Learn More</a>
+                        <a href="#" class="btn btn--primary">Get Started</a>
+                        <a href="#" class="btn btn--outline">Learn More</a>
                     </div>
                 </div>
 
@@ -194,7 +220,7 @@ get_header();
                             <textarea id="sg-textarea" rows="4" placeholder="Your message&hellip;"></textarea>
                         </div>
                         <div class="sg-form__group">
-                            <button type="submit" class="front-cta-button">Submit</button>
+                            <button type="submit" class="btn btn--primary">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -316,7 +342,7 @@ get_header();
         <div class="site-container">
             <h3 class="front-featured-banner__title">Ready to Transform Your Hotel&rsquo;s Performance?</h3>
             <p class="front-featured-banner__text">Partner with 360&deg; Hotelier and unlock your property&rsquo;s full revenue potential.</p>
-            <a href="#" class="front-featured-banner__cta">Get in Touch</a>
+            <a href="#" class="btn btn--primary">Get in Touch</a>
         </div>
     </section>
 
@@ -334,7 +360,7 @@ get_header();
         <div class="site-container">
             <h3 class="front-contact__title">Let&rsquo;s Work Together</h3>
             <p class="front-contact__text">Whether you need a full revenue strategy or a quick consultation, we&rsquo;re here to help.</p>
-            <a href="#" class="front-contact__cta">Contact Us</a>
+            <a href="#" class="btn btn--primary front-contact__cta">Contact Us</a>
         </div>
     </section>
 

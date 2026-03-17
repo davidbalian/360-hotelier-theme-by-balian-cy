@@ -31,8 +31,8 @@ get_header(); ?>
             <p><?php esc_html_e( 'Today, Giorgos works as an external e-commerce manager and pre-opening consultant for a variety of boutique, mid-scale, and upscale hotels, as well as tourism accommodations in Cyprus and abroad. His work continues to contribute to the growth and professionalisation of the hospitality sector, combining traditional hospitality values with innovative digital practices.', '360-hotelier' ); ?></p>
 
             <p class="page-founder__cta">
-                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="front-cta-button"><?php esc_html_e( 'Get in Touch', '360-hotelier' ); ?></a>
-                <a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>" class="front-cta-button front-cta-button--secondary"><?php esc_html_e( 'About 360° Hotelier Consulting', '360-hotelier' ); ?></a>
+                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Get in Touch', '360-hotelier' ); ?></a>
+                <a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>" class="btn btn--outline"><?php esc_html_e( 'About 360° Hotelier Consulting', '360-hotelier' ); ?></a>
             </p>
         </article>
 
