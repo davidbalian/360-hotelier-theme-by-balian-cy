@@ -178,7 +178,7 @@
 
 @media (min-width: 769px) {
     .footer-col--logo img {
-        height: 86px;
+        height: 45px;
     }
 }
 
@@ -420,7 +420,7 @@
    ========================================================================== */
 
 .front-page-main {
-    padding: 0 2rem 4rem;
+    padding: 0 0 4rem;
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -1194,7 +1194,7 @@
     }
 
     .front-page-main {
-        padding: 0 1rem 2rem;
+        padding: 0 0 2rem;
         gap: 2rem;
     }
 
