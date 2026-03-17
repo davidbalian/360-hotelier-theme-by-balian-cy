@@ -148,7 +148,7 @@
 /* Footer columns */
 .footer-cols {
     display: grid;
-    grid-template-columns: auto 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
     padding-bottom: 4rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -158,8 +158,6 @@
 .footer-col--logo {
     display: flex;
     align-items: flex-start;
-    padding-right: 4rem;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-col--logo img {
