@@ -57,7 +57,7 @@
 }
 
 .site-branding a {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 1vw + 0.75rem, 1.25rem);
     font-weight: 700;
     color: var(--color-purple);
     text-decoration: none;
@@ -266,7 +266,7 @@
 }
 
 .entry-title {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 1vw + 0.75rem, 1.25rem);
     margin-bottom: 0.5rem;
 }
 
@@ -327,7 +327,7 @@
 
 .error-404 .page-title,
 .no-results .page-title {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 2.5vw + 0.75rem, 2rem);
     margin-bottom: 1rem;
 }
 
@@ -448,7 +448,7 @@
 }
 
 .front-section__title {
-    font-size: 1.75rem;
+    font-size: clamp(1.375rem, 2vw + 0.875rem, 1.75rem);
     margin-bottom: 0.5rem;
     text-align: center;
     color: var(--color-purple);
@@ -506,7 +506,7 @@
 }
 
 .front-hero__title {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
     margin-bottom: 1.5rem;
     line-height: 1.1;
     color: #fff;
@@ -514,7 +514,7 @@
 }
 
 .front-hero__subheadline {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 1vw + 0.75rem, 1.25rem);
     margin-bottom: 1.5rem;
     color: #fff;
     max-width: 50ch;
@@ -525,7 +525,7 @@
     margin-bottom: 2.5rem;
     max-width: 50ch;
     color: #fff;
-    font-size: 1.125rem;
+    font-size: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);
     line-height: 1.6;
 }
 
@@ -566,7 +566,7 @@
 }
 
 .front-why-choose__box-title {
-    font-size: 1.125rem;
+    font-size: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);
     margin-bottom: 0.5rem;
     color: var(--color-purple);
 }
@@ -605,7 +605,7 @@
 }
 
 .front-services-overview__card-title {
-    font-size: 1.125rem;
+    font-size: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);
     margin-bottom: 0.5rem;
     color: var(--color-purple);
 }
@@ -646,7 +646,7 @@
 }
 
 .front-featured-banner__title {
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 1.5vw + 0.875rem, 1.5rem);
     margin-bottom: 0.75rem;
     color: #fff;
 }
@@ -788,7 +788,7 @@
 }
 
 .front-contact__title {
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 1.5vw + 0.875rem, 1.5rem);
     margin-bottom: 0.75rem;
     color: #fff;
 }
@@ -899,7 +899,7 @@
 }
 
 .page-founder__subtitle {
-    font-size: 1.125rem;
+    font-size: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);
     color: var(--color-charcoal);
     margin-bottom: 1rem;
 }
@@ -938,7 +938,7 @@
 }
 
 .style-guide__section > h2 {
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 1.5vw + 0.875rem, 1.5rem);
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--color-border);
@@ -953,7 +953,7 @@
 }
 
 .sg-subsection > h3 {
-    font-size: 1.125rem;
+    font-size: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);
     margin-bottom: 0.75rem;
     color: var(--color-charcoal);
 }
