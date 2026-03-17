@@ -156,6 +156,8 @@
 .footer-col--logo {
     display: flex;
     align-items: flex-start;
+    padding-right: 3rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-col--logo img {

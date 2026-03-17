@@ -197,6 +197,13 @@ a:active {
     transform: scale(0.98);
 }
 
+/* Image links — no underline effect */
+a:has(img),
+a:has(img):hover,
+a:has(img):focus {
+    background-image: none;
+}
+
 /* Buttons override — no underline effect */
 .btn,
 .btn:hover,
