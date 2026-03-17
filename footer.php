@@ -11,6 +11,12 @@
 
             <div class="footer-cols">
 
+                <div class="footer-col footer-col--logo">
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+                        <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/03/360-hotelier-horizontal-logo.webp' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+                    </a>
+                </div>
+
                 <div class="footer-col">
                     <h4 class="footer-col__heading"><?php esc_html_e( 'Navigation', '360-hotelier' ); ?></h4>
                     <nav aria-label="<?php esc_attr_e( 'Footer Menu', '360-hotelier' ); ?>">
