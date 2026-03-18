@@ -10,7 +10,7 @@
 
         <!-- Image column (left) -->
         <div class="front-approach__image">
-            <div class="front-approach__placeholder"></div>
+            <img src="<?php echo esc_url( content_url( 'uploads/2026/03/person-at-hotel-reception-scaled.webp' ) ); ?>" alt="<?php esc_attr_e( 'Hotel reception consultant at work', '360-hotelier' ); ?>" class="front-approach__img">
         </div>
 
         <!-- Heading column (middle) -->
