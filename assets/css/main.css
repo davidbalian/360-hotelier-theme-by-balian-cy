@@ -543,7 +543,7 @@
 /* Why Choose */
 .front-why-choose {
     padding: 8rem 0;
-    background: var(--color-white);
+    background: var(--color-sand);
 }
 
 .front-why-choose__grid {
@@ -558,7 +558,7 @@
     border: none;
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-card);
-    background: var(--color-sand);
+    background: var(--color-white);
     transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
@@ -595,28 +595,52 @@
 /* Services Overview */
 .front-services-overview {
     padding: 8rem 0;
-    background: var(--color-sand);
+    background: var(--color-white);
 }
 
 .front-services-overview__grid {
-    display: grid;
-    grid-template-columns: repeat( auto-fit, minmax( 260px, 1fr ) );
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     margin: 2rem 0;
 }
 
 .front-services-overview__card {
-    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     background: var(--color-white);
     border-radius: var(--radius-card);
     border: none;
     box-shadow: var(--shadow-card);
+    overflow: hidden;
     transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .front-services-overview__card:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transform: translateY(-2px);
+}
+
+.front-services-overview__card--reverse .front-services-overview__card-image {
+    order: 2;
+}
+
+.front-services-overview__card-image {
+    overflow: hidden;
+}
+
+.front-services-overview__card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.front-services-overview__card-content {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .front-services-overview__card-title {
@@ -634,6 +658,20 @@
 .front-services-overview__cta {
     text-align: center;
     margin-top: 2rem;
+}
+
+@media ( max-width: 768px ) {
+    .front-services-overview__card {
+        grid-template-columns: 1fr;
+    }
+
+    .front-services-overview__card--reverse .front-services-overview__card-image {
+        order: unset;
+    }
+
+    .front-services-overview__card-image {
+        height: 240px;
+    }
 }
 
 /* Featured Banner */
