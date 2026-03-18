@@ -855,11 +855,21 @@
     padding: 6rem 0;
 }
 
+.front-approach__heading {
+    margin-bottom: 2.5rem;
+}
+
 .front-approach__inner {
     display: grid;
-    grid-template-columns: 1fr 1fr 1.5fr;
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: start;
+}
+
+.front-approach__card {
+    background: var(--color-white);
+    border-radius: 2rem;
+    padding: 3rem;
 }
 
 .front-approach__step {
