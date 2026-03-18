@@ -1396,6 +1396,12 @@
         text-align: center;
     }
 
+    .front-why-choose,
+    .front-founder,
+    .front-approach {
+        margin-inline: 0;
+    }
+
     .front-founder__inner {
         grid-template-columns: 1fr;
     }
