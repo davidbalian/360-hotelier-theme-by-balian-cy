@@ -8,7 +8,7 @@
 <section class="front-approach">
     <div class="site-container">
 
-        <div class="front-approach__heading">
+        <div class="front-approach__heading fade-in fade-in-delay-0">
             <h2 class="front-section__title text-2xl"><?php esc_html_e( 'How We Work', '360-hotelier' ); ?></h2>
             <p class="front-section__subtitle"><?php esc_html_e( 'Four steps. Nothing hidden.', '360-hotelier' ); ?></p>
         </div>
@@ -16,12 +16,12 @@
         <div class="front-approach__inner">
 
             <!-- Image column (left) -->
-            <div class="front-approach__image">
+            <div class="front-approach__image fade-in fade-in-delay-1">
                 <img src="<?php echo esc_url( content_url( 'uploads/2026/03/person-at-hotel-reception-scaled.webp' ) ); ?>" alt="<?php esc_attr_e( 'Hotel reception consultant at work', '360-hotelier' ); ?>" class="front-approach__img">
             </div>
 
             <!-- Steps column (right) -->
-            <div class="front-approach__content front-approach__card card-border">
+            <div class="front-approach__content front-approach__card card-border fade-in fade-in-delay-2">
                 <div class="front-approach__steps">
 
                     <div class="front-approach__step">

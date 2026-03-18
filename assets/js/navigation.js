@@ -68,4 +68,21 @@
     window.addEventListener( 'scroll', handleScroll );
     handleScroll();
 
+    // Scroll-triggered fade-in animations
+    var fadeEls = document.querySelectorAll( '.fade-in' );
+    if ( fadeEls.length ) {
+        var observer = new IntersectionObserver( function ( entries ) {
+            entries.forEach( function ( entry ) {
+                if ( entry.isIntersecting ) {
+                    entry.target.classList.add( 'visible' );
+                    observer.unobserve( entry.target );
+                }
+            } );
+        }, { root: null, rootMargin: '0px', threshold: 0.25 } );
+
+        fadeEls.forEach( function ( el ) {
+            observer.observe( el );
+        } );
+    }
+
 } )();

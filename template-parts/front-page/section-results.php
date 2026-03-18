@@ -7,8 +7,8 @@
 ?>
 <section class="front-results card-border">
     <div class="site-container">
-        <h2 class="front-section__title text-2xl"><?php esc_html_e( 'Proven Impact for Hotels in Cyprus & Greece', '360-hotelier' ); ?></h2>
-        <ul class="front-results__list">
+        <h2 class="front-section__title text-2xl fade-in fade-in-delay-0"><?php esc_html_e( 'Proven Impact for Hotels in Cyprus & Greece', '360-hotelier' ); ?></h2>
+        <ul class="front-results__list fade-in fade-in-delay-1">
             <li>
                 <span class="front-results__stat"><?php esc_html_e( '+20%', '360-hotelier' ); ?></span>
                 <span class="front-results__label"><?php esc_html_e( 'increase in online bookings', '360-hotelier' ); ?></span>
@@ -26,8 +26,8 @@
                 <span class="front-results__label"><?php esc_html_e( 'Growth through better digital strategy and channel management', '360-hotelier' ); ?></span>
             </li>
         </ul>
-        <p class="front-results__trust"><?php esc_html_e( 'Trusted by hotels across Cyprus & Greece.', '360-hotelier' ); ?></p>
-        <div class="front-results__ticker">
+        <p class="front-results__trust fade-in fade-in-delay-2"><?php esc_html_e( 'Trusted by hotels across Cyprus & Greece.', '360-hotelier' ); ?></p>
+        <div class="front-results__ticker fade-in fade-in-delay-3">
             <div class="front-results__ticker-track">
                 <img src="<?php echo esc_url( content_url( '/uploads/2026/03/pendeli-resort-hotel-cyprus-logo-white.svg' ) ); ?>" alt="<?php esc_attr_e( 'Pendeli Resort Hotel Cyprus', '360-hotelier' ); ?>" loading="lazy" />
                 <img src="<?php echo esc_url( content_url( '/uploads/2026/03/cap-st-georges-resort-logo-hd.webp' ) ); ?>" alt="<?php esc_attr_e( 'Cap St Georges Hotel & Resort Cyprus', '360-hotelier' ); ?>" loading="lazy" />

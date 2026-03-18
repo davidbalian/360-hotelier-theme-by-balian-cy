@@ -8,9 +8,9 @@ $services_url = home_url( '/services/' );
 ?>
 <section class="front-services-overview card-border">
     <div class="site-container">
-        <h2 class="front-section__title text-2xl"><?php esc_html_e( 'Our Core Services', '360-hotelier' ); ?></h2>
-        <p class="front-section__subtitle"><?php esc_html_e( 'Full commercial support to grow revenue, strengthen distribution and sharpen your digital presence.', '360-hotelier' ); ?></p>
-        <div class="front-services-overview__grid">
+        <h2 class="front-section__title text-2xl fade-in fade-in-delay-0"><?php esc_html_e( 'Our Core Services', '360-hotelier' ); ?></h2>
+        <p class="front-section__subtitle fade-in fade-in-delay-1"><?php esc_html_e( 'Full commercial support to grow revenue, strengthen distribution and sharpen your digital presence.', '360-hotelier' ); ?></p>
+        <div class="front-services-overview__grid fade-in fade-in-delay-2">
 
             <div class="front-services-overview__card card-border">
                 <div class="front-services-overview__card-image">
@@ -53,7 +53,7 @@ $services_url = home_url( '/services/' );
             </div>
 
         </div>
-        <p class="front-services-overview__cta">
+        <p class="front-services-overview__cta fade-in fade-in-delay-3">
             <a href="<?php echo esc_url( $services_url ); ?>" class="btn btn--primary"><?php esc_html_e( 'View Our Services', '360-hotelier' ); ?></a>
         </p>
     </div>

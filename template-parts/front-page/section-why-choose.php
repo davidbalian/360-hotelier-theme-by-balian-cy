@@ -7,10 +7,10 @@
 ?>
 <section class="front-why-choose">
     <div class="site-container">
-        <h2 class="front-section__title text-2xl"><?php esc_html_e( 'Why Hotels Choose 360° Hotelier Consulting', '360-hotelier' ); ?></h2>
-        <p class="front-section__subtitle"><?php esc_html_e( 'Deep local knowledge, hands-on experience and real results.', '360-hotelier' ); ?></p>
+        <h2 class="front-section__title text-2xl fade-in fade-in-delay-0"><?php esc_html_e( 'Why Hotels Choose 360° Hotelier Consulting', '360-hotelier' ); ?></h2>
+        <p class="front-section__subtitle fade-in fade-in-delay-1"><?php esc_html_e( 'Deep local knowledge, hands-on experience and real results.', '360-hotelier' ); ?></p>
         <div class="front-why-choose__layout">
-            <div class="front-why-choose__grid">
+            <div class="front-why-choose__grid fade-in fade-in-delay-2">
                 <div class="front-why-choose__box card-border">
                     <div class="front-why-choose__box-icon" aria-hidden="true">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
@@ -40,7 +40,7 @@
                     <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'We keep our client roster small so every hotel gets real attention and real results.', '360-hotelier' ); ?></p>
                 </div>
             </div>
-            <div class="front-why-choose__image" aria-hidden="true" style="background-image: url('<?php echo esc_url( home_url( '/wp-content/uploads/2026/03/why-choose-360-hotelier.webp' ) ); ?>');"></div>
+            <div class="front-why-choose__image fade-in fade-in-delay-3" aria-hidden="true" style="background-image: url('<?php echo esc_url( home_url( '/wp-content/uploads/2026/03/why-choose-360-hotelier.webp' ) ); ?>');"></div>
         </div>
     </div>
 </section>
