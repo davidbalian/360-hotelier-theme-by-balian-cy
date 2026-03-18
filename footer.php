@@ -65,7 +65,7 @@
 
             <div class="footer-logo">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-                    <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/03/360-hotelier-horizontal-logo.webp' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+                    <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/03/360-hotelier-logo-hd.svg' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
                 </a>
             </div><!-- .footer-logo -->
 
