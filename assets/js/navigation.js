@@ -76,9 +76,13 @@
                 if ( entry.isIntersecting ) {
                     var el = entry.target;
                     el.classList.add( 'visible' );
-                    el.addEventListener( 'transitionend', function clearDelay() {
-                        el.style.transitionDelay = '0s';
-                        el.removeEventListener( 'transitionend', clearDelay );
+                    el.addEventListener( 'animationend', function onDone( e ) {
+                        if ( e.target !== el ) { return; }
+                        el.classList.remove( 'visible', 'fade-in' );
+                        for ( var i = 0; i <= 10; i++ ) {
+                            el.classList.remove( 'fade-in-delay-' + i );
+                        }
+                        el.removeEventListener( 'animationend', onDone );
                     } );
                     observer.unobserve( el );
                 }
