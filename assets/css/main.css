@@ -862,6 +862,12 @@
     opacity: 0.9;
 }
 
+@media (max-width: 768px) {
+    .front-featured-banner__text {
+        max-width: 30ch;
+    }
+}
+
 
 /* Founder */
 .front-founder {
@@ -1569,7 +1575,7 @@
     }
 
     .front-founder__image {
-        min-height: 400px;
+        min-height: 600px;
     }
 
     .front-hero__ctas .btn {
