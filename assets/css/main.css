@@ -167,11 +167,11 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
-    padding-bottom: 4rem;
+    padding: 2rem;
 }
 
 .footer-logo {
-    padding: 3rem 0;
+    padding: 2rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 2rem;
 }
@@ -186,7 +186,7 @@
     height: auto;
     display: block;
     filter: brightness(0) invert(1);
-    opacity: 0.35;
+    opacity: 0.25;
 }
 
 .footer-col__heading {
