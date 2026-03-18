@@ -628,15 +628,7 @@
 /* Services Overview */
 .front-services-overview {
     padding: 6rem 2rem;
-    background: var(--color-purple);
-}
-
-.front-services-overview .front-section__title {
-    color: #fff;
-}
-
-.front-services-overview .front-section__subtitle {
-    color: rgba(255, 255, 255, 0.8);
+    background: var(--color-white);
 }
 
 .front-services-overview__grid {
