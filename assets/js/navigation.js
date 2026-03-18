@@ -74,8 +74,13 @@
         var observer = new IntersectionObserver( function ( entries ) {
             entries.forEach( function ( entry ) {
                 if ( entry.isIntersecting ) {
-                    entry.target.classList.add( 'visible' );
-                    observer.unobserve( entry.target );
+                    var el = entry.target;
+                    el.classList.add( 'visible' );
+                    el.addEventListener( 'transitionend', function clearDelay() {
+                        el.style.transitionDelay = '0s';
+                        el.removeEventListener( 'transitionend', clearDelay );
+                    } );
+                    observer.unobserve( el );
                 }
             } );
         }, { root: null, rootMargin: '0px', threshold: 0.25 } );
