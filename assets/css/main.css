@@ -894,6 +894,7 @@
     color: var(--color-purple);
     font-weight: 600;
     line-height: 1;
+    min-width: 40px;
 }
 
 .front-approach__step-title {
