@@ -857,21 +857,23 @@
 
 .front-approach__inner {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1.5fr;
     gap: 3rem;
     align-items: start;
 }
 
-.front-approach__steps {
-    margin-top: 2rem;
-}
-
 .front-approach__step {
     display: grid;
-    grid-template-columns: auto 1fr 2fr;
+    grid-template-columns: auto 1fr;
     gap: 1.5rem;
-    align-items: baseline;
+    align-items: center;
     padding: 1.5rem 0;
+}
+
+.front-approach__step-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
 .front-approach__step-number {
@@ -1426,15 +1428,6 @@
 
     .front-approach__inner {
         grid-template-columns: 1fr;
-    }
-
-    .front-approach__step {
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto auto;
-    }
-
-    .front-approach__step-text {
-        grid-column: 2;
     }
 
     .front-founder__inner {
