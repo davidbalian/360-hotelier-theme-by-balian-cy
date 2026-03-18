@@ -1606,6 +1606,7 @@
 .fade-in.visible {
     opacity: 1;
     translate: 0 0;
+    transition: opacity 0.2s ease, translate 0.5s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 /* Staggered delays: 0–10 (0.1s increments) */
