@@ -14,7 +14,7 @@ $services_url = home_url( '/services/' );
 
             <div class="front-services-overview__card card-border">
                 <div class="front-services-overview__card-image">
-                    <img src="https://placehold.co/800x600/e8e0d5/6b5b8e" alt="Yield & Revenue Management" />
+                    <img src="/wp-content/uploads/2026/03/service-yield-revenue-management.webp" alt="Yield & Revenue Management" />
                 </div>
                 <div class="front-services-overview__card-content">
                     <h3 class="front-services-overview__card-title"><?php esc_html_e( 'Yield & Revenue Management', '360-hotelier' ); ?></h3>
@@ -24,7 +24,7 @@ $services_url = home_url( '/services/' );
 
             <div class="front-services-overview__card front-services-overview__card--reverse card-border">
                 <div class="front-services-overview__card-image">
-                    <img src="https://placehold.co/800x600/e8e0d5/6b5b8e" alt="Online Sales & B2B Distribution" />
+                    <img src="/wp-content/uploads/2026/03/service-online-sales-b2b-distribution.webp" alt="Online Sales & B2B Distribution" />
                 </div>
                 <div class="front-services-overview__card-content">
                     <h3 class="front-services-overview__card-title"><?php esc_html_e( 'Online Sales & B2B Distribution', '360-hotelier' ); ?></h3>
@@ -34,7 +34,7 @@ $services_url = home_url( '/services/' );
 
             <div class="front-services-overview__card card-border">
                 <div class="front-services-overview__card-image">
-                    <img src="https://placehold.co/800x600/e8e0d5/6b5b8e" alt="E-Commerce & Digital Marketing" />
+                    <img src="/wp-content/uploads/2026/03/service-ecommerce-digital-marketing.webp" alt="E-Commerce & Digital Marketing" />
                 </div>
                 <div class="front-services-overview__card-content">
                     <h3 class="front-services-overview__card-title"><?php esc_html_e( 'E-Commerce & Digital Marketing', '360-hotelier' ); ?></h3>
@@ -44,7 +44,7 @@ $services_url = home_url( '/services/' );
 
             <div class="front-services-overview__card front-services-overview__card--reverse card-border">
                 <div class="front-services-overview__card-image">
-                    <img src="https://placehold.co/800x600/e8e0d5/6b5b8e" alt="Contracting & Negotiations" />
+                    <img src="/wp-content/uploads/2026/03/service-contracting-negotiations.webp" alt="Contracting & Negotiations" />
                 </div>
                 <div class="front-services-overview__card-content">
                     <h3 class="front-services-overview__card-title"><?php esc_html_e( 'Contracting & Negotiations (Tour Operators)', '360-hotelier' ); ?></h3>
