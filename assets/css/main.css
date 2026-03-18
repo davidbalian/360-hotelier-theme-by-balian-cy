@@ -160,8 +160,6 @@
     background-color: #1a1a1a;
     color: #ccc;
     padding: 4rem 0 2rem;
-    position: relative;
-    overflow: hidden;
 }
 
 /* Footer columns */
@@ -175,12 +173,7 @@
 }
 
 .footer-logo {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    transform: translateY(75%);
-    pointer-events: none;
 }
 
 .footer-logo img {

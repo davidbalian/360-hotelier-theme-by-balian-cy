@@ -78,12 +78,11 @@
                 </span>
             </div><!-- .footer-bottom -->
 
+            <div class="footer-logo" aria-hidden="true">
+                <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/03/360-hotelier-logo-hd.svg' ) ); ?>" alt="">
+            </div><!-- .footer-logo -->
+
         </div><!-- .site-container -->
-
-        <div class="footer-logo" aria-hidden="true">
-            <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/03/360-hotelier-logo-hd.svg' ) ); ?>" alt="">
-        </div><!-- .footer-logo -->
-
     </footer>
 
 </div><!-- #page -->
