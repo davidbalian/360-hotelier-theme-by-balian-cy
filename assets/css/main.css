@@ -558,13 +558,26 @@
     border: none;
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-card);
-    background: var(--color-white);
+    background: var(--color-sand);
     transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .front-why-choose__box:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transform: translateY(-2px);
+}
+
+.front-why-choose__box-icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+    color: var(--color-purple);
+}
+
+.front-why-choose__box-icon svg {
+    width: 2rem;
+    height: 2rem;
 }
 
 .front-why-choose__box-title {
