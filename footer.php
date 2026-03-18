@@ -6,7 +6,7 @@
  */
 ?>
 
-    <footer id="colophon" class="site-footer card-border">
+    <footer id="colophon" class="site-footer">
         <div class="site-container">
 
             <div class="footer-cols">

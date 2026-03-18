@@ -1323,10 +1323,6 @@
         gap: 2rem;
     }
 
-    .site-footer {
-        margin-inline: 1rem;
-        margin-bottom: 1rem;
-    }
 
     .footer-cols {
         grid-template-columns: 1fr;
