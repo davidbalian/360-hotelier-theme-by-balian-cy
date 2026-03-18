@@ -592,6 +592,19 @@
     min-height: 100%;
 }
 
+@media (min-width: 769px) and (max-width: 1024px) {
+    .front-why-choose__layout {
+        grid-template-columns: 1fr 1fr;
+    }
+    .front-why-choose__grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .front-why-choose__box:nth-child(n) {
+        grid-column: auto;
+    }
+}
+
 @media (max-width: 768px) {
     .front-why-choose__layout {
         grid-template-columns: 1fr;
