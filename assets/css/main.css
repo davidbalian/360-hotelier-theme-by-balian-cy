@@ -1482,6 +1482,10 @@
         padding: 2rem;
     }
 
+    .front-results__ticker {
+        margin-inline: -1rem;
+    }
+
     .front-results__ticker-track img {
         width: 74px;
         height: 52px;
