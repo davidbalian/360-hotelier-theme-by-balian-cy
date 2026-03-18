@@ -681,7 +681,7 @@
     }
 
     .front-services-overview__card:last-child:nth-child(odd) .front-services-overview__card-image::before {
-        content: none;
+        aspect-ratio: 16 / 9;
     }
 }
 
@@ -699,7 +699,7 @@
     }
 
     .front-services-overview__card:last-child:nth-child(3n+1) .front-services-overview__card-image::before {
-        content: none;
+        aspect-ratio: 16 / 9;
     }
 }
 
