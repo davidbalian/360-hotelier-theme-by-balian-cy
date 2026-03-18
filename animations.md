@@ -155,15 +155,27 @@ Within each section, elements stagger sequentially. The counter restarts at `del
 | Element | Classes |
 |---|---|
 | `div.front-founder__image` | `fade-in fade-in-delay-0` |
-| `div.front-founder__card` | `fade-in fade-in-delay-1` |
+| `h2.front-founder__heading` | `fade-in fade-in-delay-1` |
+| `h3.front-founder__name` | `fade-in fade-in-delay-2` |
+| Bio paragraph 1 | `fade-in fade-in-delay-3` |
+| Bio paragraph 2 | `fade-in fade-in-delay-4` |
+| Bullet point 1 | `fade-in fade-in-delay-5` |
+| Bullet point 2 | `fade-in fade-in-delay-6` |
+| Bullet point 3 | `fade-in fade-in-delay-7` |
+| Bullet point 4 | `fade-in fade-in-delay-8` |
+| `a.front-founder__cta` (btn) | `fade-in fade-in-delay-9` |
+
+> `.front-founder__card` wrapper has no `fade-in` — only the internal elements stagger.
 
 ### Contact (`section-contact.php`)
 
 | Element | Classes |
 |---|---|
-| `div.front-contact__content` | `fade-in fade-in-delay-0` |
+| `h2.front-contact__title` | `fade-in fade-in-delay-0` |
+| `p.front-contact__text` | `fade-in fade-in-delay-1` |
+| `a.front-contact__cta` (btn) | `fade-in fade-in-delay-2` |
 
-> Entire content block animates as one unit.
+> `.front-contact__content` wrapper has no `fade-in` — only the internal elements stagger.
 
 ### Footer (`footer.php`)
 
