@@ -1418,8 +1418,13 @@
 
 
     .footer-cols {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-wrap: wrap;
         gap: 2rem;
+    }
+
+    .footer-col {
+        width: max-content;
     }
 
 
