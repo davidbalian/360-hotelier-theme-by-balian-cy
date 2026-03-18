@@ -6,6 +6,13 @@
     outline: 1px solid rgba(0, 0, 0, 0.07);
 }
 
+.section-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(90, 42, 130, 0.85);
+    z-index: 1;
+}
+
 /* ==========================================================================
    Site Header & Branding
    ========================================================================== */
@@ -478,18 +485,6 @@
     }
 }
 
-.front-hero__overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(30, 10, 50, 0.80) 0%, rgba(60, 20, 90, 0.75) 100%);
-    z-index: 1;
-}
-
-@media (min-width: 769px) {
-    .front-hero__overlay {
-        background: linear-gradient(135deg, rgba(30, 10, 50, 0.80) 0%, rgba(60, 20, 90, 0.60) 100%);
-    }
-}
 
 .front-hero__content {
     position: relative;
@@ -742,12 +737,6 @@
     overflow: hidden;
 }
 
-.front-featured-banner__overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(90, 42, 130, 0.85);
-    z-index: 1;
-}
 
 .front-featured-banner__content {
     position: relative;
@@ -934,12 +923,6 @@
     overflow: hidden;
 }
 
-.front-contact__overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(90, 42, 130, 0.85);
-    z-index: 1;
-}
 
 .front-contact__content {
     position: relative;
