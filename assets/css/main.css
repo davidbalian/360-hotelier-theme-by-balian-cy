@@ -752,6 +752,7 @@
     padding: 6rem 0;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     color: #fff;
     text-align: center;
@@ -839,7 +840,7 @@
 @media (min-width: 769px) {
     .front-founder__content {
         position: sticky;
-        top: calc(var(--wp-admin-bar-offset, 0px) + 4rem);
+        top: calc(var(--wp-admin-bar-offset, 0px) + 5rem);
         align-self: start;
     }
 }
