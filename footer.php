@@ -18,21 +18,21 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-col__heading"><?php esc_html_e( 'Navigation', '360-hotelier' ); ?></h4>
+                    <h4 class="footer-col__heading text-xs"><?php esc_html_e( 'Navigation', '360-hotelier' ); ?></h4>
                     <nav aria-label="<?php esc_attr_e( 'Footer Menu', '360-hotelier' ); ?>">
                         <?php
                         if ( has_nav_menu( 'footer' ) ) {
                             wp_nav_menu( array(
                                 'theme_location' => 'footer',
                                 'menu_id'        => 'footer-menu',
-                                'menu_class'     => 'footer-nav-menu',
+                                'menu_class'     => 'footer-nav-menu text-base-sm',
                                 'container'      => false,
                                 'depth'          => 1,
                                 'fallback_cb'    => false,
                             ) );
                         } else {
                             hotelier_default_nav_fallback( array(
-                                'menu_class' => 'footer-nav-menu',
+                                'menu_class' => 'footer-nav-menu text-base-sm',
                                 'menu_id'   => 'footer-menu',
                             ) );
                         }
@@ -41,8 +41,8 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-col__heading"><?php esc_html_e( 'Follow Us', '360-hotelier' ); ?></h4>
-                    <ul class="footer-social">
+                    <h4 class="footer-col__heading text-xs"><?php esc_html_e( 'Follow Us', '360-hotelier' ); ?></h4>
+                    <ul class="footer-social text-base-sm">
                         <li><a href="#" rel="noopener noreferrer" target="_blank"><?php esc_html_e( 'Facebook', '360-hotelier' ); ?></a></li>
                         <li><a href="#" rel="noopener noreferrer" target="_blank"><?php esc_html_e( 'LinkedIn', '360-hotelier' ); ?></a></li>
                         <li><a href="#" rel="noopener noreferrer" target="_blank"><?php esc_html_e( 'Instagram', '360-hotelier' ); ?></a></li>
@@ -50,8 +50,8 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-col__heading"><?php esc_html_e( 'Legal', '360-hotelier' ); ?></h4>
-                    <ul class="footer-legal">
+                    <h4 class="footer-col__heading text-xs"><?php esc_html_e( 'Legal', '360-hotelier' ); ?></h4>
+                    <ul class="footer-legal text-base-sm">
                         <li><a href="#"><?php esc_html_e( 'Privacy Policy', '360-hotelier' ); ?></a></li>
                         <li><a href="#"><?php esc_html_e( 'Cookie Policy', '360-hotelier' ); ?></a></li>
                         <li><a href="#"><?php esc_html_e( 'Terms', '360-hotelier' ); ?></a></li>
@@ -60,7 +60,7 @@
 
             </div><!-- .footer-cols -->
 
-            <div class="footer-bottom">
+            <div class="footer-bottom text-sm">
                 <span class="footer-copyright">
                     &copy; <?php echo esc_html( date( 'Y' ) ); ?> 360&deg; Hotelier Consulting. <?php esc_html_e( 'All Rights Reserved.', '360-hotelier' ); ?>
                 </span>

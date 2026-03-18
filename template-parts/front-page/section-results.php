@@ -7,7 +7,7 @@
 ?>
 <section class="front-results card-border">
     <div class="site-container">
-        <h2 class="front-section__title"><?php esc_html_e( 'Proven Impact for Hotels in Cyprus', '360-hotelier' ); ?></h2>
+        <h2 class="front-section__title text-2xl"><?php esc_html_e( 'Proven Impact for Hotels in Cyprus', '360-hotelier' ); ?></h2>
         <ul class="front-results__list">
             <li><?php esc_html_e( '+20% increase in online bookings', '360-hotelier' ); ?></li>
             <li><?php esc_html_e( '+15% RevPAR improvement', '360-hotelier' ); ?></li>

@@ -12,7 +12,7 @@ $about_url = home_url( '/about-us/' );
             <img class="front-founder__photo card-border" src="<?php echo esc_url( content_url( '/uploads/2026/03/george-peyiazis-hotel-revenue-consultant-360-hotelier-cyprus.webp' ) ); ?>" alt="<?php esc_attr_e( 'Giorgos Peyiazis, Founder of 360 Hotelier Consulting', '360-hotelier' ); ?>" loading="lazy" />
         </div>
         <div class="front-founder__content">
-            <h2 class="front-section__title"><?php esc_html_e( 'Meet the Founder - Giorgos Peyiazis', '360-hotelier' ); ?></h2>
+            <h2 class="front-section__title text-2xl"><?php esc_html_e( 'Meet the Founder - Giorgos Peyiazis', '360-hotelier' ); ?></h2>
             <p><?php esc_html_e( 'With over 15 years of experience in hotel revenue management, digital marketing, online sales and tour-operator contracting, Giorgos brings international expertise and local market understanding to independent and boutique hotels in Cyprus.', '360-hotelier' ); ?></p>
             <p><strong><?php esc_html_e( 'His mission is simple:', '360-hotelier' ); ?></strong></p>
             <p><?php esc_html_e( 'Help Cyprus hotels grow sustainably through smarter commercial strategies.', '360-hotelier' ); ?></p>

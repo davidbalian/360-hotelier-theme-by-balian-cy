@@ -18,21 +18,21 @@
 
     <div class="post-content-wrap">
         <header class="entry-header">
-            <?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '">', '</a></h2>' ); ?>
+            <?php the_title( '<h2 class="entry-title text-lg"><a href="' . esc_url( get_permalink() ) . '">', '</a></h2>' ); ?>
 
-            <div class="entry-meta">
+            <div class="entry-meta text-sm">
                 <time class="entry-date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
                     <?php echo esc_html( get_the_date() ); ?>
                 </time>
             </div>
         </header>
 
-        <div class="entry-summary">
+        <div class="entry-summary text-body">
             <?php the_excerpt(); ?>
         </div>
 
         <footer class="entry-footer">
-            <a href="<?php the_permalink(); ?>" class="read-more">
+            <a href="<?php the_permalink(); ?>" class="read-more text-base-sm">
                 <?php esc_html_e( 'Read more', '360-hotelier' ); ?>
             </a>
         </footer>

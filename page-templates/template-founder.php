@@ -12,7 +12,7 @@ get_header(); ?>
 
         <article class="page-founder__content">
             <h1 class="page-founder__title"><?php esc_html_e( 'Giorgos Peyiazis', '360-hotelier' ); ?></h1>
-            <p class="page-founder__subtitle"><?php esc_html_e( 'Founder & Hospitality Consultant', '360-hotelier' ); ?></p>
+            <p class="page-founder__subtitle text-md"><?php esc_html_e( 'Founder & Hospitality Consultant', '360-hotelier' ); ?></p>
 
             <div class="page-founder__image">
                 <div class="page-founder__image-placeholder card-border" role="img" aria-label="<?php esc_attr_e( 'Giorgos Peyiazis, founder of 360 Hotelier Consulting', '360-hotelier' ); ?>"></div>
