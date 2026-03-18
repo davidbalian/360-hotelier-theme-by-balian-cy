@@ -495,6 +495,7 @@
 
     .front-hero__ctas {
         margin-top: 1rem;
+        align-items: center;
     }
 
     .front-contact__text {
@@ -1480,6 +1481,13 @@
     .front-founder__card,
     .front-approach__card {
         padding: 2rem;
+    }
+
+    .front-founder__cta,
+    .front-approach__cta {
+        display: block;
+        width: fit-content;
+        margin-inline: auto;
     }
 
     .front-results__ticker {
