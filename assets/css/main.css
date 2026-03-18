@@ -532,10 +532,6 @@
     background: var(--color-sand);
 }
 
-.front-why-choose .front-section__title,
-.front-why-choose .front-section__subtitle {
-    text-align: left;
-}
 
 .front-why-choose__layout {
     display: grid;

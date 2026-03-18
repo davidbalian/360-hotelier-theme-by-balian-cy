@@ -13,17 +13,17 @@
             <div class="front-why-choose__grid">
                 <div class="front-why-choose__box card-border">
                     <div class="front-why-choose__box-icon" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <h3 class="front-why-choose__box-title text-md"><?php esc_html_e( 'Experience', '360-hotelier' ); ?></h3>
-                    <p class="front-why-choose__box-text text-body"><?php esc_html_e( '15+ years of hotel sales, revenue, marketing and OTA experience.', '360-hotelier' ); ?></p>
-                </div>
-                <div class="front-why-choose__box card-border">
-                    <div class="front-why-choose__box-icon" aria-hidden="true">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
                     </div>
                     <h3 class="front-why-choose__box-title text-md"><?php esc_html_e( 'Cyprus Market Knowledge', '360-hotelier' ); ?></h3>
                     <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'In-depth understanding of island seasonality, tour-operator networks and domestic + international demand', '360-hotelier' ); ?></p>
+                </div>
+                <div class="front-why-choose__box card-border">
+                    <div class="front-why-choose__box-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3 class="front-why-choose__box-title text-md"><?php esc_html_e( 'Experience', '360-hotelier' ); ?></h3>
+                    <p class="front-why-choose__box-text text-body"><?php esc_html_e( '15+ years of hotel sales, revenue, marketing and OTA experience.', '360-hotelier' ); ?></p>
                 </div>
                 <div class="front-why-choose__box card-border">
                     <div class="front-why-choose__box-icon" aria-hidden="true">
