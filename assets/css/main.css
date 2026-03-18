@@ -222,7 +222,6 @@
     font-weight: 500;
     color: var(--color-charcoal);
     text-decoration: none;
-    border-bottom: 1px solid var(--color-border);
     transition: color 0.2s ease;
 }
 
