@@ -926,6 +926,7 @@
 .front-contact {
     position: relative;
     padding: 6rem 0;
+    margin-bottom: -2rem;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
