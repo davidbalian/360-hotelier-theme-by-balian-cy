@@ -1477,6 +1477,11 @@
         gap: 1rem;
     }
 
+    .front-founder__card,
+    .front-approach__card {
+        padding: 2rem;
+    }
+
     .front-approach__image {
         min-height: 400px;
     }
