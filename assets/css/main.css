@@ -667,6 +667,39 @@
     margin-top: 2rem;
 }
 
+/* Lone card — 2-column grid range */
+@media ( min-width: 664px ) and ( max-width: 963px ) {
+    .front-services-overview__card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        flex-direction: row;
+    }
+
+    .front-services-overview__card:last-child:nth-child(odd) .front-services-overview__card-image {
+        width: 50%;
+        flex-shrink: 0;
+    }
+
+    .front-services-overview__card:last-child:nth-child(odd) .front-services-overview__card-image::before {
+        content: none;
+    }
+}
+
+/* Lone card — 3-column grid range */
+@media ( min-width: 964px ) and ( max-width: 1263px ) {
+    .front-services-overview__card:last-child:nth-child(3n+1) {
+        grid-column: 1 / -1;
+        flex-direction: row;
+    }
+
+    .front-services-overview__card:last-child:nth-child(3n+1) .front-services-overview__card-image {
+        width: 50%;
+        flex-shrink: 0;
+    }
+
+    .front-services-overview__card:last-child:nth-child(3n+1) .front-services-overview__card-image::before {
+        content: none;
+    }
+}
 
 /* Featured Banner */
 .front-featured-banner {
