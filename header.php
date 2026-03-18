@@ -66,7 +66,7 @@
                     'menu_id'        => 'mobile-primary-menu',
                     'menu_class'     => 'mobile-nav__links',
                     'container'      => false,
-                    'fallback_cb'    => false,
+                    'fallback_cb'    => 'hotelier_default_nav_fallback',
                 ) ); ?>
             </nav>
         </div>
