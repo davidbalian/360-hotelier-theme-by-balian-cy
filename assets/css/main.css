@@ -631,7 +631,7 @@
 
 /* Services Overview */
 .front-services-overview {
-    padding: 6rem 2rem;
+    padding: 6rem 0;
     background: var(--color-white);
 }
 
@@ -1365,6 +1365,10 @@
 }
 
 @media ( max-width: 768px ) {
+    .site-container {
+        padding-inline: 1rem;
+    }
+
     .site-header {
         padding: 0 1rem; /* Reduced padding on mobile to match sections */
     }
