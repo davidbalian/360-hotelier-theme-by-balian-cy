@@ -785,15 +785,22 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 3rem;
-    align-items: start;
+    align-items: stretch;
+}
+
+.front-founder__image {
+    position: relative;
 }
 
 .front-founder__photo {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 2rem;
     display: block;
     object-fit: cover;
+    object-position: top;
 }
 
 .front-founder__card {
@@ -842,13 +849,6 @@
     display: inline-block;
 }
 
-@media (min-width: 769px) {
-    .front-founder__card {
-        position: sticky;
-        top: calc(var(--wp-admin-bar-offset, 0px) + 5rem);
-        align-self: start;
-    }
-}
 
 /* Approach */
 .front-approach {
@@ -1456,6 +1456,10 @@
 
     .front-founder__inner {
         grid-template-columns: 1fr;
+    }
+
+    .front-founder__image {
+        min-height: 400px;
     }
 
     .front-hero__ctas .btn {
