@@ -1396,10 +1396,10 @@
         text-align: center;
     }
 
-    .front-why-choose,
-    .front-founder,
-    .front-approach {
-        margin-inline: 0;
+    .front-why-choose .site-container,
+    .front-founder .site-container,
+    .front-approach .site-container {
+        padding-inline: 0;
     }
 
     .front-founder__inner {
