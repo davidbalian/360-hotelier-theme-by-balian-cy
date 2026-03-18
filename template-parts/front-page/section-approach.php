@@ -5,7 +5,7 @@
  * @package 360-hotelier
  */
 ?>
-<section class="front-approach card-border">
+<section class="front-approach">
     <div class="site-container">
         <h2 class="front-section__title text-2xl"><?php esc_html_e( 'A Practical, Data-Driven & Collaborative Method', '360-hotelier' ); ?></h2>
         <p class="front-section__subtitle"><?php esc_html_e( 'We follow a simple and transparent four-step process.', '360-hotelier' ); ?></p>

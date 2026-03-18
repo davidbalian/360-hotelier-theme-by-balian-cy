@@ -5,7 +5,7 @@
  * @package 360-hotelier
  */
 ?>
-<section class="front-why-choose card-border">
+<section class="front-why-choose">
     <div class="site-container">
         <h2 class="front-section__title text-2xl"><?php esc_html_e( 'Why Hotels Choose 360° Hotelier Consulting', '360-hotelier' ); ?></h2>
         <p class="front-section__subtitle"><?php esc_html_e( 'Modern expertise, local market insight and data-driven strategy.', '360-hotelier' ); ?></p>

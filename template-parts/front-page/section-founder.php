@@ -6,7 +6,7 @@
  */
 $about_url = home_url( '/about-us/' );
 ?>
-<section class="front-founder card-border">
+<section class="front-founder">
     <div class="site-container front-founder__inner">
         <div class="front-founder__image">
             <img class="front-founder__photo card-border" src="<?php echo esc_url( content_url( '/uploads/2026/03/george-peyiazis-hotel-revenue-consultant-360-hotelier-cyprus.webp' ) ); ?>" alt="<?php esc_attr_e( 'Giorgos Peyiazis, Founder of 360 Hotelier Consulting', '360-hotelier' ); ?>" loading="lazy" />

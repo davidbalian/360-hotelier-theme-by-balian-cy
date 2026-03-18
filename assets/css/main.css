@@ -424,16 +424,20 @@
 }
 
 .front-hero,
-.front-why-choose,
 .front-services-overview,
 .front-featured-banner,
-.front-founder,
-.front-approach,
 .front-results,
 .front-contact {
     max-width: 1500px;
     margin-inline: max(1rem, calc((100% - 1500px) / 2));
     border-radius: 2rem;
+}
+
+.front-why-choose,
+.front-founder,
+.front-approach {
+    max-width: 1500px;
+    margin-inline: max(1rem, calc((100% - 1500px) / 2));
 }
 
 .front-section__title {
@@ -524,7 +528,6 @@
 /* Why Choose */
 .front-why-choose {
     padding: 6rem 0;
-    background: var(--color-white);
 }
 
 
@@ -758,7 +761,6 @@
 /* Founder */
 .front-founder {
     padding: 6rem 0;
-    background: var(--color-white);
 }
 
 .front-founder__inner {
@@ -792,7 +794,6 @@
 /* Approach */
 .front-approach {
     padding: 6rem 0;
-    background: var(--color-sand);
 }
 
 .front-approach__steps {
