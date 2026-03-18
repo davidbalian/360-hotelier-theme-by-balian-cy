@@ -847,7 +847,9 @@
 .front-results__ticker {
     overflow: hidden;
     margin-top: 2.5rem;
-    width: 100%;
+    margin-inline: -2rem;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
 }
 
 .front-results__ticker-track {
