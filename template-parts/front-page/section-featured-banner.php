@@ -9,7 +9,7 @@
     <div class="front-featured-banner__overlay section-overlay"></div>
     <div class="site-container front-featured-banner__content">
         <h2 class="front-featured-banner__title text-4xl"><?php esc_html_e( "We Become Your Hotel's External Commercial Team", '360-hotelier' ); ?></h2>
-        <p class="front-featured-banner__text"><?php esc_html_e( 'From pricing to distribution, from contracting to digital marketing - we support every part of your revenue journey.', '360-hotelier' ); ?></p>
-        <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Schedule Your Free Revenue Strategy Consultation', '360-hotelier' ); ?></a>
+        <p class="front-featured-banner__text"><?php esc_html_e( 'Pricing, distribution, contracting, digital marketing - we cover the full commercial picture.', '360-hotelier' ); ?></p>
+        <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
     </div>
 </section>

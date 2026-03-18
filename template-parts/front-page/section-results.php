@@ -23,7 +23,7 @@
             </li>
             <li>
                 <span class="front-results__stat"><?php esc_html_e( '360°', '360-hotelier' ); ?></span>
-                <span class="front-results__label"><?php esc_html_e( 'Sustainable growth through smarter digital strategy', '360-hotelier' ); ?></span>
+                <span class="front-results__label"><?php esc_html_e( 'Growth through better digital strategy and channel management', '360-hotelier' ); ?></span>
             </li>
         </ul>
         <p class="front-results__trust"><?php esc_html_e( 'Trusted by hotels across Cyprus & Greece.', '360-hotelier' ); ?></p>

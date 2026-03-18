@@ -9,7 +9,7 @@ $services_url = home_url( '/services/' );
 <section class="front-services-overview card-border">
     <div class="site-container">
         <h2 class="front-section__title text-2xl"><?php esc_html_e( 'Our Core Services', '360-hotelier' ); ?></h2>
-        <p class="front-section__subtitle"><?php esc_html_e( 'We provide complete hotel commercial solutions built to drive revenue, strengthen your online presence and improve profitability.', '360-hotelier' ); ?></p>
+        <p class="front-section__subtitle"><?php esc_html_e( 'Full commercial support to grow revenue, strengthen distribution and sharpen your digital presence.', '360-hotelier' ); ?></p>
         <div class="front-services-overview__grid">
 
             <div class="front-services-overview__card card-border">
@@ -54,7 +54,7 @@ $services_url = home_url( '/services/' );
 
         </div>
         <p class="front-services-overview__cta">
-            <a href="<?php echo esc_url( $services_url ); ?>" class="btn btn--primary"><?php esc_html_e( 'Explore Our Hotel Consulting Services', '360-hotelier' ); ?></a>
+            <a href="<?php echo esc_url( $services_url ); ?>" class="btn btn--primary"><?php esc_html_e( 'View Our Services', '360-hotelier' ); ?></a>
         </p>
     </div>
 </section>

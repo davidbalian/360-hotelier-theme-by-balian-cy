@@ -9,8 +9,8 @@
     <div class="site-container">
 
         <div class="front-approach__heading">
-            <h2 class="front-section__title text-2xl"><?php esc_html_e( 'A Practical, Data-Driven & Collaborative Method', '360-hotelier' ); ?></h2>
-            <p class="front-section__subtitle"><?php esc_html_e( 'We follow a simple and transparent four-step process.', '360-hotelier' ); ?></p>
+            <h2 class="front-section__title text-2xl"><?php esc_html_e( 'How We Work', '360-hotelier' ); ?></h2>
+            <p class="front-section__subtitle"><?php esc_html_e( 'Four steps. Nothing hidden.', '360-hotelier' ); ?></p>
         </div>
 
         <div class="front-approach__inner">

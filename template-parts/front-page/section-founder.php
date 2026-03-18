@@ -15,16 +15,15 @@ $about_url = home_url( '/about-us/' );
         <div class="front-founder__content">
             <h2 class="front-founder__heading text-2xl"><?php esc_html_e( 'Meet the Founder', '360-hotelier' ); ?></h2>
             <h3 class="front-founder__name"><?php esc_html_e( 'Giorgos Peyiazis', '360-hotelier' ); ?></h3>
-            <p><?php esc_html_e( 'With over 15 years of experience in hotel revenue management, digital marketing, online sales and tour-operator contracting, Giorgos brings international expertise and local market understanding to independent and boutique hotels in Cyprus.', '360-hotelier' ); ?></p>
-            <p><strong><?php esc_html_e( 'His mission is simple:', '360-hotelier' ); ?></strong></p>
-            <p><?php esc_html_e( 'Help Cyprus hotels grow sustainably through smarter commercial strategies.', '360-hotelier' ); ?></p>
+            <p><?php esc_html_e( 'Giorgos has 15+ years in hotel revenue management, digital marketing, online sales and tour-operator contracting. He works with independent and boutique hotels across Cyprus.', '360-hotelier' ); ?></p>
+            <p><?php esc_html_e( 'His goal: help Cyprus hotels grow through smarter commercial decisions.', '360-hotelier' ); ?></p>
             <ul class="front-founder__points">
-                <li><?php esc_html_e( 'Extensive experience in hospitality sales & distribution', '360-hotelier' ); ?></li>
-                <li><?php esc_html_e( 'Deep knowledge of Cyprus hotel market', '360-hotelier' ); ?></li>
-                <li><?php esc_html_e( 'Proven track record in driving RevPAR and direct bookings', '360-hotelier' ); ?></li>
+                <li><?php esc_html_e( '15+ years in hospitality sales & distribution', '360-hotelier' ); ?></li>
+                <li><?php esc_html_e( 'Hands-on knowledge of the Cyprus hotel market', '360-hotelier' ); ?></li>
+                <li><?php esc_html_e( 'Track record in growing RevPAR and direct bookings', '360-hotelier' ); ?></li>
                 <li><?php esc_html_e( 'Trusted advisor to boutique, resort and independent hotels', '360-hotelier' ); ?></li>
             </ul>
-            <a href="<?php echo esc_url( $about_url ); ?>" class="btn btn--primary front-founder__cta"><?php esc_html_e( 'About 360° Hotelier Consulting', '360-hotelier' ); ?></a>
+            <a href="<?php echo esc_url( $about_url ); ?>" class="btn btn--primary front-founder__cta"><?php esc_html_e( 'About Us', '360-hotelier' ); ?></a>
         </div>
         </div>
     </div>
