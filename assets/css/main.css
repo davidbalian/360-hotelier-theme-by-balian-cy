@@ -672,6 +672,7 @@
     .front-services-overview__card:last-child:nth-child(odd) {
         grid-column: 1 / -1;
         flex-direction: row;
+        min-height: 250px;
     }
 
     .front-services-overview__card:last-child:nth-child(odd) .front-services-overview__card-image {
@@ -689,6 +690,7 @@
     .front-services-overview__card:last-child:nth-child(3n+1) {
         grid-column: 1 / -1;
         flex-direction: row;
+        min-height: 250px;
     }
 
     .front-services-overview__card:last-child:nth-child(3n+1) .front-services-overview__card-image {
