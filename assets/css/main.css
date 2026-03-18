@@ -415,7 +415,7 @@
    ========================================================================== */
 
 .front-page-main {
-    padding: 0 0 4rem;
+    padding: 0;
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -623,7 +623,7 @@
 
 /* Services Overview */
 .front-services-overview {
-    padding: 6rem 0;
+    padding: 6rem 2rem;
     background: var(--color-purple);
 }
 
@@ -926,7 +926,6 @@
 .front-contact {
     position: relative;
     padding: 6rem 0;
-    margin-bottom: -2rem;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1319,7 +1318,7 @@
     }
 
     .front-page-main {
-        padding: 0 0 2rem;
+        padding: 0;
         gap: 2rem;
     }
 
