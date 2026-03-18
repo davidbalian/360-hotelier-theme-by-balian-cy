@@ -34,13 +34,6 @@
             </div>
 
             <nav id="primary-navigation" class="primary-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', '360-hotelier' ); ?>">
-                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                    <span class="screen-reader-text"><?php esc_html_e( 'Menu', '360-hotelier' ); ?></span>
-                    <span class="menu-toggle-bar"></span>
-                    <span class="menu-toggle-bar"></span>
-                    <span class="menu-toggle-bar"></span>
-                </button>
-
                 <?php wp_nav_menu( array(
                     'theme_location' => 'primary',
                     'menu_id'        => 'primary-menu',
@@ -48,7 +41,34 @@
                     'container'      => false,
                     'fallback_cb'    => 'hotelier_default_nav_fallback',
                 ) ); ?>
+
+                <button
+                    type="button"
+                    class="mobile-nav-toggle"
+                    aria-label="<?php esc_attr_e( 'Open menu', '360-hotelier' ); ?>"
+                    aria-expanded="false"
+                    aria-controls="mobile-nav"
+                >
+                    <span class="mobile-nav-toggle__line"></span>
+                    <span class="mobile-nav-toggle__line"></span>
+                    <span class="mobile-nav-toggle__line"></span>
+                </button>
             </nav>
 
         </div>
     </header>
+
+    <div id="mobile-nav" class="mobile-nav-overlay" aria-hidden="true">
+        <div class="mobile-nav__content">
+            <nav class="mobile-nav__menu" aria-label="<?php esc_attr_e( 'Mobile Menu', '360-hotelier' ); ?>">
+                <?php wp_nav_menu( array(
+                    'theme_location' => 'primary',
+                    'menu_id'        => 'mobile-primary-menu',
+                    'menu_class'     => 'mobile-nav__links',
+                    'container'      => false,
+                    'fallback_cb'    => false,
+                ) ); ?>
+            </nav>
+        </div>
+    </div>
+

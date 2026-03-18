@@ -1,27 +1,59 @@
 /**
  * Mobile navigation toggle.
  *
- * Toggles the .is-open class on the primary nav menu
- * and updates aria-expanded on the toggle button.
+ * Full-screen overlay triggered by .mobile-nav-toggle.
+ * Adds .is-open to #mobile-nav and .is-active to the toggle button.
  */
 ( function () {
     'use strict';
 
-    var toggle = document.querySelector( '.menu-toggle' );
-    var menu   = document.querySelector( '#primary-menu' );
+    var toggle  = document.querySelector( '.mobile-nav-toggle' );
+    var mobileNav = document.getElementById( 'mobile-nav' );
 
-    if ( ! toggle || ! menu ) {
-        return;
+    if ( toggle && mobileNav ) {
+        var isToggling = false;
+
+        function openMobileNav() {
+            mobileNav.classList.add( 'is-open' );
+            mobileNav.setAttribute( 'aria-hidden', 'false' );
+            toggle.classList.add( 'is-active' );
+            toggle.setAttribute( 'aria-expanded', 'true' );
+            toggle.setAttribute( 'aria-label', 'Close menu' );
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileNav() {
+            mobileNav.classList.remove( 'is-open' );
+            mobileNav.setAttribute( 'aria-hidden', 'true' );
+            toggle.classList.remove( 'is-active' );
+            toggle.setAttribute( 'aria-expanded', 'false' );
+            toggle.setAttribute( 'aria-label', 'Open menu' );
+            document.body.style.overflow = '';
+        }
+
+        toggle.addEventListener( 'click', function () {
+            if ( isToggling ) return;
+            isToggling = true;
+
+            if ( mobileNav.classList.contains( 'is-open' ) ) {
+                closeMobileNav();
+            } else {
+                openMobileNav();
+            }
+
+            setTimeout( function () {
+                isToggling = false;
+            }, 280 );
+        } );
+
+        document.addEventListener( 'keydown', function ( e ) {
+            if ( e.key === 'Escape' && mobileNav.classList.contains( 'is-open' ) ) {
+                closeMobileNav();
+            }
+        } );
     }
 
-    toggle.addEventListener( 'click', function () {
-        var isExpanded = this.getAttribute( 'aria-expanded' ) === 'true';
-
-        this.setAttribute( 'aria-expanded', String( ! isExpanded ) );
-        menu.classList.toggle( 'is-open' );
-    } );
-
-    // Handle scroll for logo shrink
+    // Handle scroll for logo shrink and header state
     var header = document.querySelector( '.site-header' );
     var scrollThreshold = 10;
 
@@ -34,13 +66,6 @@
     }
 
     window.addEventListener( 'scroll', handleScroll );
-    handleScroll(); // Initial check
+    handleScroll();
 
-    // Close menu when clicking outside of it
-    document.addEventListener( 'click', function ( event ) {
-        if ( ! event.target.closest( '#primary-navigation' ) ) {
-            toggle.setAttribute( 'aria-expanded', 'false' );
-            menu.classList.remove( 'is-open' );
-        }
-    } );
 } )();
