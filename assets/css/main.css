@@ -792,9 +792,15 @@
 .front-founder__photo {
     width: 100%;
     height: auto;
-    border-radius: var(--radius-card);
+    border-radius: 2rem;
     display: block;
     object-fit: cover;
+}
+
+.front-founder__card {
+    background: var(--color-white);
+    border-radius: 2rem;
+    padding: 3rem;
 }
 
 .front-founder__heading {
@@ -806,7 +812,7 @@
     text-align: left;
     color: var(--color-charcoal);
     font-weight: 400;
-    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .front-founder__points {
@@ -838,7 +844,7 @@
 }
 
 @media (min-width: 769px) {
-    .front-founder__content {
+    .front-founder__card {
         position: sticky;
         top: calc(var(--wp-admin-bar-offset, 0px) + 5rem);
         align-self: start;
