@@ -63,12 +63,6 @@
 
             </div><!-- .footer-cols -->
 
-            <div class="footer-logo">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-                    <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/03/360-hotelier-logo-hd.svg' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-                </a>
-            </div><!-- .footer-logo -->
-
             <div class="footer-bottom text-sm">
                 <span class="footer-copyright">
                     &copy; <?php echo esc_html( date( 'Y' ) ); ?> 360&deg; Hotelier Consulting. <?php esc_html_e( 'All Rights Reserved.', '360-hotelier' ); ?>
@@ -85,6 +79,11 @@
             </div><!-- .footer-bottom -->
 
         </div><!-- .site-container -->
+
+        <div class="footer-logo" aria-hidden="true">
+            <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/03/360-hotelier-logo-hd.svg' ) ); ?>" alt="">
+        </div><!-- .footer-logo -->
+
     </footer>
 
 </div><!-- #page -->

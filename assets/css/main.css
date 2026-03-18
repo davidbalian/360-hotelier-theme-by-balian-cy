@@ -160,6 +160,8 @@
     background-color: #1a1a1a;
     color: #ccc;
     padding: 4rem 0 2rem;
+    position: relative;
+    overflow: hidden;
 }
 
 /* Footer columns */
@@ -168,17 +170,17 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
     padding: 2rem;
-}
-
-.footer-logo {
-    padding: 2rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 2rem;
 }
 
-.footer-logo a {
-    display: block;
+.footer-logo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
+    transform: translateY(75%);
+    pointer-events: none;
 }
 
 .footer-logo img {
@@ -186,7 +188,7 @@
     height: auto;
     display: block;
     filter: brightness(0) invert(1);
-    opacity: 0.25;
+    opacity: 0.05;
 }
 
 .footer-col__heading {
