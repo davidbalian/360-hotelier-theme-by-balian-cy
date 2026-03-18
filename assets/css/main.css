@@ -234,7 +234,7 @@
 
 .posts-loop {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
     gap: 2rem;
     padding: 2rem 0;
 }
@@ -637,7 +637,7 @@
 
 .front-services-overview__grid {
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax( 300px, 1fr ) );
+    grid-template-columns: repeat( auto-fit, minmax( min(300px, 100%), 1fr ) );
     gap: 2rem;
     margin: 2rem 0;
 }
@@ -936,7 +936,7 @@
 
 .front-results__list {
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax( 200px, 1fr ) );
+    grid-template-columns: repeat( auto-fit, minmax( min(200px, 100%), 1fr ) );
     gap: 2rem;
     list-style: none;
     padding: 0;
@@ -1091,7 +1091,7 @@
 
 .page-services__grid {
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax( 300px, 1fr ) );
+    grid-template-columns: repeat( auto-fit, minmax( min(300px, 100%), 1fr ) );
     gap: 2rem;
     margin: 2rem 0;
 }
@@ -1193,7 +1193,7 @@
 /* Color Swatches */
 .sg-color-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr));
     gap: 1.5rem;
 }
 
@@ -1251,7 +1251,7 @@
 /* Card Grids */
 .sg-card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
     gap: 1.5rem;
     margin-top: 1rem;
 }
