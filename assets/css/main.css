@@ -427,7 +427,7 @@
 .front-results {
     max-width: 1500px;
     margin-inline: max(1rem, calc((100% - 1500px) / 2));
-    border-radius: 2rem;
+    border-radius: 4rem;
 }
 
 .front-why-choose,
