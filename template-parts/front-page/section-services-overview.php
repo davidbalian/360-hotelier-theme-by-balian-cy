@@ -22,7 +22,7 @@ $services_url = home_url( '/services/' );
                 </div>
             </div>
 
-            <div class="front-services-overview__card front-services-overview__card--reverse card-border">
+            <div class="front-services-overview__card card-border">
                 <div class="front-services-overview__card-image">
                     <img src="/wp-content/uploads/2026/03/service-online-sales-b2b-distribution.webp" alt="Online Sales & B2B Distribution" />
                 </div>
@@ -42,7 +42,7 @@ $services_url = home_url( '/services/' );
                 </div>
             </div>
 
-            <div class="front-services-overview__card front-services-overview__card--reverse card-border">
+            <div class="front-services-overview__card card-border">
                 <div class="front-services-overview__card-image">
                     <img src="/wp-content/uploads/2026/03/service-contracting-negotiations.webp" alt="Contracting & Negotiations" />
                 </div>
