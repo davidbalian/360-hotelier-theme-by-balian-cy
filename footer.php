@@ -58,6 +58,15 @@
                     </ul>
                 </div>
 
+                <div class="footer-col">
+                    <h4 class="footer-col__heading text-xs"><?php esc_html_e( 'Contact', '360-hotelier' ); ?></h4>
+                    <ul class="footer-contact-details text-base-sm">
+                        <li><a href="tel:+35770001818">7000 1818</a></li>
+                        <li><a href="mailto:info@360hotelier.com">info@360hotelier.com</a></li>
+                        <li>9, Epaminondou street, 3075, Limassol, Cyprus</li>
+                    </ul>
+                </div>
+
             </div><!-- .footer-cols -->
 
             <div class="footer-bottom text-sm">

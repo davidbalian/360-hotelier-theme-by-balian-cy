@@ -157,7 +157,7 @@
 /* Footer columns */
 .footer-cols {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 3rem;
     padding-bottom: 4rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -193,7 +193,8 @@
 
 .footer-nav-menu,
 .footer-social,
-.footer-legal {
+.footer-legal,
+.footer-contact-details {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -204,7 +205,8 @@
 
 .footer-nav-menu a,
 .footer-social a,
-.footer-legal a {
+.footer-legal a,
+.footer-contact-details a {
     color: #ccc;
     text-decoration: none;
 }
@@ -941,17 +943,6 @@
     margin-bottom: 2rem;
 }
 
-.front-contact__or {
-    margin-bottom: 0.5rem;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.front-contact__details {
-}
-
-.front-contact__details a {
-    color: #fff;
-}
 
 
 /* ==========================================================================
