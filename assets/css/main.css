@@ -9,7 +9,7 @@
 .section-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(90, 42, 130, 0.85);
+    background: linear-gradient(to top right, rgba(90, 42, 130, 0.85) 0%, rgba(90, 42, 130, 0.35) 100%);
     z-index: 1;
 }
 
