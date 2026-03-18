@@ -749,7 +749,7 @@
 /* Featured Banner */
 .front-featured-banner {
     position: relative;
-    padding: 6rem 0;
+    padding: 8rem 0;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -975,7 +975,7 @@
 /* Contact */
 .front-contact {
     position: relative;
-    padding: 6rem 0;
+    padding: 8rem 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -988,6 +988,10 @@
 .front-contact__content {
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .front-contact__title {
