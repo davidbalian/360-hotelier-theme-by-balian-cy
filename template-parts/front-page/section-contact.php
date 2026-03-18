@@ -5,7 +5,7 @@
  * @package 360-hotelier
  */
 ?>
-<section class="front-contact card-border" style="background-image: url('<?php echo esc_url( content_url( '/uploads/2026/03/contact-360-hotelier.webp' ) ); ?>');">
+<section class="front-contact" style="background-image: url('<?php echo esc_url( content_url( '/uploads/2026/03/contact-360-hotelier.webp' ) ); ?>');">
     <div class="front-contact__overlay section-overlay"></div>
     <div class="site-container front-contact__content">
         <h2 class="front-contact__title text-xl"><?php esc_html_e( "Ready to Boost Your Hotel's Revenue & Distribution?", '360-hotelier' ); ?></h2>
