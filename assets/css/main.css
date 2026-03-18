@@ -492,6 +492,10 @@
     .front-hero__subheadline {
         display: none;
     }
+
+    .front-hero__ctas {
+        margin-top: 1rem;
+    }
 }
 
 
@@ -1450,6 +1454,14 @@
     .front-why-choose .site-container,
     .front-founder .site-container {
         padding-inline: 0;
+    }
+
+    .front-why-choose,
+    .front-services-overview,
+    .front-founder,
+    .front-approach,
+    .front-results {
+        padding-block: 4rem;
     }
 
     .front-approach__inner {
