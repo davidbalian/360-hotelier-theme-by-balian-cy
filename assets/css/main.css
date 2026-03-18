@@ -96,9 +96,10 @@
     filter: brightness(0) invert(1); /* Initial state: White */
 }
 
-.site-header.is-scrolled .site-branding img {
+.site-header.is-scrolled .site-branding img,
+.site-header:not(.is-scrolled):has(.mobile-nav-toggle.is-active) .site-branding img {
     height: 40px;
-    filter: none; /* Scrolled state: Original color */
+    filter: none; /* Scrolled state or menu open: Original color */
 }
 
 /* ==========================================================================
