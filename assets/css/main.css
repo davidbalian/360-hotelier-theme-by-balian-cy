@@ -861,7 +861,7 @@
 
 .front-approach__inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
     gap: 3rem;
     align-items: start;
 }
@@ -878,6 +878,10 @@
     gap: 1.5rem;
     align-items: center;
     padding: 1.5rem 0;
+}
+
+.front-approach__step:first-child {
+    padding-top: 0;
 }
 
 .front-approach__step-body {
