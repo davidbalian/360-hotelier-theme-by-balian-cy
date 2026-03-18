@@ -10,9 +10,9 @@ $services_url = home_url( '/services/' );
     <div class="site-container">
         <h2 class="front-section__title text-2xl fade-in fade-in-delay-0"><?php esc_html_e( 'Our Core Services', '360-hotelier' ); ?></h2>
         <p class="front-section__subtitle fade-in fade-in-delay-1"><?php esc_html_e( 'Full commercial support to grow revenue, strengthen distribution and sharpen your digital presence.', '360-hotelier' ); ?></p>
-        <div class="front-services-overview__grid fade-in fade-in-delay-2">
+        <div class="front-services-overview__grid">
 
-            <div class="front-services-overview__card card-border">
+            <div class="front-services-overview__card card-border fade-in fade-in-delay-2">
                 <div class="front-services-overview__card-image">
                     <img src="/wp-content/uploads/2026/03/service-yield-revenue-management.webp" alt="Yield & Revenue Management" />
                 </div>
@@ -22,7 +22,7 @@ $services_url = home_url( '/services/' );
                 </div>
             </div>
 
-            <div class="front-services-overview__card card-border">
+            <div class="front-services-overview__card card-border fade-in fade-in-delay-3">
                 <div class="front-services-overview__card-image">
                     <img src="/wp-content/uploads/2026/03/service-online-sales-b2b-distribution.webp" alt="Online Sales & B2B Distribution" />
                 </div>
@@ -32,7 +32,7 @@ $services_url = home_url( '/services/' );
                 </div>
             </div>
 
-            <div class="front-services-overview__card card-border">
+            <div class="front-services-overview__card card-border fade-in fade-in-delay-4">
                 <div class="front-services-overview__card-image">
                     <img src="/wp-content/uploads/2026/03/service-ecommerce-digital-marketing.webp" alt="E-Commerce & Digital Marketing" />
                 </div>
@@ -42,7 +42,7 @@ $services_url = home_url( '/services/' );
                 </div>
             </div>
 
-            <div class="front-services-overview__card card-border">
+            <div class="front-services-overview__card card-border fade-in fade-in-delay-5">
                 <div class="front-services-overview__card-image">
                     <img src="/wp-content/uploads/2026/03/service-contracting-negotiations.webp" alt="Contracting & Negotiations" />
                 </div>
@@ -53,7 +53,7 @@ $services_url = home_url( '/services/' );
             </div>
 
         </div>
-        <p class="front-services-overview__cta fade-in fade-in-delay-3">
+        <p class="front-services-overview__cta fade-in fade-in-delay-6">
             <a href="<?php echo esc_url( $services_url ); ?>" class="btn btn--primary"><?php esc_html_e( 'View Our Services', '360-hotelier' ); ?></a>
         </p>
     </div>

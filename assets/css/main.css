@@ -1586,15 +1586,20 @@
 }
 
 /* ── Scroll-triggered fade-in animations ── */
+/*
+ * Uses the CSS `translate` property (independent of `transform`) so that
+ * existing transform-based effects — hover lifts, ticker scroll,
+ * footer logo offset — are never overridden.
+ */
 .fade-in {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    translate: 0 24px;
+    transition: opacity 0.5s ease, translate 0.5s ease;
 }
 
 .fade-in.visible {
     opacity: 1;
-    transform: translateY(0);
+    translate: 0 0;
 }
 
 /* Staggered delays: 0–10 (0.1s increments) */

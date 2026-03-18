@@ -21,10 +21,10 @@
             </div>
 
             <!-- Steps column (right) -->
-            <div class="front-approach__content front-approach__card card-border fade-in fade-in-delay-2">
+            <div class="front-approach__content front-approach__card card-border">
                 <div class="front-approach__steps">
 
-                    <div class="front-approach__step">
+                    <div class="front-approach__step fade-in fade-in-delay-2">
                         <span class="front-approach__step-number text-3xl">01</span>
                         <div class="front-approach__step-body">
                             <h3 class="front-approach__step-title text-base"><?php esc_html_e( 'Audit & Insights', '360-hotelier' ); ?></h3>
@@ -33,7 +33,7 @@
                     </div>
                     <hr class="front-approach__divider">
 
-                    <div class="front-approach__step">
+                    <div class="front-approach__step fade-in fade-in-delay-3">
                         <span class="front-approach__step-number text-3xl">02</span>
                         <div class="front-approach__step-body">
                             <h3 class="front-approach__step-title text-base"><?php esc_html_e( 'Strategy & Planning', '360-hotelier' ); ?></h3>
@@ -42,7 +42,7 @@
                     </div>
                     <hr class="front-approach__divider">
 
-                    <div class="front-approach__step">
+                    <div class="front-approach__step fade-in fade-in-delay-4">
                         <span class="front-approach__step-number text-3xl">03</span>
                         <div class="front-approach__step-body">
                             <h3 class="front-approach__step-title text-base"><?php esc_html_e( 'Execution & Management', '360-hotelier' ); ?></h3>
@@ -51,7 +51,7 @@
                     </div>
                     <hr class="front-approach__divider">
 
-                    <div class="front-approach__step">
+                    <div class="front-approach__step fade-in fade-in-delay-5">
                         <span class="front-approach__step-number text-3xl">04</span>
                         <div class="front-approach__step-body">
                             <h3 class="front-approach__step-title text-base"><?php esc_html_e( 'Review & Optimization', '360-hotelier' ); ?></h3>
@@ -61,7 +61,7 @@
 
                 </div>
 
-                <a href="/contact/" class="btn btn--primary front-approach__cta"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
+                <a href="/contact/" class="btn btn--primary front-approach__cta fade-in fade-in-delay-6"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
             </div>
 
         </div>
