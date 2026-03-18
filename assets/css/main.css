@@ -457,7 +457,7 @@
 /* Hero */
 .front-hero {
     position: relative;
-    min-height: calc(100vh - 4rem - var(--wp-admin-bar-offset, 0px));
+    min-height: calc(90vh - 4rem - var(--wp-admin-bar-offset, 0px));
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -484,9 +484,13 @@
     }
 
     .front-hero {
-        min-height: calc(100vh - 2rem - var(--wp-admin-bar-offset, 0px));
+        min-height: calc(90vh - 2rem - var(--wp-admin-bar-offset, 0px));
         padding-top: 6rem;
         padding-bottom: 2rem;
+    }
+
+    .front-hero__subheadline {
+        display: none;
     }
 }
 
