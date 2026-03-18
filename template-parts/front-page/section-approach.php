@@ -21,7 +21,7 @@
             </div>
 
             <!-- Steps column (right) -->
-            <div class="front-approach__content front-approach__card">
+            <div class="front-approach__content front-approach__card card-border">
                 <div class="front-approach__steps">
 
                     <div class="front-approach__step">
