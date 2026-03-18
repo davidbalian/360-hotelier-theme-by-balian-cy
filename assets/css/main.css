@@ -627,9 +627,18 @@
 
 .front-services-overview__card-image {
     overflow: hidden;
+    position: relative;
+}
+
+.front-services-overview__card-image::before {
+    content: '';
+    display: block;
+    aspect-ratio: 4 / 3;
 }
 
 .front-services-overview__card-image img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -669,8 +678,8 @@
         order: unset;
     }
 
-    .front-services-overview__card-image {
-        height: 240px;
+    .front-services-overview__card-image::before {
+        aspect-ratio: 16 / 9;
     }
 }
 
