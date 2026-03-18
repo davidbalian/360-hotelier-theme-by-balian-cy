@@ -917,6 +917,10 @@
     display: inline-block;
 }
 
+.front-approach__image {
+    align-self: stretch;
+}
+
 .front-approach__img {
     width: 100%;
     height: 100%;
@@ -1442,6 +1446,10 @@
 
     .front-approach__inner {
         grid-template-columns: 1fr;
+    }
+
+    .front-approach__img {
+        min-height: 400px;
     }
 
     .front-founder__inner {
