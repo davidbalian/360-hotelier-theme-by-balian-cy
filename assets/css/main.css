@@ -496,6 +496,10 @@
     .front-hero__ctas {
         margin-top: 1rem;
     }
+
+    .front-contact__text {
+        max-width: 30ch;
+    }
 }
 
 
@@ -1466,6 +1470,11 @@
 
     .front-approach__inner {
         grid-template-columns: 1fr;
+    }
+
+    .front-approach__step {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .front-approach__image {
