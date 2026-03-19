@@ -22,6 +22,57 @@
 }
 
 /* ==========================================================================
+   Top Bar
+   ========================================================================== */
+
+.top-bar {
+    position: fixed;
+    top: var(--wp-admin-bar-offset, 0);
+    left: 0;
+    right: 0;
+    z-index: 201;
+    height: var(--top-bar-height);
+    background-color: transparent;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.top-bar__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.top-bar__email,
+.top-bar__phone {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.top-bar__email:hover,
+.top-bar__phone:hover {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.top-bar.is-scrolled {
+    background-color: #1a1a1a;
+    color: #ccc;
+}
+
+.top-bar.is-scrolled .top-bar__email,
+.top-bar.is-scrolled .top-bar__phone {
+    color: #ccc;
+}
+
+.top-bar.is-scrolled .top-bar__email:hover,
+.top-bar.is-scrolled .top-bar__phone:hover {
+    color: #fff;
+}
+
+/* ==========================================================================
    Site Header & Branding
    ========================================================================== */
 
@@ -31,7 +82,7 @@
     position: fixed; /* Switch to fixed for hero underlap */
     left: 0;
     right: 0;
-    top: var(--wp-admin-bar-offset, 0);
+    top: calc(var(--wp-admin-bar-offset, 0) + var(--top-bar-height));
     z-index: 200;
     transition: padding 0.15s ease, background-color 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
     padding: 1rem;
@@ -50,6 +101,7 @@
 :root {
     --wp-admin-bar-offset: 0px;
     --header-height: 72px; /* Set a default height that includes previous padding */
+    --top-bar-height: 36px;
 }
 
 .admin-bar {
@@ -186,7 +238,7 @@
     background: rgba(255, 255, 255, 0.97);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
-    padding: var(--header-height) 2rem 2rem;
+    padding: calc(var(--header-height) + var(--top-bar-height)) 2rem 2rem;
     color: var(--color-charcoal);
     opacity: 0;
     visibility: hidden;
@@ -544,7 +596,7 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    padding: 8rem 0 2rem;
+    padding: calc(8rem + var(--top-bar-height)) 0 2rem;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -567,7 +619,7 @@
 
     .front-hero {
         min-height: calc(90vh - 2rem - var(--wp-admin-bar-offset, 0px));
-        padding-top: 6rem;
+        padding-top: calc(6rem + var(--top-bar-height));
         padding-bottom: 2rem;
     }
 

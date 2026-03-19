@@ -20,6 +20,13 @@
 <div id="page" class="site">
     <a class="screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', '360-hotelier' ); ?></a>
 
+    <div class="top-bar">
+        <div class="site-container top-bar__inner">
+            <a href="mailto:info@360hotelier.com" class="top-bar__email">info@360hotelier.com</a>
+            <a href="tel:+35770001818" class="top-bar__phone">7000 1818</a>
+        </div>
+    </div>
+
     <header id="masthead" class="site-header">
         <div class="site-container header-inner">
 

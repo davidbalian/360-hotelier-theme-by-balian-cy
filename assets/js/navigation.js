@@ -55,13 +55,16 @@
 
     // Handle scroll for logo shrink and header state
     var header = document.querySelector( '.site-header' );
+    var topBar = document.querySelector( '.top-bar' );
     var scrollThreshold = 10;
 
     function handleScroll() {
         if ( window.scrollY > scrollThreshold ) {
             header.classList.add( 'is-scrolled' );
+            if ( topBar ) { topBar.classList.add( 'is-scrolled' ); }
         } else {
             header.classList.remove( 'is-scrolled' );
+            if ( topBar ) { topBar.classList.remove( 'is-scrolled' ); }
         }
     }
 
