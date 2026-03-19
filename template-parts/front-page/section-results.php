@@ -35,7 +35,7 @@
                 <img src="<?php echo esc_url( content_url( '/uploads/2026/03/serbellas-boutique-hotel-logo-transparent.webp' ) ); ?>" alt="<?php esc_attr_e( 'Serbellas Boutique Hotel', '360-hotelier' ); ?>" loading="lazy" />
                 <img src="<?php echo esc_url( content_url( '/uploads/2026/03/petit-palais-platres-hotel-logo-color-cyprus.webp' ) ); ?>" alt="<?php esc_attr_e( 'Petit Palais Hotel Platres Cyprus', '360-hotelier' ); ?>" loading="lazy" />
                 <img src="<?php echo esc_url( content_url( '/uploads/2026/03/chic-centre-suites-athens-hotel-logo.webp' ) ); ?>" alt="<?php esc_attr_e( 'Chic Centre Suites Athens', '360-hotelier' ); ?>" loading="lazy" />
-                <img src="http://360hotelier.local/wp-content/uploads/2026/03/napa-jay-hotel-ayia-napa-cyprus-logo-transparent-e1773821609772.png" alt="<?php esc_attr_e( 'Napa Jay Hotel Ayia Napa Cyprus', '360-hotelier' ); ?>" loading="lazy" />
+                <img src="<?php echo esc_url( content_url( '/uploads/2026/03/napa-jay-hotel-ayia-napa-cyprus-logo-transparent-e1773821609772.png' ) ); ?>" alt="<?php esc_attr_e( 'Napa Jay Hotel Ayia Napa Cyprus', '360-hotelier' ); ?>" loading="lazy" />
                 <!-- Duplicate set for seamless loop -->
                 <img src="<?php echo esc_url( content_url( '/uploads/2026/03/pendeli-resort-hotel-cyprus-logo-white.svg' ) ); ?>" alt="<?php esc_attr_e( 'Pendeli Resort Hotel Cyprus', '360-hotelier' ); ?>" loading="lazy" aria-hidden="true" />
                 <img src="<?php echo esc_url( content_url( '/uploads/2026/03/cap-st-georges-resort-logo-hd.webp' ) ); ?>" alt="<?php esc_attr_e( 'Cap St Georges Hotel & Resort Cyprus', '360-hotelier' ); ?>" loading="lazy" aria-hidden="true" />
@@ -43,7 +43,7 @@
                 <img src="<?php echo esc_url( content_url( '/uploads/2026/03/serbellas-boutique-hotel-logo-transparent.webp' ) ); ?>" alt="<?php esc_attr_e( 'Serbellas Boutique Hotel', '360-hotelier' ); ?>" loading="lazy" aria-hidden="true" />
                 <img src="<?php echo esc_url( content_url( '/uploads/2026/03/petit-palais-platres-hotel-logo-color-cyprus.webp' ) ); ?>" alt="<?php esc_attr_e( 'Petit Palais Hotel Platres Cyprus', '360-hotelier' ); ?>" loading="lazy" aria-hidden="true" />
                 <img src="<?php echo esc_url( content_url( '/uploads/2026/03/chic-centre-suites-athens-hotel-logo.webp' ) ); ?>" alt="<?php esc_attr_e( 'Chic Centre Suites Athens', '360-hotelier' ); ?>" loading="lazy" aria-hidden="true" />
-                <img src="http://360hotelier.local/wp-content/uploads/2026/03/napa-jay-hotel-ayia-napa-cyprus-logo-transparent-e1773821609772.png" alt="<?php esc_attr_e( 'Napa Jay Hotel Ayia Napa Cyprus', '360-hotelier' ); ?>" loading="lazy" aria-hidden="true" />
+                <img src="<?php echo esc_url( content_url( '/uploads/2026/03/napa-jay-hotel-ayia-napa-cyprus-logo-transparent-e1773821609772.png' ) ); ?>" alt="<?php esc_attr_e( 'Napa Jay Hotel Ayia Napa Cyprus', '360-hotelier' ); ?>" loading="lazy" aria-hidden="true" />
             </div>
         </div>
     </div>
