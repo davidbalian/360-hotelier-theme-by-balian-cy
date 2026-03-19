@@ -596,6 +596,7 @@
 .front-hero {
     position: relative;
     height: calc(90vh - 4rem - var(--wp-admin-bar-offset, 0px));
+    max-height: 1080px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
