@@ -112,8 +112,12 @@
     .admin-bar {
         --wp-admin-bar-offset: 46px;
     }
-    
+
     .site-header.is-scrolled {
+        --wp-admin-bar-offset: 0px; /* Mobile admin bar scrolls up */
+    }
+
+    .top-bar.is-scrolled {
         --wp-admin-bar-offset: 0px; /* Mobile admin bar scrolls up */
     }
 }
@@ -1514,8 +1518,26 @@
 }
 
 @media ( max-width: 768px ) {
+    :root {
+        --top-bar-height: 28px;
+    }
+
+    .top-bar {
+        padding: 0 1rem;
+        font-size: 0.7rem;
+    }
+
+    .top-bar__inner {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
     .site-container {
         padding-inline: 1rem;
+    }
+
+    .front-approach .site-container {
+        padding-inline: 0;
     }
 
     .site-header {
