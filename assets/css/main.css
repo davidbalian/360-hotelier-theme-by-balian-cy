@@ -622,7 +622,7 @@
     }
 
     .front-hero {
-        min-height: calc(80vh - 2rem - var(--wp-admin-bar-offset, 0px));
+        height: calc(80vh - 2rem - var(--wp-admin-bar-offset, 0px));
         max-height: 1080px;
         padding-top: calc(6rem + var(--top-bar-height));
         padding-bottom: 2rem;
