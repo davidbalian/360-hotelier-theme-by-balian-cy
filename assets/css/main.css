@@ -90,6 +90,17 @@
     color: #fff;
 }
 
+/* Top bar text goes dark when mobile nav is open (non-scrolled state) */
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__email,
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__phone {
+    color: var(--color-charcoal);
+}
+
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__email:hover,
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__phone:hover {
+    color: rgba(0, 0, 0, 0.6);
+}
+
 /* ==========================================================================
    Site Header & Branding
    ========================================================================== */
