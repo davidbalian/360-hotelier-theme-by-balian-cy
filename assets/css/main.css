@@ -595,7 +595,7 @@
 /* Hero */
 .front-hero {
     position: relative;
-    height: calc(90vh - 4rem - var(--wp-admin-bar-offset, 0px));
+    height: calc(95vh - 4rem - var(--wp-admin-bar-offset, 0px));
     max-height: 1080px;
     display: flex;
     flex-direction: column;
