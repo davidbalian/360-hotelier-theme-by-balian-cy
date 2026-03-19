@@ -651,7 +651,16 @@
         display: none;
     }
 
+    .front-hero,
+    .front-services-overview,
+    .front-featured-banner,
+    .front-results {
+        border-radius: 2rem;
+    }
+
     .front-hero {
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
         height: calc(80vh - 2rem - var(--wp-admin-bar-offset, 0px));
         padding-top: calc(6rem + var(--top-bar-height));
         padding-bottom: 2rem;
