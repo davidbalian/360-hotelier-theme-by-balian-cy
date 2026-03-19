@@ -35,7 +35,7 @@
                     <?php the_custom_logo(); ?>
                 <?php else : ?>
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title-link site-logo-fallback" rel="home">
-                        <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/03/360-hotelier-logo-hd.svg' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+                        <img src="<?php echo esc_url( content_url( '/uploads/2026/03/360-hotelier-logo-hd.svg' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
                     </a>
                 <?php endif; ?>
             </div>
