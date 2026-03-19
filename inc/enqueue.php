@@ -39,3 +39,17 @@ function hotelier_enqueue_assets() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'hotelier_enqueue_assets' );
+
+/**
+ * Preload the hero background image and add a meta description on the front page.
+ */
+function hotelier_front_page_head() {
+    if ( ! is_front_page() ) {
+        return;
+    }
+
+    $hero_image_url = content_url( '/uploads/2026/03/360-hotelier-consulting-cyprus-hero.webp' );
+    echo '<link rel="preload" as="image" href="' . esc_url( $hero_image_url ) . '" fetchpriority="high">' . "\n";
+    echo '<meta name="description" content="' . esc_attr__( 'Revenue management, B2B distribution and digital growth for hotels in Cyprus. 360° Hotelier Consulting — your external commercial team, built around measurable results.', '360-hotelier' ) . '">' . "\n";
+}
+add_action( 'wp_head', 'hotelier_front_page_head', 1 );

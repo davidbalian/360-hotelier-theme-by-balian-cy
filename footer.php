@@ -12,7 +12,7 @@
             <div class="footer-cols">
 
                 <div class="footer-col">
-                    <h4 class="footer-col__heading text-xs fade-in fade-in-delay-0"><?php esc_html_e( 'Navigation', '360-hotelier' ); ?></h4>
+                    <p class="footer-col__heading text-xs fade-in fade-in-delay-0"><?php esc_html_e( 'Navigation', '360-hotelier' ); ?></p>
                     <nav class="fade-in fade-in-delay-1" aria-label="<?php esc_attr_e( 'Footer Menu', '360-hotelier' ); ?>">
                         <?php
                         if ( has_nav_menu( 'footer' ) ) {
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-col__heading text-xs fade-in fade-in-delay-0"><?php esc_html_e( 'Follow Us', '360-hotelier' ); ?></h4>
+                    <p class="footer-col__heading text-xs fade-in fade-in-delay-0"><?php esc_html_e( 'Follow Us', '360-hotelier' ); ?></p>
                     <ul class="footer-social text-base-sm">
                         <li class="fade-in fade-in-delay-1"><a href="#" rel="noopener noreferrer" target="_blank"><?php esc_html_e( 'Facebook', '360-hotelier' ); ?></a></li>
                         <li class="fade-in fade-in-delay-2"><a href="#" rel="noopener noreferrer" target="_blank"><?php esc_html_e( 'LinkedIn', '360-hotelier' ); ?></a></li>
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-col__heading text-xs fade-in fade-in-delay-0"><?php esc_html_e( 'Legal', '360-hotelier' ); ?></h4>
+                    <p class="footer-col__heading text-xs fade-in fade-in-delay-0"><?php esc_html_e( 'Legal', '360-hotelier' ); ?></p>
                     <ul class="footer-legal text-base-sm">
                         <li class="fade-in fade-in-delay-1"><a href="#"><?php esc_html_e( 'Privacy Policy', '360-hotelier' ); ?></a></li>
                         <li class="fade-in fade-in-delay-2"><a href="#"><?php esc_html_e( 'Cookie Policy', '360-hotelier' ); ?></a></li>
@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-col__heading text-xs fade-in fade-in-delay-0"><?php esc_html_e( 'Contact', '360-hotelier' ); ?></h4>
+                    <p class="footer-col__heading text-xs fade-in fade-in-delay-0"><?php esc_html_e( 'Contact', '360-hotelier' ); ?></p>
                     <ul class="footer-contact-details text-base-sm">
                         <li class="fade-in fade-in-delay-1"><a href="tel:+35770001818">7000 1818</a></li>
                         <li class="fade-in fade-in-delay-2"><a href="mailto:info@360hotelier.com">info@360hotelier.com</a></li>
@@ -79,7 +79,7 @@
             </div><!-- .footer-bottom -->
 
             <div class="footer-logo fade-in fade-in-delay-1" aria-hidden="true">
-                <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/03/360-hotelier-logo-hd.svg' ) ); ?>" alt="">
+                <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/03/360-hotelier-logo-hd.svg' ) ); ?>" alt="" width="180" height="50">
             </div><!-- .footer-logo -->
 
         </div><!-- .site-container -->

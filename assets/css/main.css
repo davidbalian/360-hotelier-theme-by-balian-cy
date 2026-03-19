@@ -533,13 +533,13 @@
 /* Primary — orange fill */
 .btn--primary {
     background: var(--color-orange);
-    color: #fff;
+    color: var(--color-charcoal);
     border-color: var(--color-orange);
 }
 
 .btn--primary:hover {
     opacity: 0.9;
-    color: #fff;
+    color: var(--color-charcoal);
 }
 
 /* Outline — transparent with orange border */
