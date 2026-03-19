@@ -19,23 +19,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 function hotelier_get_default_nav_items() {
     return array(
         array(
-            'url'   => home_url( '/' ),
+            'url'   => '#',
             'label' => __( 'Home', '360-hotelier' ),
         ),
         array(
-            'url'   => home_url( '/about-us/' ),
+            'url'   => '#',
             'label' => __( 'About Us', '360-hotelier' ),
         ),
         array(
-            'url'   => home_url( '/services/' ),
+            'url'   => '#',
             'label' => __( 'Services', '360-hotelier' ),
         ),
         array(
-            'url'   => home_url( '/portfolio/' ),
+            'url'   => '#',
             'label' => __( 'Portfolio', '360-hotelier' ),
         ),
         array(
-            'url'   => home_url( '/contact/' ),
+            'url'   => '#',
             'label' => __( 'Contact', '360-hotelier' ),
         ),
     );

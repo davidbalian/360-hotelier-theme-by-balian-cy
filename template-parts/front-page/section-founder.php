@@ -4,7 +4,7 @@
  *
  * @package 360-hotelier
  */
-$about_url = home_url( '/about-us/' );
+$about_url = '#';
 ?>
 <section class="front-founder">
     <div class="site-container front-founder__inner">

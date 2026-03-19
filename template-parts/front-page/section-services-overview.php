@@ -4,7 +4,7 @@
  *
  * @package 360-hotelier
  */
-$services_url = home_url( '/services/' );
+$services_url = '#';
 ?>
 <section class="front-services-overview card-border">
     <div class="site-container">
