@@ -1528,8 +1528,7 @@
     }
 
     .top-bar__inner {
-        justify-content: center;
-        gap: 1.5rem;
+        justify-content: space-between;
     }
 
     .site-container {
