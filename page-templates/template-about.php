@@ -5,67 +5,87 @@
  * @package 360-hotelier
  */
 
-get_header(); ?>
+$page_hero_title    = __( 'Your Trusted Hotel Consultant in Cyprus', '360-hotelier' );
+$page_hero_subtitle = __( '360° Hotelier Consulting — 15+ years of hospitality expertise driving revenue for independent hotels across Cyprus.', '360-hotelier' );
+$page_hero_image    = content_url( '/uploads/2026/03/featured-360-hotelier.webp' );
 
-<main id="main" class="site-main">
-    <div class="site-container page-about">
+get_header();
+get_template_part( 'template-parts/page/page-hero' );
+?>
 
-        <article class="page-about__content">
-            <h1 class="page-about__title"><?php esc_html_e( 'Your Trusted Hotel Consultant in Cyprus', '360-hotelier' ); ?></h1>
+<main id="main" class="site-main page-about">
 
-            <p><?php esc_html_e( '360° Hotelier Consulting is a Cyprus-based hotel consultancy providing strategic commercial support to independent hotels, boutique properties and resorts across the island.', '360-hotelier' ); ?></p>
-
-            <p><?php esc_html_e( 'As an experienced hotel consultant in Cyprus, we specialize in hotel revenue management, online sales & B2B distribution, e-commerce, digital marketing and tour-operator contracting, helping hotels increase revenue, improve profitability and strengthen their market positioning.', '360-hotelier' ); ?></p>
-
-            <p><?php esc_html_e( "With more than 15 years of experience in the hospitality and travel industry, we support hotels in navigating today's complex commercial environment through data-driven strategies, digital expertise and hands-on execution.", '360-hotelier' ); ?></p>
-
-            <h2><?php esc_html_e( 'What We Do', '360-hotelier' ); ?></h2>
-            <p><?php esc_html_e( 'We provide end-to-end commercial consulting services for hotels in Cyprus, tailored to each property\'s size, concept and market dynamics.', '360-hotelier' ); ?></p>
-            <p><?php esc_html_e( 'Our core services include:', '360-hotelier' ); ?></p>
-            <ul>
-                <li><strong><?php esc_html_e( 'Yield & Revenue Management', '360-hotelier' ); ?></strong> — <?php esc_html_e( 'Strategic pricing, demand forecasting and segmentation designed to maximize RevPAR and revenue performance.', '360-hotelier' ); ?></li>
-                <li><strong><?php esc_html_e( 'Online Sales & B2B Distribution', '360-hotelier' ); ?></strong> — <?php esc_html_e( 'OTA optimization, channel-mix strategy and development of profitable B2B partnerships.', '360-hotelier' ); ?></li>
-                <li><strong><?php esc_html_e( 'E-Commerce & Digital Marketing', '360-hotelier' ); ?></strong> — <?php esc_html_e( 'Direct booking optimization, SEO & SEM, social media marketing and digital performance analysis.', '360-hotelier' ); ?></li>
-                <li><strong><?php esc_html_e( 'Contracting & Tour Operator Negotiations', '360-hotelier' ); ?></strong> — <?php esc_html_e( 'Professional representation and negotiation with tour operators and wholesalers, acting in the hotel\'s best commercial interest.', '360-hotelier' ); ?></li>
-            </ul>
-            <p><?php esc_html_e( 'As a dedicated hotel consultant in Cyprus, we ensure that every strategy is aligned with local seasonality, demand patterns and the Cyprus tourism landscape.', '360-hotelier' ); ?></p>
-
-            <h2><?php esc_html_e( 'How We Work', '360-hotelier' ); ?></h2>
-            <p><?php esc_html_e( 'Our approach is practical, transparent and results-oriented.', '360-hotelier' ); ?></p>
-            <p><?php esc_html_e( 'We begin with a comprehensive commercial audit of your hotel, analyzing pricing strategy, online distribution, digital presence and existing contracts. Based on these insights, we develop a customized commercial strategy that supports both short-term revenue growth and long-term sustainability.', '360-hotelier' ); ?></p>
-            <p><?php esc_html_e( 'Throughout the collaboration, we work as an extension of your internal team, providing hands-on management, regular reporting and continuous optimization.', '360-hotelier' ); ?></p>
-
-            <h2><?php esc_html_e( 'Meet the Founder', '360-hotelier' ); ?></h2>
-            <p><strong><?php esc_html_e( 'Giorgos Peyiazis — Founder & Hotel Consultant', '360-hotelier' ); ?></strong></p>
-            <p><?php esc_html_e( 'Giorgos Peyiazis is the Founder of 360° Hotelier Consulting and an experienced hotel consultant in Cyprus, with a professional background spanning more than 15 years in hotel revenue management, online distribution, digital marketing and commercial strategy.', '360-hotelier' ); ?></p>
-            <p><?php esc_html_e( 'Giorgos has worked closely with independent hotels, boutique properties and international hospitality platforms, supporting hotels in improving revenue performance, strengthening online sales channels and negotiating effective B2B and tour-operator agreements.', '360-hotelier' ); ?></p>
-            <p><a href="<?php echo esc_url( home_url( '/founder/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Read Full Bio', '360-hotelier' ); ?></a></p>
-
-            <h2><?php esc_html_e( 'Our Philosophy', '360-hotelier' ); ?></h2>
-            <p><?php esc_html_e( 'At 360° Hotelier Consulting, we believe that successful hotel consulting is built on partnership, trust and long-term collaboration.', '360-hotelier' ); ?></p>
-            <p><?php esc_html_e( 'We work with a select number of hotels in Cyprus, allowing us to remain fully engaged, responsive and accountable. Our goal is not simply to advise, but to actively support hotels in improving performance and achieving sustainable commercial growth.', '360-hotelier' ); ?></p>
-            <p><?php esc_html_e( 'By combining local expertise, international best practices and modern digital tools, we help hotels remain competitive in an evolving hospitality landscape.', '360-hotelier' ); ?></p>
-
-            <h2><?php esc_html_e( 'Why Choose 360° Hotelier Consulting', '360-hotelier' ); ?></h2>
-            <ul>
-                <li><?php esc_html_e( 'Experienced hotel consultant in Cyprus with proven results', '360-hotelier' ); ?></li>
-                <li><?php esc_html_e( '15+ years of hospitality sales, revenue and digital expertise', '360-hotelier' ); ?></li>
-                <li><?php esc_html_e( 'Strong understanding of the Cyprus tourism and hotel market', '360-hotelier' ); ?></li>
-                <li><?php esc_html_e( 'Data-driven strategies with measurable KPIs', '360-hotelier' ); ?></li>
-                <li><?php esc_html_e( 'Hands-on support, not generic consultancy', '360-hotelier' ); ?></li>
-            </ul>
-
-            <div class="page-about__cta">
-                <h2><?php esc_html_e( 'Looking for a Reliable Hotel Consultant in Cyprus?', '360-hotelier' ); ?></h2>
-                <p><?php esc_html_e( "Let's discuss how 360° Hotelier Consulting can support your hotel's revenue, distribution and digital growth.", '360-hotelier' ); ?></p>
-                <p>
-                    <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
-                    <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="btn btn--outline"><?php esc_html_e( 'Explore Our Services', '360-hotelier' ); ?></a>
-                </p>
+    <!-- Intro Section -->
+    <section class="page-section page-section--white">
+        <div class="site-container">
+            <div class="page-about__intro-grid">
+                <div class="page-about__intro-text fade-in fade-in-delay-0">
+                    <h2 class="page-section__title"><?php esc_html_e( 'About 360° Hotelier Consulting', '360-hotelier' ); ?></h2>
+                    <p><?php esc_html_e( '360° Hotelier Consulting is a Cyprus-based hotel consultancy providing strategic commercial support to independent hotels, boutique properties and resorts across the island.', '360-hotelier' ); ?></p>
+                    <p><?php esc_html_e( 'As an experienced hotel consultant in Cyprus, we specialize in hotel revenue management, online sales & B2B distribution, e-commerce, digital marketing and tour-operator contracting — helping hotels increase revenue, improve profitability and strengthen their market positioning.', '360-hotelier' ); ?></p>
+                    <p><?php esc_html_e( "With more than 15 years of experience in the hospitality and travel industry, we support hotels in navigating today's complex commercial environment through data-driven strategies, digital expertise and hands-on execution. We work with a select number of hotels, allowing us to remain fully engaged, responsive and accountable.", '360-hotelier' ); ?></p>
+                </div>
+                <div class="page-about__intro-image fade-in fade-in-delay-1" style="background-image: url('<?php echo esc_url( home_url( '/wp-content/uploads/2026/03/why-choose-360-hotelier.webp' ) ); ?>');" aria-hidden="true"></div>
             </div>
-        </article>
+        </div>
+    </section>
 
-    </div>
+    <!-- What We Do -->
+    <section class="page-section page-section--sand">
+        <div class="site-container">
+            <div class="page-section__heading fade-in fade-in-delay-0">
+                <h2 class="page-section__title"><?php esc_html_e( 'What We Do', '360-hotelier' ); ?></h2>
+                <p class="page-section__subtitle"><?php esc_html_e( "End-to-end commercial consulting tailored to each property's market and goals.", '360-hotelier' ); ?></p>
+            </div>
+            <div class="page-about__services-grid">
+                <div class="front-why-choose__box card-border fade-in fade-in-delay-1">
+                    <div class="front-why-choose__box-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3 class="front-why-choose__box-title text-md"><?php esc_html_e( 'Yield & Revenue Management', '360-hotelier' ); ?></h3>
+                    <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Strategic pricing, demand forecasting and segmentation designed to maximize RevPAR and revenue performance.', '360-hotelier' ); ?></p>
+                </div>
+                <div class="front-why-choose__box card-border fade-in fade-in-delay-2">
+                    <div class="front-why-choose__box-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h3 class="front-why-choose__box-title text-md"><?php esc_html_e( 'Online Sales & B2B Distribution', '360-hotelier' ); ?></h3>
+                    <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'OTA optimization, channel-mix strategy and development of profitable B2B partnerships.', '360-hotelier' ); ?></p>
+                </div>
+                <div class="front-why-choose__box card-border fade-in fade-in-delay-3">
+                    <div class="front-why-choose__box-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3 class="front-why-choose__box-title text-md"><?php esc_html_e( 'E-Commerce & Digital Marketing', '360-hotelier' ); ?></h3>
+                    <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Direct booking optimization, SEO & SEM, social media marketing and digital performance analysis.', '360-hotelier' ); ?></p>
+                </div>
+                <div class="front-why-choose__box card-border fade-in fade-in-delay-4">
+                    <div class="front-why-choose__box-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3 class="front-why-choose__box-title text-md"><?php esc_html_e( 'Contracting & Tour Operator Negotiations', '360-hotelier' ); ?></h3>
+                    <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Professional representation and negotiation with tour operators and wholesalers, acting in the hotel\'s best commercial interest.', '360-hotelier' ); ?></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work -->
+    <?php get_template_part( 'template-parts/front-page/section-approach' ); ?>
+
+    <!-- CTA Banner -->
+    <section class="front-featured-banner card-border" style="background-image: url('<?php echo esc_url( content_url( '/uploads/2026/03/featured-360-hotelier.webp' ) ); ?>');">
+        <div class="front-featured-banner__overlay section-overlay"></div>
+        <div class="site-container front-featured-banner__content fade-in fade-in-delay-0">
+            <h2 class="front-featured-banner__title text-4xl"><?php esc_html_e( 'Looking for a Hotel Consultant in Cyprus?', '360-hotelier' ); ?></h2>
+            <p class="front-featured-banner__text"><?php esc_html_e( "Let's discuss how 360° Hotelier Consulting can support your hotel's revenue, distribution and digital growth.", '360-hotelier' ); ?></p>
+            <div class="page-about__cta-buttons">
+                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
+                <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="btn btn--ghost"><?php esc_html_e( 'Explore Our Services', '360-hotelier' ); ?></a>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 <?php get_footer();
