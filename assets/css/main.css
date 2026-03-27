@@ -1267,8 +1267,12 @@
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
-    border-bottom-left-radius: 3rem;
-    border-bottom-right-radius: 3rem;
+    max-width: 1500px;
+    margin-inline: max(1rem, calc((100% - 1500px) / 2));
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 4rem;
+    border-bottom-right-radius: 4rem;
 }
 
 .page-hero__overlay {
