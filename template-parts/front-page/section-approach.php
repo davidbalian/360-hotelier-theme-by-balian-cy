@@ -61,7 +61,7 @@
 
                 </div>
 
-                <a href="#" class="btn btn--primary front-approach__cta fade-in fade-in-delay-6"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
+                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary front-approach__cta fade-in fade-in-delay-6"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
             </div>
 
         </div>

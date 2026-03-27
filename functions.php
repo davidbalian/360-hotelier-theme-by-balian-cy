@@ -30,17 +30,3 @@ require_once HOTELIER_THEME_DIR . '/inc/service-content.php';
 // Include enqueue functions
 require_once HOTELIER_THEME_DIR . '/inc/enqueue.php';
 
-// TEMPORARY: Redirect all non-admin, non-homepage requests to the homepage.
-add_action( 'template_redirect', function() {
-    if ( is_front_page() || is_admin() ) {
-        return;
-    }
-    wp_redirect( home_url( '/' ), 302 );
-    exit;
-} );
-
-// TEMPORARY: Point all WordPress nav menu links to #.
-add_filter( 'nav_menu_link_attributes', function( $atts ) {
-    $atts['href'] = '#';
-    return $atts;
-}, 10, 4 );
