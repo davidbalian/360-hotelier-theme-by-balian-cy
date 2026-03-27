@@ -1203,9 +1203,34 @@
     filter: none;
 }
 
-/* Pendeli — hover to #00231f (dark forest green) */
-.front-results__ticker-track img.ticker-logo--pendeli:hover {
-    filter: brightness(0.4) sepia(1) saturate(4) hue-rotate(140deg) brightness(0.17);
+/* Pendeli — inline SVG, sized to match img logos */
+.ticker-logo--pendeli {
+    width: 148px;
+    height: 105px;
+    padding-inline: 3.75rem;
+    box-sizing: content-box;
+    display: block;
+    flex-shrink: 0;
+    filter: brightness(0) opacity(0.65);
+    transition: filter 150ms ease;
+}
+
+.ticker-logo--pendeli svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.ticker-logo--pendeli .st0 {
+    transition: fill 150ms ease;
+}
+
+.ticker-logo--pendeli:hover {
+    filter: none;
+}
+
+.ticker-logo--pendeli:hover .st0 {
+    fill: #00231f;
 }
 
 /* Serbellas — hover to ~#C2B275 (warm gold/brass) */
@@ -2041,7 +2066,8 @@
         margin-inline: -1rem;
     }
 
-    .front-results__ticker-track img {
+    .front-results__ticker-track img,
+    .ticker-logo--pendeli {
         width: 74px;
         height: 52px;
         padding-inline: 1.875rem;
