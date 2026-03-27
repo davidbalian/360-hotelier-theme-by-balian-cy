@@ -1200,7 +1200,7 @@
 }
 
 .front-results__ticker-track img:hover {
-    filter: brightness(0) opacity(0.9);
+    filter: none;
 }
 
 @keyframes ticker {
