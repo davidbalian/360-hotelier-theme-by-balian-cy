@@ -1204,12 +1204,12 @@
 }
 
 /* Pendeli — hover to #00231f (dark forest green) */
-.ticker-logo--pendeli:hover {
+.front-results__ticker-track img.ticker-logo--pendeli:hover {
     filter: brightness(0.4) sepia(1) saturate(4) hue-rotate(140deg) brightness(0.17);
 }
 
 /* Serbellas — hover to ~#C2B275 (warm gold/brass) */
-.ticker-logo--serbellas:hover {
+.front-results__ticker-track img.ticker-logo--serbellas:hover {
     filter: brightness(0.4) sepia(1) saturate(1.2) hue-rotate(13deg) brightness(1.35);
 }
 
