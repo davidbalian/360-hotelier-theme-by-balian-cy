@@ -1,0 +1,23 @@
+---
+description: Efficient, non-redundant CSS for the 360 Hotelier theme (tokens, partials, shared patterns).
+globs: "**/*.css"
+alwaysApply: false
+---
+
+# CSS efficiency (360 Hotelier)
+
+When editing or adding CSS for this theme:
+
+1. **Tokens** — Add or reuse variables in `style.css` `:root` (colours, `--section-padding-y`, radii, shadows, `--text-*`, overlay stops). Avoid new magic hex values or repeated `6rem` in partials.
+
+2. **Reuse before duplicating** — If multiple components share the same behaviour, use **grouped selectors** (comma-separated) or extend existing utilities (`section-overlay`, shared card lift rules in `assets/css/parts/01-global-header.css`). Do not copy-paste identical `transition` / `:hover` lift, grid `grid-template-columns`, or overlay gradients.
+
+3. **Section rhythm** — Sections use `padding-block: var(--section-padding-y)`. Do not add long mobile selector lists to change section padding; the mobile `@media` block overrides `--section-padding-y` on `:root`.
+
+4. **File placement** — Put rules in the correct `assets/css/parts/*.css` file; keep files under ~500 lines. If you add a new partial, update `inc/enqueue.php` chain. Do not recreate a single huge `main.css`.
+
+5. **PHP templates** — When adding markup in `template-parts/` or `page-templates/`, prefer existing classes (`page-section`, `page-section__heading`, `section-overlay`, `section-overlay--strong`) before new BEM blocks that only repeat spacing or overlays.
+
+6. **Editor** — `editor-style.css` loads after `style.css`; use CSS variables from the theme for consistency; keep heading scale aligned with `style.css`.
+
+Full rationale and checklist: `docs/css-efficiency.md`.
