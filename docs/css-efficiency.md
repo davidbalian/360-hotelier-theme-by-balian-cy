@@ -15,6 +15,7 @@ Use this when adding or changing styles so the theme stays maintainable and avoi
 |--------|----------|
 | Section vertical padding | `padding-block: var(--section-padding-y)` (mobile overrides the token in the shared `@media` block, not per-section lists). |
 | Purple hero/band overlays | `section-overlay` + optional `section-overlay--strong`; gradient stops from `:root`. |
+| Featured banner CTAs | Wrap all buttons in `front-featured-banner__actions` (flex, centered). Plain `<a class="btn">` siblings look centered only because of `text-align: center`; flex rows need this wrapper or they align left. |
 | Card lift on hover | Shared selectors in [assets/css/parts/01-global-header.css](../assets/css/parts/01-global-header.css) (transition + `:hover`). Component rules keep layout/surface only. |
 | Identical grids | Merge selectors (e.g. two blocks sharing the same `grid-template-columns`) or one utility class—do not copy-paste the full grid declaration. |
 | Section titles / subtitles | Extend grouped selectors (`front-section__*` / `page-section__*`) or introduce a neutral BEM block once if you rename markup. |

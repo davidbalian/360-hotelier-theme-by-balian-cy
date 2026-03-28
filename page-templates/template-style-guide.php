@@ -342,7 +342,9 @@ get_header();
         <div class="site-container">
             <h3 class="front-featured-banner__title">Ready to Transform Your Hotel&rsquo;s Performance?</h3>
             <p class="front-featured-banner__text">Partner with 360&deg; Hotelier and unlock your property&rsquo;s full revenue potential.</p>
-            <a href="#" class="btn btn--primary">Get in Touch</a>
+            <div class="front-featured-banner__actions">
+                <a href="#" class="btn btn--primary">Get in Touch</a>
+            </div>
         </div>
     </section>
 
