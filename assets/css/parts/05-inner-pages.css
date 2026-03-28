@@ -250,6 +250,10 @@
     opacity: 0.9;
 }
 
+.page-contact__card--cta .btn {
+    margin-top: 1rem;
+}
+
 .page-contact__card-title {
     margin-bottom: 1.75rem;
 }
@@ -333,6 +337,13 @@
     font-size: var(--text-md);
     margin-bottom: 1.5rem;
     opacity: 0.8;
+}
+
+.page-founder__bio-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
 }
 
 .page-founder__timeline {

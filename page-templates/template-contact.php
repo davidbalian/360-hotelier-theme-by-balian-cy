@@ -53,7 +53,7 @@ get_template_part( 'template-parts/page/page-hero' );
                     <h2 class="page-contact__card-title"><?php esc_html_e( 'Book a Free Strategy Session', '360-hotelier' ); ?></h2>
                     <p><?php esc_html_e( "Tell us about your hotel and we'll walk you through how 360° Hotelier Consulting can support your commercial growth — at no cost or commitment.", '360-hotelier' ); ?></p>
                     <p><?php esc_html_e( 'We work with a select number of hotels so every client gets real attention and real results.', '360-hotelier' ); ?></p>
-                    <a href="mailto:info@360hotelier.com" class="btn btn--ghost" style="margin-top: 1rem;"><?php esc_html_e( 'Start Your Free Session', '360-hotelier' ); ?></a>
+                    <a href="mailto:info@360hotelier.com" class="btn btn--ghost"><?php esc_html_e( 'Start Your Free Session', '360-hotelier' ); ?></a>
                 </div>
 
             </div>
