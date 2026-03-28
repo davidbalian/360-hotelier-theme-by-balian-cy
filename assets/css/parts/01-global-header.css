@@ -1,0 +1,353 @@
+/* ==========================================================================
+   Global
+   ========================================================================== */
+
+* {
+    corner-shape: squircle;
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+
+.card-border {
+    outline: 0.5px solid rgba(0, 0, 0, 0.07);
+}
+
+.section-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        to top right,
+        var(--hero-overlay-start-soft) 0%,
+        var(--hero-overlay-end-soft) 100%
+    );
+}
+
+.section-overlay--strong {
+    background: linear-gradient(
+        to top right,
+        var(--hero-overlay-start-strong) 0%,
+        var(--hero-overlay-end-strong) 100%
+    );
+}
+
+/* Shared hover lift for card-style surfaces */
+.post-card,
+.front-why-choose__box,
+.front-services-overview__card,
+.page-services__card,
+.page-portfolio__hotel-card,
+.front-approach__bento-card {
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.post-card:hover,
+.front-why-choose__box:hover,
+.front-services-overview__card:hover,
+.page-services__card:hover,
+.page-portfolio__hotel-card:hover,
+.front-approach__bento-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Top Bar
+   ========================================================================== */
+
+.top-bar {
+    position: fixed;
+    top: var(--wp-admin-bar-offset, 0);
+    left: 0;
+    right: 0;
+    z-index: 201;
+    height: var(--top-bar-height);
+    background-color: transparent;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.top-bar__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.top-bar__email,
+.top-bar__phone {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.top-bar__email::after,
+.top-bar__phone::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.25s ease;
+}
+
+.top-bar__email:hover::after,
+.top-bar__phone:hover::after {
+    width: 100%;
+}
+
+.top-bar__email:hover,
+.top-bar__phone:hover {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.top-bar.is-scrolled {
+    background-color: #1a1a1a;
+    color: #ccc;
+}
+
+.top-bar.is-scrolled .top-bar__email,
+.top-bar.is-scrolled .top-bar__phone {
+    color: #ccc;
+}
+
+.top-bar.is-scrolled .top-bar__email:hover,
+.top-bar.is-scrolled .top-bar__phone:hover {
+    color: #fff;
+}
+
+/* Top bar text goes dark when mobile nav is open (non-scrolled state) */
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__email,
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__phone {
+    color: var(--color-charcoal);
+}
+
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__email:hover,
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__phone:hover {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   Site Header & Branding
+   ========================================================================== */
+
+.site-header {
+    background-color: transparent;
+    border-bottom: none;
+    position: fixed; /* Switch to fixed for hero underlap */
+    left: 0;
+    right: 0;
+    top: calc(var(--wp-admin-bar-offset, 0) + var(--top-bar-height));
+    z-index: 200;
+    transition: padding 0.15s ease, background-color 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
+    padding: 1rem;
+}
+
+.site-header.is-scrolled {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* WP Admin Bar Handling */
+:root {
+    --wp-admin-bar-offset: 0px;
+    --header-height: 72px; /* Set a default height that includes previous padding */
+    --top-bar-height: 36px;
+}
+
+.admin-bar {
+    --wp-admin-bar-offset: 32px;
+}
+
+@media (max-width: 782px) {
+    .admin-bar {
+        --wp-admin-bar-offset: 46px;
+    }
+
+    .site-header.is-scrolled {
+        --wp-admin-bar-offset: 0px; /* Mobile admin bar scrolls up */
+    }
+
+    .top-bar.is-scrolled {
+        --wp-admin-bar-offset: 0px; /* Mobile admin bar scrolls up */
+    }
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+    transition: height 0.15s ease;
+    max-width: 1500px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.site-header.is-scrolled .header-inner {
+    --header-height: 60px; /* Slightly smaller header height on scroll */
+}
+
+.site-branding a {
+    font-weight: 700;
+    color: var(--color-purple);
+    text-decoration: none;
+    display: block;
+}
+
+.site-branding img {
+    height: 50px;
+    width: auto;
+    display: block;
+    transition: height 0.15s ease, filter 0.3s ease;
+    filter: brightness(0) invert(1); /* Initial state: White */
+}
+
+.site-header.is-scrolled .site-branding img {
+    height: 40px;
+    filter: none; /* Scrolled state: Original color */
+}
+
+.site-header:not(.is-scrolled):has(.mobile-nav-toggle.is-active) .site-branding img {
+    filter: none; /* Menu open: Original color, no size change */
+}
+
+/* ==========================================================================
+   Primary Navigation
+   ========================================================================== */
+
+.primary-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    font-weight: 500;
+    color: #fff; /* Initial state: White */
+    text-decoration: none;
+}
+
+.site-header.is-scrolled .nav-menu a {
+    color: var(--color-charcoal); /* Scrolled state: Charcoal */
+}
+
+/* Mobile menu toggle — hidden on desktop */
+.mobile-nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff; /* Initial state: White */
+    transition: color 0.2s ease;
+}
+
+.site-header.is-scrolled .mobile-nav-toggle {
+    color: var(--color-charcoal); /* Scrolled state: Charcoal */
+}
+
+.mobile-nav-toggle__line {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 1px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Hamburger → X when active */
+.mobile-nav-toggle.is-active .mobile-nav-toggle__line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-nav-toggle.is-active .mobile-nav-toggle__line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.mobile-nav-toggle.is-active .mobile-nav-toggle__line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Full-screen overlay */
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 199;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    padding: calc(var(--header-height) + var(--top-bar-height)) 2rem 2rem;
+    color: var(--color-charcoal);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-nav-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav__content {
+    text-align: center;
+    width: 100%;
+}
+
+.mobile-nav__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.mobile-nav__links li {
+    width: 100%;
+}
+
+.mobile-nav__links a {
+    display: block;
+    padding: 1.25rem 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-charcoal);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.mobile-nav__links a:hover,
+.mobile-nav__links .current-menu-item > a {
+    color: var(--color-purple);
+}
+

@@ -1,0 +1,256 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    padding: 4rem 0 0;
+}
+
+/* Footer columns */
+.footer-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    width: 100%;
+    margin-top: calc(4rem - 9.83%);
+    overflow: hidden;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+    opacity: 0.05;
+    transform: translateY(50%);
+}
+
+.footer-col__heading {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.footer-nav-menu,
+.footer-social,
+.footer-legal,
+.footer-contact-details {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-nav-menu a,
+.footer-social a,
+.footer-legal a,
+.footer-contact-details a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+/* Footer bottom bar */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    color: #888;
+}
+
+.footer-bottom a {
+    color: #888;
+}
+
+/* ==========================================================================
+   Post Cards (index loop)
+   ========================================================================== */
+
+.posts-loop {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.post-card {
+    border: none;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+}
+
+.post-thumbnail img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.post-content-wrap {
+    padding: 2rem;
+}
+
+.entry-title {
+    margin-bottom: 0.5rem;
+}
+
+.entry-title a {
+    color: var(--color-purple);
+}
+
+.entry-title a:hover {
+    color: var(--color-blue);
+}
+
+.entry-meta {
+    color: var(--color-charcoal);
+    margin-bottom: 1rem;
+}
+
+.entry-summary {
+    color: var(--color-charcoal);
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    font-weight: 600;
+    color: var(--color-blue);
+}
+
+.read-more:hover {
+    color: var(--color-blue-hover);
+}
+
+/* ==========================================================================
+   Page Content
+   ========================================================================== */
+
+.entry-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.entry-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================================================================
+   404 & No Results
+   ========================================================================== */
+
+.error-404,
+.no-results {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.error-404 .page-title,
+.no-results .page-title {
+    margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   Post Navigation
+   ========================================================================== */
+
+.post-navigation,
+.posts-navigation {
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 100px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    min-height: 48px;
+    transition: opacity 150ms ease, transform 150ms ease;
+    white-space: nowrap;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Primary — orange fill */
+.btn--primary {
+    background: var(--color-orange);
+    color: #fff;
+    border-color: var(--color-orange);
+}
+
+.btn--primary:hover {
+    opacity: 0.9;
+    color: #fff;
+}
+
+/* Outline — transparent with orange border */
+.btn--outline {
+    background: transparent;
+    color: var(--color-orange);
+    border-color: var(--color-orange);
+}
+
+.btn--outline:hover {
+    opacity: 0.85;
+    color: var(--color-orange);
+}
+
+/* Ghost — for use on dark/coloured backgrounds */
+.btn--ghost {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn--ghost:hover {
+    border-color: #fff;
+    color: #fff;
+    opacity: 0.85;
+}
+
+/* Size modifiers */
+.btn--lg {
+    padding: 1rem 2rem;
+    font-size: var(--text-base);
+    font-weight: 500;
+    min-height: 56px;
+}
+
+.btn--sm {
+    padding: 0.5rem 1rem;
+    font-size: var(--text-base-sm);
+    min-height: 36px;
+}
+

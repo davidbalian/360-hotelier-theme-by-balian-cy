@@ -1,6 +1,8 @@
 /* ==========================================================================
    Block Editor Styles
    Mirrors front-end typography and spacing so the editor matches the site.
+   `add_editor_style` loads `style.css` first — design tokens (e.g. --text-*)
+   resolve from there; keep heading sizes here aligned with style.css.
    ========================================================================== */
 
 .editor-styles-wrapper {

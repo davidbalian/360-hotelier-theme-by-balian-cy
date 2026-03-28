@@ -97,9 +97,17 @@ Text Domain: 360-hotelier
     --color-blue: #2c6e91;
     --color-blue-hover: #245a77;
     --color-border: #e5d9cc;
+    --color-section-gray: #f4f5f7;
+    --section-padding-y: 6rem;
     --radius-card: 16px;
     --radius-large: 24px;
     --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
+
+    /* Hero / band overlays (purple gradient stops) */
+    --hero-overlay-start-soft: rgba(58, 9, 104, 0.9);
+    --hero-overlay-end-soft: rgba(58, 9, 104, 0.5);
+    --hero-overlay-start-strong: rgba(58, 9, 104, 0.92);
+    --hero-overlay-end-strong: rgba(58, 9, 104, 0.55);
 
     /* Typography scale */
     --text-xs: 0.75rem;

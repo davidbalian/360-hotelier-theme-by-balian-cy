@@ -1,0 +1,452 @@
+/* ==========================================================================
+   Style Guide
+   ========================================================================== */
+
+.style-guide {
+    padding: 2rem 0;
+}
+
+.style-guide__header {
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--color-purple);
+}
+
+.style-guide__header h1 {
+    margin-bottom: 0.5rem;
+}
+
+.style-guide__header p {
+    max-width: 600px;
+    color: var(--color-charcoal);
+}
+
+.style-guide__section {
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.style-guide__section:last-child {
+    border-bottom: none;
+}
+
+.style-guide__section > h2 {
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.sg-subsection {
+    margin-bottom: 2rem;
+}
+
+.sg-subsection:last-child {
+    margin-bottom: 0;
+}
+
+.sg-subsection > h3 {
+    margin-bottom: 1rem;
+    color: var(--color-charcoal);
+}
+
+/* Color Swatches */
+.sg-color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr));
+    gap: 1.5rem;
+}
+
+.sg-color-swatch {
+    text-align: center;
+}
+
+.sg-color-swatch__preview {
+    width: 100%;
+    height: 80px;
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-border);
+    margin-bottom: 0.5rem;
+}
+
+.sg-color-swatch__name {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.sg-color-swatch code {
+    color: var(--color-charcoal);
+}
+
+/* Typography Specimens */
+.sg-type-specimen {
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+}
+
+.sg-type-specimen h1,
+.sg-type-specimen h2,
+.sg-type-specimen h3,
+.sg-type-specimen h4,
+.sg-type-specimen h5,
+.sg-type-specimen h6 {
+    margin-bottom: 1rem;
+}
+
+.sg-type-specimen h6 {
+    margin-bottom: 0;
+}
+
+/* Button Rows */
+.sg-button-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Card Grids */
+.sg-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Columns (side by side) */
+.sg-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+/* Forms */
+.sg-form {
+    max-width: 500px;
+}
+
+.sg-form__group {
+    margin-bottom: 1rem;
+}
+
+.sg-form__group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-charcoal);
+}
+
+.sg-form__group input,
+.sg-form__group select,
+.sg-form__group textarea {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    background: #fff;
+    color: var(--color-charcoal);
+    transition: border-color 0.2s ease;
+}
+
+.sg-form__group input:focus,
+.sg-form__group select:focus,
+.sg-form__group textarea:focus {
+    outline: none;
+    border-color: var(--color-purple);
+}
+
+.sg-form__group button {
+    border: none;
+    cursor: pointer;
+}
+
+/* Image Placeholder */
+.sg-image-placeholder {
+    background: var(--color-sand);
+    width: 100%;
+    display: block;
+}
+
+/* Demo Blocks */
+.sg-demo-block {
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    background: var(--color-white);
+}
+
+/* Spacing Samples */
+.sg-spacing-samples {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sg-spacing-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sg-spacing-block {
+    background: var(--color-purple);
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.sg-spacing-item span {
+    color: var(--color-charcoal);
+}
+
+/* Border & Shadow Demos */
+.sg-border-demo {
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    text-align: center;
+}
+
+.sg-shadow-demo {
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    text-align: center;
+    transition: box-shadow 0.2s ease;
+    cursor: default;
+}
+
+.sg-shadow-demo:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+@media ( max-width: 768px ) {
+    :root {
+        --top-bar-height: 28px;
+        --section-padding-y: 4rem;
+    }
+
+    .top-bar {
+        padding: 0 1rem;
+        font-size: 0.7rem;
+    }
+
+    .top-bar__inner {
+        justify-content: space-between;
+    }
+
+    .site-container {
+        padding-inline: 1rem;
+    }
+
+    .front-approach .site-container {
+        padding-inline: 0;
+    }
+
+    .site-header {
+        padding: 0 1rem; /* Reduced padding on mobile to match sections */
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .mobile-nav-toggle {
+        display: flex;
+    }
+
+    .mobile-nav-overlay {
+        display: flex;
+    }
+
+    .site-branding img {
+        height: 35px;
+    }
+
+    .site-header.is-scrolled .site-branding img {
+        height: 30px;
+    }
+
+    .mobile-nav-toggle.is-active {
+        color: var(--color-charcoal);
+    }
+
+    .front-page-main {
+        padding: 0;
+        gap: 2rem;
+    }
+
+
+    .footer-cols {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .footer-col {
+        width: max-content;
+    }
+
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .front-why-choose .site-container,
+    .front-founder .site-container {
+        padding-inline: 0;
+    }
+
+    .front-approach__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .front-approach__step {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .front-founder__card,
+    .front-approach__card {
+        padding: 2rem;
+    }
+
+    .front-founder__cta,
+    .front-approach__cta {
+        display: block;
+        width: fit-content;
+        margin-inline: auto;
+    }
+
+    .front-results__ticker {
+        margin-inline: -1rem;
+    }
+
+    .front-results__ticker-track img,
+    .ticker-logo--pendeli {
+        width: 74px;
+        height: 52px;
+        padding-inline: 1.875rem;
+    }
+
+    .front-approach__image {
+        min-height: 400px;
+    }
+
+    .front-founder__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .front-founder__image {
+        min-height: 600px;
+    }
+
+    .front-hero__ctas .btn {
+        width: 100%;
+    }
+
+    .sg-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .sg-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Inner page responsive */
+    .page-hero {
+        min-height: 40vh;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        padding-bottom: 3rem;
+    }
+
+    .page-service-single__body {
+        grid-template-columns: 1fr;
+    }
+
+    .page-about__intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-about__intro-image {
+        min-height: 260px;
+        order: -1;
+    }
+
+    .page-about__services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-contact__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-founder__bio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Scroll-triggered fade-in animations ── */
+/*
+ * Uses @keyframes animation (not transition) for the entrance effect so that
+ * elements' own transition declarations (hover effects, etc.) are never
+ * overridden. After the animation ends, JS strips the fade-in classes entirely,
+ * leaving each element in a clean state with its own transitions intact.
+ * Uses the CSS `translate` property (independent of `transform`) so that
+ * existing transform-based effects — hover lifts, ticker scroll,
+ * footer logo offset — are never overridden.
+ */
+@keyframes fade-in-up {
+    from { opacity: 0; translate: 0 24px; }
+    to   { opacity: 1; translate: 0 0;   }
+}
+
+.fade-in {
+    opacity: 0;
+    translate: 0 24px;
+}
+
+.fade-in.visible {
+    animation: fade-in-up 0.5s ease both;
+}
+
+/* Staggered delays: 0–10 (0.1s increments) */
+.fade-in-delay-0.visible  { animation-delay: 0s; }
+.fade-in-delay-1.visible  { animation-delay: 0.1s; }
+.fade-in-delay-2.visible  { animation-delay: 0.2s; }
+.fade-in-delay-3.visible  { animation-delay: 0.3s; }
+.fade-in-delay-4.visible  { animation-delay: 0.4s; }
+.fade-in-delay-5.visible  { animation-delay: 0.5s; }
+.fade-in-delay-6.visible  { animation-delay: 0.6s; }
+.fade-in-delay-7.visible  { animation-delay: 0.7s; }
+.fade-in-delay-8.visible  { animation-delay: 0.8s; }
+.fade-in-delay-9.visible  { animation-delay: 0.9s; }
+.fade-in-delay-10.visible { animation-delay: 1s; }
+
+/* Mobile: remove stagger so all items appear together */
+@media (max-width: 768px) {
+    .fade-in-delay-1.visible,
+    .fade-in-delay-2.visible,
+    .fade-in-delay-3.visible,
+    .fade-in-delay-4.visible,
+    .fade-in-delay-5.visible,
+    .fade-in-delay-6.visible,
+    .fade-in-delay-7.visible,
+    .fade-in-delay-8.visible,
+    .fade-in-delay-9.visible,
+    .fade-in-delay-10.visible {
+        animation-delay: 0s;
+    }
+}

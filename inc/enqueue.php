@@ -21,13 +21,25 @@ function hotelier_enqueue_assets() {
         HOTELIER_THEME_VERSION
     );
 
-    // Main CSS (navigation, components, layout)
-    wp_enqueue_style(
-        '360-hotelier-main',
-        HOTELIER_THEME_URI . '/assets/css/main.css',
-        array( '360-hotelier-style' ),
-        HOTELIER_THEME_VERSION
+    // Main CSS — split partials (load order = cascade order)
+    $main_css_deps = array( '360-hotelier-style' );
+    $main_css_parts  = array(
+        '360-hotelier-main-01' => '/assets/css/parts/01-global-header.css',
+        '360-hotelier-main-02' => '/assets/css/parts/02-footer-content-buttons.css',
+        '360-hotelier-main-03' => '/assets/css/parts/03-front-page-hero-through-banner.css',
+        '360-hotelier-main-04' => '/assets/css/parts/04-front-page-founder-through-contact.css',
+        '360-hotelier-main-05' => '/assets/css/parts/05-inner-pages.css',
+        '360-hotelier-main-06' => '/assets/css/parts/06-style-guide-responsive-fade.css',
     );
+    foreach ( $main_css_parts as $handle => $relative_path ) {
+        wp_enqueue_style(
+            $handle,
+            HOTELIER_THEME_URI . $relative_path,
+            $main_css_deps,
+            HOTELIER_THEME_VERSION
+        );
+        $main_css_deps = array( $handle );
+    }
 
     // Navigation JS (mobile menu toggle)
     wp_enqueue_script(
