@@ -72,9 +72,11 @@
     padding: calc(8rem + var(--top-bar-height)) 0 2rem;
 }
 
-.front-hero .site-container {
+.front-hero .site-container,
+.page-hero .site-container {
     margin-left: 0;
     margin-right: 0;
+    width: 100%;
 }
 
 @media (max-width: 768px) {

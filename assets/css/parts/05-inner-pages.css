@@ -8,12 +8,29 @@
     padding-bottom: 4rem;
 }
 
+.page-hero__content {
+    align-self: stretch;
+    text-align: left;
+}
+
 .page-hero__title {
-    margin-bottom: 0.75rem;
-    line-height: 1.1;
+    margin: 0 0 0.65rem;
+    line-height: 1.12;
     color: #fff;
     font-weight: 800;
-    max-width: 22ch;
+    max-width: 20ch;
+    font-size: clamp(2rem, 5.5vw, 3.25rem);
+    letter-spacing: -0.02em;
+}
+
+.page-hero__tagline {
+    margin: 0 0 0.85rem;
+    line-height: 1.2;
+    color: #fff;
+    font-weight: 700;
+    max-width: 28ch;
+    font-size: clamp(1.2rem, 2.75vw, 1.85rem);
+    opacity: 0.96;
 }
 
 .page-hero__label {

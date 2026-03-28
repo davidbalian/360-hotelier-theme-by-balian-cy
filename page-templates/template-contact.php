@@ -5,7 +5,8 @@
  * @package 360-hotelier
  */
 
-$page_hero_title    = __( "Ready to Boost Your Hotel's Revenue & Distribution?", '360-hotelier' );
+$page_hero_title    = __( 'Contact', '360-hotelier' );
+$page_hero_tagline  = __( "Ready to Boost Your Hotel's Revenue & Distribution?", '360-hotelier' );
 $page_hero_subtitle = __( "Let's discuss your property and explore how we can support your commercial growth.", '360-hotelier' );
 $page_hero_image    = content_url( '/uploads/2026/03/featured-360-hotelier.webp' );
 
