@@ -13,9 +13,12 @@
 <section class="page-hero" style="background-image: url('<?php echo esc_url( $page_hero_image ); ?>');">
     <div class="page-hero__overlay"></div>
     <div class="site-container page-hero__content">
-        <h1 class="page-hero__title text-5xl fade-in fade-in-delay-0"><?php echo esc_html( $page_hero_title ); ?></h1>
+        <?php if ( ! empty( $page_hero_label ) ) : ?>
+            <p class="page-hero__label fade-in fade-in-delay-0"><?php echo esc_html( $page_hero_label ); ?></p>
+        <?php endif; ?>
+        <h1 class="page-hero__title text-5xl fade-in fade-in-delay-1"><?php echo esc_html( $page_hero_title ); ?></h1>
         <?php if ( ! empty( $page_hero_subtitle ) ) : ?>
-            <p class="page-hero__subtitle text-lg fade-in fade-in-delay-1"><?php echo esc_html( $page_hero_subtitle ); ?></p>
+            <p class="page-hero__subtitle text-lg fade-in fade-in-delay-2"><?php echo esc_html( $page_hero_subtitle ); ?></p>
         <?php endif; ?>
     </div>
 </section>

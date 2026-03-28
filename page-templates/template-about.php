@@ -5,6 +5,7 @@
  * @package 360-hotelier
  */
 
+$page_hero_label    = __( 'About Us', '360-hotelier' );
 $page_hero_title    = __( 'Your Trusted Hotel Consultant in Cyprus', '360-hotelier' );
 $page_hero_subtitle = __( '360° Hotelier Consulting — 15+ years of hospitality expertise driving revenue for independent hotels across Cyprus.', '360-hotelier' );
 $page_hero_image    = content_url( '/uploads/2026/03/featured-360-hotelier.webp' );
@@ -31,9 +32,9 @@ get_template_part( 'template-parts/page/page-hero' );
     </section>
 
     <!-- What We Do -->
-    <section class="page-section page-section--sand">
+    <section class="page-section page-section--gray">
         <div class="site-container">
-            <div class="page-section__heading fade-in fade-in-delay-0">
+            <div class="page-section__heading page-section__heading--center fade-in fade-in-delay-0">
                 <h2 class="page-section__title"><?php esc_html_e( 'What We Do', '360-hotelier' ); ?></h2>
                 <p class="page-section__subtitle"><?php esc_html_e( "End-to-end commercial consulting tailored to each property's market and goals.", '360-hotelier' ); ?></p>
             </div>
