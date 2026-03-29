@@ -28,9 +28,9 @@
 .editor-styles-wrapper h1 { font-size: var(--text-5xl); }
 .editor-styles-wrapper h2 { font-size: var(--text-4xl); }
 .editor-styles-wrapper h3 { font-size: var(--text-3xl); }
-.editor-styles-wrapper h4 { font-size: var(--text-md); }
-.editor-styles-wrapper h5 { font-size: var(--text-md); }
-.editor-styles-wrapper h6 { font-size: var(--text-body); }
+.editor-styles-wrapper h4 { font-size: var(--text-2xl); }
+.editor-styles-wrapper h5 { font-size: var(--text-xl); }
+.editor-styles-wrapper h6 { font-size: var(--text-md); }
 
 .editor-styles-wrapper p {
     margin-top: 0;
