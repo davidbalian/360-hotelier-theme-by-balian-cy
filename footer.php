@@ -27,7 +27,8 @@
                         } else {
                             hotelier_default_nav_fallback( array(
                                 'menu_class' => 'footer-nav-menu text-base-sm',
-                                'menu_id'   => 'footer-menu',
+                                'menu_id'    => 'footer-menu',
+                                'depth'      => 1,
                             ) );
                         }
                         ?>

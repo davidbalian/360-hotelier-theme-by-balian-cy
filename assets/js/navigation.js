@@ -71,6 +71,80 @@
     window.addEventListener( 'scroll', handleScroll );
     handleScroll();
 
+    /**
+     * Desktop primary nav: aria-expanded on parent items with submenus.
+     */
+    var PrimarySubmenuAria = {
+        mq: window.matchMedia( '(min-width: 769px)' ),
+
+        isDesktop: function () {
+            return this.mq.matches;
+        },
+
+        resetAllExpanded: function ( nav ) {
+            var triggers = nav.querySelectorAll( '.nav-menu > .menu-item-has-children > a' );
+            triggers.forEach( function ( t ) {
+                t.setAttribute( 'aria-expanded', 'false' );
+            } );
+        },
+
+        bindItem: function ( li ) {
+            var trigger = li.querySelector( ':scope > a' );
+            if ( !trigger ) {
+                return;
+            }
+            trigger.setAttribute( 'aria-haspopup', 'true' );
+            trigger.setAttribute( 'aria-expanded', 'false' );
+
+            var self = this;
+            function setExpanded( open ) {
+                if ( !self.isDesktop() ) {
+                    trigger.setAttribute( 'aria-expanded', 'false' );
+                    return;
+                }
+                trigger.setAttribute( 'aria-expanded', open ? 'true' : 'false' );
+            }
+
+            li.addEventListener( 'mouseenter', function () {
+                setExpanded( true );
+            } );
+            li.addEventListener( 'mouseleave', function () {
+                setExpanded( false );
+            } );
+            li.addEventListener( 'focusin', function () {
+                setExpanded( true );
+            } );
+            li.addEventListener( 'focusout', function ( e ) {
+                if ( !li.contains( e.relatedTarget ) ) {
+                    setExpanded( false );
+                }
+            } );
+        },
+
+        init: function () {
+            var nav = document.querySelector( '.primary-navigation' );
+            if ( !nav ) {
+                return;
+            }
+            var parents = nav.querySelectorAll( '.nav-menu > .menu-item-has-children' );
+            var self = this;
+            parents.forEach( function ( li ) {
+                self.bindItem( li );
+            } );
+            function onMqChange() {
+                if ( !self.isDesktop() ) {
+                    self.resetAllExpanded( nav );
+                }
+            }
+            if ( this.mq.addEventListener ) {
+                this.mq.addEventListener( 'change', onMqChange );
+            } else if ( this.mq.addListener ) {
+                this.mq.addListener( onMqChange );
+            }
+        }
+    };
+    PrimarySubmenuAria.init();
+
     // Scroll-triggered fade-in animations
     var fadeEls = document.querySelectorAll( '.fade-in' );
     if ( fadeEls.length ) {

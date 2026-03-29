@@ -27,9 +27,35 @@ function hotelier_get_page_url_by_slug( $slug ) {
 }
 
 /**
- * Default primary/footer navigation items.
+ * Service sub-pages for the primary nav submenu (aligned with theme default pages).
  *
- * @return array Array of [url, label] pairs.
+ * @return array<int, array{url: string, label: string}>
+ */
+function hotelier_get_service_submenu_items() {
+    $slugs = array(
+        'revenue-management',
+        'online-sales-distribution',
+        'digital-marketing',
+        'tour-operator-contracting',
+    );
+
+    $items = array();
+    foreach ( $slugs as $slug ) {
+        $content = hotelier_get_service_content( $slug );
+        $label   = ( is_array( $content ) && isset( $content['title'] ) ) ? $content['title'] : $slug;
+        $items[] = array(
+            'url'   => hotelier_get_page_url_by_slug( $slug ),
+            'label' => $label,
+        );
+    }
+
+    return $items;
+}
+
+/**
+ * Default primary/footer navigation items (tree: optional `children` per item).
+ *
+ * @return array<int, array{url: string, label: string, children?: array<int, array{url: string, label: string}>}>
  */
 function hotelier_get_default_nav_items() {
     return array(
@@ -42,8 +68,9 @@ function hotelier_get_default_nav_items() {
             'label' => __( 'About Us', '360-hotelier' ),
         ),
         array(
-            'url'   => hotelier_get_page_url_by_slug( 'services' ),
-            'label' => __( 'Services', '360-hotelier' ),
+            'url'      => hotelier_get_page_url_by_slug( 'services' ),
+            'label'    => __( 'Services', '360-hotelier' ),
+            'children' => hotelier_get_service_submenu_items(),
         ),
         array(
             'url'   => hotelier_get_page_url_by_slug( 'portfolio' ),
@@ -57,22 +84,59 @@ function hotelier_get_default_nav_items() {
 }
 
 /**
+ * Output one fallback nav item and optional submenu.
+ *
+ * @param array  $item    Item with url, label, optional children.
+ * @param bool   $flatten When true, do not output child lists (footer depth 1).
+ */
+function hotelier_render_default_nav_item( $item, $flatten ) {
+    $children     = isset( $item['children'] ) && is_array( $item['children'] ) ? $item['children'] : array();
+    $has_children = ! $flatten && ! empty( $children );
+
+    $li_classes = 'menu-item';
+    if ( $has_children ) {
+        $li_classes .= ' menu-item-has-children';
+    }
+
+    echo '<li class="' . esc_attr( $li_classes ) . '">';
+    printf(
+        '<a href="%s">%s</a>',
+        esc_url( $item['url'] ),
+        esc_html( $item['label'] )
+    );
+
+    if ( $has_children ) {
+        echo '<ul class="sub-menu">';
+        foreach ( $children as $child ) {
+            echo '<li class="menu-item">';
+            printf(
+                '<a href="%s">%s</a>',
+                esc_url( $child['url'] ),
+                esc_html( $child['label'] )
+            );
+            echo '</li>';
+        }
+        echo '</ul>';
+    }
+
+    echo '</li>';
+}
+
+/**
  * Fallback callback for wp_nav_menu when no menu is assigned.
  *
  * @param array $args Nav menu arguments.
  */
 function hotelier_default_nav_fallback( $args ) {
-    $items = hotelier_get_default_nav_items();
+    $items      = hotelier_get_default_nav_items();
     $menu_class = isset( $args['menu_class'] ) ? $args['menu_class'] : 'nav-menu';
     $menu_id    = isset( $args['menu_id'] ) ? $args['menu_id'] : 'primary-menu';
+    $depth      = isset( $args['depth'] ) ? (int) $args['depth'] : 0;
+    $flatten    = ( 1 === $depth );
 
     echo '<ul id="' . esc_attr( $menu_id ) . '" class="' . esc_attr( $menu_class ) . '">';
     foreach ( $items as $item ) {
-        printf(
-            '<li><a href="%s">%s</a></li>',
-            esc_url( $item['url'] ),
-            esc_html( $item['label'] )
-        );
+        hotelier_render_default_nav_item( $item, $flatten );
     }
     echo '</ul>';
 }
