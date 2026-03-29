@@ -122,7 +122,8 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    margin-top: 2rem;
+    max-width: 800px;
+    margin: 2rem auto 0;
 }
 
 .page-about__services-grid .front-why-choose__box:nth-child(n) {

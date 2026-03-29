@@ -2,9 +2,12 @@
 /**
  * Front page "Meet the Founder" section.
  *
+ * Optional (via get_template_part third argument): hide_about_cta (bool) — omit the About Us button.
+ *
  * @package 360-hotelier
  */
-$about_url = home_url( '/about-us/' );
+$hide_about_cta = isset( $hide_about_cta ) ? (bool) $hide_about_cta : false;
+$about_url      = home_url( '/about-us/' );
 ?>
 <section class="front-founder">
     <div class="site-container front-founder__inner">
@@ -23,7 +26,9 @@ $about_url = home_url( '/about-us/' );
                 <li class="fade-in fade-in-delay-7"><?php esc_html_e( 'Track record in growing RevPAR and direct bookings', '360-hotelier' ); ?></li>
                 <li class="fade-in fade-in-delay-8"><?php esc_html_e( 'Trusted advisor to boutique, resort and independent hotels', '360-hotelier' ); ?></li>
             </ul>
+            <?php if ( ! $hide_about_cta ) : ?>
             <a href="<?php echo esc_url( $about_url ); ?>" class="btn btn--primary front-founder__cta fade-in fade-in-delay-9"><?php esc_html_e( 'About Us', '360-hotelier' ); ?></a>
+            <?php endif; ?>
         </div>
         </div>
     </div>

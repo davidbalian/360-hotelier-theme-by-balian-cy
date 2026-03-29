@@ -41,7 +41,7 @@ get_template_part( 'template-parts/page/page-hero' );
             <div class="page-about__services-grid">
                 <div class="front-why-choose__box card-border fade-in fade-in-delay-1">
                     <div class="front-why-choose__box-icon" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12"/><path d="M4 14h12"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2H7"/><path d="M7 18h6.8a7.7 7.7 0 0 0 5.2-2"/></svg>
                     </div>
                     <h3 class="front-why-choose__box-title text-md"><?php esc_html_e( 'Yield & Revenue Management', '360-hotelier' ); ?></h3>
                     <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Strategic pricing, demand forecasting and segmentation designed to maximize RevPAR and revenue performance.', '360-hotelier' ); ?></p>
@@ -70,6 +70,16 @@ get_template_part( 'template-parts/page/page-hero' );
             </div>
         </div>
     </section>
+
+    <?php
+    get_template_part(
+        'template-parts/front-page/section',
+        'founder',
+        array(
+            'hide_about_cta' => true,
+        )
+    );
+    ?>
 
     <!-- CTA Banner -->
     <section class="front-featured-banner card-border" style="background-image: url('<?php echo esc_url( content_url( '/uploads/2026/03/featured-360-hotelier.webp' ) ); ?>');">
