@@ -413,10 +413,3 @@
     opacity: 0.9;
 }
 
-@media (max-width: 768px) {
-    .front-featured-banner__text {
-        max-width: 30ch;
-    }
-}
-
-
