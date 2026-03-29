@@ -221,16 +221,12 @@
     padding-bottom: 0;
 }
 
-.page-service-single__deliverables li::before {
-    content: '';
-    display: inline-block;
+.page-service-single__deliverable-icon {
     width: 1.25rem;
     height: 1.25rem;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235a2a82' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
-    background-size: contain;
-    background-repeat: no-repeat;
     flex-shrink: 0;
     margin-top: 0.15rem;
+    color: var(--color-purple);
 }
 
 /* ==========================================================================
@@ -423,10 +419,11 @@
     padding-bottom: 1.5rem;
 }
 
-.page-portfolio__hotel-location svg {
+.page-portfolio__hotel-location .page-portfolio__location-icon {
     width: 0.875rem;
     height: 0.875rem;
     flex-shrink: 0;
+    stroke-width: 2;
 }
 
 .page-portfolio__hotel-link {

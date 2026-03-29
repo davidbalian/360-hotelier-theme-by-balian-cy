@@ -27,6 +27,9 @@ require_once HOTELIER_THEME_DIR . '/inc/schema.php';
 // Include service content
 require_once HOTELIER_THEME_DIR . '/inc/service-content.php';
 
+// Lucide icon placeholders
+require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-lucide-icon.php';
+
 // Include enqueue functions
 require_once HOTELIER_THEME_DIR . '/inc/enqueue.php';
 

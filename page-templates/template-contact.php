@@ -25,7 +25,7 @@ get_template_part( 'template-parts/page/page-hero' );
                     <h2 class="page-contact__card-title"><?php esc_html_e( 'Contact Us Directly', '360-hotelier' ); ?></h2>
 
                     <div class="page-contact__detail">
-                        <svg class="page-contact__detail-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.6 4.87 2 2 0 0 1 3.57 2.7h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 10.5a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.41 18l.01-1.08z"/></svg>
+                        <?php Hotelier_Lucide_Icon::render( 'phone', 'page-contact__detail-icon' ); ?>
                         <div class="page-contact__detail-text">
                             <strong><?php esc_html_e( 'Phone', '360-hotelier' ); ?></strong>
                             <a href="tel:+35770001818">7000 1818</a>
@@ -33,7 +33,7 @@ get_template_part( 'template-parts/page/page-hero' );
                     </div>
 
                     <div class="page-contact__detail">
-                        <svg class="page-contact__detail-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <?php Hotelier_Lucide_Icon::render( 'mail', 'page-contact__detail-icon' ); ?>
                         <div class="page-contact__detail-text">
                             <strong><?php esc_html_e( 'Email', '360-hotelier' ); ?></strong>
                             <a href="mailto:info@360hotelier.com">info@360hotelier.com</a>
@@ -41,7 +41,7 @@ get_template_part( 'template-parts/page/page-hero' );
                     </div>
 
                     <div class="page-contact__detail">
-                        <svg class="page-contact__detail-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                        <?php Hotelier_Lucide_Icon::render( 'map-pin', 'page-contact__detail-icon' ); ?>
                         <div class="page-contact__detail-text">
                             <strong><?php esc_html_e( 'Address', '360-hotelier' ); ?></strong>
                             <?php esc_html_e( '9, Epaminondou street, 3075, Limassol, Cyprus', '360-hotelier' ); ?>

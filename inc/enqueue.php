@@ -49,6 +49,17 @@ function hotelier_enqueue_assets() {
         HOTELIER_THEME_VERSION,
         true
     );
+
+    $lucide_bundle = HOTELIER_THEME_DIR . '/assets/js/lucide-icons.bundle.js';
+    $lucide_ver    = file_exists( $lucide_bundle ) ? (string) filemtime( $lucide_bundle ) : HOTELIER_THEME_VERSION;
+
+    wp_enqueue_script(
+        '360-hotelier-lucide-icons',
+        HOTELIER_THEME_URI . '/assets/js/lucide-icons.bundle.js',
+        array(),
+        $lucide_ver,
+        true
+    );
 }
 add_action( 'wp_enqueue_scripts', 'hotelier_enqueue_assets' );
 

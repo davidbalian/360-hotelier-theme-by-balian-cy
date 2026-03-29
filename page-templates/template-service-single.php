@@ -44,7 +44,10 @@ get_template_part( 'template-parts/page/page-hero' );
                 <h2><?php esc_html_e( 'What We Deliver', '360-hotelier' ); ?></h2>
                 <ul class="page-service-single__deliverables">
                     <?php foreach ( $content['deliverables'] as $item ) : ?>
-                        <li><?php echo esc_html( $item ); ?></li>
+                        <li>
+                            <?php Hotelier_Lucide_Icon::render( 'check', 'page-service-single__deliverable-icon' ); ?>
+                            <span class="page-service-single__deliverable-text"><?php echo esc_html( $item ); ?></span>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
             </div>

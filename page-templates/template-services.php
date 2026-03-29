@@ -25,28 +25,28 @@ get_template_part( 'template-parts/page/page-hero' );
 
             <div class="page-services__grid">
                 <div class="page-services__card card-border fade-in fade-in-delay-1">
-                    <svg class="page-services__card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    <?php Hotelier_Lucide_Icon::render( 'circle-dollar-sign', 'page-services__card-icon' ); ?>
                     <h2 class="page-services__card-title"><?php esc_html_e( 'Yield & Revenue Management', '360-hotelier' ); ?></h2>
                     <p class="page-services__card-text"><?php esc_html_e( 'Dynamic pricing, forecasting, segmentation and performance analysis to maximise RevPAR and increase revenue.', '360-hotelier' ); ?></p>
                     <a href="<?php echo esc_url( home_url( '/services/revenue-management/' ) ); ?>" class="page-services__link"><?php esc_html_e( 'Learn more →', '360-hotelier' ); ?></a>
                 </div>
 
                 <div class="page-services__card card-border fade-in fade-in-delay-2">
-                    <svg class="page-services__card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <?php Hotelier_Lucide_Icon::render( 'globe', 'page-services__card-icon' ); ?>
                     <h2 class="page-services__card-title"><?php esc_html_e( 'Online Sales & B2B Distribution', '360-hotelier' ); ?></h2>
                     <p class="page-services__card-text"><?php esc_html_e( 'OTA optimisation, B2B partnerships, channel-mix strategy and distribution management across global and regional markets.', '360-hotelier' ); ?></p>
                     <a href="<?php echo esc_url( home_url( '/services/online-sales-distribution/' ) ); ?>" class="page-services__link"><?php esc_html_e( 'Learn more →', '360-hotelier' ); ?></a>
                 </div>
 
                 <div class="page-services__card card-border fade-in fade-in-delay-3">
-                    <svg class="page-services__card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    <?php Hotelier_Lucide_Icon::render( 'monitor', 'page-services__card-icon' ); ?>
                     <h2 class="page-services__card-title"><?php esc_html_e( 'E-Commerce & Digital Marketing', '360-hotelier' ); ?></h2>
                     <p class="page-services__card-text"><?php esc_html_e( 'Direct booking strategy, SEO/SEM campaigns, social media management and digital performance tracking.', '360-hotelier' ); ?></p>
                     <a href="<?php echo esc_url( home_url( '/services/digital-marketing/' ) ); ?>" class="page-services__link"><?php esc_html_e( 'Learn more →', '360-hotelier' ); ?></a>
                 </div>
 
                 <div class="page-services__card card-border fade-in fade-in-delay-4">
-                    <svg class="page-services__card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <?php Hotelier_Lucide_Icon::render( 'users', 'page-services__card-icon' ); ?>
                     <h2 class="page-services__card-title"><?php esc_html_e( 'Contracting & Negotiations (Tour Operators)', '360-hotelier' ); ?></h2>
                     <p class="page-services__card-text"><?php esc_html_e( 'Full contracting services, benchmarking, negotiation support and relationship management with key tour operators & travel partners.', '360-hotelier' ); ?></p>
                     <a href="<?php echo esc_url( home_url( '/services/tour-operator-contracting/' ) ); ?>" class="page-services__link"><?php esc_html_e( 'Learn more →', '360-hotelier' ); ?></a>

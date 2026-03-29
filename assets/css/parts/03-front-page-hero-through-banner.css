@@ -193,9 +193,11 @@
     color: var(--color-purple);
 }
 
-.front-why-choose__box-icon svg {
+.front-why-choose__box-icon svg,
+.front-why-choose__box-icon i[data-lucide] {
     width: 2rem;
     height: 2rem;
+    display: block;
 }
 
 .front-why-choose__box-title {

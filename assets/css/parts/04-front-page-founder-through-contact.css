@@ -50,20 +50,22 @@
 }
 
 .front-founder__points li {
-    padding-left: 1.75rem;
-    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.front-founder__points li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.2em;
+.front-founder__points li:last-child {
+    margin-bottom: 0;
+}
+
+.front-founder__point-icon {
     width: 1.1em;
     height: 1.1em;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%235a2a82' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='1,6 4.5,9.5 11,2.5'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-size: contain;
+    flex-shrink: 0;
+    margin-top: 0.15em;
+    color: var(--color-purple);
 }
 
 .front-founder__cta {

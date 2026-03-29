@@ -39,7 +39,7 @@ get_template_part( 'template-parts/page/page-hero' );
                     <div class="page-portfolio__hotel-card card-border fade-in fade-in-delay-<?php echo min( $index + 1, 10 ); ?>">
                         <h3 class="page-portfolio__hotel-name"><?php echo esc_html( $hotel['name'] ); ?></h3>
                         <span class="page-portfolio__hotel-location">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            <?php Hotelier_Lucide_Icon::render( 'map-pin', 'page-portfolio__location-icon' ); ?>
                             <?php echo esc_html( $hotel['location'] ); ?>
                         </span>
                         <a href="<?php echo esc_url( $hotel['url'] ); ?>" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm page-portfolio__hotel-link"><?php esc_html_e( 'Visit Website →', '360-hotelier' ); ?></a>
