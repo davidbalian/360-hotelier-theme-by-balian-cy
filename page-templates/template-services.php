@@ -16,7 +16,7 @@ get_template_part( 'template-parts/page/page-hero' );
 <main id="main" class="site-main page-services">
 
     <!-- Services Grid -->
-    <section id="services" class="page-section page-section--gray page-services__offer">
+    <section id="services" class="page-section page-section--gray">
         <div class="site-container">
             <div class="page-section__heading page-section__heading--center fade-in fade-in-delay-0">
                 <h2 class="page-section__title"><?php esc_html_e( 'What We Offer', '360-hotelier' ); ?></h2>
