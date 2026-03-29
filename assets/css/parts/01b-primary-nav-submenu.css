@@ -175,34 +175,18 @@
     }
 
     .mobile-nav__links .sub-menu .menu-item a {
-        position: relative;
         padding: 0.65rem 0 0.65rem 1.25rem;
         font-size: 1rem;
         font-weight: 500;
         text-align: left;
         transition: color 0.2s ease;
-    }
-
-    /* Glide underline (match desktop): only grows on hover / focus-visible */
-    .mobile-nav__links .sub-menu a::after {
-        content: '';
-        position: absolute;
-        left: 1.25rem;
-        bottom: 0.4rem;
-        height: 1px;
-        background: currentColor;
-        width: 0;
-        transition: width 0.25s ease;
+        background-image: none;
+        background-size: auto;
     }
 
     .mobile-nav__links .sub-menu a:hover,
     .mobile-nav__links .sub-menu a:focus-visible {
         color: var(--color-purple);
-    }
-
-    .mobile-nav__links .sub-menu a:hover::after,
-    .mobile-nav__links .sub-menu a:focus-visible::after {
-        width: calc(100% - 1.25rem);
     }
 
     .mobile-nav__links .sub-menu .current-menu-item > a {
