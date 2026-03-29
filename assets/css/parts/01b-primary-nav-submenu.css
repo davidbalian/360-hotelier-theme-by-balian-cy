@@ -151,6 +151,10 @@
         padding: 1.25rem 0;
     }
 
+    .mobile-nav__links .menu-item-has-children.is-submenu-open > a {
+        padding-bottom: 0;
+    }
+
     .mobile-nav__links .nav-submenu-chevron {
         display: inline-flex;
         align-items: center;
