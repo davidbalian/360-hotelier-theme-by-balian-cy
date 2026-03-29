@@ -5,14 +5,13 @@ import { createIcons } from 'lucide';
 import {
 	Briefcase,
 	Check,
-	CircleDollarSign,
 	Clock,
+	Euro,
 	Globe,
 	Mail,
 	MapPin,
 	Monitor,
 	Phone,
-	TrendingUp,
 	Users,
 } from 'lucide';
 
@@ -21,14 +20,13 @@ function initLucideIcons() {
 		icons: {
 			Briefcase,
 			Check,
-			CircleDollarSign,
 			Clock,
+			Euro,
 			Globe,
 			Mail,
 			MapPin,
 			Monitor,
 			Phone,
-			TrendingUp,
 			Users,
 		},
 		attrs: {

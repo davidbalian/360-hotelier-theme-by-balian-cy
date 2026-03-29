@@ -25,7 +25,7 @@ get_template_part( 'template-parts/page/page-hero' );
 
             <div class="page-services__grid">
                 <div class="page-services__card card-border fade-in fade-in-delay-1">
-                    <?php Hotelier_Lucide_Icon::render( 'circle-dollar-sign', 'page-services__card-icon' ); ?>
+                    <?php Hotelier_Lucide_Icon::render( 'euro', 'page-services__card-icon' ); ?>
                     <h2 class="page-services__card-title"><?php esc_html_e( 'Yield & Revenue Management', '360-hotelier' ); ?></h2>
                     <p class="page-services__card-text"><?php esc_html_e( 'Dynamic pricing, forecasting, segmentation and performance analysis to maximise RevPAR and increase revenue.', '360-hotelier' ); ?></p>
                     <a href="<?php echo esc_url( home_url( '/services/revenue-management/' ) ); ?>" class="page-services__link"><?php esc_html_e( 'Learn more →', '360-hotelier' ); ?></a>

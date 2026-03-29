@@ -41,7 +41,7 @@ get_template_part( 'template-parts/page/page-hero' );
             <div class="page-about__services-grid">
                 <div class="front-why-choose__box card-border fade-in fade-in-delay-1">
                     <div class="front-why-choose__box-icon" aria-hidden="true">
-                        <?php Hotelier_Lucide_Icon::render( 'trending-up' ); ?>
+                        <?php Hotelier_Lucide_Icon::render( 'euro' ); ?>
                     </div>
                     <h3 class="front-why-choose__box-title text-md"><?php esc_html_e( 'Yield & Revenue Management', '360-hotelier' ); ?></h3>
                     <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Strategic pricing, demand forecasting and segmentation designed to maximize RevPAR and revenue performance.', '360-hotelier' ); ?></p>
