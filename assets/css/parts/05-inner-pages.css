@@ -119,6 +119,19 @@
     align-self: stretch;
 }
 
+/* Portfolio intro: image column left, copy right (same proportions as About, reversed) */
+.page-portfolio .page-about__intro-grid {
+    grid-template-columns: 1fr 1.5fr;
+}
+
+.page-portfolio .page-about__intro-image {
+    order: -1;
+}
+
+.page-portfolio .page-about__intro-text {
+    order: 1;
+}
+
 #services {
     scroll-margin-top: calc(var(--wp-admin-bar-offset, 0px) + var(--top-bar-height) + var(--header-height) + 1rem);
 }
@@ -365,6 +378,14 @@
     align-items: stretch;
 }
 
+.page-portfolio__row--flip .page-portfolio__row-media {
+    order: 1;
+}
+
+.page-portfolio__row--flip .page-portfolio__hotel-card {
+    order: 2;
+}
+
 .page-portfolio__row-media {
     border-radius: var(--radius-card);
     min-height: 220px;
@@ -381,31 +402,29 @@
     flex-direction: column;
 }
 
+/* Logo box matches homepage ticker slot: fixed frame + object-fit contain */
 .page-portfolio__hotel-logo {
-    margin-bottom: 1rem;
-    max-height: 5.5rem;
+    width: 148px;
+    height: 105px;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .page-portfolio__hotel-logo img {
-    max-height: 5.5rem;
-    width: auto;
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    object-position: left center;
+    object-position: center center;
     display: block;
 }
 
-.page-portfolio__hotel-logo--pendeli {
-    max-height: 5.5rem;
-}
-
 .page-portfolio__hotel-logo--pendeli svg {
-    max-height: 5.5rem;
-    width: auto;
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
     display: block;
 }
 

@@ -391,7 +391,11 @@
         order: -1;
     }
 
-    /* Portfolio intro: keep copy before image on small screens */
+    /* Portfolio intro: stacked — copy above image */
+    .page-portfolio .page-about__intro-text {
+        order: -1;
+    }
+
     .page-portfolio .page-about__intro-image {
         order: 0;
     }
@@ -413,8 +417,23 @@
         grid-template-columns: 1fr;
     }
 
+    /* Image always above the card on small screens (overrides row--flip order) */
+    .page-portfolio__row .page-portfolio__row-media {
+        order: -1;
+    }
+
+    .page-portfolio__row .page-portfolio__hotel-card {
+        order: 0;
+    }
+
     .page-portfolio__row-media {
         min-height: 180px;
+    }
+
+    .page-portfolio__hotel-logo {
+        width: 74px;
+        height: 52px;
+        margin-bottom: 1.5rem;
     }
 }
 

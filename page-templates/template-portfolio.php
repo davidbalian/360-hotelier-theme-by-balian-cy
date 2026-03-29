@@ -105,6 +105,10 @@ get_template_part( 'template-parts/page/page-hero' );
 
     <section class="page-section page-section--gray">
         <div class="site-container">
+            <div class="page-section__heading page-section__heading--center fade-in fade-in-delay-0">
+                <h2 class="page-section__title"><?php esc_html_e( 'Partner hotels', '360-hotelier' ); ?></h2>
+                <p class="page-section__subtitle"><?php esc_html_e( 'Independent, boutique and resort properties we support with revenue, distribution and digital strategy.', '360-hotelier' ); ?></p>
+            </div>
             <div class="page-portfolio__rows">
                 <?php foreach ( $hotels as $index => $hotel ) : ?>
                     <?php
@@ -117,8 +121,12 @@ get_template_part( 'template-parts/page/page-hero' );
                         $logo_mods[] = 'page-portfolio__hotel-logo--pendeli';
                     }
                     $logo_class = implode( ' ', $logo_mods );
+                    $row_class  = 'page-portfolio__row fade-in fade-in-delay-' . min( $index + 1, 10 );
+                    if ( 1 === ( $index % 2 ) ) {
+                        $row_class .= ' page-portfolio__row--flip';
+                    }
                     ?>
-                    <div class="page-portfolio__row fade-in fade-in-delay-<?php echo min( $index + 1, 10 ); ?>">
+                    <div class="<?php echo esc_attr( $row_class ); ?>">
                         <div class="page-portfolio__hotel-card card-border">
                             <?php if ( 'pendeli' === $logo['type'] && $pendeli_svg ) : ?>
                                 <div class="<?php echo esc_attr( $logo_class ); ?>" role="img" aria-label="<?php echo esc_attr( __( 'Pendeli Resort Hotel Cyprus', '360-hotelier' ) ); ?>">
