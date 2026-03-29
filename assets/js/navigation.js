@@ -281,7 +281,7 @@
                     observer.unobserve( el );
                 }
             } );
-        }, { root: null, rootMargin: '0px', threshold: 0.25 } );
+        }, { root: null, rootMargin: '0px', threshold: 0.15 } );
 
         fadeEls.forEach( function ( el ) {
             observer.observe( el );

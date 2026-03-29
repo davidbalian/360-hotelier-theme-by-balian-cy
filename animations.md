@@ -67,13 +67,13 @@ if (fadeEls.length) {
                 observer.unobserve(entry.target);
             }
         });
-    }, { root: null, rootMargin: '0px', threshold: 0.25 });
+    }, { root: null, rootMargin: '0px', threshold: 0.15 });
 
     fadeEls.forEach(function(el) { observer.observe(el); });
 }
 ```
 
-- **Trigger:** 25% of element visible in viewport
+- **Trigger:** 15% of element visible in viewport
 - **One-time:** Element is unobserved after animating in (never re-triggers)
 
 ---
