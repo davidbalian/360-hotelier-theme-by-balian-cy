@@ -3,9 +3,9 @@
    ========================================================================== */
 
 .page-hero {
-    min-height: 52vh;
+    min-height: 64vh;
     padding-top: calc(var(--top-bar-height) + var(--header-height) + 2rem);
-    padding-bottom: 4rem;
+    padding-bottom: 1rem;
 }
 
 .page-hero__content {

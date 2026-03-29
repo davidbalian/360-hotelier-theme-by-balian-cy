@@ -366,10 +366,10 @@
 
     /* Inner page responsive */
     .page-hero {
-        min-height: 40vh;
+        min-height: 52vh;
         border-bottom-left-radius: 2rem;
         border-bottom-right-radius: 2rem;
-        padding-bottom: 3rem;
+        padding-bottom: 1rem;
     }
 
     .page-service-single__body {
