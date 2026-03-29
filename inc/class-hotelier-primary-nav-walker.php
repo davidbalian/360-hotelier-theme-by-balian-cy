@@ -1,6 +1,6 @@
 <?php
 /**
- * Primary nav walker: appends “All Services” to the Services submenu.
+ * Primary nav walker: submenu clip wrapper + “All Services” on Services submenu.
  *
  * @package 360-hotelier
  */
@@ -60,15 +60,48 @@ class Hotelier_Primary_Nav_Walker extends Walker_Nav_Menu {
      * @param int      $depth  Depth.
      * @param stdClass $args   Args.
      */
+    public function start_lvl( &$output, $depth = 0, $args = null ) {
+        if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
+            $t = '';
+            $n = '';
+        } else {
+            $t = "\t";
+            $n = "\n";
+        }
+        $indent = str_repeat( $t, (int) $depth );
+        if ( 0 === (int) $depth ) {
+            $output .= $n . $indent . '<div class="nav-submenu-clip">' . $n;
+            $output .= $indent . $t . '<ul class="sub-menu">' . $n;
+            return;
+        }
+        parent::start_lvl( $output, $depth, $args );
+    }
+
+    /**
+     * @param string   $output Output.
+     * @param int      $depth  Depth.
+     * @param stdClass $args   Args.
+     */
     public function end_lvl( &$output, $depth = 0, $args = null ) {
-        if ( 0 === (int) $depth && $this->services_submenu_pending ) {
-            $t = ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) ? '' : "\t";
-            $n = ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) ? '' : "\n";
-            $indent = str_repeat( $t, (int) $depth + 2 );
-            $url      = hotelier_get_page_url_by_slug( 'services' );
-            $label    = esc_html__( 'All Services', '360-hotelier' );
-            $output  .= $indent . '<li class="menu-item menu-item-all-services"><a href="' . esc_url( $url ) . '">' . $label . '</a></li>' . $n;
-            $this->services_submenu_pending = false;
+        if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
+            $t = '';
+            $n = '';
+        } else {
+            $t = "\t";
+            $n = "\n";
+        }
+        $indent = str_repeat( $t, (int) $depth );
+        if ( 0 === (int) $depth ) {
+            if ( $this->services_submenu_pending ) {
+                $indent_li = $indent . $t . $t;
+                $url       = hotelier_get_page_url_by_slug( 'services' );
+                $label     = esc_html__( 'All Services', '360-hotelier' );
+                $output   .= $indent_li . '<li class="menu-item menu-item-all-services"><a href="' . esc_url( $url ) . '">' . $label . '</a></li>' . $n;
+                $this->services_submenu_pending = false;
+            }
+            $output .= $indent . $t . '</ul>' . $n;
+            $output .= $indent . '</div>' . $n;
+            return;
         }
         parent::end_lvl( $output, $depth, $args );
     }

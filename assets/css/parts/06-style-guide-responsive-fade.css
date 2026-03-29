@@ -263,6 +263,10 @@
 
     .mobile-nav-overlay {
         display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .site-branding img {

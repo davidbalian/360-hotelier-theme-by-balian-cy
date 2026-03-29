@@ -144,6 +144,7 @@ function hotelier_render_default_nav_item( $item, $flatten ) {
     );
 
     if ( $has_children ) {
+        echo '<div class="nav-submenu-clip">';
         echo '<ul class="sub-menu">';
         foreach ( $children as $child ) {
             echo '<li class="menu-item">';
@@ -162,6 +163,7 @@ function hotelier_render_default_nav_item( $item, $flatten ) {
         );
         echo '</li>';
         echo '</ul>';
+        echo '</div>';
     }
 
     echo '</li>';

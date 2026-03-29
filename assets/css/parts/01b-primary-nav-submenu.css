@@ -5,6 +5,10 @@
 
 /* Desktop: Services dropdown (card panel, primary nav only — not footer) */
 @media (min-width: 769px) {
+    .primary-navigation .nav-menu .nav-submenu-clip {
+        display: contents;
+    }
+
     .primary-navigation .nav-menu > li.menu-item-has-children {
         position: relative;
     }
@@ -24,6 +28,18 @@
         display: inline-flex;
         align-items: center;
         gap: 0.65rem;
+        background-image: none !important;
+        background-size: auto !important;
+    }
+
+    .primary-navigation .nav-menu > li.menu-item-has-children > a:hover,
+    .primary-navigation .nav-menu > li.menu-item-has-children > a:focus-visible {
+        background-image: none !important;
+        background-size: auto !important;
+    }
+
+    .primary-navigation .nav-menu > li.menu-item-has-children > a:active {
+        transform: none;
     }
 
     .primary-navigation .nav-menu .nav-submenu-chevron {
@@ -45,7 +61,7 @@
         transform: rotate(180deg);
     }
 
-    .primary-navigation .nav-menu .sub-menu {
+    .primary-navigation .nav-menu .nav-submenu-clip > .sub-menu {
         position: absolute;
         left: 50%;
         top: 100%;
@@ -69,23 +85,23 @@
             visibility 0.28s ease;
     }
 
-    .primary-navigation .nav-menu li.menu-item-has-children.is-submenu-open > .sub-menu {
+    .primary-navigation .nav-menu li.menu-item-has-children.is-submenu-open > .nav-submenu-clip > .sub-menu {
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
         transform: translateX(-50%) translateY(0);
     }
 
-    .primary-navigation .nav-menu .sub-menu .menu-item {
+    .primary-navigation .nav-menu .nav-submenu-clip > .sub-menu .menu-item {
         margin: 0;
     }
 
-    .primary-navigation .nav-menu .sub-menu .menu-item-all-services {
+    .primary-navigation .nav-menu .nav-submenu-clip > .sub-menu .menu-item-all-services {
         border-top: 1px solid var(--color-border);
         margin-top: 0.125rem;
     }
 
-    .primary-navigation .nav-menu .sub-menu a {
+    .primary-navigation .nav-menu .nav-submenu-clip > .sub-menu a {
         display: block;
         position: relative;
         padding: 0.6rem 1.25rem;
@@ -94,9 +110,11 @@
         color: var(--color-charcoal);
         text-decoration: none;
         transition: color 0.2s ease;
+        background-image: none !important;
+        background-size: auto !important;
     }
 
-    .primary-navigation .nav-menu .sub-menu a::after {
+    .primary-navigation .nav-menu .nav-submenu-clip > .sub-menu a::after {
         content: '';
         position: absolute;
         left: 1.25rem;
@@ -107,39 +125,56 @@
         transition: width 0.25s ease;
     }
 
-    .primary-navigation .nav-menu .sub-menu a:hover,
-    .primary-navigation .nav-menu .sub-menu a:focus-visible {
+    .primary-navigation .nav-menu .nav-submenu-clip > .sub-menu a:hover,
+    .primary-navigation .nav-menu .nav-submenu-clip > .sub-menu a:focus-visible {
         color: var(--color-purple);
+        background-image: none !important;
+        background-size: auto !important;
     }
 
-    .primary-navigation .nav-menu .sub-menu a:hover::after,
-    .primary-navigation .nav-menu .sub-menu a:focus-visible::after {
+    .primary-navigation .nav-menu .nav-submenu-clip > .sub-menu a:active {
+        transform: none;
+    }
+
+    .primary-navigation .nav-menu .nav-submenu-clip > .sub-menu a:hover::after,
+    .primary-navigation .nav-menu .nav-submenu-clip > .sub-menu a:focus-visible::after {
         width: calc(100% - 2.5rem);
     }
 
-    .primary-navigation .nav-menu .sub-menu .current-menu-item > a {
+    .primary-navigation .nav-menu .nav-submenu-clip > .sub-menu .current-menu-item > a {
         color: var(--color-purple);
-    }
-
-    .primary-navigation .nav-menu .sub-menu .current-menu-item > a::after {
-        width: calc(100% - 2.5rem);
+        background-image: none !important;
+        background-size: auto !important;
     }
 }
 
-/* Mobile overlay: submenu collapsed until toggled */
+/* Mobile overlay: clip + grid height; submenu pushes list below (overlay top-aligned) */
 @media (max-width: 768px) {
-    .mobile-nav__links .menu-item-has-children > .sub-menu {
-        display: none;
+    .mobile-nav__links .menu-item-has-children > .nav-submenu-clip {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.35s ease;
+        width: 100%;
+        max-width: 22rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mobile-nav__links .menu-item-has-children.is-submenu-open > .nav-submenu-clip {
+        grid-template-rows: 1fr;
+    }
+
+    .mobile-nav__links .nav-submenu-clip > .sub-menu {
+        display: block;
+        min-height: 0;
+        overflow: hidden;
         list-style: none;
         margin: 0 auto;
         padding: 0;
         width: 100%;
-        max-width: 22rem;
     }
 
-    .mobile-nav__links .menu-item-has-children.is-submenu-open > .sub-menu {
-        display: block;
-        border-top: 1px solid rgba(0, 0, 0, 0.07);
+    .mobile-nav__links .menu-item-has-children.is-submenu-open > .nav-submenu-clip > .sub-menu {
         padding-bottom: 0.25rem;
     }
 
@@ -174,7 +209,7 @@
         transform: rotate(180deg);
     }
 
-    .mobile-nav__links .sub-menu .menu-item a {
+    .mobile-nav__links .nav-submenu-clip > .sub-menu .menu-item a {
         padding: 0.65rem 0 0.65rem 1.25rem;
         font-size: 1rem;
         font-weight: 500;
@@ -184,17 +219,16 @@
         background-size: auto;
     }
 
-    .mobile-nav__links .sub-menu a:hover,
-    .mobile-nav__links .sub-menu a:focus-visible {
+    .mobile-nav__links .nav-submenu-clip > .sub-menu a:hover,
+    .mobile-nav__links .nav-submenu-clip > .sub-menu a:focus-visible {
         color: var(--color-purple);
     }
 
-    .mobile-nav__links .sub-menu .current-menu-item > a {
+    .mobile-nav__links .nav-submenu-clip > .sub-menu .current-menu-item > a {
         color: var(--color-purple);
     }
 
-    .mobile-nav__links .sub-menu .menu-item-all-services {
-        border-top: 1px solid rgba(0, 0, 0, 0.07);
+    .mobile-nav__links .nav-submenu-clip > .sub-menu .menu-item-all-services {
         margin-top: 0.125rem;
     }
 }

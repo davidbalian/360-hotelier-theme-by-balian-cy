@@ -239,6 +239,32 @@ a:active {
     transform: scale(0.98);
 }
 
+/* Primary nav: card submenu + parent with chevron — no site-wide gradient bar (glide ::after lives in 01b) */
+.primary-navigation .nav-menu .nav-submenu-clip .sub-menu a,
+.primary-navigation .nav-menu > li.menu-item-has-children > a {
+    background-image: none;
+    background-size: auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .primary-navigation .nav-menu .nav-submenu-clip .sub-menu a:hover,
+    .primary-navigation .nav-menu > li.menu-item-has-children > a:hover {
+        background-image: none;
+        background-size: 0% 1px;
+    }
+}
+
+.primary-navigation .nav-menu .nav-submenu-clip .sub-menu a:focus-visible,
+.primary-navigation .nav-menu > li.menu-item-has-children > a:focus-visible {
+    background-image: none;
+    background-size: 0% 1px;
+}
+
+.primary-navigation .nav-menu .nav-submenu-clip .sub-menu a:active,
+.primary-navigation .nav-menu > li.menu-item-has-children > a:active {
+    transform: none;
+}
+
 /* No full-width gradient underline on small screens (block links look like huge bars) */
 @media (max-width: 768px) {
     a:hover {
