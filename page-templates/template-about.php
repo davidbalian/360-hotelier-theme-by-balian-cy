@@ -68,6 +68,9 @@ get_template_part( 'template-parts/page/page-hero' );
                     <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Professional representation and negotiation with tour operators and wholesalers, acting in the hotel\'s best commercial interest.', '360-hotelier' ); ?></p>
                 </div>
             </div>
+            <p class="front-services-overview__cta fade-in fade-in-delay-5">
+                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'services' ) . '#services' ); ?>" class="btn btn--primary"><?php esc_html_e( 'View All Services', '360-hotelier' ); ?></a>
+            </p>
         </div>
     </section>
 

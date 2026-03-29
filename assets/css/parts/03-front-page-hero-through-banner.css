@@ -267,8 +267,7 @@
     background: var(--color-white);
 }
 
-.front-services-overview__grid,
-.page-services__grid {
+.front-services-overview__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 2rem;

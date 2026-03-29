@@ -385,7 +385,8 @@
         order: -1;
     }
 
-    .page-about__services-grid {
+    .page-about__services-grid,
+    .page-services-icon-grid {
         grid-template-columns: 1fr;
     }
 
