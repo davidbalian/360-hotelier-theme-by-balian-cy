@@ -397,8 +397,7 @@
         order: -1;
     }
 
-    .page-about__services-grid,
-    .page-services-icon-grid {
+    .page-about__services-grid {
         grid-template-columns: 1fr;
     }
 
@@ -410,7 +409,8 @@
         grid-template-columns: 1fr;
     }
 
-    .page-portfolio__row {
+    .page-portfolio__row,
+    .page-services__row {
         grid-template-columns: 1fr;
     }
 
@@ -421,6 +421,23 @@
 
     .page-portfolio__row .page-portfolio__hotel-card {
         order: 0;
+    }
+
+    .page-services__row .page-services__row-media {
+        order: -1;
+    }
+
+    .page-services__row .page-services__offer-card {
+        order: 0;
+    }
+
+    .page-services__offer-card {
+        text-align: center;
+        align-items: center;
+    }
+
+    .page-services__offer-card .btn {
+        align-self: center;
     }
 
     .page-portfolio__hotel-card {

@@ -9,6 +9,37 @@ $page_hero_title    = __( 'Our Core Services', '360-hotelier' );
 $page_hero_subtitle = __( 'Revenue, distribution and digital growth for hotels in Cyprus. We act as your external commercial team.', '360-hotelier' );
 $page_hero_image    = content_url( '/uploads/2026/03/360-hotelier-consulting-cyprus-hero.webp' );
 
+$services_offer = array(
+	array(
+		'title'    => __( 'Yield & Revenue Management', '360-hotelier' ),
+		'text'     => __( 'Dynamic pricing, forecasting, segmentation and performance analysis to maximise RevPAR and increase revenue.', '360-hotelier' ),
+		'url_slug' => 'revenue-management',
+		'image'    => content_url( '/uploads/2026/03/service-yield-revenue-management.webp' ),
+		'alt'      => __( 'Yield & Revenue Management', '360-hotelier' ),
+	),
+	array(
+		'title'    => __( 'Online Sales & B2B Distribution', '360-hotelier' ),
+		'text'     => __( 'OTA optimisation, B2B partnerships, channel-mix strategy and distribution management across global and regional markets.', '360-hotelier' ),
+		'url_slug' => 'online-sales-distribution',
+		'image'    => content_url( '/uploads/2026/03/service-online-sales-b2b-distribution.webp' ),
+		'alt'      => __( 'Online Sales & B2B Distribution', '360-hotelier' ),
+	),
+	array(
+		'title'    => __( 'E-Commerce & Digital Marketing', '360-hotelier' ),
+		'text'     => __( 'Direct booking strategy, SEO/SEM campaigns, social media management and digital performance tracking.', '360-hotelier' ),
+		'url_slug' => 'digital-marketing',
+		'image'    => content_url( '/uploads/2026/03/service-ecommerce-digital-marketing.webp' ),
+		'alt'      => __( 'E-Commerce & Digital Marketing', '360-hotelier' ),
+	),
+	array(
+		'title'    => __( 'Contracting & Negotiations (Tour Operators)', '360-hotelier' ),
+		'text'     => __( 'Full contracting services, benchmarking, negotiation support and relationship management with key tour operators & travel partners.', '360-hotelier' ),
+		'url_slug' => 'tour-operator-contracting',
+		'image'    => content_url( '/uploads/2026/03/service-contracting-negotiations.webp' ),
+		'alt'      => __( 'Contracting & Negotiations', '360-hotelier' ),
+	),
+);
+
 get_header();
 get_template_part( 'template-parts/page/page-hero' );
 ?>
@@ -23,42 +54,32 @@ get_template_part( 'template-parts/page/page-hero' );
                 <p class="page-section__subtitle"><?php esc_html_e( 'We help hotels drive direct bookings, optimise channel mix and negotiate stronger tour-operator & B2B agreements.', '360-hotelier' ); ?></p>
             </div>
 
-            <div class="page-services-icon-grid">
-                <div class="front-why-choose__box card-border fade-in fade-in-delay-1">
-                    <div class="front-why-choose__box-icon" aria-hidden="true">
-                        <?php Hotelier_Lucide_Icon::render( 'euro' ); ?>
+            <div class="page-services__rows">
+                <?php foreach ( $services_offer as $index => $service ) : ?>
+                    <?php
+                    $row_class = 'page-services__row fade-in fade-in-delay-' . min( $index + 1, 10 );
+                    if ( 1 === ( $index % 2 ) ) {
+                        $row_class .= ' page-services__row--flip';
+                    }
+                    ?>
+                    <div class="<?php echo esc_attr( $row_class ); ?>">
+                        <div class="page-services__offer-card card-border">
+                            <h3 class="page-services__offer-title"><?php echo esc_html( $service['title'] ); ?></h3>
+                            <p class="page-services__offer-text text-body"><?php echo esc_html( $service['text'] ); ?></p>
+                            <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( $service['url_slug'] ) ); ?>" class="btn btn--secondary btn--sm"><?php esc_html_e( 'Learn more', '360-hotelier' ); ?></a>
+                        </div>
+                        <div class="page-services__row-media">
+                            <img
+                                src="<?php echo esc_url( $service['image'] ); ?>"
+                                alt="<?php echo esc_attr( $service['alt'] ); ?>"
+                                width="1920"
+                                height="1081"
+                                loading="lazy"
+                                sizes="(max-width: 768px) calc(100vw - 64px), 480px"
+                            />
+                        </div>
                     </div>
-                    <h3 class="front-why-choose__box-title"><?php esc_html_e( 'Yield & Revenue Management', '360-hotelier' ); ?></h3>
-                    <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Dynamic pricing, forecasting, segmentation and performance analysis to maximise RevPAR and increase revenue.', '360-hotelier' ); ?></p>
-                    <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'revenue-management' ) ); ?>" class="btn btn--secondary btn--sm"><?php esc_html_e( 'Learn more', '360-hotelier' ); ?></a>
-                </div>
-
-                <div class="front-why-choose__box card-border fade-in fade-in-delay-2">
-                    <div class="front-why-choose__box-icon" aria-hidden="true">
-                        <?php Hotelier_Lucide_Icon::render( 'globe' ); ?>
-                    </div>
-                    <h3 class="front-why-choose__box-title"><?php esc_html_e( 'Online Sales & B2B Distribution', '360-hotelier' ); ?></h3>
-                    <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'OTA optimisation, B2B partnerships, channel-mix strategy and distribution management across global and regional markets.', '360-hotelier' ); ?></p>
-                    <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'online-sales-distribution' ) ); ?>" class="btn btn--secondary btn--sm"><?php esc_html_e( 'Learn more', '360-hotelier' ); ?></a>
-                </div>
-
-                <div class="front-why-choose__box card-border fade-in fade-in-delay-3">
-                    <div class="front-why-choose__box-icon" aria-hidden="true">
-                        <?php Hotelier_Lucide_Icon::render( 'monitor' ); ?>
-                    </div>
-                    <h3 class="front-why-choose__box-title"><?php esc_html_e( 'E-Commerce & Digital Marketing', '360-hotelier' ); ?></h3>
-                    <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Direct booking strategy, SEO/SEM campaigns, social media management and digital performance tracking.', '360-hotelier' ); ?></p>
-                    <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'digital-marketing' ) ); ?>" class="btn btn--secondary btn--sm"><?php esc_html_e( 'Learn more', '360-hotelier' ); ?></a>
-                </div>
-
-                <div class="front-why-choose__box card-border fade-in fade-in-delay-4">
-                    <div class="front-why-choose__box-icon" aria-hidden="true">
-                        <?php Hotelier_Lucide_Icon::render( 'users' ); ?>
-                    </div>
-                    <h3 class="front-why-choose__box-title"><?php esc_html_e( 'Contracting & Negotiations (Tour Operators)', '360-hotelier' ); ?></h3>
-                    <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Full contracting services, benchmarking, negotiation support and relationship management with key tour operators & travel partners.', '360-hotelier' ); ?></p>
-                    <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'tour-operator-contracting' ) ); ?>" class="btn btn--secondary btn--sm"><?php esc_html_e( 'Learn more', '360-hotelier' ); ?></a>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>

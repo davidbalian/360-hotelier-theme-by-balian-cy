@@ -136,8 +136,7 @@
     scroll-margin-top: calc(var(--wp-admin-bar-offset, 0px) + var(--top-bar-height) + var(--header-height) + 1rem);
 }
 
-.page-about__services-grid,
-.page-services-icon-grid {
+.page-about__services-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
@@ -145,23 +144,8 @@
     margin: 2rem auto 0;
 }
 
-.page-about__services-grid .front-why-choose__box:nth-child(n),
-.page-services-icon-grid .front-why-choose__box:nth-child(n) {
+.page-about__services-grid .front-why-choose__box:nth-child(n) {
     grid-column: auto;
-}
-
-.page-services .page-services-icon-grid .front-why-choose__box {
-    display: flex;
-    flex-direction: column;
-}
-
-.page-services .page-services-icon-grid .front-why-choose__box > .front-why-choose__box-text {
-    flex-grow: 1;
-}
-
-.page-services .page-services-icon-grid .front-why-choose__box > .btn {
-    margin-top: 1rem;
-    align-self: flex-start;
 }
 
 /* ==========================================================================
@@ -280,10 +264,11 @@
 }
 
 /* ==========================================================================
-   Portfolio Page
+   Portfolio Page & Services "What We Offer" rows
    ========================================================================== */
 
-.page-portfolio__rows {
+.page-portfolio__rows,
+.page-services__rows {
     max-width: 1000px;
     margin-inline: auto;
     display: flex;
@@ -291,18 +276,21 @@
     gap: 2rem;
 }
 
-.page-portfolio__row {
+.page-portfolio__row,
+.page-services__row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
     align-items: stretch;
 }
 
-.page-portfolio__row--flip .page-portfolio__row-media {
+.page-portfolio__row--flip .page-portfolio__row-media,
+.page-services__row--flip .page-services__row-media {
     order: 1;
 }
 
-.page-portfolio__row--flip .page-portfolio__hotel-card {
+.page-portfolio__row--flip .page-portfolio__hotel-card,
+.page-services__row--flip .page-services__offer-card {
     order: 2;
 }
 
@@ -314,6 +302,50 @@
     overflow: hidden;
     background: linear-gradient( 145deg, var(--color-section-gray) 0%, rgba( 0, 0, 0, 0.06 ) 100% );
     border: 1px dashed var(--color-border);
+}
+
+.page-services__row-media {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    align-self: start;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    background: none;
+    border: none;
+}
+
+.page-services__row-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.page-services__offer-card {
+    padding: 2rem;
+    border-radius: var(--radius-card);
+    background: var(--color-white);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+}
+
+.page-services__offer-title {
+    font-size: var(--text-xl);
+    color: var(--color-purple);
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.page-services__offer-text {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.page-services__offer-card .btn {
+    margin-top: 1rem;
+    align-self: flex-start;
 }
 
 .page-portfolio__hotel-card {
