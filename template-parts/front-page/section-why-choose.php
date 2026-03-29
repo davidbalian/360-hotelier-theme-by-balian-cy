@@ -16,7 +16,7 @@
                         <?php Hotelier_Lucide_Icon::render( 'map-pin' ); ?>
                     </div>
                     <h3 class="front-why-choose__box-title"><?php esc_html_e( 'Cyprus Market Knowledge', '360-hotelier' ); ?></h3>
-                    <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Island seasonality, tour-operator networks and source market demand. We've worked this market for fifteen years.', '360-hotelier' ); ?></p>
+                    <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Island seasonality, tour-operator networks and source market demand. We\'ve worked this market for fifteen years.', '360-hotelier' ); ?></p>
                 </div>
                 <div class="front-why-choose__box card-border fade-in fade-in-delay-3">
                     <div class="front-why-choose__box-icon" aria-hidden="true">
