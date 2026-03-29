@@ -5,7 +5,8 @@
  * @package 360-hotelier
  */
 ?>
-<section class="front-featured-banner card-border" style="background-image: url('<?php echo esc_url( content_url( '/uploads/2026/03/featured-360-hotelier.webp' ) ); ?>');">
+<section class="front-featured-banner card-border">
+    <?php Hotelier_Cta_Band_Image::render( content_url( '/uploads/2026/03/featured-360-hotelier.webp' ) ); ?>
     <div class="front-featured-banner__overlay section-overlay"></div>
     <div class="site-container front-featured-banner__content fade-in fade-in-delay-0">
         <h2 class="front-featured-banner__title"><?php esc_html_e( "We Become Your Hotel's External Commercial Team", '360-hotelier' ); ?></h2>

@@ -309,9 +309,6 @@
 .front-contact {
     position: relative;
     padding: 8rem 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     color: #fff;
     text-align: center;
     overflow: hidden;

@@ -36,6 +36,9 @@ require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-lucide-icon.php';
 // Contact form (admin-post handler self-registers on load)
 require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-contact-form-handler.php';
 
+// CTA band cover images (object-fit)
+require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-cta-band-image.php';
+
 // Include enqueue functions
 require_once HOTELIER_THEME_DIR . '/inc/enqueue.php';
 

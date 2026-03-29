@@ -367,10 +367,6 @@
 .front-featured-banner {
     position: relative;
     padding: 8rem 0;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     color: #fff;
     text-align: center;
     overflow: hidden;

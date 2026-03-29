@@ -33,6 +33,21 @@
     );
 }
 
+/* Full-bleed CTA band photos (replaces background-image for sharper scaling / retina srcset) */
+.cta-band-cover-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    z-index: 0;
+    image-rendering: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
 /* Shared hover lift for card-style surfaces */
 .post-card,
 .front-why-choose__box,

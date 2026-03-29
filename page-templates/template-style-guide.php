@@ -340,7 +340,8 @@ get_header();
     </div><!-- .site-container -->
 
     <!-- Full-width banner demo (outside container) -->
-    <section class="front-featured-banner">
+    <section class="front-featured-banner card-border">
+        <?php Hotelier_Cta_Band_Image::render( content_url( '/uploads/2026/03/featured-360-hotelier.webp' ) ); ?>
         <div class="front-featured-banner__overlay section-overlay" aria-hidden="true"></div>
         <div class="site-container front-featured-banner__content">
             <h2 class="front-featured-banner__title">Ready to Transform Your Hotel&rsquo;s Performance?</h2>
@@ -362,6 +363,8 @@ get_header();
     </div>
 
     <section class="front-contact">
+        <?php Hotelier_Cta_Band_Image::render( content_url( '/uploads/2026/03/contact-360-hotelier.webp' ) ); ?>
+        <div class="front-contact__overlay section-overlay" aria-hidden="true"></div>
         <div class="site-container front-contact__content">
             <h2 class="front-contact__title">Let&rsquo;s Work Together</h2>
             <p class="front-contact__text">Whether you need a full revenue strategy or a quick consultation, we&rsquo;re here to help.</p>
