@@ -68,7 +68,7 @@ $hotels = array(
         'url'      => 'https://napajayhotel.com/',
         'logo'     => array(
             'type' => 'img',
-            'src'  => 'https://www.360hotelier.com/staging/8979/wp-content/uploads/2026/03/napa-jay-hotel-logo-cropped.png',
+            'src'  => content_url( '/uploads/2026/03/napa-jay-hotel-logo-cropped.png' ),
             'alt'  => __( 'Napa Jay Hotel Ayia Napa Cyprus', '360-hotelier' ),
         ),
     ),
@@ -98,7 +98,7 @@ get_template_part( 'template-parts/page/page-hero' );
                     <p><?php esc_html_e( 'At 360° Hotelier Consulting, we collaborate with independent, boutique and resort hotels in Cyprus, providing revenue management, online sales & B2B distribution, digital marketing and tour-operator contracting services.', '360-hotelier' ); ?></p>
                     <p><?php esc_html_e( 'Each project is tailored to the hotel\'s market positioning, seasonality and commercial goals — delivering measurable results through data-driven hotel consulting and strategic execution.', '360-hotelier' ); ?></p>
                 </div>
-                <div class="page-about__intro-image fade-in fade-in-delay-1" style="background-image: url('<?php echo esc_url( home_url( '/wp-content/uploads/2026/03/why-choose-360-hotelier.webp' ) ); ?>');" aria-hidden="true"></div>
+                <div class="page-about__intro-image fade-in fade-in-delay-1" style="background-image: url('<?php echo esc_url( content_url( '/uploads/2026/03/why-choose-360-hotelier.webp' ) ); ?>');" aria-hidden="true"></div>
             </div>
         </div>
     </section>
@@ -158,7 +158,7 @@ get_template_part( 'template-parts/page/page-hero' );
             <h2 class="front-featured-banner__title"><?php esc_html_e( 'Ready to Join Our Portfolio?', '360-hotelier' ); ?></h2>
             <p class="front-featured-banner__text"><?php esc_html_e( "We work with a select number of hotels so every client gets real attention and real results. Let's talk.", '360-hotelier' ); ?></p>
             <div class="front-featured-banner__actions">
-                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
+                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
             </div>
         </div>
     </section>

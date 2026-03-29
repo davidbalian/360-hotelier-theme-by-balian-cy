@@ -10,7 +10,7 @@
 global $hotelier_section_founder_hide_about_cta;
 $hide_about_cta = ( isset( $hide_about_cta ) ? (bool) $hide_about_cta : false )
     || ! empty( $hotelier_section_founder_hide_about_cta );
-$about_url      = home_url( '/about-us/' );
+$about_url      = hotelier_get_page_url_by_slug( 'about-us' );
 ?>
 <section class="front-founder">
     <div class="site-container front-founder__inner">

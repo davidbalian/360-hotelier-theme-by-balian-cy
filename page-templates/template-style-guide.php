@@ -7,6 +7,8 @@
  * @package 360_Hotelier
  */
 
+$hotelier_style_guide_contact_url = hotelier_get_page_url_by_slug( 'contact' );
+
 get_header();
 ?>
 
@@ -344,7 +346,7 @@ get_header();
             <h2 class="front-featured-banner__title">Ready to Transform Your Hotel&rsquo;s Performance?</h2>
             <p class="front-featured-banner__text">Partner with 360&deg; Hotelier and unlock your property&rsquo;s full revenue potential.</p>
             <div class="front-featured-banner__actions">
-                <a href="#" class="btn btn--primary">Get in Touch</a>
+                <a href="<?php echo esc_url( $hotelier_style_guide_contact_url ); ?>" class="btn btn--primary">Get in Touch</a>
             </div>
         </div>
     </section>
@@ -363,7 +365,7 @@ get_header();
         <div class="site-container front-contact__content">
             <h2 class="front-contact__title">Let&rsquo;s Work Together</h2>
             <p class="front-contact__text">Whether you need a full revenue strategy or a quick consultation, we&rsquo;re here to help.</p>
-            <a href="#" class="btn btn--primary front-contact__cta">Contact Us</a>
+            <a href="<?php echo esc_url( $hotelier_style_guide_contact_url ); ?>" class="btn btn--primary front-contact__cta">Contact Us</a>
         </div>
     </section>
 

@@ -33,6 +33,9 @@ require_once HOTELIER_THEME_DIR . '/inc/schema.php';
 // Lucide icon placeholders
 require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-lucide-icon.php';
 
+// Contact form (admin-post handler self-registers on load)
+require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-contact-form-handler.php';
+
 // Include enqueue functions
 require_once HOTELIER_THEME_DIR . '/inc/enqueue.php';
 

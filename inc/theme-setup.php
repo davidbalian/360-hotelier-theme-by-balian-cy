@@ -65,7 +65,7 @@ add_action( 'after_setup_theme', 'hotelier_theme_setup' );
  */
 function hotelier_favicon() {
     if ( ! has_site_icon() ) {
-        echo '<link rel="icon" href="' . esc_url( home_url( '/wp-content/uploads/2026/03/360-hotelier-favi-on.png' ) ) . '" type="image/png">' . "\n";
+        echo '<link rel="icon" href="' . esc_url( content_url( '/uploads/2026/03/360-hotelier-favi-on.png' ) ) . '" type="image/png">' . "\n";
     }
 }
 add_action( 'wp_head', 'hotelier_favicon', 1 );
@@ -144,25 +144,33 @@ function hotelier_create_default_pages() {
             $parent_id = $parent_ids[ $page_data['parent'] ];
         }
 
-        $page = get_page_by_path( $page_data['slug'] );
-        if ( ! $page ) {
-            $page_id = wp_insert_post( array(
-                'post_title'   => $page_data['title'],
-                'post_name'    => $page_data['slug'],
-                'post_status'  => 'publish',
-                'post_type'    => 'page',
-                'post_parent'  => $parent_id,
-                'post_content' => '',
-            ) );
-            if ( $page_id && ! is_wp_error( $page_id ) ) {
-                if ( ! empty( $page_data['template'] ) && 'default' !== $page_data['template'] ) {
-                    update_post_meta( $page_id, '_wp_page_template', $page_data['template'] );
-                }
-                $parent_ids[ $page_data['slug'] ] = $page_id;
-                if ( ! empty( $page_data['front'] ) ) {
-                    update_option( 'show_on_front', 'page' );
-                    update_option( 'page_on_front', $page_id );
-                }
+        $lookup_path = $page_data['slug'];
+        if ( ! empty( $page_data['parent'] ) ) {
+            $lookup_path = $page_data['parent'] . '/' . $page_data['slug'];
+        }
+
+        $page = get_page_by_path( $lookup_path, OBJECT, 'page' );
+        if ( $page instanceof WP_Post ) {
+            $parent_ids[ $page_data['slug'] ] = (int) $page->ID;
+            continue;
+        }
+
+        $page_id = wp_insert_post( array(
+            'post_title'   => $page_data['title'],
+            'post_name'    => $page_data['slug'],
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'post_parent'  => $parent_id,
+            'post_content' => '',
+        ) );
+        if ( $page_id && ! is_wp_error( $page_id ) ) {
+            if ( ! empty( $page_data['template'] ) && 'default' !== $page_data['template'] ) {
+                update_post_meta( $page_id, '_wp_page_template', $page_data['template'] );
+            }
+            $parent_ids[ $page_data['slug'] ] = $page_id;
+            if ( ! empty( $page_data['front'] ) ) {
+                update_option( 'show_on_front', 'page' );
+                update_option( 'page_on_front', $page_id );
             }
         }
     }
@@ -170,3 +178,35 @@ function hotelier_create_default_pages() {
     update_option( 'hotelier_pages_created', true );
 }
 add_action( 'after_switch_theme', 'hotelier_create_default_pages' );
+
+/**
+ * Create footer legal pages once if missing (covers sites that activated the theme before those pages existed).
+ */
+function hotelier_ensure_legal_pages_exist() {
+    if ( get_option( 'hotelier_legal_pages_ensured_v1' ) ) {
+        return;
+    }
+
+    $legal_pages = array(
+        'privacy-policy' => __( 'Privacy Policy', '360-hotelier' ),
+        'cookie-policy'  => __( 'Cookie Policy', '360-hotelier' ),
+        'terms'          => __( 'Terms & Conditions', '360-hotelier' ),
+    );
+
+    foreach ( $legal_pages as $slug => $title ) {
+        if ( get_page_by_path( $slug, OBJECT, 'page' ) ) {
+            continue;
+        }
+        wp_insert_post(
+            array(
+                'post_title'  => $title,
+                'post_name'   => $slug,
+                'post_status' => 'publish',
+                'post_type'   => 'page',
+            )
+        );
+    }
+
+    update_option( 'hotelier_legal_pages_ensured_v1', 1 );
+}
+add_action( 'after_setup_theme', 'hotelier_ensure_legal_pages_exist', 11 );

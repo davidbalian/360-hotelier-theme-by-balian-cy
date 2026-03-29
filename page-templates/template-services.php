@@ -30,7 +30,7 @@ get_template_part( 'template-parts/page/page-hero' );
                     </div>
                     <h3 class="front-why-choose__box-title"><?php esc_html_e( 'Yield & Revenue Management', '360-hotelier' ); ?></h3>
                     <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Dynamic pricing, forecasting, segmentation and performance analysis to maximise RevPAR and increase revenue.', '360-hotelier' ); ?></p>
-                    <a href="<?php echo esc_url( home_url( '/services/revenue-management/' ) ); ?>" class="btn btn--secondary btn--sm"><?php esc_html_e( 'Learn more', '360-hotelier' ); ?></a>
+                    <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'revenue-management' ) ); ?>" class="btn btn--secondary btn--sm"><?php esc_html_e( 'Learn more', '360-hotelier' ); ?></a>
                 </div>
 
                 <div class="front-why-choose__box card-border fade-in fade-in-delay-2">
@@ -39,7 +39,7 @@ get_template_part( 'template-parts/page/page-hero' );
                     </div>
                     <h3 class="front-why-choose__box-title"><?php esc_html_e( 'Online Sales & B2B Distribution', '360-hotelier' ); ?></h3>
                     <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'OTA optimisation, B2B partnerships, channel-mix strategy and distribution management across global and regional markets.', '360-hotelier' ); ?></p>
-                    <a href="<?php echo esc_url( home_url( '/services/online-sales-distribution/' ) ); ?>" class="btn btn--secondary btn--sm"><?php esc_html_e( 'Learn more', '360-hotelier' ); ?></a>
+                    <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'online-sales-distribution' ) ); ?>" class="btn btn--secondary btn--sm"><?php esc_html_e( 'Learn more', '360-hotelier' ); ?></a>
                 </div>
 
                 <div class="front-why-choose__box card-border fade-in fade-in-delay-3">
@@ -48,7 +48,7 @@ get_template_part( 'template-parts/page/page-hero' );
                     </div>
                     <h3 class="front-why-choose__box-title"><?php esc_html_e( 'E-Commerce & Digital Marketing', '360-hotelier' ); ?></h3>
                     <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Direct booking strategy, SEO/SEM campaigns, social media management and digital performance tracking.', '360-hotelier' ); ?></p>
-                    <a href="<?php echo esc_url( home_url( '/services/digital-marketing/' ) ); ?>" class="btn btn--secondary btn--sm"><?php esc_html_e( 'Learn more', '360-hotelier' ); ?></a>
+                    <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'digital-marketing' ) ); ?>" class="btn btn--secondary btn--sm"><?php esc_html_e( 'Learn more', '360-hotelier' ); ?></a>
                 </div>
 
                 <div class="front-why-choose__box card-border fade-in fade-in-delay-4">
@@ -57,7 +57,7 @@ get_template_part( 'template-parts/page/page-hero' );
                     </div>
                     <h3 class="front-why-choose__box-title"><?php esc_html_e( 'Contracting & Negotiations (Tour Operators)', '360-hotelier' ); ?></h3>
                     <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Full contracting services, benchmarking, negotiation support and relationship management with key tour operators & travel partners.', '360-hotelier' ); ?></p>
-                    <a href="<?php echo esc_url( home_url( '/services/tour-operator-contracting/' ) ); ?>" class="btn btn--secondary btn--sm"><?php esc_html_e( 'Learn more', '360-hotelier' ); ?></a>
+                    <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'tour-operator-contracting' ) ); ?>" class="btn btn--secondary btn--sm"><?php esc_html_e( 'Learn more', '360-hotelier' ); ?></a>
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@ get_template_part( 'template-parts/page/page-hero' );
             <h2 class="front-featured-banner__title"><?php esc_html_e( "Ready to Grow Your Hotel's Revenue?", '360-hotelier' ); ?></h2>
             <p class="front-featured-banner__text"><?php esc_html_e( "Let's build a commercial strategy tailored to your property, market and goals.", '360-hotelier' ); ?></p>
             <div class="front-featured-banner__actions">
-                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
+                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
             </div>
         </div>
     </section>

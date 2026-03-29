@@ -46,18 +46,65 @@ function hotelier_nav_menu_parent_chevron_title( $title, $item, $args, $depth ) 
 add_filter( 'nav_menu_item_title', 'hotelier_nav_menu_parent_chevron_title', 10, 4 );
 
 /**
- * Resolve the front-end URL for a top-level page by slug.
+ * Service single-page slugs (children of the Services page in default theme setup).
  *
- * @param string $slug Page post_name (e.g. about-us).
+ * @return string[]
+ */
+function hotelier_get_service_child_slugs() {
+    return array(
+        'revenue-management',
+        'online-sales-distribution',
+        'digital-marketing',
+        'tour-operator-contracting',
+    );
+}
+
+/**
+ * Resolve the front-end URL for a page by slug (supports child pages under Services).
+ *
+ * @param string $slug Page post_name (e.g. about-us, revenue-management).
  * @return string
  */
 function hotelier_get_page_url_by_slug( $slug ) {
-    $page = get_page_by_path( $slug, OBJECT, 'page' );
-    if ( $page instanceof WP_Post && 'publish' === $page->post_status ) {
-        return get_permalink( $page );
+    $candidates = array( $slug );
+
+    if ( in_array( $slug, hotelier_get_service_child_slugs(), true ) ) {
+        array_unshift( $candidates, 'services/' . $slug );
+    }
+
+    foreach ( $candidates as $path ) {
+        $page = get_page_by_path( $path, OBJECT, 'page' );
+        if ( $page instanceof WP_Post && 'publish' === $page->post_status ) {
+            return get_permalink( $page );
+        }
+    }
+
+    if ( in_array( $slug, hotelier_get_service_child_slugs(), true ) ) {
+        return home_url( user_trailingslashit( 'services/' . $slug ) );
     }
 
     return home_url( user_trailingslashit( $slug ) );
+}
+
+/**
+ * URLs for footer legal links (Settings → Privacy page when set, else theme pages).
+ *
+ * @return array{privacy: string, cookie: string, terms: string}
+ */
+function hotelier_get_footer_legal_urls() {
+    $privacy = '';
+    if ( function_exists( 'get_privacy_policy_url' ) ) {
+        $privacy = get_privacy_policy_url();
+    }
+    if ( ! is_string( $privacy ) || '' === $privacy ) {
+        $privacy = hotelier_get_page_url_by_slug( 'privacy-policy' );
+    }
+
+    return array(
+        'privacy' => $privacy,
+        'cookie'  => hotelier_get_page_url_by_slug( 'cookie-policy' ),
+        'terms'   => hotelier_get_page_url_by_slug( 'terms' ),
+    );
 }
 
 /**
@@ -66,12 +113,7 @@ function hotelier_get_page_url_by_slug( $slug ) {
  * @return array<int, array{url: string, label: string}>
  */
 function hotelier_get_service_submenu_items() {
-    $slugs = array(
-        'revenue-management',
-        'online-sales-distribution',
-        'digital-marketing',
-        'tour-operator-contracting',
-    );
+    $slugs = hotelier_get_service_child_slugs();
 
     $items = array();
     foreach ( $slugs as $slug ) {

@@ -62,8 +62,8 @@ get_template_part( 'template-parts/page/page-hero' );
             <h2 class="front-featured-banner__title"><?php esc_html_e( "Let's Build Your Hotel's Commercial Strategy", '360-hotelier' ); ?></h2>
             <p class="front-featured-banner__text"><?php esc_html_e( "Book a free strategy session and let's discuss how we can help your hotel grow.", '360-hotelier' ); ?></p>
             <div class="front-featured-banner__actions">
-                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Get in Touch', '360-hotelier' ); ?></a>
-                <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="btn btn--ghost"><?php esc_html_e( 'All Services', '360-hotelier' ); ?></a>
+                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Get in Touch', '360-hotelier' ); ?></a>
+                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'services' ) ); ?>" class="btn btn--ghost"><?php esc_html_e( 'All Services', '360-hotelier' ); ?></a>
             </div>
         </div>
     </section>

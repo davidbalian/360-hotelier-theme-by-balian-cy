@@ -35,21 +35,32 @@
                     </nav>
                 </div>
 
+                <?php
+                $hotelier_social = apply_filters(
+                    'hotelier_footer_social_links',
+                    array(
+                        'facebook'  => '',
+                        'linkedin'  => '',
+                        'instagram' => '',
+                    )
+                );
+                $hotelier_legal = hotelier_get_footer_legal_urls();
+                ?>
                 <div class="footer-col">
                     <p class="footer-col__heading text-xs fade-in fade-in-delay-0"><?php esc_html_e( 'Follow Us', '360-hotelier' ); ?></p>
                     <ul class="footer-social text-base-sm">
-                        <li class="fade-in fade-in-delay-1"><a href="#" rel="noopener noreferrer" target="_blank"><?php esc_html_e( 'Facebook', '360-hotelier' ); ?></a></li>
-                        <li class="fade-in fade-in-delay-2"><a href="#" rel="noopener noreferrer" target="_blank"><?php esc_html_e( 'LinkedIn', '360-hotelier' ); ?></a></li>
-                        <li class="fade-in fade-in-delay-3"><a href="#" rel="noopener noreferrer" target="_blank"><?php esc_html_e( 'Instagram', '360-hotelier' ); ?></a></li>
+                        <li class="fade-in fade-in-delay-1"><a href="<?php echo esc_url( ! empty( $hotelier_social['facebook'] ) ? $hotelier_social['facebook'] : '#' ); ?>" rel="noopener noreferrer" target="_blank"><?php esc_html_e( 'Facebook', '360-hotelier' ); ?></a></li>
+                        <li class="fade-in fade-in-delay-2"><a href="<?php echo esc_url( ! empty( $hotelier_social['linkedin'] ) ? $hotelier_social['linkedin'] : '#' ); ?>" rel="noopener noreferrer" target="_blank"><?php esc_html_e( 'LinkedIn', '360-hotelier' ); ?></a></li>
+                        <li class="fade-in fade-in-delay-3"><a href="<?php echo esc_url( ! empty( $hotelier_social['instagram'] ) ? $hotelier_social['instagram'] : '#' ); ?>" rel="noopener noreferrer" target="_blank"><?php esc_html_e( 'Instagram', '360-hotelier' ); ?></a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <p class="footer-col__heading text-xs fade-in fade-in-delay-0"><?php esc_html_e( 'Legal', '360-hotelier' ); ?></p>
                     <ul class="footer-legal text-base-sm">
-                        <li class="fade-in fade-in-delay-1"><a href="#"><?php esc_html_e( 'Privacy Policy', '360-hotelier' ); ?></a></li>
-                        <li class="fade-in fade-in-delay-2"><a href="#"><?php esc_html_e( 'Cookie Policy', '360-hotelier' ); ?></a></li>
-                        <li class="fade-in fade-in-delay-3"><a href="#"><?php esc_html_e( 'Terms', '360-hotelier' ); ?></a></li>
+                        <li class="fade-in fade-in-delay-1"><a href="<?php echo esc_url( $hotelier_legal['privacy'] ); ?>"><?php esc_html_e( 'Privacy Policy', '360-hotelier' ); ?></a></li>
+                        <li class="fade-in fade-in-delay-2"><a href="<?php echo esc_url( $hotelier_legal['cookie'] ); ?>"><?php esc_html_e( 'Cookie Policy', '360-hotelier' ); ?></a></li>
+                        <li class="fade-in fade-in-delay-3"><a href="<?php echo esc_url( $hotelier_legal['terms'] ); ?>"><?php esc_html_e( 'Terms', '360-hotelier' ); ?></a></li>
                     </ul>
                 </div>
 
@@ -80,7 +91,7 @@
             </div><!-- .footer-bottom -->
 
             <div class="footer-logo fade-in fade-in-delay-1" aria-hidden="true">
-                <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/03/360-hotelier-logo-hd.svg' ) ); ?>" alt="" width="180" height="50">
+                <img src="<?php echo esc_url( content_url( '/uploads/2026/03/360-hotelier-logo-hd.svg' ) ); ?>" alt="" width="180" height="50">
             </div><!-- .footer-logo -->
 
         </div><!-- .site-container -->

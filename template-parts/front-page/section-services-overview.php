@@ -4,7 +4,7 @@
  *
  * @package 360-hotelier
  */
-$services_url = '#';
+$services_url = hotelier_get_page_url_by_slug( 'services' );
 ?>
 <section class="front-services-overview card-border">
     <div class="site-container">

@@ -40,7 +40,7 @@
                     <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'We keep our client roster small so every hotel gets real attention and real results.', '360-hotelier' ); ?></p>
                 </div>
             </div>
-            <div class="front-why-choose__image fade-in fade-in-delay-3" aria-hidden="true" style="background-image: url('<?php echo esc_url( home_url( '/wp-content/uploads/2026/03/why-choose-360-hotelier.webp' ) ); ?>');"></div>
+            <div class="front-why-choose__image fade-in fade-in-delay-3" aria-hidden="true" style="background-image: url('<?php echo esc_url( content_url( '/uploads/2026/03/why-choose-360-hotelier.webp' ) ); ?>');"></div>
         </div>
     </div>
 </section>

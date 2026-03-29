@@ -26,7 +26,7 @@ get_template_part( 'template-parts/page/page-hero' );
                     <p><?php esc_html_e( 'As an experienced hotel consultant in Cyprus, we specialize in hotel revenue management, online sales & B2B distribution, e-commerce, digital marketing and tour-operator contracting — helping hotels increase revenue, improve profitability and strengthen their market positioning.', '360-hotelier' ); ?></p>
                     <p><?php esc_html_e( "With more than 15 years of experience in the hospitality and travel industry, we support hotels in navigating today's complex commercial environment through data-driven strategies, digital expertise and hands-on execution. We work with a select number of hotels, allowing us to remain fully engaged, responsive and accountable.", '360-hotelier' ); ?></p>
                 </div>
-                <div class="page-about__intro-image fade-in fade-in-delay-1" style="background-image: url('<?php echo esc_url( home_url( '/wp-content/uploads/2026/03/why-choose-360-hotelier.webp' ) ); ?>');" aria-hidden="true"></div>
+                <div class="page-about__intro-image fade-in fade-in-delay-1" style="background-image: url('<?php echo esc_url( content_url( '/uploads/2026/03/why-choose-360-hotelier.webp' ) ); ?>');" aria-hidden="true"></div>
             </div>
         </div>
     </section>
@@ -93,8 +93,8 @@ get_template_part( 'template-parts/page/page-hero' );
             <h2 class="front-featured-banner__title"><?php esc_html_e( 'Looking for a Hotel Consultant in Cyprus?', '360-hotelier' ); ?></h2>
             <p class="front-featured-banner__text"><?php esc_html_e( "Let's discuss how 360° Hotelier Consulting can support your hotel's revenue, distribution and digital growth.", '360-hotelier' ); ?></p>
             <div class="front-featured-banner__actions">
-                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
-                <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="btn btn--ghost"><?php esc_html_e( 'Explore Our Services', '360-hotelier' ); ?></a>
+                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
+                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'services' ) ); ?>" class="btn btn--ghost"><?php esc_html_e( 'Explore Our Services', '360-hotelier' ); ?></a>
             </div>
         </div>
     </section>

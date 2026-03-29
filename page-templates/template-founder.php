@@ -36,8 +36,8 @@ get_template_part( 'template-parts/page/page-hero' );
                     <p><?php esc_html_e( 'After completing his postgraduate studies in Business Administration with a specialization in Marketing at Les Roches International School of Hotel Management in Switzerland, Giorgos gained extensive experience across multiple sectors of the hospitality industry, both in Cyprus and abroad.', '360-hotelier' ); ?></p>
                     <p><?php esc_html_e( 'Through 360° Hotelier Consulting, Giorgos provides tailored consulting services focused on revenue optimisation, e-commerce management, and digital marketing for independent and boutique hotels. His goal is to help hoteliers increase visibility, drive direct bookings, and achieve sustainable revenue growth through strategic and practical solutions.', '360-hotelier' ); ?></p>
                     <div class="page-founder__bio-actions">
-                        <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Get in Touch', '360-hotelier' ); ?></a>
-                        <a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>" class="btn btn--outline"><?php esc_html_e( 'About 360° Hotelier', '360-hotelier' ); ?></a>
+                        <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Get in Touch', '360-hotelier' ); ?></a>
+                        <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'about-us' ) ); ?>" class="btn btn--outline"><?php esc_html_e( 'About 360° Hotelier', '360-hotelier' ); ?></a>
                     </div>
                 </div>
 
@@ -103,7 +103,7 @@ get_template_part( 'template-parts/page/page-hero' );
             <h2 class="front-featured-banner__title"><?php esc_html_e( 'Work With Giorgos', '360-hotelier' ); ?></h2>
             <p class="front-featured-banner__text"><?php esc_html_e( "Ready to grow your hotel's revenue and distribution? Let's have a conversation.", '360-hotelier' ); ?></p>
             <div class="front-featured-banner__actions">
-                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Get in Touch', '360-hotelier' ); ?></a>
+                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Get in Touch', '360-hotelier' ); ?></a>
             </div>
         </div>
     </section>
