@@ -12,6 +12,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Resolve the front-end URL for a top-level page by slug.
+ *
+ * @param string $slug Page post_name (e.g. about-us).
+ * @return string
+ */
+function hotelier_get_page_url_by_slug( $slug ) {
+    $page = get_page_by_path( $slug, OBJECT, 'page' );
+    if ( $page instanceof WP_Post && 'publish' === $page->post_status ) {
+        return get_permalink( $page );
+    }
+
+    return home_url( user_trailingslashit( $slug ) );
+}
+
+/**
  * Default primary/footer navigation items.
  *
  * @return array Array of [url, label] pairs.
@@ -19,23 +34,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 function hotelier_get_default_nav_items() {
     return array(
         array(
-            'url'   => '#',
+            'url'   => home_url( '/' ),
             'label' => __( 'Home', '360-hotelier' ),
         ),
         array(
-            'url'   => '#',
+            'url'   => hotelier_get_page_url_by_slug( 'about-us' ),
             'label' => __( 'About Us', '360-hotelier' ),
         ),
         array(
-            'url'   => '#',
+            'url'   => hotelier_get_page_url_by_slug( 'services' ),
             'label' => __( 'Services', '360-hotelier' ),
         ),
         array(
-            'url'   => '#',
+            'url'   => hotelier_get_page_url_by_slug( 'portfolio' ),
             'label' => __( 'Portfolio', '360-hotelier' ),
         ),
         array(
-            'url'   => '#',
+            'url'   => hotelier_get_page_url_by_slug( 'contact' ),
             'label' => __( 'Contact', '360-hotelier' ),
         ),
     );
