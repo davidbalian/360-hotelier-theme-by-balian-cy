@@ -391,6 +391,11 @@
         order: -1;
     }
 
+    /* Portfolio intro: keep copy before image on small screens */
+    .page-portfolio .page-about__intro-image {
+        order: 0;
+    }
+
     .page-about__services-grid,
     .page-services-icon-grid {
         grid-template-columns: 1fr;
@@ -402,6 +407,14 @@
 
     .page-founder__bio-grid {
         grid-template-columns: 1fr;
+    }
+
+    .page-portfolio__row {
+        grid-template-columns: 1fr;
+    }
+
+    .page-portfolio__row-media {
+        min-height: 180px;
     }
 }
 

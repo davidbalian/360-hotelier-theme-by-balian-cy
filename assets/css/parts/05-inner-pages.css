@@ -350,27 +350,26 @@
    Portfolio Page
    ========================================================================== */
 
-.page-portfolio__section {
-    padding-block: var(--section-padding-y);
+.page-portfolio__rows {
+    max-width: 1000px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-.page-portfolio__intro {
-    max-width: 65ch;
-    margin-bottom: 3rem;
-}
-
-.page-portfolio__intro p {
-    margin-bottom: 1rem;
-}
-
-.page-portfolio__intro p:last-child {
-    margin-bottom: 0;
-}
-
-.page-portfolio__grid {
+.page-portfolio__row {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+    align-items: stretch;
+}
+
+.page-portfolio__row-media {
+    border-radius: var(--radius-card);
+    min-height: 220px;
+    background: linear-gradient( 145deg, var(--color-section-gray) 0%, rgba( 0, 0, 0, 0.06 ) 100% );
+    border: 1px dashed var(--color-border);
 }
 
 .page-portfolio__hotel-card {
@@ -382,10 +381,47 @@
     flex-direction: column;
 }
 
+.page-portfolio__hotel-logo {
+    margin-bottom: 1rem;
+    max-height: 5.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.page-portfolio__hotel-logo img {
+    max-height: 5.5rem;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: left center;
+    display: block;
+}
+
+.page-portfolio__hotel-logo--pendeli {
+    max-height: 5.5rem;
+}
+
+.page-portfolio__hotel-logo--pendeli svg {
+    max-height: 5.5rem;
+    width: auto;
+    max-width: 100%;
+    display: block;
+}
+
+.page-portfolio__hotel-logo--pendeli .st0 {
+    fill: #00231f;
+}
+
+.page-portfolio__hotel-logo--serbellas img {
+    filter: brightness(0.4) sepia(1) saturate(1.2) hue-rotate(13deg) brightness(1.35);
+}
+
 .page-portfolio__hotel-name {
     font-size: var(--text-xl);
     color: var(--color-purple);
     font-weight: 600;
+    margin-top: 0;
     margin-bottom: 0.5rem;
 }
 
