@@ -142,9 +142,25 @@
     flex-direction: column;
 }
 
+.page-services .page-services-icon-grid .front-why-choose__box > .front-why-choose__box-text {
+    flex-grow: 1;
+}
+
 .page-services .page-services-icon-grid .front-why-choose__box > .btn {
-    margin-top: auto;
+    margin-top: 1rem;
     align-self: flex-start;
+}
+
+/* Ghost is defined for dark banners; on light cards match structure, use dark ink + border */
+.page-services .page-services-icon-grid .front-why-choose__box > .btn.btn--ghost {
+    color: var(--color-charcoal);
+    border-color: rgba(43, 43, 43, 0.35);
+}
+
+.page-services .page-services-icon-grid .front-why-choose__box > .btn.btn--ghost:hover {
+    border-color: var(--color-charcoal);
+    color: var(--color-charcoal);
+    opacity: 0.85;
 }
 
 /* ==========================================================================
