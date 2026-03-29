@@ -384,6 +384,12 @@
 
     .page-about__intro-grid {
         grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+
+    /* Portfolio: desktop rule is .page-portfolio .page-about__intro-grid (higher specificity) — force one column here */
+    .page-portfolio .page-about__intro-grid {
+        grid-template-columns: 1fr;
     }
 
     .page-about__intro-image {
@@ -417,10 +423,24 @@
         order: 0;
     }
 
+    .page-portfolio__hotel-card {
+        text-align: center;
+        align-items: center;
+    }
+
     .page-portfolio__hotel-logo {
-        width: 111px;
-        height: 78px;
+        width: 167px;
+        height: 117px;
         margin-bottom: 1.5rem;
+        align-self: center;
+    }
+
+    .page-portfolio__hotel-location {
+        justify-content: center;
+    }
+
+    .page-portfolio__hotel-link {
+        align-self: center;
     }
 }
 
