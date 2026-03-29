@@ -391,15 +391,6 @@
         order: -1;
     }
 
-    /* Portfolio intro: stacked — copy above image */
-    .page-portfolio .page-about__intro-text {
-        order: -1;
-    }
-
-    .page-portfolio .page-about__intro-image {
-        order: 0;
-    }
-
     .page-about__services-grid,
     .page-services-icon-grid {
         grid-template-columns: 1fr;
@@ -427,8 +418,8 @@
     }
 
     .page-portfolio__hotel-logo {
-        width: 74px;
-        height: 52px;
+        width: 111px;
+        height: 78px;
         margin-bottom: 1.5rem;
     }
 }

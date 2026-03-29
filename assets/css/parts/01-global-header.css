@@ -37,7 +37,6 @@
 .post-card,
 .front-why-choose__box,
 .front-services-overview__card,
-.page-portfolio__hotel-card,
 .front-approach__bento-card {
     transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
@@ -45,7 +44,6 @@
 .post-card:hover,
 .front-why-choose__box:hover,
 .front-services-overview__card:hover,
-.page-portfolio__hotel-card:hover,
 .front-approach__bento-card:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transform: translateY(-2px);
@@ -354,5 +352,10 @@
     color: var(--color-purple);
     background-image: none;
     background-size: auto;
+}
+
+/* Match global a:active scale without drifting: full-width right-aligned links need origin on the right */
+.mobile-nav__links a:active {
+    transform-origin: right center;
 }
 
