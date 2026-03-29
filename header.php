@@ -47,6 +47,7 @@
                     'menu_class'     => 'nav-menu text-body',
                     'container'      => false,
                     'fallback_cb'    => 'hotelier_default_nav_fallback',
+                    'walker'         => new Hotelier_Primary_Nav_Walker(),
                 ) ); ?>
 
                 <button
@@ -74,6 +75,7 @@
                     'menu_class'     => 'mobile-nav__links',
                     'container'      => false,
                     'fallback_cb'    => 'hotelier_default_nav_fallback',
+                    'walker'         => new Hotelier_Primary_Nav_Walker(),
                 ) ); ?>
             </nav>
         </div>

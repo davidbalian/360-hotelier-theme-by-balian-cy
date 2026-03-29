@@ -12,6 +12,40 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Markup for the primary nav dropdown chevron (inline SVG, currentColor).
+ *
+ * @return string
+ */
+function hotelier_get_nav_submenu_chevron_markup() {
+    return '<span class="nav-submenu-chevron" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>';
+}
+
+/**
+ * Append chevron to top-level primary menu items that have submenus.
+ *
+ * @param string   $title Menu item title.
+ * @param WP_Post  $item  Menu item.
+ * @param stdClass $args  Menu args.
+ * @param int      $depth Depth.
+ * @return string
+ */
+function hotelier_nav_menu_parent_chevron_title( $title, $item, $args, $depth ) {
+    if ( 0 !== (int) $depth ) {
+        return $title;
+    }
+    if ( ! is_object( $args ) || empty( $args->theme_location ) || 'primary' !== $args->theme_location ) {
+        return $title;
+    }
+    if ( ! in_array( 'menu-item-has-children', (array) $item->classes, true ) ) {
+        return $title;
+    }
+
+    return $title . hotelier_get_nav_submenu_chevron_markup();
+}
+
+add_filter( 'nav_menu_item_title', 'hotelier_nav_menu_parent_chevron_title', 10, 4 );
+
+/**
  * Resolve the front-end URL for a top-level page by slug.
  *
  * @param string $slug Page post_name (e.g. about-us).
@@ -99,10 +133,14 @@ function hotelier_render_default_nav_item( $item, $flatten ) {
     }
 
     echo '<li class="' . esc_attr( $li_classes ) . '">';
+    $link_inner = esc_html( $item['label'] );
+    if ( $has_children ) {
+        $link_inner .= hotelier_get_nav_submenu_chevron_markup();
+    }
     printf(
         '<a href="%s">%s</a>',
         esc_url( $item['url'] ),
-        esc_html( $item['label'] )
+        $link_inner
     );
 
     if ( $has_children ) {
@@ -116,6 +154,13 @@ function hotelier_render_default_nav_item( $item, $flatten ) {
             );
             echo '</li>';
         }
+        echo '<li class="menu-item menu-item-all-services">';
+        printf(
+            '<a href="%s">%s</a>',
+            esc_url( $item['url'] ),
+            esc_html__( 'All Services', '360-hotelier' )
+        );
+        echo '</li>';
         echo '</ul>';
     }
 

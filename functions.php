@@ -24,6 +24,9 @@ require_once HOTELIER_THEME_DIR . '/inc/service-content.php';
 // Include menu fallback
 require_once HOTELIER_THEME_DIR . '/inc/menu-fallback.php';
 
+// Primary nav walker (Services submenu footer link)
+require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-primary-nav-walker.php';
+
 // Include schema markup
 require_once HOTELIER_THEME_DIR . '/inc/schema.php';
 

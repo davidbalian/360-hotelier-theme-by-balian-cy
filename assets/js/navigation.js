@@ -7,8 +7,83 @@
 ( function () {
     'use strict';
 
-    var toggle  = document.querySelector( '.mobile-nav-toggle' );
+    var toggle    = document.querySelector( '.mobile-nav-toggle' );
     var mobileNav = document.getElementById( 'mobile-nav' );
+
+    /**
+     * Mobile overlay: accordion submenus (e.g. Services), collapsed by default.
+     */
+    var MobileNavSubmenuToggle = {
+        mq: window.matchMedia( '(max-width: 768px)' ),
+
+        isMobileLayout: function () {
+            return this.mq.matches;
+        },
+
+        closeAll: function () {
+            if ( !mobileNav ) {
+                return;
+            }
+            mobileNav.querySelectorAll( '.mobile-nav__links > .menu-item-has-children.is-submenu-open' ).forEach( function ( li ) {
+                li.classList.remove( 'is-submenu-open' );
+                var t = li.querySelector( ':scope > a' );
+                if ( t ) {
+                    t.setAttribute( 'aria-expanded', 'false' );
+                }
+            } );
+        },
+
+        init: function () {
+            if ( !mobileNav ) {
+                return;
+            }
+            var self = this;
+            mobileNav.querySelectorAll( '.mobile-nav__links > .menu-item-has-children' ).forEach( function ( li ) {
+                var trigger = li.querySelector( ':scope > a' );
+                if ( !trigger ) {
+                    return;
+                }
+                trigger.setAttribute( 'aria-haspopup', 'true' );
+                trigger.setAttribute( 'aria-expanded', 'false' );
+
+                trigger.addEventListener( 'click', function ( e ) {
+                    if ( !self.isMobileLayout() ) {
+                        return;
+                    }
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var wasOpen = li.classList.contains( 'is-submenu-open' );
+                    self.closeAll();
+                    if ( !wasOpen ) {
+                        li.classList.add( 'is-submenu-open' );
+                        trigger.setAttribute( 'aria-expanded', 'true' );
+                    }
+                } );
+
+                trigger.addEventListener( 'keydown', function ( e ) {
+                    if ( !self.isMobileLayout() ) {
+                        return;
+                    }
+                    if ( e.key === 'Enter' || e.key === ' ' ) {
+                        e.preventDefault();
+                        trigger.click();
+                    }
+                } );
+            } );
+
+            function onMqChange() {
+                if ( !self.isMobileLayout() ) {
+                    self.closeAll();
+                }
+            }
+            if ( this.mq.addEventListener ) {
+                this.mq.addEventListener( 'change', onMqChange );
+            } else if ( this.mq.addListener ) {
+                this.mq.addListener( onMqChange );
+            }
+        }
+    };
+    MobileNavSubmenuToggle.init();
 
     if ( toggle && mobileNav ) {
         var isToggling = false;
@@ -29,6 +104,7 @@
             toggle.setAttribute( 'aria-expanded', 'false' );
             toggle.setAttribute( 'aria-label', 'Open menu' );
             document.body.style.overflow = '';
+            MobileNavSubmenuToggle.closeAll();
         }
 
         toggle.addEventListener( 'click', function () {
@@ -72,19 +148,26 @@
     handleScroll();
 
     /**
-     * Desktop primary nav: aria-expanded on parent items with submenus.
+     * Desktop primary nav: click parent link to toggle submenu (Services).
      */
-    var PrimarySubmenuAria = {
+    var PrimarySubmenuToggle = {
         mq: window.matchMedia( '(min-width: 769px)' ),
+        nav: null,
 
         isDesktop: function () {
             return this.mq.matches;
         },
 
-        resetAllExpanded: function ( nav ) {
-            var triggers = nav.querySelectorAll( '.nav-menu > .menu-item-has-children > a' );
-            triggers.forEach( function ( t ) {
-                t.setAttribute( 'aria-expanded', 'false' );
+        closeAllSubmenus: function () {
+            if ( !this.nav ) {
+                return;
+            }
+            this.nav.querySelectorAll( '.nav-menu > .menu-item-has-children.is-submenu-open' ).forEach( function ( li ) {
+                li.classList.remove( 'is-submenu-open' );
+                var t = li.querySelector( ':scope > a' );
+                if ( t ) {
+                    t.setAttribute( 'aria-expanded', 'false' );
+                }
             } );
         },
 
@@ -97,43 +180,77 @@
             trigger.setAttribute( 'aria-expanded', 'false' );
 
             var self = this;
-            function setExpanded( open ) {
+
+            trigger.addEventListener( 'click', function ( e ) {
                 if ( !self.isDesktop() ) {
-                    trigger.setAttribute( 'aria-expanded', 'false' );
                     return;
                 }
-                trigger.setAttribute( 'aria-expanded', open ? 'true' : 'false' );
-            }
-
-            li.addEventListener( 'mouseenter', function () {
-                setExpanded( true );
-            } );
-            li.addEventListener( 'mouseleave', function () {
-                setExpanded( false );
-            } );
-            li.addEventListener( 'focusin', function () {
-                setExpanded( true );
-            } );
-            li.addEventListener( 'focusout', function ( e ) {
-                if ( !li.contains( e.relatedTarget ) ) {
-                    setExpanded( false );
+                e.preventDefault();
+                e.stopPropagation();
+                var wasOpen = li.classList.contains( 'is-submenu-open' );
+                self.closeAllSubmenus();
+                if ( !wasOpen ) {
+                    li.classList.add( 'is-submenu-open' );
+                    trigger.setAttribute( 'aria-expanded', 'true' );
                 }
+            } );
+
+            trigger.addEventListener( 'keydown', function ( e ) {
+                if ( !self.isDesktop() ) {
+                    return;
+                }
+                if ( e.key === 'Enter' || e.key === ' ' ) {
+                    e.preventDefault();
+                    trigger.click();
+                }
+            } );
+
+            li.addEventListener( 'focusout', function ( e ) {
+                if ( !self.isDesktop() ) {
+                    return;
+                }
+                if ( li.contains( e.relatedTarget ) ) {
+                    return;
+                }
+                li.classList.remove( 'is-submenu-open' );
+                trigger.setAttribute( 'aria-expanded', 'false' );
             } );
         },
 
         init: function () {
-            var nav = document.querySelector( '.primary-navigation' );
-            if ( !nav ) {
+            this.nav = document.querySelector( '.primary-navigation' );
+            if ( !this.nav ) {
                 return;
             }
-            var parents = nav.querySelectorAll( '.nav-menu > .menu-item-has-children' );
             var self = this;
-            parents.forEach( function ( li ) {
+            this.nav.querySelectorAll( '.nav-menu > .menu-item-has-children' ).forEach( function ( li ) {
                 self.bindItem( li );
             } );
+
+            document.addEventListener( 'click', function ( e ) {
+                if ( !self.isDesktop() ) {
+                    return;
+                }
+                var openLi = self.nav.querySelector( '.nav-menu > .menu-item-has-children.is-submenu-open' );
+                if ( !openLi || openLi.contains( e.target ) ) {
+                    return;
+                }
+                self.closeAllSubmenus();
+            } );
+
+            document.addEventListener( 'keydown', function ( e ) {
+                if ( e.key !== 'Escape' ) {
+                    return;
+                }
+                if ( !self.isDesktop() ) {
+                    return;
+                }
+                self.closeAllSubmenus();
+            } );
+
             function onMqChange() {
                 if ( !self.isDesktop() ) {
-                    self.resetAllExpanded( nav );
+                    self.closeAllSubmenus();
                 }
             }
             if ( this.mq.addEventListener ) {
@@ -143,7 +260,7 @@
             }
         }
     };
-    PrimarySubmenuAria.init();
+    PrimarySubmenuToggle.init();
 
     // Scroll-triggered fade-in animations
     var fadeEls = document.querySelectorAll( '.fade-in' );

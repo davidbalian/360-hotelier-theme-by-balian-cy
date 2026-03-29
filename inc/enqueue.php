@@ -24,8 +24,9 @@ function hotelier_enqueue_assets() {
     // Main CSS — split partials (load order = cascade order)
     $main_css_deps = array( '360-hotelier-style' );
     $main_css_parts  = array(
-        '360-hotelier-main-01' => '/assets/css/parts/01-global-header.css',
-        '360-hotelier-main-02' => '/assets/css/parts/02-footer-content-buttons.css',
+        '360-hotelier-main-01'  => '/assets/css/parts/01-global-header.css',
+        '360-hotelier-main-01b' => '/assets/css/parts/01b-primary-nav-submenu.css',
+        '360-hotelier-main-02'  => '/assets/css/parts/02-footer-content-buttons.css',
         '360-hotelier-main-03' => '/assets/css/parts/03-front-page-hero-through-banner.css',
         '360-hotelier-main-04' => '/assets/css/parts/04-front-page-founder-through-contact.css',
         '360-hotelier-main-05' => '/assets/css/parts/05-inner-pages.css',
