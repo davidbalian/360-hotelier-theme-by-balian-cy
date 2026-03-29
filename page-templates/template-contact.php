@@ -9,12 +9,13 @@ $page_hero_title    = __( 'Contact', '360-hotelier' );
 $page_hero_tagline  = __( "Ready to Boost Your Hotel's Revenue & Distribution?", '360-hotelier' );
 $page_hero_subtitle = __( "Let's discuss your property and explore how we can support your commercial growth.", '360-hotelier' );
 $page_hero_image    = content_url( '/uploads/2026/03/featured-360-hotelier.webp' );
-$contact_street_address = __( '9, Epaminondou street, 3075, Limassol, Cyprus', '360-hotelier' );
-$contact_map_embed_url  = 'https://maps.google.com/maps?q=' . rawurlencode( $contact_street_address ) . '&z=16&ie=UTF8&iwloc=&output=embed';
+$contact_street_address  = __( '9, Epaminondou street, 3075, Limassol, Cyprus', '360-hotelier' );
+$contact_map_place_query = __( '360° Hotelier Consulting Limassol', '360-hotelier' );
+$contact_map_embed_url   = 'https://maps.google.com/maps?q=' . rawurlencode( $contact_map_place_query ) . '&z=16&ie=UTF8&iwloc=&output=embed';
 $contact_map_iframe_title = sprintf(
-    /* translators: %s: Street address shown on the map */
+    /* translators: %s: Business name / place searched on the map */
     __( 'Map: %s', '360-hotelier' ),
-    $contact_street_address
+    $contact_map_place_query
 );
 
 get_header();

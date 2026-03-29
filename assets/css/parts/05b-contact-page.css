@@ -43,7 +43,7 @@ main.site-main.page-contact {
 .page-contact__map {
     margin-top: 1.5rem;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 2;
     border-radius: var(--radius-card);
     overflow: hidden;
     background: var(--color-section-gray);
