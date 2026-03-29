@@ -137,7 +137,7 @@
 
 .front-approach__divider {
     border: none;
-    border-top: 1px solid rgba(0, 0, 0, 0.07);
+    border-top: 1px solid var(--color-border);
     margin: 0;
 }
 
