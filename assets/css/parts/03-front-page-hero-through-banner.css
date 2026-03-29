@@ -401,6 +401,8 @@
 }
 
 .front-featured-banner__text {
+    max-width: 40ch;
+    margin-inline: auto;
     margin-bottom: 2rem;
     color: #fff;
     opacity: 0.9;
@@ -409,7 +411,6 @@
 @media (max-width: 768px) {
     .front-featured-banner__text {
         max-width: 30ch;
-        margin-inline: auto;
     }
 }
 
