@@ -12,7 +12,7 @@ get_header(); ?>
 
         <section class="error-404 not-found">
             <header class="page-header">
-                <h1 class="page-title text-3xl"><?php esc_html_e( '404 — Page Not Found', '360-hotelier' ); ?></h1>
+                <h1 class="page-title"><?php esc_html_e( '404 — Page Not Found', '360-hotelier' ); ?></h1>
             </header>
 
             <div class="page-content">

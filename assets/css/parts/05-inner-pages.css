@@ -19,7 +19,7 @@
     color: #fff;
     font-weight: 800;
     max-width: 20ch;
-    font-size: clamp(2rem, 5.5vw, 3.25rem);
+    font-size: var(--text-5xl);
     letter-spacing: -0.02em;
 }
 
@@ -47,6 +47,7 @@
 }
 
 .page-hero__subtitle {
+    font-size: var(--text-lg);
     color: #fff;
     opacity: 0.85;
     max-width: 52ch;
@@ -141,10 +142,9 @@
     flex-direction: column;
 }
 
-.page-services__link {
-    font-weight: 600;
-    color: var(--color-blue);
+.page-services .page-services-icon-grid .front-why-choose__box > .btn {
     margin-top: auto;
+    align-self: flex-start;
 }
 
 /* ==========================================================================

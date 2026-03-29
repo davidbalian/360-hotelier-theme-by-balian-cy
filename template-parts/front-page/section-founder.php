@@ -19,7 +19,7 @@ $about_url      = home_url( '/about-us/' );
         </div>
         <div class="front-founder__card card-border">
         <div class="front-founder__content">
-            <h2 class="front-founder__heading text-2xl fade-in fade-in-delay-1"><?php esc_html_e( 'Meet the Founder', '360-hotelier' ); ?></h2>
+            <h2 class="front-founder__heading fade-in fade-in-delay-1"><?php esc_html_e( 'Meet the Founder', '360-hotelier' ); ?></h2>
             <h3 class="front-founder__name fade-in fade-in-delay-2"><?php esc_html_e( 'Giorgos Peyiazis', '360-hotelier' ); ?></h3>
             <p class="fade-in fade-in-delay-3"><?php esc_html_e( 'Giorgos has 15+ years in hotel revenue management, digital marketing, online sales and tour-operator contracting. He works with independent and boutique hotels across Cyprus.', '360-hotelier' ); ?></p>
             <p class="fade-in fade-in-delay-4"><?php esc_html_e( 'His goal: help Cyprus hotels grow through smarter commercial decisions.', '360-hotelier' ); ?></p>

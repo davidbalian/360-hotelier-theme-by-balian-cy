@@ -104,6 +104,7 @@
 }
 
 .entry-title {
+    font-size: var(--text-lg);
     margin-bottom: 0.5rem;
 }
 
@@ -161,6 +162,7 @@
 
 .error-404 .page-title,
 .no-results .page-title {
+    font-size: var(--text-3xl);
     margin-bottom: 1rem;
 }
 
@@ -215,14 +217,16 @@
     color: #fff;
 }
 
-/* Outline — transparent with orange border */
-.btn--outline {
+/* Outline / secondary — transparent with orange border */
+.btn--outline,
+.btn--secondary {
     background: transparent;
     color: var(--color-orange);
     border-color: var(--color-orange);
 }
 
-.btn--outline:hover {
+.btn--outline:hover,
+.btn--secondary:hover {
     opacity: 0.85;
     color: var(--color-orange);
 }

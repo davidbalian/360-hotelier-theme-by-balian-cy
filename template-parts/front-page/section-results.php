@@ -11,7 +11,7 @@ $pendeli_svg      = file_exists( $pendeli_svg_path ) ? file_get_contents( $pende
 ?>
 <section class="front-results card-border">
     <div class="site-container">
-        <h2 class="front-section__title text-2xl fade-in fade-in-delay-0"><?php esc_html_e( 'Proven Impact for Hotels in Cyprus & Greece', '360-hotelier' ); ?></h2>
+        <h2 class="front-section__title fade-in fade-in-delay-0"><?php esc_html_e( 'Proven Impact for Hotels in Cyprus & Greece', '360-hotelier' ); ?></h2>
         <ul class="front-results__list">
             <li class="fade-in fade-in-delay-1">
                 <span class="front-results__stat"><?php esc_html_e( '+20%', '360-hotelier' ); ?></span>

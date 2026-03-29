@@ -23,7 +23,7 @@ get_header();
                  Colors
                  ============================================================ -->
             <section class="style-guide__section" id="sg-colors">
-                <h2 class="text-xl">Brand Colours</h2>
+                <h2>Brand Colours</h2>
                 <div class="sg-color-grid">
                     <div class="sg-color-swatch">
                         <div class="sg-color-swatch__preview" style="background-color: var(--color-purple);"></div>
@@ -62,15 +62,15 @@ get_header();
                  Typography
                  ============================================================ -->
             <section class="style-guide__section" id="sg-typography">
-                <h2 class="text-xl">Typography</h2>
+                <h2>Typography</h2>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Font Family</h3>
+                    <h3>Font Family</h3>
                     <p class="sg-font-sample">Satoshi &mdash; the primary typeface used across the site, loaded locally in weights 300&ndash;900.</p>
                 </div>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Headings</h3>
+                    <h3>Headings</h3>
                     <div class="sg-type-specimen">
                         <h1>Heading 1 &mdash; The quick brown fox</h1>
                         <h2>Heading 2 &mdash; The quick brown fox</h2>
@@ -82,13 +82,13 @@ get_header();
                 </div>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Body Text</h3>
+                    <h3>Body Text</h3>
                     <p>This is a standard paragraph. The base font size is 1rem (16px) with a line-height of 1.6 for comfortable reading. Body text uses Satoshi in regular weight with the charcoal colour for optimal contrast and legibility.</p>
                     <p><strong>Bold text</strong> uses font-weight 700. <em>Italic text</em> uses the Satoshi Italic variant. <a href="#">Links are styled in blue</a> with a smooth colour transition on hover.</p>
                 </div>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Small &amp; Meta Text</h3>
+                    <h3>Small &amp; Meta Text</h3>
                     <p><small>Small text used for captions, disclaimers, and fine print (0.875rem).</small></p>
                     <p class="entry-meta">Meta text style &mdash; used for dates, categories, and secondary info (0.8125rem).</p>
                 </div>
@@ -98,10 +98,10 @@ get_header();
                  Buttons
                  ============================================================ -->
             <section class="style-guide__section" id="sg-buttons">
-                <h2 class="text-xl">Buttons</h2>
+                <h2>Buttons</h2>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Primary <code>.btn .btn--primary</code></h3>
+                    <h3>Primary <code>.btn .btn--primary</code></h3>
                     <p>Main call-to-action. Orange fill, white text.</p>
                     <div class="sg-button-row">
                         <a href="#" class="btn btn--primary">Primary Button</a>
@@ -109,7 +109,7 @@ get_header();
                 </div>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Outline <code>.btn .btn--outline</code></h3>
+                    <h3>Outline <code>.btn .btn--outline</code></h3>
                     <p>Secondary action. Transparent with an orange border.</p>
                     <div class="sg-button-row">
                         <a href="#" class="btn btn--outline">Outline Button</a>
@@ -117,7 +117,7 @@ get_header();
                 </div>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Ghost <code>.btn .btn--ghost</code></h3>
+                    <h3>Ghost <code>.btn .btn--ghost</code></h3>
                     <p>For use on dark or coloured backgrounds.</p>
                     <div class="sg-button-row" style="background: var(--color-purple); padding: 1.5rem; border-radius: var(--radius-card);">
                         <a href="#" class="btn btn--ghost">Ghost Button</a>
@@ -125,7 +125,7 @@ get_header();
                 </div>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Large <code>.btn .btn--primary .btn--lg</code></h3>
+                    <h3>Large <code>.btn .btn--primary .btn--lg</code></h3>
                     <p>Used in hero sections and high-emphasis CTAs.</p>
                     <div class="sg-button-row">
                         <a href="#" class="btn btn--primary btn--lg">Large Primary</a>
@@ -134,7 +134,7 @@ get_header();
                 </div>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Small <code>.btn .btn--primary .btn--sm</code></h3>
+                    <h3>Small <code>.btn .btn--primary .btn--sm</code></h3>
                     <p>Used for compact UI contexts.</p>
                     <div class="sg-button-row">
                         <a href="#" class="btn btn--primary btn--sm">Small Primary</a>
@@ -143,7 +143,7 @@ get_header();
                 </div>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Button Pair</h3>
+                    <h3>Button Pair</h3>
                     <p>Primary and outline buttons used together.</p>
                     <div class="sg-button-row">
                         <a href="#" class="btn btn--primary">Get Started</a>
@@ -152,7 +152,7 @@ get_header();
                 </div>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Text Link / Read More</h3>
+                    <h3>Text Link / Read More</h3>
                     <p>Used for inline navigation and "read more" patterns.</p>
                     <div class="sg-button-row">
                         <a href="#" class="read-more">Read more &rarr;</a>
@@ -164,11 +164,11 @@ get_header();
                  Lists
                  ============================================================ -->
             <section class="style-guide__section" id="sg-lists">
-                <h2 class="text-xl">Lists</h2>
+                <h2>Lists</h2>
 
                 <div class="sg-columns">
                     <div class="sg-subsection">
-                        <h3 class="text-md">Unordered List</h3>
+                        <h3>Unordered List</h3>
                         <ul>
                             <li>Revenue management consulting</li>
                             <li>Online sales &amp; distribution</li>
@@ -178,7 +178,7 @@ get_header();
                     </div>
 
                     <div class="sg-subsection">
-                        <h3 class="text-md">Ordered List</h3>
+                        <h3>Ordered List</h3>
                         <ol>
                             <li>Initial discovery &amp; audit</li>
                             <li>Strategy development</li>
@@ -193,7 +193,7 @@ get_header();
                  Form Elements
                  ============================================================ -->
             <section class="style-guide__section" id="sg-forms">
-                <h2 class="text-xl">Form Elements</h2>
+                <h2>Form Elements</h2>
 
                 <div class="sg-subsection">
                     <form class="sg-form" onsubmit="return false;">
@@ -230,10 +230,10 @@ get_header();
                  Cards
                  ============================================================ -->
             <section class="style-guide__section" id="sg-cards">
-                <h2 class="text-xl">Cards</h2>
+                <h2>Cards</h2>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Service Card</h3>
+                    <h3>Service Card</h3>
                     <p>Used on the services page and front page services overview.</p>
                     <div class="sg-card-grid">
                         <div class="front-services-overview__card">
@@ -252,7 +252,7 @@ get_header();
                 </div>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Feature Box</h3>
+                    <h3>Feature Box</h3>
                     <p>Used in the &ldquo;Why Choose Us&rdquo; section to highlight key value propositions.</p>
                     <div class="sg-card-grid">
                         <div class="front-why-choose__box">
@@ -271,7 +271,7 @@ get_header();
                 </div>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Post Card</h3>
+                    <h3>Post Card</h3>
                     <p>Used in blog listings and archive pages.</p>
                     <div class="sg-card-grid">
                         <article class="post-card card-border">
@@ -300,7 +300,7 @@ get_header();
                 </div>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Step Card</h3>
+                    <h3>Step Card</h3>
                     <p>Used in the &ldquo;Our Approach&rdquo; section to outline process steps.</p>
                     <div class="sg-card-grid">
                         <div class="front-approach__step">
@@ -327,10 +327,10 @@ get_header();
                  Banners
                  ============================================================ -->
             <section class="style-guide__section" id="sg-banners">
-                <h2 class="text-xl">Banners</h2>
+                <h2>Banners</h2>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Featured Banner (Purple)</h3>
+                    <h3>Featured Banner (Purple)</h3>
                     <p>Full-width call-to-action banner with a purple background.</p>
                 </div>
             </section>
@@ -339,8 +339,9 @@ get_header();
 
     <!-- Full-width banner demo (outside container) -->
     <section class="front-featured-banner">
-        <div class="site-container">
-            <h3 class="front-featured-banner__title">Ready to Transform Your Hotel&rsquo;s Performance?</h3>
+        <div class="front-featured-banner__overlay section-overlay" aria-hidden="true"></div>
+        <div class="site-container front-featured-banner__content">
+            <h2 class="front-featured-banner__title">Ready to Transform Your Hotel&rsquo;s Performance?</h2>
             <p class="front-featured-banner__text">Partner with 360&deg; Hotelier and unlock your property&rsquo;s full revenue potential.</p>
             <div class="front-featured-banner__actions">
                 <a href="#" class="btn btn--primary">Get in Touch</a>
@@ -352,15 +353,15 @@ get_header();
         <div class="style-guide">
 
             <div class="sg-subsection">
-                <h3 class="text-md">Contact Banner (Purple)</h3>
+                <h3>Contact Banner (Purple)</h3>
                 <p>Variation used in the contact CTA section of the front page.</p>
             </div>
         </div>
     </div>
 
     <section class="front-contact">
-        <div class="site-container">
-            <h3 class="front-contact__title">Let&rsquo;s Work Together</h3>
+        <div class="site-container front-contact__content">
+            <h2 class="front-contact__title">Let&rsquo;s Work Together</h2>
             <p class="front-contact__text">Whether you need a full revenue strategy or a quick consultation, we&rsquo;re here to help.</p>
             <a href="#" class="btn btn--primary front-contact__cta">Contact Us</a>
         </div>
@@ -373,13 +374,13 @@ get_header();
                  Section Titles
                  ============================================================ -->
             <section class="style-guide__section" id="sg-section-titles">
-                <h2 class="text-xl">Section Titles</h2>
+                <h2>Section Titles</h2>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Centred Section Title + Subtitle</h3>
+                    <h3>Centred Section Title + Subtitle</h3>
                     <p>Used at the top of front page sections.</p>
                     <div class="sg-demo-block">
-                        <h3 class="front-section__title">Our Services</h3>
+                        <h2 class="front-section__title">Our Services</h2>
                         <p class="front-section__subtitle">Comprehensive hospitality consulting services designed to maximise your property&rsquo;s revenue and market position.</p>
                     </div>
                 </div>
@@ -389,15 +390,15 @@ get_header();
                  Layout & Spacing
                  ============================================================ -->
             <section class="style-guide__section" id="sg-layout">
-                <h2 class="text-xl">Layout &amp; Spacing</h2>
+                <h2>Layout &amp; Spacing</h2>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Container</h3>
+                    <h3>Container</h3>
                     <p>The <code>.site-container</code> class constrains content to a max-width of <strong>1200px</strong> with <strong>20px</strong> horizontal padding.</p>
                 </div>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Spacing Scale</h3>
+                    <h3>Spacing Scale</h3>
                     <div class="sg-spacing-samples">
                         <div class="sg-spacing-item">
                             <div class="sg-spacing-block" style="width: 16px; height: 16px;"></div>
@@ -423,7 +424,7 @@ get_header();
                 </div>
 
                 <div class="sg-subsection">
-                    <h3 class="text-md">Responsive Breakpoint</h3>
+                    <h3>Responsive Breakpoint</h3>
                     <p><code>768px</code> &mdash; Mobile navigation appears, grid layouts stack to single column, and footer centres its content.</p>
                 </div>
             </section>
@@ -432,11 +433,11 @@ get_header();
                  Borders & Shadows
                  ============================================================ -->
             <section class="style-guide__section" id="sg-borders">
-                <h2 class="text-xl">Borders &amp; Shadows</h2>
+                <h2>Borders &amp; Shadows</h2>
 
                 <div class="sg-columns">
                     <div class="sg-subsection">
-                        <h3 class="text-md">Default Border</h3>
+                        <h3>Default Border</h3>
                         <div class="sg-border-demo">
                             <code>1px solid var(--color-border)</code>
                             <br><code>border-radius: 6px</code>
@@ -444,7 +445,7 @@ get_header();
                     </div>
 
                     <div class="sg-subsection">
-                        <h3 class="text-md">Hover Shadow</h3>
+                        <h3>Hover Shadow</h3>
                         <div class="sg-shadow-demo">
                             <code>box-shadow: 0 4px 20px rgba(0,0,0,0.08)</code>
                             <br>Hover over me

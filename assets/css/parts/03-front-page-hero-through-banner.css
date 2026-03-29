@@ -130,6 +130,7 @@
 }
 
 .front-hero__subheadline {
+    font-size: var(--text-lg);
     margin-bottom: 2rem;
     color: #fff;
     max-width: 54ch;
@@ -201,6 +202,7 @@
 }
 
 .front-why-choose__box-title {
+    font-size: var(--text-md);
     margin-bottom: 0.5rem;
     color: var(--color-purple);
 }
@@ -317,6 +319,7 @@
 }
 
 .front-services-overview__card-title {
+    font-size: var(--text-md);
     margin-bottom: 0.5rem;
     color: var(--color-purple);
 }
@@ -394,6 +397,7 @@
 }
 
 .front-featured-banner__title {
+    font-size: var(--text-4xl);
     margin-bottom: 1rem;
     margin-inline: auto;
     color: #fff;

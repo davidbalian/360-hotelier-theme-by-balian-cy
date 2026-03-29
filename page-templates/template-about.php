@@ -43,28 +43,28 @@ get_template_part( 'template-parts/page/page-hero' );
                     <div class="front-why-choose__box-icon" aria-hidden="true">
                         <?php Hotelier_Lucide_Icon::render( 'euro' ); ?>
                     </div>
-                    <h3 class="front-why-choose__box-title text-md"><?php esc_html_e( 'Yield & Revenue Management', '360-hotelier' ); ?></h3>
+                    <h3 class="front-why-choose__box-title"><?php esc_html_e( 'Yield & Revenue Management', '360-hotelier' ); ?></h3>
                     <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Strategic pricing, demand forecasting and segmentation designed to maximize RevPAR and revenue performance.', '360-hotelier' ); ?></p>
                 </div>
                 <div class="front-why-choose__box card-border fade-in fade-in-delay-2">
                     <div class="front-why-choose__box-icon" aria-hidden="true">
                         <?php Hotelier_Lucide_Icon::render( 'globe' ); ?>
                     </div>
-                    <h3 class="front-why-choose__box-title text-md"><?php esc_html_e( 'Online Sales & B2B Distribution', '360-hotelier' ); ?></h3>
+                    <h3 class="front-why-choose__box-title"><?php esc_html_e( 'Online Sales & B2B Distribution', '360-hotelier' ); ?></h3>
                     <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'OTA optimization, channel-mix strategy and development of profitable B2B partnerships.', '360-hotelier' ); ?></p>
                 </div>
                 <div class="front-why-choose__box card-border fade-in fade-in-delay-3">
                     <div class="front-why-choose__box-icon" aria-hidden="true">
                         <?php Hotelier_Lucide_Icon::render( 'monitor' ); ?>
                     </div>
-                    <h3 class="front-why-choose__box-title text-md"><?php esc_html_e( 'E-Commerce & Digital Marketing', '360-hotelier' ); ?></h3>
+                    <h3 class="front-why-choose__box-title"><?php esc_html_e( 'E-Commerce & Digital Marketing', '360-hotelier' ); ?></h3>
                     <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Direct booking optimization, SEO & SEM, social media marketing and digital performance analysis.', '360-hotelier' ); ?></p>
                 </div>
                 <div class="front-why-choose__box card-border fade-in fade-in-delay-4">
                     <div class="front-why-choose__box-icon" aria-hidden="true">
                         <?php Hotelier_Lucide_Icon::render( 'users' ); ?>
                     </div>
-                    <h3 class="front-why-choose__box-title text-md"><?php esc_html_e( 'Contracting & Tour Operator Negotiations', '360-hotelier' ); ?></h3>
+                    <h3 class="front-why-choose__box-title"><?php esc_html_e( 'Contracting & Tour Operator Negotiations', '360-hotelier' ); ?></h3>
                     <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Professional representation and negotiation with tour operators and wholesalers, acting in the hotel\'s best commercial interest.', '360-hotelier' ); ?></p>
                 </div>
             </div>
@@ -90,7 +90,7 @@ get_template_part( 'template-parts/page/page-hero' );
     <section class="front-featured-banner card-border" style="background-image: url('<?php echo esc_url( content_url( '/uploads/2026/03/featured-360-hotelier.webp' ) ); ?>');">
         <div class="front-featured-banner__overlay section-overlay"></div>
         <div class="site-container front-featured-banner__content fade-in fade-in-delay-0">
-            <h2 class="front-featured-banner__title text-4xl"><?php esc_html_e( 'Looking for a Hotel Consultant in Cyprus?', '360-hotelier' ); ?></h2>
+            <h2 class="front-featured-banner__title"><?php esc_html_e( 'Looking for a Hotel Consultant in Cyprus?', '360-hotelier' ); ?></h2>
             <p class="front-featured-banner__text"><?php esc_html_e( "Let's discuss how 360° Hotelier Consulting can support your hotel's revenue, distribution and digital growth.", '360-hotelier' ); ?></p>
             <div class="front-featured-banner__actions">
                 <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>

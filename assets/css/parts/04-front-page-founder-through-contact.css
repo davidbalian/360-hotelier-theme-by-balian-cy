@@ -37,6 +37,7 @@
 }
 
 .front-founder__name {
+    font-size: var(--text-3xl);
     text-align: left;
     color: var(--color-charcoal);
     font-weight: 400;
@@ -116,6 +117,7 @@
 }
 
 .front-approach__step-number {
+    font-size: var(--text-3xl);
     color: var(--color-purple);
     font-weight: 600;
     line-height: 1;
@@ -123,6 +125,7 @@
 }
 
 .front-approach__step-title {
+    font-size: var(--text-base);
     color: var(--color-purple);
     margin: 0;
 }
@@ -325,6 +328,7 @@
 }
 
 .front-contact__title {
+    font-size: var(--text-4xl);
     margin-bottom: 1rem;
     margin-inline: auto;
     color: #fff;

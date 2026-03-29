@@ -50,7 +50,7 @@ get_template_part( 'template-parts/page/page-hero' );
         <div class="site-container">
 
             <div class="front-approach__heading fade-in fade-in-delay-0">
-                <h2 class="front-section__title text-2xl"><?php esc_html_e( 'Professional Experience', '360-hotelier' ); ?></h2>
+                <h2 class="front-section__title"><?php esc_html_e( 'Professional Experience', '360-hotelier' ); ?></h2>
                 <p class="front-section__subtitle"><?php esc_html_e( '15+ years building expertise across distribution, revenue and digital strategy.', '360-hotelier' ); ?></p>
             </div>
 
@@ -64,27 +64,27 @@ get_template_part( 'template-parts/page/page-hero' );
                     <div class="front-approach__steps">
 
                         <div class="front-approach__step fade-in fade-in-delay-2">
-                            <span class="front-approach__step-number text-3xl">01</span>
+                            <span class="front-approach__step-number">01</span>
                             <div class="front-approach__step-body">
-                                <h3 class="front-approach__step-title text-base"><?php esc_html_e( 'Booking.com · 2013–2021', '360-hotelier' ); ?></h3>
+                                <h3 class="front-approach__step-title"><?php esc_html_e( 'Booking.com · 2013–2021', '360-hotelier' ); ?></h3>
                                 <p class="front-approach__step-text text-body"><?php esc_html_e( 'Key roles in sales strategy, distribution management and hotel market competitiveness. Delivered workshops and represented Booking.com at international conferences.', '360-hotelier' ); ?></p>
                             </div>
                         </div>
                         <hr class="front-approach__divider">
 
                         <div class="front-approach__step fade-in fade-in-delay-3">
-                            <span class="front-approach__step-number text-3xl">02</span>
+                            <span class="front-approach__step-number">02</span>
                             <div class="front-approach__step-body">
-                                <h3 class="front-approach__step-title text-base"><?php esc_html_e( 'Tour Operators & Wholesalers · 2022–2024', '360-hotelier' ); ?></h3>
+                                <h3 class="front-approach__step-title"><?php esc_html_e( 'Tour Operators & Wholesalers · 2022–2024', '360-hotelier' ); ?></h3>
                                 <p class="front-approach__step-text text-body"><?php esc_html_e( 'Contracting management, tactical promotions and strategic pricing for DERTOUR Group, EasyJet Holidays, Sunweb Group, Love Holidays, ITAKA, Grecos Holidays and more.', '360-hotelier' ); ?></p>
                             </div>
                         </div>
                         <hr class="front-approach__divider">
 
                         <div class="front-approach__step fade-in fade-in-delay-4">
-                            <span class="front-approach__step-number text-3xl">03</span>
+                            <span class="front-approach__step-number">03</span>
                             <div class="front-approach__step-body">
-                                <h3 class="front-approach__step-title text-base"><?php esc_html_e( '360° Hotelier Consulting · 2024–Present', '360-hotelier' ); ?></h3>
+                                <h3 class="front-approach__step-title"><?php esc_html_e( '360° Hotelier Consulting · 2024–Present', '360-hotelier' ); ?></h3>
                                 <p class="front-approach__step-text text-body"><?php esc_html_e( 'External e-commerce manager and pre-opening consultant for boutique, mid-scale and upscale hotels across Cyprus and abroad. Full commercial support from revenue to digital.', '360-hotelier' ); ?></p>
                             </div>
                         </div>
@@ -100,7 +100,7 @@ get_template_part( 'template-parts/page/page-hero' );
     <section class="front-featured-banner card-border" style="background-image: url('<?php echo esc_url( content_url( '/uploads/2026/03/featured-360-hotelier.webp' ) ); ?>');">
         <div class="front-featured-banner__overlay section-overlay"></div>
         <div class="site-container front-featured-banner__content fade-in fade-in-delay-0">
-            <h2 class="front-featured-banner__title text-4xl"><?php esc_html_e( 'Work With Giorgos', '360-hotelier' ); ?></h2>
+            <h2 class="front-featured-banner__title"><?php esc_html_e( 'Work With Giorgos', '360-hotelier' ); ?></h2>
             <p class="front-featured-banner__text"><?php esc_html_e( "Ready to grow your hotel's revenue and distribution? Let's have a conversation.", '360-hotelier' ); ?></p>
             <div class="front-featured-banner__actions">
                 <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Get in Touch', '360-hotelier' ); ?></a>

@@ -42,7 +42,7 @@ $page_hero_label    = isset( $page_hero_label ) ? $page_hero_label : '';
             <p class="page-hero__tagline"><?php echo esc_html( $page_hero_tagline ); ?></p>
         <?php endif; ?>
         <?php if ( '' !== $page_hero_subtitle ) : ?>
-            <p class="page-hero__subtitle text-lg"><?php echo esc_html( $page_hero_subtitle ); ?></p>
+            <p class="page-hero__subtitle"><?php echo esc_html( $page_hero_subtitle ); ?></p>
         <?php endif; ?>
     </div>
 </section>
