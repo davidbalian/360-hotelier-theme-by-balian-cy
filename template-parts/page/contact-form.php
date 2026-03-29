@@ -46,6 +46,7 @@ $contact_status = isset( $_GET['contact'] ) ? sanitize_text_field( wp_unslash( $
 				required
 				autocomplete="name"
 				maxlength="120"
+				placeholder="<?php echo esc_attr__( 'Your full name', '360-hotelier' ); ?>"
 			>
 		</div>
 
@@ -57,6 +58,7 @@ $contact_status = isset( $_GET['contact'] ) ? sanitize_text_field( wp_unslash( $
 				id="hotelier-contact-email"
 				required
 				autocomplete="email"
+				placeholder="<?php echo esc_attr__( 'you@yourhotel.com', '360-hotelier' ); ?>"
 			>
 		</div>
 
@@ -68,6 +70,7 @@ $contact_status = isset( $_GET['contact'] ) ? sanitize_text_field( wp_unslash( $
 				id="hotelier-contact-subject"
 				required
 				maxlength="200"
+				placeholder="<?php echo esc_attr__( 'e.g., Revenue strategy consultation', '360-hotelier' ); ?>"
 			>
 		</div>
 
@@ -79,6 +82,7 @@ $contact_status = isset( $_GET['contact'] ) ? sanitize_text_field( wp_unslash( $
 				required
 				rows="6"
 				maxlength="8000"
+				placeholder="<?php echo esc_attr__( 'Tell us about your property, your goals, and how we can help…', '360-hotelier' ); ?>"
 			></textarea>
 		</div>
 

@@ -125,6 +125,11 @@ main.site-main.page-contact {
     box-sizing: border-box;
 }
 
+.page-contact__field input::placeholder,
+.page-contact__field textarea::placeholder {
+    color: color-mix(in srgb, var(--color-charcoal) 42%, transparent);
+}
+
 .page-contact__field textarea {
     min-height: 8rem;
     resize: vertical;
