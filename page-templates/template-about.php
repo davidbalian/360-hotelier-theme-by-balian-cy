@@ -72,6 +72,7 @@ get_template_part( 'template-parts/page/page-hero' );
     </section>
 
     <?php
+    $GLOBALS['hotelier_section_founder_hide_about_cta'] = true;
     get_template_part(
         'template-parts/front-page/section',
         'founder',
@@ -79,6 +80,7 @@ get_template_part( 'template-parts/page/page-hero' );
             'hide_about_cta' => true,
         )
     );
+    unset( $GLOBALS['hotelier_section_founder_hide_about_cta'] );
     ?>
 
     <!-- CTA Banner -->

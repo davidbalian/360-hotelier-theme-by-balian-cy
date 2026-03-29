@@ -2,11 +2,14 @@
 /**
  * Front page "Meet the Founder" section.
  *
- * Optional (via get_template_part third argument): hide_about_cta (bool) — omit the About Us button.
+ * Optional: hide_about_cta via get_template_part( …, array( 'hide_about_cta' => true ) ) (WP 5.5+),
+ * or global $hotelier_section_founder_hide_about_cta (e.g. About page).
  *
  * @package 360-hotelier
  */
-$hide_about_cta = isset( $hide_about_cta ) ? (bool) $hide_about_cta : false;
+global $hotelier_section_founder_hide_about_cta;
+$hide_about_cta = ( isset( $hide_about_cta ) ? (bool) $hide_about_cta : false )
+    || ! empty( $hotelier_section_founder_hide_about_cta );
 $about_url      = home_url( '/about-us/' );
 ?>
 <section class="front-founder">
