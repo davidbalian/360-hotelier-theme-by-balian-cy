@@ -19,7 +19,7 @@ function hotelier_get_service_content( $slug ) {
     $services = array(
         'revenue-management' => array(
             'title'       => __( 'Yield & Revenue Management', '360-hotelier' ),
-            'intro'       => __( 'Hotels often lose revenue due to inconsistent pricing, weak forecasting and limited data insights.', '360-hotelier' ) . ' ' . __( 'We implement professional revenue-management systems, strategic pricing models and market-driven decisions tailored to your property.', '360-hotelier' ),
+            'intro'       => __( 'Hotels often lose revenue through inconsistent pricing, weak forecasting and limited data.', '360-hotelier' ) . ' ' . __( 'We implement revenue-management systems, pricing models and demand-based decisions specific to your property.', '360-hotelier' ),
             'deliverables' => array(
                 __( 'Daily / weekly / monthly pricing strategy', '360-hotelier' ),
                 __( 'Forecasting & demand analysis', '360-hotelier' ),
@@ -30,7 +30,7 @@ function hotelier_get_service_content( $slug ) {
         ),
         'online-sales-distribution' => array(
             'title'       => __( 'Online Sales & B2B Distribution', '360-hotelier' ),
-            'intro'       => __( 'Many hotels rely heavily on OTAs while missing opportunities in B2B contracts, wholesalers and niche partners.', '360-hotelier' ) . ' ' . __( 'We build a balanced distribution strategy that increases visibility, reduces dependency and improves profitability.', '360-hotelier' ),
+            'intro'       => __( 'Many hotels rely too heavily on OTAs while leaving B2B contracts, wholesalers and niche partners untapped.', '360-hotelier' ) . ' ' . __( 'We build a distribution mix that cuts OTA dependency and improves margin.', '360-hotelier' ),
             'deliverables' => array(
                 __( 'OTA profile optimisation and content scoring', '360-hotelier' ),
                 __( 'New B2B partnership sourcing', '360-hotelier' ),
@@ -41,7 +41,7 @@ function hotelier_get_service_content( $slug ) {
         ),
         'digital-marketing' => array(
             'title'       => __( 'E-Commerce & Digital Marketing', '360-hotelier' ),
-            'intro'       => __( 'Your website and social channels should be strategic revenue drivers — not just online brochures.', '360-hotelier' ) . ' ' . __( 'We create digital strategies that increase direct bookings and strengthen your brand.', '360-hotelier' ),
+            'intro'       => __( 'Your website and social channels can drive direct bookings and reduce OTA costs.', '360-hotelier' ) . ' ' . __( 'We build digital strategies that convert.', '360-hotelier' ),
             'deliverables' => array(
                 __( 'Website audit & booking engine optimisation', '360-hotelier' ),
                 __( 'SEO (search optimisation) & SEM (paid ads)', '360-hotelier' ),
@@ -52,7 +52,7 @@ function hotelier_get_service_content( $slug ) {
         ),
         'tour-operator-contracting' => array(
             'title'       => __( 'Contracting & Negotiations (Tour Operators)', '360-hotelier' ),
-            'intro'       => __( 'We represent your hotel and negotiate on your behalf — ensuring strong margins, competitive agreements and balanced tour-operator partnerships.', '360-hotelier' ),
+            'intro'       => __( 'We represent your hotel in negotiations — securing better margins, tighter allotment terms and competitive agreements with tour operators.', '360-hotelier' ),
             'deliverables' => array(
                 __( 'Contract benchmarking & performance evaluation', '360-hotelier' ),
                 __( 'New tour-operator network development', '360-hotelier' ),

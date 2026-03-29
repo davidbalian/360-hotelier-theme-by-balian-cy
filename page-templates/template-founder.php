@@ -32,9 +32,9 @@ get_template_part( 'template-parts/page/page-hero' );
                 <div class="page-founder__bio-card card-border fade-in fade-in-delay-1">
                     <h2><?php esc_html_e( 'About Giorgos', '360-hotelier' ); ?></h2>
                     <p class="page-founder__role"><?php esc_html_e( 'Founder & Hospitality Consultant — 360° Hotelier Consulting', '360-hotelier' ); ?></p>
-                    <p><?php esc_html_e( 'Giorgos Peyiazis is the Founder of 360° Hotelier Consulting, a hospitality sales and e-commerce consultancy based in Cyprus. With over fifteen years of experience in hotel sales, contracting, and digital distribution, Giorgos specialises in helping hotels and tourism businesses maximise their online performance and profitability.', '360-hotelier' ); ?></p>
-                    <p><?php esc_html_e( 'After completing his postgraduate studies in Business Administration with a specialization in Marketing at Les Roches International School of Hotel Management in Switzerland, Giorgos gained extensive experience across multiple sectors of the hospitality industry, both in Cyprus and abroad.', '360-hotelier' ); ?></p>
-                    <p><?php esc_html_e( 'Through 360° Hotelier Consulting, Giorgos provides tailored consulting services focused on revenue optimisation, e-commerce management, and digital marketing for independent and boutique hotels. His goal is to help hoteliers increase visibility, drive direct bookings, and achieve sustainable revenue growth through strategic and practical solutions.', '360-hotelier' ); ?></p>
+                    <p><?php esc_html_e( 'Giorgos Peyiazis is the Founder of 360° Hotelier Consulting, a hospitality sales and e-commerce consultancy based in Cyprus. With over fifteen years of experience in hotel sales, contracting, and digital distribution, Giorgos specialises in helping hotels increase direct bookings, sharpen distribution and grow revenue.', '360-hotelier' ); ?></p>
+                    <p><?php esc_html_e( 'He studied Business Administration (Marketing) at Les Roches International School of Hotel Management in Switzerland, then worked across hotel operations, distribution and digital in Cyprus and abroad.', '360-hotelier' ); ?></p>
+                    <p><?php esc_html_e( '360° Hotelier Consulting focuses on revenue optimisation, e-commerce and digital marketing for independent and boutique hotels. Giorgos helps hoteliers improve channel mix, increase direct bookings and grow RevPAR.', '360-hotelier' ); ?></p>
                     <div class="page-founder__bio-actions">
                         <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Get in Touch', '360-hotelier' ); ?></a>
                         <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'about-us' ) ); ?>" class="btn btn--outline"><?php esc_html_e( 'About 360° Hotelier', '360-hotelier' ); ?></a>
@@ -67,7 +67,7 @@ get_template_part( 'template-parts/page/page-hero' );
                             <span class="front-approach__step-number">01</span>
                             <div class="front-approach__step-body">
                                 <h3 class="front-approach__step-title"><?php esc_html_e( 'Booking.com · 2013–2021', '360-hotelier' ); ?></h3>
-                                <p class="front-approach__step-text text-body"><?php esc_html_e( 'Key roles in sales strategy, distribution management and hotel market competitiveness. Delivered workshops and represented Booking.com at international conferences.', '360-hotelier' ); ?></p>
+                                <p class="front-approach__step-text text-body"><?php esc_html_e( 'Sales strategy, distribution management and partner development. Delivered workshops and represented Booking.com at international conferences.', '360-hotelier' ); ?></p>
                             </div>
                         </div>
                         <hr class="front-approach__divider">
@@ -101,7 +101,7 @@ get_template_part( 'template-parts/page/page-hero' );
         <div class="front-featured-banner__overlay section-overlay"></div>
         <div class="site-container front-featured-banner__content fade-in fade-in-delay-0">
             <h2 class="front-featured-banner__title"><?php esc_html_e( 'Work With Giorgos', '360-hotelier' ); ?></h2>
-            <p class="front-featured-banner__text"><?php esc_html_e( "Ready to grow your hotel's revenue and distribution? Let's have a conversation.", '360-hotelier' ); ?></p>
+            <p class="front-featured-banner__text"><?php esc_html_e( "Grow your hotel's revenue and distribution. Get in touch today.", '360-hotelier' ); ?></p>
             <div class="front-featured-banner__actions">
                 <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Get in Touch', '360-hotelier' ); ?></a>
             </div>

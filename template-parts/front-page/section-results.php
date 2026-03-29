@@ -11,7 +11,7 @@ $pendeli_svg      = file_exists( $pendeli_svg_path ) ? file_get_contents( $pende
 ?>
 <section class="front-results card-border">
     <div class="site-container">
-        <h2 class="front-section__title fade-in fade-in-delay-0"><?php esc_html_e( 'Proven Impact for Hotels in Cyprus & Greece', '360-hotelier' ); ?></h2>
+        <h2 class="front-section__title fade-in fade-in-delay-0"><?php esc_html_e( 'Results for Hotels in Cyprus & Greece', '360-hotelier' ); ?></h2>
         <ul class="front-results__list">
             <li class="fade-in fade-in-delay-1">
                 <span class="front-results__stat"><?php esc_html_e( '+20%', '360-hotelier' ); ?></span>
@@ -27,10 +27,10 @@ $pendeli_svg      = file_exists( $pendeli_svg_path ) ? file_get_contents( $pende
             </li>
             <li class="fade-in fade-in-delay-4">
                 <span class="front-results__stat"><?php esc_html_e( '360°', '360-hotelier' ); ?></span>
-                <span class="front-results__label"><?php esc_html_e( 'Growth through smarter digital strategy', '360-hotelier' ); ?></span>
+                <span class="front-results__label"><?php esc_html_e( 'Stronger digital performance', '360-hotelier' ); ?></span>
             </li>
         </ul>
-        <p class="front-results__trust fade-in fade-in-delay-5"><?php esc_html_e( 'Trusted by hotels across Cyprus & Greece.', '360-hotelier' ); ?></p>
+        <p class="front-results__trust fade-in fade-in-delay-5"><?php esc_html_e( 'Working with hotels across Cyprus & Greece.', '360-hotelier' ); ?></p>
         <div class="front-results__ticker fade-in fade-in-delay-6">
             <div class="front-results__ticker-track">
                 <span class="ticker-logo ticker-logo--pendeli" role="img" aria-label="<?php esc_attr_e( 'Pendeli Resort Hotel Cyprus', '360-hotelier' ); ?>"><?php echo $pendeli_svg; ?></span>

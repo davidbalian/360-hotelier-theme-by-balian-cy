@@ -6,7 +6,7 @@
  */
 
 $page_hero_title    = __( 'Our Hotel Partners', '360-hotelier' );
-$page_hero_subtitle = __( 'Boutique, independent and resort hotels across Cyprus and beyond — each collaboration built on trust and measurable results.', '360-hotelier' );
+$page_hero_subtitle = __( 'Boutique, independent and resort hotels across Cyprus and beyond, each delivering measurable results.', '360-hotelier' );
 $page_hero_image    = content_url( '/uploads/2026/03/why-choose-360-hotelier.webp' );
 
 $pendeli_svg_path = WP_CONTENT_DIR . '/uploads/2026/03/pendeli-resort-hotel-cyprus-logo-white.svg';
@@ -95,8 +95,8 @@ get_template_part( 'template-parts/page/page-hero' );
             <div class="page-about__intro-grid">
                 <div class="page-about__intro-text fade-in fade-in-delay-0">
                     <h2 class="page-section__title"><?php esc_html_e( 'Hotels We Work With', '360-hotelier' ); ?></h2>
-                    <p><?php esc_html_e( 'At 360° Hotelier Consulting, we collaborate with independent, boutique and resort hotels in Cyprus, providing revenue management, online sales & B2B distribution, digital marketing and tour-operator contracting services.', '360-hotelier' ); ?></p>
-                    <p><?php esc_html_e( 'Each project is tailored to the hotel\'s market positioning, seasonality and commercial goals — delivering measurable results through data-driven hotel consulting and strategic execution.', '360-hotelier' ); ?></p>
+                    <p><?php esc_html_e( 'We work with independent, boutique and resort hotels in Cyprus across revenue management, online sales & B2B distribution, digital marketing and tour-operator contracting.', '360-hotelier' ); ?></p>
+                    <p><?php esc_html_e( 'Each engagement is built around the hotel\'s market, seasonality and commercial goals.', '360-hotelier' ); ?></p>
                 </div>
                 <div class="page-about__intro-image fade-in fade-in-delay-1" style="background-image: url('<?php echo esc_url( content_url( '/uploads/2026/03/why-choose-360-hotelier.webp' ) ); ?>');" aria-hidden="true"></div>
             </div>
@@ -155,8 +155,8 @@ get_template_part( 'template-parts/page/page-hero' );
     <section class="front-featured-banner card-border" style="background-image: url('<?php echo esc_url( content_url( '/uploads/2026/03/featured-360-hotelier.webp' ) ); ?>');">
         <div class="front-featured-banner__overlay section-overlay"></div>
         <div class="site-container front-featured-banner__content fade-in fade-in-delay-0">
-            <h2 class="front-featured-banner__title"><?php esc_html_e( 'Ready to Join Our Portfolio?', '360-hotelier' ); ?></h2>
-            <p class="front-featured-banner__text"><?php esc_html_e( "We work with a select number of hotels so every client gets real attention and real results. Let's talk.", '360-hotelier' ); ?></p>
+            <h2 class="front-featured-banner__title"><?php esc_html_e( 'Add Your Hotel to Our Portfolio.', '360-hotelier' ); ?></h2>
+            <p class="front-featured-banner__text"><?php esc_html_e( "We keep our client list small. Every hotel gets direct access to Giorgos and full commercial support.", '360-hotelier' ); ?></p>
             <div class="front-featured-banner__actions">
                 <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
             </div>

@@ -6,7 +6,7 @@
  */
 
 $page_hero_title    = __( 'Our Core Services', '360-hotelier' );
-$page_hero_subtitle = __( 'Revenue, distribution and digital growth — end to end. Your external commercial team for hotels in Cyprus.', '360-hotelier' );
+$page_hero_subtitle = __( 'Revenue, distribution and digital growth for hotels in Cyprus. We act as your external commercial team.', '360-hotelier' );
 $page_hero_image    = content_url( '/uploads/2026/03/360-hotelier-consulting-cyprus-hero.webp' );
 
 get_header();
@@ -67,8 +67,8 @@ get_template_part( 'template-parts/page/page-hero' );
     <section class="front-featured-banner card-border" style="background-image: url('<?php echo esc_url( content_url( '/uploads/2026/03/featured-360-hotelier.webp' ) ); ?>');">
         <div class="front-featured-banner__overlay section-overlay"></div>
         <div class="site-container front-featured-banner__content fade-in fade-in-delay-0">
-            <h2 class="front-featured-banner__title"><?php esc_html_e( "Ready to Grow Your Hotel's Revenue?", '360-hotelier' ); ?></h2>
-            <p class="front-featured-banner__text"><?php esc_html_e( "Let's build a commercial strategy tailored to your property, market and goals.", '360-hotelier' ); ?></p>
+            <h2 class="front-featured-banner__title"><?php esc_html_e( "Grow Your Hotel's Revenue.", '360-hotelier' ); ?></h2>
+            <p class="front-featured-banner__text"><?php esc_html_e( "We'll build a commercial strategy around your property, market and goals.", '360-hotelier' ); ?></p>
             <div class="front-featured-banner__actions">
                 <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
             </div>

@@ -9,7 +9,7 @@ $services_url = hotelier_get_page_url_by_slug( 'services' );
 <section class="front-services-overview card-border">
     <div class="site-container">
         <h2 class="front-section__title fade-in fade-in-delay-0"><?php esc_html_e( 'Our Core Services', '360-hotelier' ); ?></h2>
-        <p class="front-section__subtitle fade-in fade-in-delay-1"><?php esc_html_e( 'Full commercial support to grow revenue, strengthen distribution and sharpen your digital presence.', '360-hotelier' ); ?></p>
+        <p class="front-section__subtitle fade-in fade-in-delay-1"><?php esc_html_e( 'Full commercial support across revenue, distribution and digital.', '360-hotelier' ); ?></p>
         <div class="front-services-overview__grid">
 
             <div class="front-services-overview__card card-border fade-in fade-in-delay-2">
@@ -48,7 +48,7 @@ $services_url = hotelier_get_page_url_by_slug( 'services' );
                 </div>
                 <div class="front-services-overview__card-content">
                     <h3 class="front-services-overview__card-title"><?php esc_html_e( 'Contracting & Negotiations (Tour Operators)', '360-hotelier' ); ?></h3>
-                    <p class="front-services-overview__card-text text-body"><?php esc_html_e( 'Professional negotiation and full contracting support with key tour operators and wholesalers.', '360-hotelier' ); ?></p>
+                    <p class="front-services-overview__card-text text-body"><?php esc_html_e( 'Negotiation and contracting support with tour operators and wholesalers.', '360-hotelier' ); ?></p>
                 </div>
             </div>
 
