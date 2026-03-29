@@ -286,18 +286,6 @@
         gap: 2rem;
     }
 
-
-    .footer-cols {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-    }
-
-    .footer-col {
-        width: max-content;
-    }
-
-
     .footer-bottom {
         flex-direction: column;
         text-align: center;
@@ -354,6 +342,38 @@
         grid-template-columns: 1fr;
     }
 
+    /* How We Work bento: column spans are defined in 04 — this file loads later, so resets win */
+    .front-approach__bento {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .front-approach__bento-card:nth-child(n) {
+        grid-column: auto;
+    }
+
+    .front-results__list {
+        grid-template-columns: 1fr;
+    }
+
+    .front-services-overview__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .posts-loop {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-cols {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .footer-col {
+        width: auto;
+        max-width: none;
+    }
+
     .front-founder__image {
         min-height: 600px;
     }
@@ -367,6 +387,10 @@
     }
 
     .sg-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sg-color-grid {
         grid-template-columns: 1fr;
     }
 

@@ -254,13 +254,6 @@
     .front-why-choose__image {
         min-height: 400px;
     }
-    .front-approach__bento {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-    .front-approach__bento-card:nth-child(n) {
-        grid-column: auto;
-    }
 }
 
 /* Services Overview */
