@@ -32,8 +32,16 @@
 		$(document).on('click', '.hotelier-clear-image', function (e) {
 			e.preventDefault();
 			var $wrap = $(this).closest('.hotelier-image-field');
+			var $prev = $wrap.find('.hotelier-image-preview');
 			$wrap.find('.hotelier-image-id').val('');
-			$wrap.find('.hotelier-image-preview').empty();
+			var defUrl = $wrap.attr('data-default-preview-url') || '';
+			$prev.empty();
+			if (defUrl) {
+				$('<img alt="">')
+					.attr('src', defUrl)
+					.css({ maxHeight: '80px', width: 'auto' })
+					.appendTo($prev);
+			}
 		});
 	});
 })(jQuery);

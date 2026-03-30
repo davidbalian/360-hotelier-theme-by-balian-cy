@@ -32,17 +32,17 @@ final class Hotelier_Page_Meta_Renderer {
 
 		echo '<div class="hotelier-page-meta-fields" data-context="' . esc_attr( $context ) . '">';
 
+		$post_id = (int) $post->ID;
+
 		foreach ( $fields as $field => $def ) {
 			$label = isset( $def['label'] ) ? (string) $def['label'] : $field;
 			$type  = isset( $def['type'] ) ? $def['type'] : 'text';
-			$mk    = Hotelier_Page_Meta_Schema::meta_key( $context, $field );
-			$val   = get_post_meta( $post->ID, $mk, true );
 
 			echo '<div class="hotelier-page-meta-field" style="margin-bottom:14px;">';
 			echo '<label style="display:block;font-weight:600;margin-bottom:4px;" for="hotelier-f-' . esc_attr( $field ) . '">' . esc_html( $label ) . '</label>';
 
 			if ( 'textarea' === $type ) {
-				$text = is_string( $val ) ? $val : '';
+				$text = Hotelier_Page_Content::get_admin_input_text( $post_id, $context, $field );
 				printf(
 					'<textarea class="widefat" style="min-height:72px;" id="hotelier-f-%1$s" name="%2$s[%1$s]">%3$s</textarea>',
 					esc_attr( $field ),
@@ -51,7 +51,7 @@ final class Hotelier_Page_Meta_Renderer {
 				);
 			} elseif ( 'select' === $type ) {
 				$options = isset( $def['options'] ) && is_array( $def['options'] ) ? $def['options'] : array();
-				$current = is_string( $val ) ? $val : '';
+				$current = Hotelier_Page_Content::get_admin_select_value( $post_id, $context, $field );
 				echo '<select class="widefat" id="hotelier-f-' . esc_attr( $field ) . '" name="' . esc_attr( Hotelier_Page_Meta_Sanitizer::INPUT_PREFIX ) . '[' . esc_attr( $field ) . ']">';
 				foreach ( $options as $opt_val => $opt_label ) {
 					printf(
@@ -63,20 +63,29 @@ final class Hotelier_Page_Meta_Renderer {
 				}
 				echo '</select>';
 			} elseif ( 'image' === $type ) {
-				$id = (int) $val;
-				$url = $id > 0 ? wp_get_attachment_image_url( $id, 'thumbnail' ) : '';
-				echo '<div class="hotelier-image-field" data-field="' . esc_attr( $field ) . '">';
+				$id = (int) get_post_meta(
+					$post->ID,
+					Hotelier_Page_Meta_Schema::meta_key( $context, $field ),
+					true
+				);
+				$preview_url  = Hotelier_Page_Content::get_admin_image_preview_url( $post_id, $context, $field );
+				$default_url  = isset( $def['default_url'] ) ? (string) $def['default_url'] : '';
+				$data_default = ( $id <= 0 && $default_url !== '' ) ? $default_url : '';
+				echo '<div class="hotelier-image-field" data-field="' . esc_attr( $field ) . '" data-default-preview-url="' . esc_url( $data_default ) . '">';
 				echo '<input type="hidden" class="hotelier-image-id" id="hotelier-f-' . esc_attr( $field ) . '" name="' . esc_attr( Hotelier_Page_Meta_Sanitizer::INPUT_PREFIX ) . '[' . esc_attr( $field ) . ']" value="' . esc_attr( (string) $id ) . '">';
 				echo '<p class="hotelier-image-preview" style="min-height:40px;">';
-				if ( $url ) {
-					echo '<img src="' . esc_url( $url ) . '" alt="" style="max-height:80px;width:auto;">';
+				if ( $preview_url !== '' ) {
+					echo '<img src="' . esc_url( $preview_url ) . '" alt="" style="max-height:80px;width:auto;">';
 				}
 				echo '</p>';
+				if ( $id <= 0 && $preview_url !== '' ) {
+					echo '<p class="description" style="margin:4px 0 8px;">' . esc_html__( 'Preview shows the theme default. Choose an image to override; Clear keeps the default on the site.', '360-hotelier' ) . '</p>';
+				}
 				echo '<button type="button" class="button hotelier-pick-image">' . esc_html__( 'Select image', '360-hotelier' ) . '</button> ';
 				echo '<button type="button" class="button hotelier-clear-image">' . esc_html__( 'Clear', '360-hotelier' ) . '</button>';
 				echo '</div>';
 			} else {
-				$text = is_string( $val ) ? $val : '';
+				$text = Hotelier_Page_Content::get_admin_input_text( $post_id, $context, $field );
 				printf(
 					'<input class="widefat" type="text" id="hotelier-f-%1$s" name="%2$s[%1$s]" value="%3$s">',
 					esc_attr( $field ),
