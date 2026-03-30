@@ -148,6 +148,7 @@ return array(
 	'founder_pt_3'           => array( 'type' => 'textarea', 'label' => 'Founder — bullet 3', 'default' => 'Track record in growing RevPAR and direct bookings' ),
 	'founder_pt_4'           => array( 'type' => 'textarea', 'label' => 'Founder — bullet 4', 'default' => 'Trusted advisor to boutique, resort and independent hotels' ),
 	'founder_cta_text'       => array( 'type' => 'text', 'label' => 'Founder — About Us button', 'default' => 'About Us' ),
+	'founder_profile_cta_text' => array( 'type' => 'text', 'label' => 'Founder — Founder page button (About page only)', 'default' => 'Founder profile' ),
 
 	'contact_band_img'       => array( 'type' => 'image', 'label' => 'Contact band — image', 'default_url' => $u . 'contact-360-hotelier.webp' ),
 	'contact_band_title'     => array( 'type' => 'textarea', 'label' => 'Contact band — title', 'default' => "Grow Your Hotel's Revenue." ),

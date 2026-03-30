@@ -2,12 +2,14 @@
 /**
  * Inner page hero section.
  *
- * Set these variables before calling get_template_part():
- *   $page_hero_title    (string) — H1: short document title (e.g. About Us, Contact)
- *   $page_hero_tagline  (string) — Optional marketing line below the H1
- *   $page_hero_subtitle (string) — Optional supporting paragraph
- *   $page_hero_image    (string) — Background image URL
- *   $page_hero_label    (string) — Optional small kicker above the H1
+ * Pass these via get_template_part( ..., null, array( ... ) ) (WP 5.5+). Parent template
+ * variables are not in scope here because the partial loads inside load_template().
+ *
+ *   page_hero_title    (string) — H1: short document title (e.g. About Us, Contact)
+ *   page_hero_tagline  (string) — Optional marketing line below the H1
+ *   page_hero_subtitle (string) — Optional supporting paragraph
+ *   page_hero_image    (string) — Background image URL
+ *   page_hero_label    (string) — Optional small kicker above the H1
  *
  * Do not use .fade-in here: hero copy sits low in the viewport and scroll observers
  * often never reveal it (opacity stays 0).

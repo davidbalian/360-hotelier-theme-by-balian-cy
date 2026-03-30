@@ -3,7 +3,8 @@
  * Front page "Meet the Founder" section.
  *
  * Optional: hide_about_cta via get_template_part( …, array( 'hide_about_cta' => true ) ),
- * or global $hotelier_section_founder_hide_about_cta (e.g. About page).
+ * or global $hotelier_section_founder_hide_about_cta (e.g. About page). When hidden, a
+ * link to the Founder page is shown instead (label: founder_profile_cta_text on the home context).
  * Optional: founder_content_post_id — post ID whose home-context founder fields to use (default: static front page).
  *
  * @package 360-hotelier
@@ -18,9 +19,11 @@ if ( $founder_pid <= 0 ) {
 	$founder_pid = (int) get_queried_object_id();
 }
 
-$hctx = 'home';
-$about_url = hotelier_get_page_url_by_slug( 'about-us' );
-$photo     = Hotelier_Page_Content::get_image_url( $founder_pid, $hctx, 'founder_photo' );
+$hctx         = 'home';
+$about_url    = hotelier_get_page_url_by_slug( 'about-us' );
+$founder_url  = hotelier_get_page_url_by_slug( 'founder' );
+$photo        = Hotelier_Page_Content::get_image_url( $founder_pid, $hctx, 'founder_photo' );
+$profile_cta  = Hotelier_Page_Content::get_text( $founder_pid, $hctx, 'founder_profile_cta_text' );
 ?>
 <section class="front-founder">
     <div class="site-container front-founder__inner">
@@ -43,6 +46,8 @@ $photo     = Hotelier_Page_Content::get_image_url( $founder_pid, $hctx, 'founder
             </ul>
             <?php if ( ! $hide_about_cta ) : ?>
             <a href="<?php echo esc_url( $about_url ); ?>" class="btn btn--primary front-founder__cta fade-in fade-in-delay-9"><?php echo esc_html( Hotelier_Page_Content::get_text( $founder_pid, $hctx, 'founder_cta_text' ) ); ?></a>
+            <?php elseif ( $founder_url !== '' ) : ?>
+            <a href="<?php echo esc_url( $founder_url ); ?>" class="btn btn--primary front-founder__cta fade-in fade-in-delay-9"><?php echo esc_html( $profile_cta ); ?></a>
             <?php endif; ?>
         </div>
         </div>

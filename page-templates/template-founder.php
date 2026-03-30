@@ -13,7 +13,15 @@ $page_hero_subtitle = Hotelier_Page_Content::get_text( $page_id, $ctx, 'hero_sub
 $page_hero_image    = Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'hero_bg' );
 
 get_header();
-get_template_part( 'template-parts/page/page-hero' );
+get_template_part(
+	'template-parts/page/page-hero',
+	null,
+	array(
+		'page_hero_title'    => $page_hero_title,
+		'page_hero_subtitle' => $page_hero_subtitle,
+		'page_hero_image'    => $page_hero_image,
+	)
+);
 ?>
 
 <main id="main" class="site-main page-founder">

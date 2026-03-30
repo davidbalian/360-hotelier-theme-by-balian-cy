@@ -23,7 +23,15 @@ $page_hero_title    = $content['title'];
 $page_hero_subtitle = $content['hero_subtitle'];
 $page_hero_image    = $content['hero_image_url'];
 
-get_template_part( 'template-parts/page/page-hero' );
+get_template_part(
+	'template-parts/page/page-hero',
+	null,
+	array(
+		'page_hero_title'    => $page_hero_title,
+		'page_hero_subtitle' => $page_hero_subtitle,
+		'page_hero_image'    => $page_hero_image,
+	)
+);
 ?>
 
 <main id="main" class="site-main page-service-single">

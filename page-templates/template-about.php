@@ -14,7 +14,16 @@ $page_hero_subtitle = Hotelier_Page_Content::get_text( $page_id, $ctx, 'hero_sub
 $page_hero_image    = Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'hero_bg' );
 
 get_header();
-get_template_part( 'template-parts/page/page-hero' );
+get_template_part(
+	'template-parts/page/page-hero',
+	null,
+	array(
+		'page_hero_title'    => $page_hero_title,
+		'page_hero_tagline'  => $page_hero_tagline,
+		'page_hero_subtitle' => $page_hero_subtitle,
+		'page_hero_image'    => $page_hero_image,
+	)
+);
 ?>
 
 <main id="main" class="site-main page-about">
@@ -52,6 +61,33 @@ get_template_part( 'template-parts/page/page-hero' );
                     <p class="front-why-choose__box-text text-body"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'what_' . $i . '_text' ) ); ?></p>
                 </div>
 				<?php endfor; ?>
+				<?php
+				$what_banner_id = Hotelier_Page_Content::get_attachment_id( $page_id, $ctx, 'what_banner_img' );
+				if ( $what_banner_id > 0 ) :
+					$what_banner_alt = Hotelier_Page_Content::get_text( $page_id, $ctx, 'what_banner_alt' );
+					if ( '' === $what_banner_alt ) {
+						$what_banner_alt = (string) get_post_meta( $what_banner_id, '_wp_attachment_image_alt', true );
+					}
+					$what_banner_markup = wp_get_attachment_image(
+						$what_banner_id,
+						'large',
+						false,
+						array(
+							'alt'      => $what_banner_alt,
+							'loading'  => 'lazy',
+							'decoding' => 'async',
+							'class'    => 'page-about__what-banner-img',
+						)
+					);
+					if ( $what_banner_markup !== '' ) :
+						?>
+                <figure class="page-about__what-banner fade-in fade-in-delay-5">
+						<?php echo $what_banner_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                </figure>
+						<?php
+					endif;
+				endif;
+				?>
             </div>
             <p class="front-services-overview__cta fade-in fade-in-delay-5">
                 <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'services' ) . '#services' ); ?>" class="btn btn--primary"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'what_cta_text' ) ); ?></a>

@@ -33,6 +33,8 @@ return array(
 	'what_3_text'            => array( 'type' => 'textarea', 'label' => 'What box 3 — text', 'default' => 'Direct booking optimization, SEO & SEM, social media marketing and digital performance analysis.' ),
 	'what_4_title'           => array( 'type' => 'text', 'label' => 'What box 4 — title', 'default' => 'Contracting & Tour Operator Negotiations' ),
 	'what_4_text'            => array( 'type' => 'textarea', 'label' => 'What box 4 — text', 'default' => "Professional representation and negotiation with tour operators and wholesalers, acting in the hotel's best commercial interest." ),
+	'what_banner_img'        => array( 'type' => 'image', 'label' => 'What we do — wide image (below grid, full width of block)', 'default_url' => '' ),
+	'what_banner_alt'        => array( 'type' => 'text', 'label' => 'What we do — wide image alt text', 'default' => '' ),
 	'what_cta_text'          => array( 'type' => 'text', 'label' => 'What we do — CTA', 'default' => 'View All Services' ),
 
 	'cta_feat_img'           => array( 'type' => 'image', 'label' => 'Bottom CTA — image', 'default_url' => $u . 'featured-360-hotelier.webp' ),

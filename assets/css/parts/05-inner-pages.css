@@ -148,6 +148,22 @@
     grid-column: auto;
 }
 
+/* Wide image under the four “What we do” cards (spans both columns). */
+.page-about__what-banner {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 0;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+}
+
+.page-about__what-banner .page-about__what-banner-img,
+.page-about__what-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* ==========================================================================
    Service Single Page
    ========================================================================== */
