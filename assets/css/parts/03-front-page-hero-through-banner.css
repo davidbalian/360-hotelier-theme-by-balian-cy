@@ -231,13 +231,6 @@
     .front-why-choose__box:nth-child(n) {
         grid-column: auto;
     }
-    .front-approach__bento {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-    }
-    .front-approach__bento-card:nth-child(n) {
-        grid-column: auto;
-    }
 }
 
 @media (max-width: 768px) {

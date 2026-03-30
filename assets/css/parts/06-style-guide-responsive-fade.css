@@ -342,14 +342,8 @@
         grid-template-columns: 1fr;
     }
 
-    /* How We Work bento: column spans are defined in 04 — this file loads later, so resets win */
     .front-approach__bento {
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-
-    .front-approach__bento-card:nth-child(n) {
-        grid-column: auto;
     }
 
     .front-results__list {
