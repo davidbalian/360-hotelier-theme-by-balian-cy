@@ -68,7 +68,7 @@ $out['hotel_1_alt']['default']           = 'Cap St Georges Hotel & Resort Cyprus
 $out['hotel_2_name']['default']          = 'Serbellas Boutique Hotel';
 $out['hotel_2_location']['default']      = 'Paphos, Cyprus';
 $out['hotel_2_url']['default']           = 'https://serbellashotel.com/';
-$out['hotel_2_logo']['default_url']      = $u . 'serbellas-boutique-hotel-logo-transparent.webp';
+$out['hotel_2_logo']['default_url']      = $u . 'serbellas-boutique-hotel-logo-partner-hotel-of-360-Hotelier-Consulting.png';
 $out['hotel_2_alt']['default']           = 'Serbellas Boutique Hotel';
 $out['hotel_2_variant']['default']       = 'serbellas';
 

@@ -103,7 +103,7 @@ return array(
 	'results_tick_1_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 1 alt', 'default' => 'Cap St Georges Hotel & Resort Cyprus' ),
 	'results_tick_2'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 2', 'default_url' => $u . 'tsanotel-hd-logo.webp' ),
 	'results_tick_2_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 2 alt', 'default' => 'Tsanotel Cyprus' ),
-	'results_tick_3'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 3', 'default_url' => $u . 'serbellas-boutique-hotel-logo-transparent.webp' ),
+	'results_tick_3'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 3', 'default_url' => $u . 'serbellas-boutique-hotel-logo-partner-hotel-of-360-Hotelier-Consulting.png' ),
 	'results_tick_3_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 3 alt', 'default' => 'Serbellas Boutique Hotel' ),
 	'results_tick_4'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 4', 'default_url' => $u . 'petit-palais-platres-hotel-logo-color-cyprus.webp' ),
 	'results_tick_4_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 4 alt', 'default' => 'Petit Palais Hotel Platres Cyprus' ),

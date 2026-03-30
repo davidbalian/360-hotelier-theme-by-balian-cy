@@ -320,12 +320,6 @@
   fill: #00231f;
 }
 
-/* Serbellas — hover to ~#C2B275 (warm gold/brass) */
-.front-results__ticker-track img.ticker-logo--serbellas:hover {
-  filter: brightness(0.4) sepia(1) saturate(1.2) hue-rotate(13deg)
-    brightness(1.35);
-}
-
 @keyframes ticker {
   from {
     transform: translateX(0);

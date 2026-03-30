@@ -415,10 +415,6 @@
     fill: #00231f;
 }
 
-.page-portfolio__hotel-logo--serbellas img {
-    filter: brightness(0.4) sepia(1) saturate(1.2) hue-rotate(13deg) brightness(1.35);
-}
-
 .page-portfolio__hotel-name {
     font-size: var(--text-xl);
     color: var(--color-purple);
