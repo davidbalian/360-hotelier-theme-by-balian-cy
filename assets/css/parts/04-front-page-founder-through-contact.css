@@ -7,11 +7,13 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 3rem;
-  align-items: stretch;
+  align-items: start;
 }
 
 .front-founder__image {
   position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: 2rem;
   overflow: hidden;
   background: var(--color-sand);

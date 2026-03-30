@@ -368,9 +368,6 @@
         max-width: none;
     }
 
-    .front-founder__image {
-        min-height: 600px;
-    }
 
     .front-hero__ctas .btn {
         width: 100%;
@@ -394,6 +391,10 @@
         border-bottom-left-radius: 2rem;
         border-bottom-right-radius: 2rem;
         padding-bottom: 1rem;
+    }
+
+    .page-hero.page-hero--square {
+        min-height: unset;
     }
 
     .page-service-single__body {

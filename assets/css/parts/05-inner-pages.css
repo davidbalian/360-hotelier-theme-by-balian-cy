@@ -8,6 +8,14 @@
     padding-bottom: 1rem;
 }
 
+.page-hero.page-hero--square {
+    aspect-ratio: 1 / 1;
+    width: min(100% - 2rem, 36rem);
+    max-width: min(100% - 2rem, 36rem);
+    margin-inline: auto;
+    min-height: unset;
+}
+
 .page-hero__content {
     align-self: stretch;
     text-align: left;
@@ -239,14 +247,19 @@
 }
 
 .page-founder__photo-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     border-radius: 2rem;
     overflow: hidden;
     background: var(--color-sand);
-    width: 100%;
 }
 
 .page-founder__photo {
+    position: absolute;
+    inset: 0;
     width: 100%;
+    height: 100%;
     display: block;
     object-fit: contain;
     object-position: center center;
