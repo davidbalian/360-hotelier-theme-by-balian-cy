@@ -33,11 +33,8 @@ final class Hotelier_Page_Meta_Schema {
 		'page-templates/template-founder.php'       => 'founder',
 	);
 
-	/** @var string Relative to theme root; same file as site content sync. */
-	private const SYNC_FILE_RELATIVE = '/inc/hotelier-db-defaults.sync.php';
-
 	/**
-	 * Schema field definitions without generated DB sync (for tooling).
+	 * Schema field definitions from theme PHP files (for tooling and export).
 	 *
 	 * @return array<string, array<string, mixed>>
 	 */
@@ -63,37 +60,7 @@ final class Hotelier_Page_Meta_Schema {
 			return $cache;
 		}
 		$cache = self::baseline_contexts();
-		self::merge_synced_page_meta( $cache );
 		return $cache;
-	}
-
-	/**
-	 * @param array<string, array<string, mixed>> $cache Baseline contexts (modified in place).
-	 */
-	private static function merge_synced_page_meta( array &$cache ): void {
-		if ( ! defined( 'HOTELIER_THEME_DIR' ) ) {
-			return;
-		}
-		$path = HOTELIER_THEME_DIR . self::SYNC_FILE_RELATIVE;
-		if ( ! is_readable( $path ) ) {
-			return;
-		}
-		/** @var mixed $data */
-		$data = require $path;
-		if ( ! is_array( $data ) || ! isset( $data['page_meta'] ) || ! is_array( $data['page_meta'] ) ) {
-			return;
-		}
-		foreach ( $data['page_meta'] as $ctx => $fields ) {
-			if ( ! is_string( $ctx ) || ! isset( $cache[ $ctx ] ) || ! is_array( $fields ) ) {
-				continue;
-			}
-			foreach ( $fields as $field => $patch ) {
-				if ( ! is_string( $field ) || ! isset( $cache[ $ctx ][ $field ] ) || ! is_array( $patch ) ) {
-					continue;
-				}
-				$cache[ $ctx ][ $field ] = array_merge( $cache[ $ctx ][ $field ], $patch );
-			}
-		}
 	}
 
 	/**

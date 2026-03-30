@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin: download JSON snapshot of site content + page meta (for theme repo sync).
+ * Admin: download JSON snapshot of site content + page meta.
  *
  * @package 360-hotelier
  */
@@ -31,7 +31,6 @@ final class Hotelier_Defaults_Export_Admin {
 		$sid  = isset( $_POST['hotelier_export_service_post_id'] ) ? absint( $_POST['hotelier_export_service_post_id'] ) : 0;
 
 		$builder = new Hotelier_Defaults_Snapshot_Builder(
-			HOTELIER_THEME_DIR,
 			$skip,
 			$sid > 0 ? $sid : null
 		);
@@ -42,7 +41,7 @@ final class Hotelier_Defaults_Export_Admin {
 				'_hotelier_export' => array(
 					'generated_at' => gmdate( 'c' ),
 					'host'         => wp_parse_url( home_url(), PHP_URL_HOST ),
-					'note'         => 'Use site_content and page_meta like inc/hotelier-db-defaults.sync.php. Remove _hotelier_export before converting to PHP if needed.',
+					'note'         => 'Contains site_content and page_meta keys. Remove _hotelier_export if you reuse this JSON elsewhere.',
 				),
 			),
 			$data
@@ -50,7 +49,7 @@ final class Hotelier_Defaults_Export_Admin {
 
 		nocache_headers();
 		header( 'Content-Type: application/json; charset=utf-8' );
-		header( 'Content-Disposition: attachment; filename="hotelier-db-defaults-export.json"' );
+		header( 'Content-Disposition: attachment; filename="hotelier-site-content-export.json"' );
 
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo wp_json_encode( $export, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
@@ -85,9 +84,9 @@ final class Hotelier_Defaults_Export_Admin {
 
 		?>
 		<hr>
-		<h2 class="title"><?php esc_html_e( 'Export for theme / development', '360-hotelier' ); ?></h2>
+		<h2 class="title"><?php esc_html_e( 'Export site content & page fields', '360-hotelier' ); ?></h2>
 		<p class="description">
-			<?php esc_html_e( 'Download a JSON file with the same structure as the theme sync file (site content + page field defaults). Share it with your developer or AI to refresh inc/hotelier-db-defaults.sync.php in the theme repository.', '360-hotelier' ); ?>
+			<?php esc_html_e( 'Download a JSON snapshot of Settings → Site content values and editable page field defaults from your database (backup or handoff to a developer).', '360-hotelier' ); ?>
 		</p>
 		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="hotelier-export-defaults-form">
 			<?php wp_nonce_field( self::NONCE_ACTION ); ?>

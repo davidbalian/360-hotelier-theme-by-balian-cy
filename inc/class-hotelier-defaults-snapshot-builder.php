@@ -1,6 +1,6 @@
 <?php
 /**
- * Builds the site_content + page_meta snapshot (CLI and admin export).
+ * Builds the site_content + page_meta snapshot for admin JSON export.
  *
  * @package 360-hotelier
  */
@@ -10,19 +10,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Collects effective option + page meta for theme default sync / JSON export.
+ * Collects effective site content option + page meta from the database for export.
  */
 final class Hotelier_Defaults_Snapshot_Builder {
-
-	private string $theme_dir;
 
 	private bool $skip_attachment_ids;
 
 	/** @var int|null */
 	private $service_post_id;
 
-	public function __construct( string $theme_dir, bool $skip_attachment_ids = false, ?int $service_post_id = null ) {
-		$this->theme_dir           = $theme_dir;
+	public function __construct( bool $skip_attachment_ids = false, ?int $service_post_id = null ) {
 		$this->skip_attachment_ids = $skip_attachment_ids;
 		$this->service_post_id     = $service_post_id;
 	}
@@ -41,31 +38,16 @@ final class Hotelier_Defaults_Snapshot_Builder {
 	 * @return array<string, mixed>
 	 */
 	private function build_site_content_payload(): array {
-		$builtin = Hotelier_Site_Content_Options::builtin_defaults();
-		$sync    = $this->read_existing_sync_array();
-		$layer   = array_merge( $builtin, isset( $sync['site_content'] ) && is_array( $sync['site_content'] ) ? $sync['site_content'] : array() );
-		$stored  = get_option( Hotelier_Site_Content_Options::OPTION_NAME, array() );
+		$builtin   = Hotelier_Site_Content_Options::builtin_defaults();
+		$stored    = get_option( Hotelier_Site_Content_Options::OPTION_NAME, array() );
 		if ( ! is_array( $stored ) ) {
 			$stored = array();
 		}
-		$effective = array_merge( $layer, $stored );
+		$effective = array_merge( $builtin, $stored );
 		if ( $this->skip_attachment_ids ) {
 			$effective['footer_logo_id'] = 0;
 		}
 		return $effective;
-	}
-
-	/**
-	 * @return array<string, mixed>
-	 */
-	private function read_existing_sync_array(): array {
-		$path = $this->theme_dir . '/inc/hotelier-db-defaults.sync.php';
-		if ( ! is_readable( $path ) ) {
-			return array();
-		}
-		/** @var mixed $data */
-		$data = require $path;
-		return is_array( $data ) ? $data : array();
 	}
 
 	/**
@@ -102,7 +84,7 @@ final class Hotelier_Defaults_Snapshot_Builder {
 			}
 			if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
 				// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
-				error_log( "Hotelier export/sync: service post ID {$pid} ignored (not a page with the service template)." );
+				error_log( "Hotelier export: service post ID {$pid} ignored (not a page with the service template)." );
 			}
 		}
 		$template = Hotelier_Page_Meta_Schema::page_template_for_context( $context );
