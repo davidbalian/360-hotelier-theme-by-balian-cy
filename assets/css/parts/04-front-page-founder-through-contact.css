@@ -185,12 +185,9 @@
     margin-bottom: 1rem;
     overflow: hidden;
     border-radius: var(--radius-card);
-}
-
-.front-approach__bento-card-thumb::before {
-    content: '';
-    display: block;
-    aspect-ratio: 16 / 9;
+    width: min(100%, 400px);
+    height: 300px;
+    flex-shrink: 0;
 }
 
 .front-approach__bento-card-thumb img {
