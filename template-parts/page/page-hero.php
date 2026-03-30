@@ -9,6 +9,7 @@
  *   page_hero_tagline  (string) — Optional marketing line below the H1
  *   page_hero_subtitle (string) — Optional supporting paragraph
  *   page_hero_image    (string) — Background image URL
+ *   page_hero_bg_fit   (string) — Optional: pass 'contain' for background-size: contain (default: cover)
  *   page_hero_label    (string) — Optional small kicker above the H1
  *
  * Do not use .fade-in here: hero copy sits low in the viewport and scroll observers
@@ -32,8 +33,10 @@ if ( '' === $page_hero_title ) {
 $page_hero_tagline  = isset( $page_hero_tagline ) ? $page_hero_tagline : '';
 $page_hero_subtitle = isset( $page_hero_subtitle ) ? $page_hero_subtitle : '';
 $page_hero_label    = isset( $page_hero_label ) ? $page_hero_label : '';
+$page_hero_bg_fit   = isset( $page_hero_bg_fit ) && 'contain' === $page_hero_bg_fit ? 'contain' : 'cover';
+$page_hero_class    = 'page-hero' . ( 'contain' === $page_hero_bg_fit ? ' page-hero--bg-contain' : '' );
 ?>
-<section class="page-hero" style="background-image: url('<?php echo esc_url( $page_hero_image ); ?>');">
+<section class="<?php echo esc_attr( $page_hero_class ); ?>" style="background-image: url('<?php echo esc_url( $page_hero_image ); ?>');">
     <div class="section-overlay section-overlay--strong" aria-hidden="true"></div>
     <div class="site-container page-hero__content">
         <?php if ( '' !== $page_hero_label ) : ?>

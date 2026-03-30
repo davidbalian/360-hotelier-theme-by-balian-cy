@@ -20,6 +20,7 @@ get_template_part(
 		'page_hero_title'    => $page_hero_title,
 		'page_hero_subtitle' => $page_hero_subtitle,
 		'page_hero_image'    => $page_hero_image,
+		'page_hero_bg_fit'   => 'contain',
 	)
 );
 ?>
@@ -30,7 +31,7 @@ get_template_part(
         <div class="site-container">
             <div class="page-founder__bio-grid">
 
-                <div class="fade-in fade-in-delay-0">
+                <div class="page-founder__photo-wrap fade-in fade-in-delay-0">
                     <img
                         class="page-founder__photo"
                         src="<?php echo esc_url( Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'bio_photo' ) ); ?>"

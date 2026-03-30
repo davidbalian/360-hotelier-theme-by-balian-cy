@@ -139,7 +139,7 @@ return array(
 	'feat_text'              => array( 'type' => 'textarea', 'label' => 'Featured banner — text', 'default' => 'Pricing, distribution, contracting and digital marketing — all handled.' ),
 	'feat_cta_text'          => array( 'type' => 'text', 'label' => 'Featured banner — CTA', 'default' => 'Book a Free Consultation' ),
 
-	'founder_photo'          => array( 'type' => 'image', 'label' => 'Founder — photo', 'default_url' => $u . 'george-peyiazis-hotel-revenue-consultant-360-hotelier-cyprus.webp' ),
+	'founder_photo'          => array( 'type' => 'image', 'label' => 'Founder — photo', 'default_url' => $u . 'giorgos-peyiazis-hotel-consultant-founder-of-360-hotelier-consulting-cyprus.webp' ),
 	'founder_photo_alt'      => array( 'type' => 'text', 'label' => 'Founder — photo alt', 'default' => 'Giorgos Peyiazis, Founder of 360 Hotelier Consulting' ),
 	'founder_heading'        => array( 'type' => 'text', 'label' => 'Founder — heading', 'default' => 'Meet the Founder' ),
 	'founder_name'           => array( 'type' => 'text', 'label' => 'Founder — name', 'default' => 'Giorgos Peyiazis' ),

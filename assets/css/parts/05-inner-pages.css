@@ -238,11 +238,18 @@
     align-items: start;
 }
 
+.page-founder__photo-wrap {
+    border-radius: 2rem;
+    overflow: hidden;
+    background: var(--color-sand);
+    width: 100%;
+}
+
 .page-founder__photo {
     width: 100%;
-    border-radius: 2rem;
-    object-fit: cover;
     display: block;
+    object-fit: contain;
+    object-position: center center;
 }
 
 .page-founder__bio-card {

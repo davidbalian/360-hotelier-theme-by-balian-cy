@@ -55,7 +55,7 @@
     justify-content: flex-end;
     align-items: flex-start;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     overflow: hidden;
     max-width: 1500px;
@@ -64,6 +64,11 @@
     border-top-right-radius: 0;
     border-bottom-left-radius: 4rem;
     border-bottom-right-radius: 4rem;
+}
+
+.page-hero.page-hero--bg-contain {
+    background-size: contain;
+    background-color: var(--color-sand);
 }
 
 .front-hero {

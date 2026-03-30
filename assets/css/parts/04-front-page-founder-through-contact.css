@@ -12,6 +12,9 @@
 
 .front-founder__image {
   position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  background: var(--color-sand);
 }
 
 .front-founder__photo {
@@ -19,10 +22,9 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  border-radius: 2rem;
   display: block;
-  object-fit: cover;
-  object-position: top;
+  object-fit: contain;
+  object-position: center center;
 }
 
 .front-founder__card {
