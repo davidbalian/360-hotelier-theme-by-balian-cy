@@ -180,6 +180,28 @@
     box-shadow: var(--shadow-card);
 }
 
+.front-approach__bento-card-thumb {
+    position: relative;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: var(--radius-card);
+}
+
+.front-approach__bento-card-thumb::before {
+    content: '';
+    display: block;
+    aspect-ratio: 16 / 9;
+}
+
+.front-approach__bento-card-thumb img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .front-approach__bento-cta {
     margin-top: 2.5rem;
     text-align: center;
