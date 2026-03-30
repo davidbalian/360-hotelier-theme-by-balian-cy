@@ -33,10 +33,11 @@ for ( $i = 1; $i <= 7; $i++ ) {
 		}
 	}
 	$hotels[] = array(
-		'name'     => Hotelier_Page_Content::get_text( $page_id, $ctx, 'hotel_' . $i . '_name' ),
-		'location' => Hotelier_Page_Content::get_text( $page_id, $ctx, 'hotel_' . $i . '_location' ),
-		'url'      => Hotelier_Page_Content::get_text( $page_id, $ctx, 'hotel_' . $i . '_url' ),
-		'logo'     => $logo,
+		'name'      => Hotelier_Page_Content::get_text( $page_id, $ctx, 'hotel_' . $i . '_name' ),
+		'location'  => Hotelier_Page_Content::get_text( $page_id, $ctx, 'hotel_' . $i . '_location' ),
+		'url'       => Hotelier_Page_Content::get_text( $page_id, $ctx, 'hotel_' . $i . '_url' ),
+		'logo'      => $logo,
+		'photo_url' => Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'hotel_' . $i . '_photo' ),
 	);
 }
 
@@ -110,7 +111,15 @@ get_template_part(
                             </span>
                             <a href="<?php echo esc_url( $hotel['url'] ); ?>" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm page-portfolio__hotel-link"><?php echo esc_html( $visit_label ); ?></a>
                         </div>
-                        <div class="page-portfolio__row-media" aria-hidden="true"></div>
+                        <?php
+						$photo_url = isset( $hotel['photo_url'] ) ? $hotel['photo_url'] : '';
+						$photo_alt = $hotel['name'] !== '' ? $hotel['name'] : __( 'Partner hotel', '360-hotelier' );
+						?>
+                        <div class="page-portfolio__row-media"<?php echo $photo_url === '' ? ' aria-hidden="true"' : ''; ?>>
+                            <?php if ( $photo_url !== '' ) : ?>
+                                <img src="<?php echo esc_url( $photo_url ); ?>" alt="<?php echo esc_attr( $photo_alt ); ?>" loading="lazy" width="800" height="600" />
+                            <?php endif; ?>
+                        </div>
                     </div>
                 <?php endforeach; ?>
             </div>

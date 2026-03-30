@@ -26,6 +26,7 @@ for ( $i = 1; $i <= 7; $i++ ) {
 		'default' => 'img',
 	);
 	$hotels[ "hotel_{$i}_logo" ]     = array( 'type' => 'image', 'label' => "Hotel {$i} — logo image", 'default_url' => '' );
+	$hotels[ "hotel_{$i}_photo" ]    = array( 'type' => 'image', 'label' => "Hotel {$i} — partner photo (large image beside card)", 'default_url' => '' );
 	$hotels[ "hotel_{$i}_alt" ]      = array( 'type' => 'text', 'label' => "Hotel {$i} — logo alt", 'default' => '' );
 	$hotels[ "hotel_{$i}_variant" ]  = array( 'type' => 'text', 'label' => "Hotel {$i} — CSS variant (optional, e.g. serbellas)", 'default' => '' );
 }
