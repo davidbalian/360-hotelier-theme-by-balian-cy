@@ -1,0 +1,104 @@
+<?php
+/**
+ * Portfolio page field definitions.
+ *
+ * @package 360-hotelier
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+$u = content_url( '/uploads/2026/03/' );
+
+$hotels = array();
+for ( $i = 1; $i <= 7; $i++ ) {
+	$hotels[ "hotel_{$i}_name" ]     = array( 'type' => 'text', 'label' => "Hotel {$i} — name", 'default' => '' );
+	$hotels[ "hotel_{$i}_location" ] = array( 'type' => 'text', 'label' => "Hotel {$i} — location", 'default' => '' );
+	$hotels[ "hotel_{$i}_url" ]      = array( 'type' => 'text', 'label' => "Hotel {$i} — website URL", 'default' => '' );
+	$hotels[ "hotel_{$i}_mode" ]     = array(
+		'type'    => 'select',
+		'label'   => "Hotel {$i} — logo type",
+		'options' => array(
+			'img'     => 'Image / raster logo',
+			'pendeli' => 'Pendeli-style inline SVG',
+		),
+		'default' => 'img',
+	);
+	$hotels[ "hotel_{$i}_logo" ]     = array( 'type' => 'image', 'label' => "Hotel {$i} — logo image", 'default_url' => '' );
+	$hotels[ "hotel_{$i}_alt" ]      = array( 'type' => 'text', 'label' => "Hotel {$i} — logo alt", 'default' => '' );
+	$hotels[ "hotel_{$i}_variant" ]  = array( 'type' => 'text', 'label' => "Hotel {$i} — CSS variant (optional, e.g. serbellas)", 'default' => '' );
+}
+
+$defaults = array(
+	'hero_title'             => array( 'type' => 'text', 'label' => 'Hero — title', 'default' => 'Our Hotel Partners' ),
+	'hero_subtitle'          => array( 'type' => 'textarea', 'label' => 'Hero — subtitle', 'default' => 'Boutique, independent and resort hotels across Cyprus and beyond, each delivering measurable results.' ),
+	'hero_bg'                => array( 'type' => 'image', 'label' => 'Hero — background', 'default_url' => $u . 'why-choose-360-hotelier.webp' ),
+
+	'intro_h2'               => array( 'type' => 'text', 'label' => 'Intro — heading', 'default' => 'Hotels We Work With' ),
+	'intro_p1'               => array( 'type' => 'textarea', 'label' => 'Intro — paragraph 1', 'default' => 'We work with independent, boutique and resort hotels in Cyprus across revenue management, online sales & B2B distribution, digital marketing and tour-operator contracting.' ),
+	'intro_p2'               => array( 'type' => 'textarea', 'label' => 'Intro — paragraph 2', 'default' => "Each engagement is built around the hotel's market, seasonality and commercial goals." ),
+	'intro_side_img'         => array( 'type' => 'image', 'label' => 'Intro — side image', 'default_url' => $u . 'why-choose-360-hotelier.webp' ),
+
+	'partners_title'         => array( 'type' => 'text', 'label' => 'Partners section — title', 'default' => 'Partner hotels' ),
+	'partners_subtitle'      => array( 'type' => 'textarea', 'label' => 'Partners section — subtitle', 'default' => 'Independent, boutique and resort properties we support with revenue, distribution and digital strategy.' ),
+	'visit_website_text'     => array( 'type' => 'text', 'label' => 'Partner card — button', 'default' => 'Visit Website' ),
+	'pendeli_aria'           => array( 'type' => 'text', 'label' => 'Pendeli logo — aria label', 'default' => 'Pendeli Resort Hotel Cyprus' ),
+	'pendeli_svg'            => array(
+		'type'        => 'image',
+		'label'       => 'Pendeli — SVG attachment (optional override)',
+		'default_url' => '',
+	),
+
+	'cta_feat_img'           => array( 'type' => 'image', 'label' => 'Bottom CTA — image', 'default_url' => $u . 'featured-360-hotelier.webp' ),
+	'cta_feat_title'         => array( 'type' => 'textarea', 'label' => 'Bottom CTA — title', 'default' => 'Add Your Hotel to Our Portfolio.' ),
+	'cta_feat_text'          => array( 'type' => 'textarea', 'label' => 'Bottom CTA — text', 'default' => 'We keep our client list small. Every hotel gets direct access to Giorgos and full commercial support.' ),
+	'cta_feat_primary'       => array( 'type' => 'text', 'label' => 'Bottom CTA — button', 'default' => 'Book a Free Consultation' ),
+);
+
+$out = array_merge( $defaults, $hotels );
+
+$out['hotel_1_name']['default']          = 'Cap St. Georges Hotel & Resort';
+$out['hotel_1_location']['default']      = 'Paphos, Cyprus';
+$out['hotel_1_url']['default']           = 'https://www.capstgeorges.com/';
+$out['hotel_1_logo']['default_url']      = $u . 'cap-st-georges-resort-logo-hd.webp';
+$out['hotel_1_alt']['default']           = 'Cap St Georges Hotel & Resort Cyprus';
+
+$out['hotel_2_name']['default']          = 'Serbellas Boutique Hotel';
+$out['hotel_2_location']['default']      = 'Paphos, Cyprus';
+$out['hotel_2_url']['default']           = 'https://serbellashotel.com/';
+$out['hotel_2_logo']['default_url']      = $u . 'serbellas-boutique-hotel-logo-transparent.webp';
+$out['hotel_2_alt']['default']           = 'Serbellas Boutique Hotel';
+$out['hotel_2_variant']['default']       = 'serbellas';
+
+$out['hotel_3_name']['default']          = 'TSANotel';
+$out['hotel_3_location']['default']      = 'Limassol, Cyprus';
+$out['hotel_3_url']['default']           = 'https://www.tsanotel.com/';
+$out['hotel_3_logo']['default_url']      = $u . 'tsanotel-hd-logo.webp';
+$out['hotel_3_alt']['default']           = 'Tsanotel Cyprus';
+
+$out['hotel_4_name']['default']          = 'Pendeli Resort';
+$out['hotel_4_location']['default']      = 'Platres, Cyprus';
+$out['hotel_4_url']['default']           = 'https://www.pendeliresort.com/';
+$out['hotel_4_mode']['default']          = 'pendeli';
+$out['hotel_4_logo']['default_url']      = '';
+
+$out['hotel_5_name']['default']          = 'Petit Palais Platres Boutique Hotel';
+$out['hotel_5_location']['default']      = 'Platres, Cyprus';
+$out['hotel_5_url']['default']           = 'https://www.petitpalais.com.cy/';
+$out['hotel_5_logo']['default_url']      = $u . 'petit-palais-platres-hotel-logo-color-cyprus.webp';
+$out['hotel_5_alt']['default']           = 'Petit Palais Hotel Platres Cyprus';
+
+$out['hotel_6_name']['default']          = 'Napa Jay Hotel';
+$out['hotel_6_location']['default']      = 'Ayia Napa, Cyprus';
+$out['hotel_6_url']['default']           = 'https://napajayhotel.com/';
+$out['hotel_6_logo']['default_url']      = $u . 'napa-jay-hotel-logo-cropped.png';
+$out['hotel_6_alt']['default']           = 'Napa Jay Hotel Ayia Napa Cyprus';
+
+$out['hotel_7_name']['default']          = 'Chic Centre Suites Athens';
+$out['hotel_7_location']['default']      = 'Athens, Greece';
+$out['hotel_7_url']['default']           = 'https://chiccentresuites.com/';
+$out['hotel_7_logo']['default_url']      = $u . 'chic-centre-suites-athens-hotel-logo.webp';
+$out['hotel_7_alt']['default']           = 'Chic Centre Suites Athens';
+
+return $out;

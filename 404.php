@@ -5,20 +5,23 @@
  * @package 360-hotelier
  */
 
-get_header(); ?>
+get_header();
+
+$h_404 = Hotelier_Site_Content_Options::get();
+?>
 
 <main id="main" class="site-main">
     <div class="site-container">
 
         <section class="error-404 not-found">
             <header class="page-header">
-                <h1 class="page-title"><?php esc_html_e( '404 — Page Not Found', '360-hotelier' ); ?></h1>
+                <h1 class="page-title"><?php echo esc_html( $h_404['error_title'] ); ?></h1>
             </header>
 
             <div class="page-content">
-                <p><?php esc_html_e( 'It looks like nothing was found at this location.', '360-hotelier' ); ?></p>
+                <p><?php echo esc_html( $h_404['error_text'] ); ?></p>
                 <p>
-                    <a class="btn btn--primary" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Back to home', '360-hotelier' ); ?></a>
+                    <a class="btn btn--primary" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html( $h_404['error_btn'] ); ?></a>
                 </p>
 
                 <?php get_search_form(); ?>

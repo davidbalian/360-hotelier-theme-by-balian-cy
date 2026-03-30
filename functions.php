@@ -42,3 +42,7 @@ require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-cta-band-image.php';
 // Include enqueue functions
 require_once HOTELIER_THEME_DIR . '/inc/enqueue.php';
 
+// Editable page content (post meta) + site-wide content options
+require_once HOTELIER_THEME_DIR . '/inc/page-meta/hotelier-page-meta.php';
+require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-site-content-options.php';
+

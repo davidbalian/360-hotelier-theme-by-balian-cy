@@ -20,10 +20,17 @@
 <div id="page" class="site">
     <a class="screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', '360-hotelier' ); ?></a>
 
+    <?php
+	$h_site = Hotelier_Site_Content_Options::get();
+	$tb_tel = preg_replace( '/\s+/', '', (string) $h_site['topbar_phone_href'] );
+	if ( $tb_tel !== '' && strpos( $tb_tel, 'tel:' ) !== 0 ) {
+		$tb_tel = 'tel:' . $tb_tel;
+	}
+	?>
     <div class="top-bar">
         <div class="site-container top-bar__inner">
-            <a href="mailto:info@360hotelier.com" class="top-bar__email">info@360hotelier.com</a>
-            <a href="tel:+35770001818" class="top-bar__phone">7000 1818</a>
+            <a href="<?php echo esc_url( 'mailto:' . antispambot( $h_site['topbar_email'] ) ); ?>" class="top-bar__email"><?php echo esc_html( $h_site['topbar_email'] ); ?></a>
+            <a href="<?php echo esc_url( $tb_tel ); ?>" class="top-bar__phone"><?php echo esc_html( $h_site['topbar_phone_display'] ); ?></a>
         </div>
     </div>
 
@@ -35,7 +42,7 @@
                     <?php the_custom_logo(); ?>
                 <?php else : ?>
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title-link site-logo-fallback" rel="home">
-                        <img src="<?php echo esc_url( content_url( '/uploads/2026/03/360-hotelier-logo-hd.svg' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" width="180" height="50">
+                        <img src="<?php echo esc_url( Hotelier_Site_Content_Options::footer_logo_url() ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" width="180" height="50">
                     </a>
                 <?php endif; ?>
             </div>

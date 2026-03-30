@@ -5,10 +5,13 @@
  * @package 360-hotelier
  */
 
-$page_hero_title    = __( 'About Us', '360-hotelier' );
-$page_hero_tagline  = __( 'Hotel Consulting Built for Cyprus', '360-hotelier' );
-$page_hero_subtitle = __( '15+ years of hospitality experience. We grow revenue for independent hotels across Cyprus.', '360-hotelier' );
-$page_hero_image    = content_url( '/uploads/2026/03/featured-360-hotelier.webp' );
+$page_id = get_the_ID();
+$ctx     = 'about';
+
+$page_hero_title    = Hotelier_Page_Content::get_text( $page_id, $ctx, 'hero_title' );
+$page_hero_tagline  = Hotelier_Page_Content::get_text( $page_id, $ctx, 'hero_tagline' );
+$page_hero_subtitle = Hotelier_Page_Content::get_text( $page_id, $ctx, 'hero_subtitle' );
+$page_hero_image    = Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'hero_bg' );
 
 get_header();
 get_template_part( 'template-parts/page/page-hero' );
@@ -16,86 +19,68 @@ get_template_part( 'template-parts/page/page-hero' );
 
 <main id="main" class="site-main page-about">
 
-    <!-- Intro Section -->
     <section class="page-section page-section--white">
         <div class="site-container">
             <div class="page-about__intro-grid">
                 <div class="page-about__intro-text fade-in fade-in-delay-0">
-                    <h2 class="page-section__title"><?php esc_html_e( 'About 360° Hotelier Consulting', '360-hotelier' ); ?></h2>
-                    <p><?php esc_html_e( '360° Hotelier Consulting is a Cyprus-based hotel consultancy providing strategic commercial support to independent hotels, boutique properties and resorts across the island.', '360-hotelier' ); ?></p>
-                    <p><?php esc_html_e( 'We specialize in hotel revenue management, online sales & B2B distribution, e-commerce, digital marketing and tour-operator contracting — helping hotels increase revenue and improve profitability.', '360-hotelier' ); ?></p>
-                    <p><?php esc_html_e( "With 15+ years in hospitality, we work hands-on across pricing, channels and digital. We keep our client list small to stay fully accountable to each hotel.", '360-hotelier' ); ?></p>
+                    <h2 class="page-section__title"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'intro_h2' ) ); ?></h2>
+                    <p><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'intro_p1' ) ); ?></p>
+                    <p><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'intro_p2' ) ); ?></p>
+                    <p><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'intro_p3' ) ); ?></p>
                 </div>
-                <div class="page-about__intro-image fade-in fade-in-delay-1" style="background-image: url('<?php echo esc_url( content_url( '/uploads/2026/03/why-choose-360-hotelier.webp' ) ); ?>');" aria-hidden="true"></div>
+                <div class="page-about__intro-image fade-in fade-in-delay-1" style="background-image: url('<?php echo esc_url( Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'intro_side_img' ) ); ?>');" aria-hidden="true"></div>
             </div>
         </div>
     </section>
 
-    <!-- What We Do -->
     <section class="page-section page-section--gray">
         <div class="site-container">
             <div class="page-section__heading page-section__heading--center fade-in fade-in-delay-0">
-                <h2 class="page-section__title"><?php esc_html_e( 'What We Do', '360-hotelier' ); ?></h2>
-                <p class="page-section__subtitle"><?php esc_html_e( "End-to-end commercial consulting tailored to each property's market and goals.", '360-hotelier' ); ?></p>
+                <h2 class="page-section__title"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'what_title' ) ); ?></h2>
+                <p class="page-section__subtitle"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'what_subtitle' ) ); ?></p>
             </div>
             <div class="page-about__services-grid">
-                <div class="front-why-choose__box card-border fade-in fade-in-delay-1">
+                <?php
+				$what_icons = array( 1 => 'euro', 2 => 'globe', 3 => 'monitor', 4 => 'users' );
+				for ( $i = 1; $i <= 4; $i++ ) :
+					?>
+                <div class="front-why-choose__box card-border fade-in fade-in-delay-<?php echo esc_attr( (string) $i ); ?>">
                     <div class="front-why-choose__box-icon" aria-hidden="true">
-                        <?php Hotelier_Lucide_Icon::render( 'euro' ); ?>
+						<?php Hotelier_Lucide_Icon::render( $what_icons[ $i ] ); ?>
                     </div>
-                    <h3 class="front-why-choose__box-title"><?php esc_html_e( 'Yield & Revenue Management', '360-hotelier' ); ?></h3>
-                    <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Strategic pricing, demand forecasting and segmentation designed to maximize RevPAR and revenue performance.', '360-hotelier' ); ?></p>
+                    <h3 class="front-why-choose__box-title"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'what_' . $i . '_title' ) ); ?></h3>
+                    <p class="front-why-choose__box-text text-body"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'what_' . $i . '_text' ) ); ?></p>
                 </div>
-                <div class="front-why-choose__box card-border fade-in fade-in-delay-2">
-                    <div class="front-why-choose__box-icon" aria-hidden="true">
-                        <?php Hotelier_Lucide_Icon::render( 'globe' ); ?>
-                    </div>
-                    <h3 class="front-why-choose__box-title"><?php esc_html_e( 'Online Sales & B2B Distribution', '360-hotelier' ); ?></h3>
-                    <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'OTA optimization, channel-mix strategy and development of profitable B2B partnerships.', '360-hotelier' ); ?></p>
-                </div>
-                <div class="front-why-choose__box card-border fade-in fade-in-delay-3">
-                    <div class="front-why-choose__box-icon" aria-hidden="true">
-                        <?php Hotelier_Lucide_Icon::render( 'monitor' ); ?>
-                    </div>
-                    <h3 class="front-why-choose__box-title"><?php esc_html_e( 'E-Commerce & Digital Marketing', '360-hotelier' ); ?></h3>
-                    <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Direct booking optimization, SEO & SEM, social media marketing and digital performance analysis.', '360-hotelier' ); ?></p>
-                </div>
-                <div class="front-why-choose__box card-border fade-in fade-in-delay-4">
-                    <div class="front-why-choose__box-icon" aria-hidden="true">
-                        <?php Hotelier_Lucide_Icon::render( 'users' ); ?>
-                    </div>
-                    <h3 class="front-why-choose__box-title"><?php esc_html_e( 'Contracting & Tour Operator Negotiations', '360-hotelier' ); ?></h3>
-                    <p class="front-why-choose__box-text text-body"><?php esc_html_e( 'Professional representation and negotiation with tour operators and wholesalers, acting in the hotel\'s best commercial interest.', '360-hotelier' ); ?></p>
-                </div>
+				<?php endfor; ?>
             </div>
             <p class="front-services-overview__cta fade-in fade-in-delay-5">
-                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'services' ) . '#services' ); ?>" class="btn btn--primary"><?php esc_html_e( 'View All Services', '360-hotelier' ); ?></a>
+                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'services' ) . '#services' ); ?>" class="btn btn--primary"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'what_cta_text' ) ); ?></a>
             </p>
         </div>
     </section>
 
     <?php
-    $GLOBALS['hotelier_section_founder_hide_about_cta'] = true;
-    get_template_part(
-        'template-parts/front-page/section',
-        'founder',
-        array(
-            'hide_about_cta' => true,
-        )
-    );
-    unset( $GLOBALS['hotelier_section_founder_hide_about_cta'] );
-    ?>
+	$GLOBALS['hotelier_section_founder_hide_about_cta'] = true;
+	get_template_part(
+		'template-parts/front-page/section',
+		'founder',
+		array(
+			'hide_about_cta'            => true,
+			'founder_content_post_id'   => Hotelier_Page_Content::front_page_id(),
+		)
+	);
+	unset( $GLOBALS['hotelier_section_founder_hide_about_cta'] );
+	?>
 
-    <!-- CTA Banner -->
     <section class="front-featured-banner card-border">
-        <?php Hotelier_Cta_Band_Image::render( content_url( '/uploads/2026/03/featured-360-hotelier.webp' ) ); ?>
+        <?php Hotelier_Cta_Band_Image::render( Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'cta_feat_img' ) ); ?>
         <div class="front-featured-banner__overlay section-overlay"></div>
         <div class="site-container front-featured-banner__content fade-in fade-in-delay-0">
-            <h2 class="front-featured-banner__title"><?php esc_html_e( 'Work With a Hotel Consultant in Cyprus.', '360-hotelier' ); ?></h2>
-            <p class="front-featured-banner__text"><?php esc_html_e( "360° Hotelier Consulting covers revenue, distribution and digital for hotels across Cyprus. Let's talk.", '360-hotelier' ); ?></p>
+            <h2 class="front-featured-banner__title"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'cta_feat_title' ) ); ?></h2>
+            <p class="front-featured-banner__text"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'cta_feat_text' ) ); ?></p>
             <div class="front-featured-banner__actions">
-                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Book a Free Consultation', '360-hotelier' ); ?></a>
-                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'services' ) ); ?>" class="btn btn--ghost"><?php esc_html_e( 'Explore Our Services', '360-hotelier' ); ?></a>
+                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'cta_feat_primary' ) ); ?></a>
+                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'services' ) ); ?>" class="btn btn--ghost"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'cta_feat_secondary' ) ); ?></a>
             </div>
         </div>
     </section>

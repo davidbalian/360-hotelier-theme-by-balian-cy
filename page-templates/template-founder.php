@@ -5,9 +5,12 @@
  * @package 360-hotelier
  */
 
-$page_hero_title    = __( 'Giorgos Peyiazis', '360-hotelier' );
-$page_hero_subtitle = __( 'Founder & Hospitality Consultant · 15+ years in hotel revenue management, online sales and digital strategy.', '360-hotelier' );
-$page_hero_image    = content_url( '/uploads/2026/03/george-peyiazis-hotel-revenue-consultant-360-hotelier-cyprus.webp' );
+$page_id = get_the_ID();
+$ctx     = 'founder';
+
+$page_hero_title    = Hotelier_Page_Content::get_text( $page_id, $ctx, 'hero_title' );
+$page_hero_subtitle = Hotelier_Page_Content::get_text( $page_id, $ctx, 'hero_subtitle' );
+$page_hero_image    = Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'hero_bg' );
 
 get_header();
 get_template_part( 'template-parts/page/page-hero' );
@@ -15,7 +18,6 @@ get_template_part( 'template-parts/page/page-hero' );
 
 <main id="main" class="site-main page-founder">
 
-    <!-- Bio Section -->
     <section class="page-founder__bio-section">
         <div class="site-container">
             <div class="page-founder__bio-grid">
@@ -23,21 +25,21 @@ get_template_part( 'template-parts/page/page-hero' );
                 <div class="fade-in fade-in-delay-0">
                     <img
                         class="page-founder__photo"
-                        src="<?php echo esc_url( content_url( '/uploads/2026/03/george-peyiazis-hotel-revenue-consultant-360-hotelier-cyprus.webp' ) ); ?>"
-                        alt="<?php esc_attr_e( 'Giorgos Peyiazis, Founder of 360 Hotelier Consulting', '360-hotelier' ); ?>"
+                        src="<?php echo esc_url( Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'bio_photo' ) ); ?>"
+                        alt="<?php echo esc_attr( Hotelier_Page_Content::get_text( $page_id, $ctx, 'bio_photo_alt' ) ); ?>"
                         loading="lazy"
                     />
                 </div>
 
                 <div class="page-founder__bio-card card-border fade-in fade-in-delay-1">
-                    <h2><?php esc_html_e( 'About Giorgos', '360-hotelier' ); ?></h2>
-                    <p class="page-founder__role"><?php esc_html_e( 'Founder & Hospitality Consultant — 360° Hotelier Consulting', '360-hotelier' ); ?></p>
-                    <p><?php esc_html_e( 'Giorgos Peyiazis is the Founder of 360° Hotelier Consulting, a hospitality sales and e-commerce consultancy based in Cyprus. With over fifteen years of experience in hotel sales, contracting, and digital distribution, Giorgos specialises in helping hotels increase direct bookings, sharpen distribution and grow revenue.', '360-hotelier' ); ?></p>
-                    <p><?php esc_html_e( 'He studied Business Administration (Marketing) at Les Roches International School of Hotel Management in Switzerland, then worked across hotel operations, distribution and digital in Cyprus and abroad.', '360-hotelier' ); ?></p>
-                    <p><?php esc_html_e( '360° Hotelier Consulting focuses on revenue optimisation, e-commerce and digital marketing for independent and boutique hotels. Giorgos helps hoteliers improve channel mix, increase direct bookings and grow RevPAR.', '360-hotelier' ); ?></p>
+                    <h2><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'bio_h2' ) ); ?></h2>
+                    <p class="page-founder__role"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'bio_role' ) ); ?></p>
+                    <p><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'bio_p1' ) ); ?></p>
+                    <p><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'bio_p2' ) ); ?></p>
+                    <p><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'bio_p3' ) ); ?></p>
                     <div class="page-founder__bio-actions">
-                        <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Get in Touch', '360-hotelier' ); ?></a>
-                        <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'about-us' ) ); ?>" class="btn btn--outline"><?php esc_html_e( 'About 360° Hotelier', '360-hotelier' ); ?></a>
+                        <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'bio_cta_primary' ) ); ?></a>
+                        <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'about-us' ) ); ?>" class="btn btn--outline"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'bio_cta_secondary' ) ); ?></a>
                     </div>
                 </div>
 
@@ -45,49 +47,35 @@ get_template_part( 'template-parts/page/page-hero' );
         </div>
     </section>
 
-    <!-- Experience Timeline -->
     <section class="page-founder__timeline">
         <div class="site-container">
 
             <div class="front-approach__heading fade-in fade-in-delay-0">
-                <h2 class="front-section__title"><?php esc_html_e( 'Professional Experience', '360-hotelier' ); ?></h2>
-                <p class="front-section__subtitle"><?php esc_html_e( '15+ years building expertise across distribution, revenue and digital strategy.', '360-hotelier' ); ?></p>
+                <h2 class="front-section__title"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'tl_title' ) ); ?></h2>
+                <p class="front-section__subtitle"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'tl_subtitle' ) ); ?></p>
             </div>
 
             <div class="front-approach__inner">
 
                 <div class="front-approach__image fade-in fade-in-delay-1">
-                    <img src="<?php echo esc_url( content_url( 'uploads/2026/03/person-at-hotel-reception-scaled.webp' ) ); ?>" alt="<?php esc_attr_e( 'Hotel consultant at work', '360-hotelier' ); ?>" class="front-approach__img">
+                    <img src="<?php echo esc_url( Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'tl_image' ) ); ?>" alt="<?php echo esc_attr( Hotelier_Page_Content::get_text( $page_id, $ctx, 'tl_image_alt' ) ); ?>" class="front-approach__img">
                 </div>
 
                 <div class="front-approach__content front-approach__card card-border">
                     <div class="front-approach__steps">
 
-                        <div class="front-approach__step fade-in fade-in-delay-2">
-                            <span class="front-approach__step-number">01</span>
+                        <?php for ( $i = 1; $i <= 3; $i++ ) : ?>
+                        <div class="front-approach__step fade-in fade-in-delay-<?php echo esc_attr( (string) ( $i + 1 ) ); ?>">
+                            <span class="front-approach__step-number"><?php echo esc_html( str_pad( (string) $i, 2, '0', STR_PAD_LEFT ) ); ?></span>
                             <div class="front-approach__step-body">
-                                <h3 class="front-approach__step-title"><?php esc_html_e( 'Booking.com · 2013–2021', '360-hotelier' ); ?></h3>
-                                <p class="front-approach__step-text text-body"><?php esc_html_e( 'Sales strategy, distribution management and partner development. Delivered workshops and represented Booking.com at international conferences.', '360-hotelier' ); ?></p>
+                                <h3 class="front-approach__step-title"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'tl_' . $i . '_title' ) ); ?></h3>
+                                <p class="front-approach__step-text text-body"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'tl_' . $i . '_text' ) ); ?></p>
                             </div>
                         </div>
+                        <?php if ( $i < 3 ) : ?>
                         <hr class="front-approach__divider">
-
-                        <div class="front-approach__step fade-in fade-in-delay-3">
-                            <span class="front-approach__step-number">02</span>
-                            <div class="front-approach__step-body">
-                                <h3 class="front-approach__step-title"><?php esc_html_e( 'Tour Operators & Wholesalers · 2022–2024', '360-hotelier' ); ?></h3>
-                                <p class="front-approach__step-text text-body"><?php esc_html_e( 'Contracting management, tactical promotions and strategic pricing for DERTOUR Group, EasyJet Holidays, Sunweb Group, Love Holidays, ITAKA, Grecos Holidays and more.', '360-hotelier' ); ?></p>
-                            </div>
-                        </div>
-                        <hr class="front-approach__divider">
-
-                        <div class="front-approach__step fade-in fade-in-delay-4">
-                            <span class="front-approach__step-number">03</span>
-                            <div class="front-approach__step-body">
-                                <h3 class="front-approach__step-title"><?php esc_html_e( '360° Hotelier Consulting · 2024–Present', '360-hotelier' ); ?></h3>
-                                <p class="front-approach__step-text text-body"><?php esc_html_e( 'External e-commerce manager and pre-opening consultant for boutique, mid-scale and upscale hotels across Cyprus and abroad. Full commercial support from revenue to digital.', '360-hotelier' ); ?></p>
-                            </div>
-                        </div>
+                        <?php endif; ?>
+                        <?php endfor; ?>
 
                     </div>
                 </div>
@@ -96,15 +84,14 @@ get_template_part( 'template-parts/page/page-hero' );
         </div>
     </section>
 
-    <!-- CTA Banner -->
     <section class="front-featured-banner card-border">
-        <?php Hotelier_Cta_Band_Image::render( content_url( '/uploads/2026/03/featured-360-hotelier.webp' ) ); ?>
+        <?php Hotelier_Cta_Band_Image::render( Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'cta_feat_img' ) ); ?>
         <div class="front-featured-banner__overlay section-overlay"></div>
         <div class="site-container front-featured-banner__content fade-in fade-in-delay-0">
-            <h2 class="front-featured-banner__title"><?php esc_html_e( 'Work With Giorgos', '360-hotelier' ); ?></h2>
-            <p class="front-featured-banner__text"><?php esc_html_e( "Grow your hotel's revenue and distribution. Get in touch today.", '360-hotelier' ); ?></p>
+            <h2 class="front-featured-banner__title"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'cta_feat_title' ) ); ?></h2>
+            <p class="front-featured-banner__text"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'cta_feat_text' ) ); ?></p>
             <div class="front-featured-banner__actions">
-                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Get in Touch', '360-hotelier' ); ?></a>
+                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'cta_feat_primary' ) ); ?></a>
             </div>
         </div>
     </section>

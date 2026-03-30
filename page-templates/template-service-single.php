@@ -9,22 +9,19 @@
 
 get_header();
 
+$post_id = get_the_ID();
 $slug    = get_post_field( 'post_name', get_post() );
-$content = hotelier_get_service_content( $slug );
+$content = hotelier_get_service_page_content( $post_id, $slug );
 
 if ( ! $content ) {
-    get_template_part( 'template-parts/content/content', 'page' );
-    get_footer();
-    return;
+	get_template_part( 'template-parts/content/content', 'page' );
+	get_footer();
+	return;
 }
 
-// Split intro into two sentences for hero subtitle vs body use.
-$intro_sentences = explode( '. ', $content['intro'], 2 );
-$hero_subtitle   = isset( $intro_sentences[0] ) ? $intro_sentences[0] . '.' : '';
-
 $page_hero_title    = $content['title'];
-$page_hero_subtitle = $hero_subtitle;
-$page_hero_image    = content_url( '/uploads/2026/03/featured-360-hotelier.webp' );
+$page_hero_subtitle = $content['hero_subtitle'];
+$page_hero_image    = $content['hero_image_url'];
 
 get_template_part( 'template-parts/page/page-hero' );
 ?>
@@ -33,15 +30,13 @@ get_template_part( 'template-parts/page/page-hero' );
     <div class="site-container">
         <div class="page-service-single__body">
 
-            <!-- Intro / lead text -->
             <div class="fade-in fade-in-delay-0">
-                <h2 class="page-section__title"><?php esc_html_e( 'Overview', '360-hotelier' ); ?></h2>
+                <h2 class="page-section__title"><?php echo esc_html( $content['overview_heading'] ); ?></h2>
                 <p class="page-service-single__lead"><?php echo esc_html( $content['intro'] ); ?></p>
             </div>
 
-            <!-- Deliverables card -->
             <div class="page-service-single__deliverables-card card-border fade-in fade-in-delay-1">
-                <h2><?php esc_html_e( 'What We Deliver', '360-hotelier' ); ?></h2>
+                <h2><?php echo esc_html( $content['deliver_heading'] ); ?></h2>
                 <ul class="page-service-single__deliverables">
                     <?php foreach ( $content['deliverables'] as $item ) : ?>
                         <li>
@@ -55,16 +50,15 @@ get_template_part( 'template-parts/page/page-hero' );
         </div>
     </div>
 
-    <!-- CTA Banner -->
     <section class="front-featured-banner card-border">
-        <?php Hotelier_Cta_Band_Image::render( content_url( '/uploads/2026/03/featured-360-hotelier.webp' ) ); ?>
+        <?php Hotelier_Cta_Band_Image::render( $content['cta_img'] ); ?>
         <div class="front-featured-banner__overlay section-overlay"></div>
         <div class="site-container front-featured-banner__content fade-in fade-in-delay-0">
-            <h2 class="front-featured-banner__title"><?php esc_html_e( "Let's Build Your Hotel's Commercial Strategy", '360-hotelier' ); ?></h2>
-            <p class="front-featured-banner__text"><?php esc_html_e( "Book a free strategy session and let's discuss how we can help your hotel grow.", '360-hotelier' ); ?></p>
+            <h2 class="front-featured-banner__title"><?php echo esc_html( $content['cta_title'] ); ?></h2>
+            <p class="front-featured-banner__text"><?php echo esc_html( $content['cta_text'] ); ?></p>
             <div class="front-featured-banner__actions">
-                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Get in Touch', '360-hotelier' ); ?></a>
-                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'services' ) ); ?>" class="btn btn--ghost"><?php esc_html_e( 'All Services', '360-hotelier' ); ?></a>
+                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php echo esc_html( $content['cta_primary'] ); ?></a>
+                <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'services' ) ); ?>" class="btn btn--ghost"><?php echo esc_html( $content['cta_secondary'] ); ?></a>
             </div>
         </div>
     </section>

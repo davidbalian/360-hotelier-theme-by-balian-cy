@@ -5,49 +5,36 @@
  * @package 360-hotelier
  */
 
-// Load Pendeli SVG inline so CSS can target its paths directly.
-$pendeli_svg_path = WP_CONTENT_DIR . '/uploads/2026/03/pendeli-resort-hotel-cyprus-logo-white.svg';
-$pendeli_svg      = file_exists( $pendeli_svg_path ) ? file_get_contents( $pendeli_svg_path ) : '';
+$hctx  = 'home';
+$hpage = (int) get_queried_object_id();
+
+$pendeli_id = Hotelier_Page_Content::get_attachment_id( $hpage, $hctx, 'results_pendeli_svg' );
+$pendeli_svg = Hotelier_Page_Content::get_svg_inline( $pendeli_id, 'uploads/2026/03/pendeli-resort-hotel-cyprus-logo-white.svg' );
+$pendeli_label = Hotelier_Page_Content::get_text( $hpage, $hctx, 'results_pendeli_label' );
 ?>
 <section class="front-results card-border">
     <div class="site-container">
-        <h2 class="front-section__title fade-in fade-in-delay-0"><?php esc_html_e( 'Results for Hotels in Cyprus & Greece', '360-hotelier' ); ?></h2>
+        <h2 class="front-section__title fade-in fade-in-delay-0"><?php echo esc_html( Hotelier_Page_Content::get_text( $hpage, $hctx, 'results_title' ) ); ?></h2>
         <ul class="front-results__list">
-            <li class="fade-in fade-in-delay-1">
-                <span class="front-results__stat"><?php esc_html_e( '+20%', '360-hotelier' ); ?></span>
-                <span class="front-results__label"><?php esc_html_e( 'increase in online bookings', '360-hotelier' ); ?></span>
+            <?php for ( $i = 1; $i <= 4; $i++ ) : ?>
+            <li class="fade-in fade-in-delay-<?php echo esc_attr( (string) $i ); ?>">
+                <span class="front-results__stat"><?php echo esc_html( Hotelier_Page_Content::get_text( $hpage, $hctx, 'results_stat_' . $i ) ); ?></span>
+                <span class="front-results__label"><?php echo esc_html( Hotelier_Page_Content::get_text( $hpage, $hctx, 'results_label_' . $i ) ); ?></span>
             </li>
-            <li class="fade-in fade-in-delay-2">
-                <span class="front-results__stat"><?php esc_html_e( '+15%', '360-hotelier' ); ?></span>
-                <span class="front-results__label"><?php esc_html_e( 'RevPAR improvement', '360-hotelier' ); ?></span>
-            </li>
-            <li class="fade-in fade-in-delay-3">
-                <span class="front-results__stat"><?php esc_html_e( 'B2B', '360-hotelier' ); ?></span>
-                <span class="front-results__label"><?php esc_html_e( 'Stronger portfolios and better contracting terms', '360-hotelier' ); ?></span>
-            </li>
-            <li class="fade-in fade-in-delay-4">
-                <span class="front-results__stat"><?php esc_html_e( '360°', '360-hotelier' ); ?></span>
-                <span class="front-results__label"><?php esc_html_e( 'Stronger digital performance', '360-hotelier' ); ?></span>
-            </li>
+            <?php endfor; ?>
         </ul>
-        <p class="front-results__trust fade-in fade-in-delay-5"><?php esc_html_e( 'Working with hotels across Cyprus & Greece.', '360-hotelier' ); ?></p>
+        <p class="front-results__trust fade-in fade-in-delay-5"><?php echo esc_html( Hotelier_Page_Content::get_text( $hpage, $hctx, 'results_trust' ) ); ?></p>
         <div class="front-results__ticker fade-in fade-in-delay-6">
             <div class="front-results__ticker-track">
-                <span class="ticker-logo ticker-logo--pendeli" role="img" aria-label="<?php esc_attr_e( 'Pendeli Resort Hotel Cyprus', '360-hotelier' ); ?>"><?php echo $pendeli_svg; ?></span>
-                <img src="<?php echo esc_url( content_url( '/uploads/2026/03/cap-st-georges-resort-logo-hd.webp' ) ); ?>" alt="<?php esc_attr_e( 'Cap St Georges Hotel & Resort Cyprus', '360-hotelier' ); ?>" loading="lazy" />
-                <img src="<?php echo esc_url( content_url( '/uploads/2026/03/tsanotel-hd-logo.webp' ) ); ?>" alt="<?php esc_attr_e( 'Tsanotel Cyprus', '360-hotelier' ); ?>" loading="lazy" />
-                <img class="ticker-logo ticker-logo--serbellas" src="<?php echo esc_url( content_url( '/uploads/2026/03/serbellas-boutique-hotel-logo-transparent.webp' ) ); ?>" alt="<?php esc_attr_e( 'Serbellas Boutique Hotel', '360-hotelier' ); ?>" loading="lazy" />
-                <img src="<?php echo esc_url( content_url( '/uploads/2026/03/petit-palais-platres-hotel-logo-color-cyprus.webp' ) ); ?>" alt="<?php esc_attr_e( 'Petit Palais Hotel Platres Cyprus', '360-hotelier' ); ?>" loading="lazy" />
-                <img src="<?php echo esc_url( content_url( '/uploads/2026/03/chic-centre-suites-athens-hotel-logo.webp' ) ); ?>" alt="<?php esc_attr_e( 'Chic Centre Suites Athens', '360-hotelier' ); ?>" loading="lazy" />
-                <img src="<?php echo esc_url( content_url( '/uploads/2026/03/napa-jay-hotel-logo-cropped.png' ) ); ?>" alt="<?php esc_attr_e( 'Napa Jay Hotel Ayia Napa Cyprus', '360-hotelier' ); ?>" loading="lazy" />
+                <span class="ticker-logo ticker-logo--pendeli" role="img" aria-label="<?php echo esc_attr( $pendeli_label ); ?>"><?php echo $pendeli_svg; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- inline trusted SVG ?></span>
+                <?php for ( $t = 1; $t <= 6; $t++ ) : ?>
+                <img src="<?php echo esc_url( Hotelier_Page_Content::get_image_url( $hpage, $hctx, 'results_tick_' . $t ) ); ?>" alt="<?php echo esc_attr( Hotelier_Page_Content::get_text( $hpage, $hctx, 'results_tick_' . $t . '_alt' ) ); ?>" loading="lazy" />
+                <?php endfor; ?>
                 <!-- Duplicate set for seamless loop -->
-                <span class="ticker-logo ticker-logo--pendeli" aria-hidden="true"><?php echo $pendeli_svg; ?></span>
-                <img src="<?php echo esc_url( content_url( '/uploads/2026/03/cap-st-georges-resort-logo-hd.webp' ) ); ?>" alt="" loading="lazy" aria-hidden="true" />
-                <img src="<?php echo esc_url( content_url( '/uploads/2026/03/tsanotel-hd-logo.webp' ) ); ?>" alt="" loading="lazy" aria-hidden="true" />
-                <img class="ticker-logo ticker-logo--serbellas" src="<?php echo esc_url( content_url( '/uploads/2026/03/serbellas-boutique-hotel-logo-transparent.webp' ) ); ?>" alt="" loading="lazy" aria-hidden="true" />
-                <img src="<?php echo esc_url( content_url( '/uploads/2026/03/petit-palais-platres-hotel-logo-color-cyprus.webp' ) ); ?>" alt="" loading="lazy" aria-hidden="true" />
-                <img src="<?php echo esc_url( content_url( '/uploads/2026/03/chic-centre-suites-athens-hotel-logo.webp' ) ); ?>" alt="" loading="lazy" aria-hidden="true" />
-                <img src="<?php echo esc_url( content_url( '/uploads/2026/03/napa-jay-hotel-logo-cropped.png' ) ); ?>" alt="" loading="lazy" aria-hidden="true" />
+                <span class="ticker-logo ticker-logo--pendeli" aria-hidden="true"><?php echo $pendeli_svg; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+                <?php for ( $t = 1; $t <= 6; $t++ ) : ?>
+                <img src="<?php echo esc_url( Hotelier_Page_Content::get_image_url( $hpage, $hctx, 'results_tick_' . $t ) ); ?>" alt="" loading="lazy" aria-hidden="true" />
+                <?php endfor; ?>
             </div>
         </div>
     </div>

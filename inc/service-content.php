@@ -65,3 +65,64 @@ function hotelier_get_service_content( $slug ) {
 
     return isset( $services[ $slug ] ) ? $services[ $slug ] : null;
 }
+
+/**
+ * Service single page content: post meta merged with theme defaults from slug.
+ *
+ * @param int    $post_id Page ID.
+ * @param string $slug    Page slug.
+ * @return array<string, mixed>|null
+ */
+function hotelier_get_service_page_content( int $post_id, string $slug ): ?array {
+	$ctx      = 'service';
+	$fallback = hotelier_get_service_content( $slug );
+
+	$title = Hotelier_Page_Content::get_text( $post_id, $ctx, 'hero_title' );
+	if ( $title === '' && $fallback ) {
+		$title = $fallback['title'];
+	}
+
+	$intro = Hotelier_Page_Content::get_text( $post_id, $ctx, 'intro' );
+	if ( $intro === '' && $fallback ) {
+		$intro = $fallback['intro'];
+	}
+
+	$hero_subtitle = Hotelier_Page_Content::get_text( $post_id, $ctx, 'hero_subtitle' );
+	if ( $hero_subtitle === '' && $intro !== '' ) {
+		$intro_sentences = explode( '. ', $intro, 2 );
+		$hero_subtitle   = isset( $intro_sentences[0] ) ? $intro_sentences[0] . '.' : '';
+	}
+
+	$deliverables = array();
+	for ( $i = 1; $i <= 5; $i++ ) {
+		$d = Hotelier_Page_Content::get_text( $post_id, $ctx, 'deliver_' . $i );
+		if ( $d !== '' ) {
+			$deliverables[] = $d;
+		}
+	}
+	if ( $deliverables === array() && $fallback ) {
+		$deliverables = $fallback['deliverables'];
+	}
+
+	if ( ! $fallback && $title === '' && $intro === '' && $deliverables === array() ) {
+		return null;
+	}
+
+	$overview_h = Hotelier_Page_Content::get_text( $post_id, $ctx, 'overview_heading' );
+	$deliver_h  = Hotelier_Page_Content::get_text( $post_id, $ctx, 'deliver_heading' );
+
+	return array(
+		'title'            => $title,
+		'hero_subtitle'    => $hero_subtitle,
+		'intro'            => $intro,
+		'deliverables'     => $deliverables,
+		'overview_heading' => $overview_h !== '' ? $overview_h : __( 'Overview', '360-hotelier' ),
+		'deliver_heading'  => $deliver_h !== '' ? $deliver_h : __( 'What We Deliver', '360-hotelier' ),
+		'hero_image_url'   => Hotelier_Page_Content::get_image_url( $post_id, $ctx, 'hero_bg' ),
+		'cta_img'          => Hotelier_Page_Content::get_image_url( $post_id, $ctx, 'cta_feat_img' ),
+		'cta_title'        => Hotelier_Page_Content::get_text( $post_id, $ctx, 'cta_feat_title' ),
+		'cta_text'         => Hotelier_Page_Content::get_text( $post_id, $ctx, 'cta_feat_text' ),
+		'cta_primary'      => Hotelier_Page_Content::get_text( $post_id, $ctx, 'cta_feat_primary' ),
+		'cta_secondary'    => Hotelier_Page_Content::get_text( $post_id, $ctx, 'cta_feat_secondary' ),
+	);
+}
