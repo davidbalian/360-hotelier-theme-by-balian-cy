@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $u = content_url( '/uploads/2026/03/' );
 
 $hotels = array();
-for ( $i = 1; $i <= 7; $i++ ) {
+for ( $i = 1; $i <= 8; $i++ ) {
 	$hotels[ "hotel_{$i}_name" ]     = array( 'type' => 'text', 'label' => "Hotel {$i} — name", 'default' => '' );
 	$hotels[ "hotel_{$i}_location" ] = array( 'type' => 'text', 'label' => "Hotel {$i} — location", 'default' => '' );
 	$hotels[ "hotel_{$i}_url" ]      = array( 'type' => 'text', 'label' => "Hotel {$i} — website URL", 'default' => '' );
@@ -101,5 +101,12 @@ $out['hotel_7_location']['default']      = 'Athens, Greece';
 $out['hotel_7_url']['default']           = 'https://chiccentresuites.com/';
 $out['hotel_7_logo']['default_url']      = $u . 'chic-centre-suites-athens-hotel-logo.webp';
 $out['hotel_7_alt']['default']           = 'Chic Centre Suites Athens';
+
+$out['hotel_8_name']['default']          = 'Mito Developers';
+$out['hotel_8_location']['default']      = 'Paphos, Cyprus';
+$out['hotel_8_url']['default']           = 'https://mitodevelopers.com/';
+$out['hotel_8_logo']['default_url']      = $u . 'mito-developers-paphos-logo-partner-hotel-of-360-Hotelier-Consulting.png';
+$out['hotel_8_photo']['default_url']     = $u . 'mito-seaview-villas-by-serbellas-paphos-hotel-consulting.webp';
+$out['hotel_8_alt']['default']           = 'Mito Developers Paphos';
 
 return $out;

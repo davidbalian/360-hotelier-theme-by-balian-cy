@@ -27,12 +27,12 @@ $pendeli_label = Hotelier_Page_Content::get_text( $hpage, $hctx, 'results_pendel
         <div class="front-results__ticker fade-in fade-in-delay-6">
             <div class="front-results__ticker-track">
                 <span class="ticker-logo ticker-logo--pendeli" role="img" aria-label="<?php echo esc_attr( $pendeli_label ); ?>"><?php echo $pendeli_svg; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- inline trusted SVG ?></span>
-                <?php for ( $t = 1; $t <= 6; $t++ ) : ?>
+                <?php for ( $t = 1; $t <= 7; $t++ ) : ?>
                 <img src="<?php echo esc_url( Hotelier_Page_Content::get_image_url( $hpage, $hctx, 'results_tick_' . $t ) ); ?>" alt="<?php echo esc_attr( Hotelier_Page_Content::get_text( $hpage, $hctx, 'results_tick_' . $t . '_alt' ) ); ?>" loading="lazy" />
                 <?php endfor; ?>
                 <!-- Duplicate set for seamless loop -->
                 <span class="ticker-logo ticker-logo--pendeli" aria-hidden="true"><?php echo $pendeli_svg; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
-                <?php for ( $t = 1; $t <= 6; $t++ ) : ?>
+                <?php for ( $t = 1; $t <= 7; $t++ ) : ?>
                 <img src="<?php echo esc_url( Hotelier_Page_Content::get_image_url( $hpage, $hctx, 'results_tick_' . $t ) ); ?>" alt="" loading="lazy" aria-hidden="true" />
                 <?php endfor; ?>
             </div>

@@ -16,7 +16,7 @@ $pendeli_id  = Hotelier_Page_Content::get_attachment_id( $page_id, $ctx, 'pendel
 $pendeli_svg = Hotelier_Page_Content::get_svg_inline( $pendeli_id, 'uploads/2026/03/pendeli-resort-hotel-cyprus-logo-white.svg' );
 
 $hotels = array();
-for ( $i = 1; $i <= 7; $i++ ) {
+for ( $i = 1; $i <= 8; $i++ ) {
 	$mode = Hotelier_Page_Content::get_select( $page_id, $ctx, 'hotel_' . $i . '_mode' );
 	$logo = array();
 	if ( 'pendeli' === $mode ) {
