@@ -41,7 +41,7 @@ $defaults = array(
 	'intro_p2'               => array( 'type' => 'textarea', 'label' => 'Intro — paragraph 2', 'default' => "Each engagement is built around the hotel's market, seasonality and commercial goals." ),
 	'intro_side_img'         => array( 'type' => 'image', 'label' => 'Intro — side image', 'default_url' => $u . 'why-choose-360-hotelier.webp' ),
 
-	'partners_title'         => array( 'type' => 'text', 'label' => 'Partners section — title', 'default' => 'Partner hotels' ),
+	'partners_title'         => array( 'type' => 'text', 'label' => 'Partners section — title', 'default' => 'Hotels & Partners' ),
 	'partners_subtitle'      => array( 'type' => 'textarea', 'label' => 'Partners section — subtitle', 'default' => 'Independent, boutique and resort properties we support with revenue, distribution and digital strategy.' ),
 	'visit_website_text'     => array( 'type' => 'text', 'label' => 'Partner card — button', 'default' => 'Visit Website' ),
 	'pendeli_aria'           => array( 'type' => 'text', 'label' => 'Pendeli logo — aria label', 'default' => 'Pendeli Resort Hotel Cyprus' ),
