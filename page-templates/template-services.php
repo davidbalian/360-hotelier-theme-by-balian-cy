@@ -96,6 +96,20 @@ get_template_part(
         </div>
     </section>
 
+    <?php
+    get_template_part(
+        'template-parts/components/section-faq',
+        null,
+        array(
+            'hotelier_section_faq' => array(
+                'context' => Hotelier_Faq_Content::CONTEXT_SERVICES,
+                'heading' => __( 'Frequently asked questions', '360-hotelier' ),
+                'intro'   => __( 'How we support hotels with revenue, OTAs, and commercial strategy.', '360-hotelier' ),
+            ),
+        )
+    );
+    ?>
+
     <section class="front-featured-banner card-border">
         <?php Hotelier_Cta_Band_Image::render( Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'cta_feat_img' ) ); ?>
         <div class="front-featured-banner__overlay section-overlay"></div>

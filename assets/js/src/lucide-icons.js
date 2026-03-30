@@ -5,6 +5,7 @@ import { createIcons } from 'lucide';
 import {
 	Briefcase,
 	Check,
+	ChevronDown,
 	Clock,
 	Euro,
 	Globe,
@@ -20,6 +21,7 @@ function initLucideIcons() {
 		icons: {
 			Briefcase,
 			Check,
+			ChevronDown,
 			Clock,
 			Euro,
 			Globe,

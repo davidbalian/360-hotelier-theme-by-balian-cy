@@ -2,9 +2,12 @@
   "name": "360-hotelier-theme",
   "private": true,
   "scripts": {
-    "build:icons": "esbuild assets/js/src/lucide-icons.js --bundle --minify --outfile=assets/js/lucide-icons.bundle.js --format=iife --global-name=HotelierLucide"
+    "build": "npm run build:icons && npm run build:faq",
+    "build:icons": "esbuild assets/js/src/lucide-icons.js --bundle --minify --outfile=assets/js/lucide-icons.bundle.js --format=iife --global-name=HotelierLucide",
+    "build:faq": "esbuild assets/js/src/faq-accordions.js --bundle --minify --outfile=assets/js/faq-accordions.bundle.js --format=iife"
   },
   "devDependencies": {
+    "@chenglou/pretext": "^0.0.3",
     "esbuild": "^0.25.0",
     "lucide": "^0.562.0"
   }

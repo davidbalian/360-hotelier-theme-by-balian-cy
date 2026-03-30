@@ -1,0 +1,159 @@
+/* ==========================================================================
+   FAQ section (reusable: home, services, contact)
+   ========================================================================== */
+
+.hotel-faq-section {
+    padding-block: var(--section-padding-y);
+    background: var(--color-section-gray);
+}
+
+.hotel-faq-section--front-page {
+    background: var(--color-white);
+}
+
+.hotel-faq-section__heading {
+    margin-bottom: 2.5rem;
+}
+
+.hotel-faq-section__intro {
+    margin-top: 0.75rem;
+}
+
+.hotel-faq {
+    max-width: 46rem;
+    margin-inline: auto;
+    padding: 0.35rem 0.5rem;
+    background: var(--color-white);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+}
+
+.hotel-faq__item {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.hotel-faq__item:last-child {
+    border-bottom: none;
+}
+
+.hotel-faq__question {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.hotel-faq__trigger {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 0.85rem;
+    margin: 0;
+    border: none;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--color-charcoal);
+    border-radius: calc(var(--radius-card) - 6px);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.hotel-faq__trigger:hover {
+    background: rgba(90, 42, 130, 0.05);
+    color: var(--color-purple);
+}
+
+.hotel-faq__trigger:focus-visible {
+    outline: 2px solid var(--color-orange);
+    outline-offset: 2px;
+}
+
+.hotel-faq__trigger-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.hotel-faq__trigger-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    background: rgba(90, 42, 130, 0.08);
+    color: var(--color-purple);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s ease;
+}
+
+.hotel-faq__item.is-open .hotel-faq__trigger-icon {
+    transform: rotate(180deg);
+    background: rgba(242, 140, 40, 0.15);
+    color: var(--color-orange);
+}
+
+.hotel-faq__chevron {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+.hotel-faq__panel {
+    box-sizing: border-box;
+}
+
+.hotel-faq__panel-inner {
+    padding: 0 0.85rem 1.15rem;
+}
+
+.hotel-faq__answer-inner {
+    font-family: var(--font-body);
+    color: var(--color-charcoal);
+    opacity: 0.92;
+}
+
+.hotel-faq__p {
+    margin: 0 0 0.75rem;
+}
+
+.hotel-faq__p:last-child {
+    margin-bottom: 0;
+}
+
+.hotel-faq__list {
+    margin: 0 0 0.85rem;
+    padding-left: 1.2rem;
+}
+
+.hotel-faq__li {
+    margin-bottom: 0.35rem;
+    line-height: 1.55;
+}
+
+.hotel-faq__li:last-child {
+    margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hotel-faq__trigger-icon {
+        transition: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .hotel-faq {
+        padding-inline: 0.25rem;
+    }
+
+    .hotel-faq__trigger {
+        padding-inline: 0.65rem;
+    }
+
+    .hotel-faq__panel-inner {
+        padding-inline: 0.65rem;
+    }
+}
