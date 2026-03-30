@@ -73,6 +73,46 @@ function prefersReducedMotion() {
 /**
  * @param {HTMLElement} root
  */
+/**
+ * Accordion mode: close every other open item in this FAQ root (exclusive open).
+ *
+ * @param {HTMLElement} root
+ * @param {HTMLElement} exceptItem Item that is opening — never closed here.
+ */
+function closeSiblingItems( root, exceptItem ) {
+	root.querySelectorAll( '[data-hotel-faq-item].is-open' ).forEach( ( other ) => {
+		if ( other === exceptItem ) {
+			return;
+		}
+		const p = other.querySelector( '.hotel-faq__panel' );
+		const t = other.querySelector( '.hotel-faq__trigger' );
+		if ( ! p || ! t ) {
+			return;
+		}
+
+		if ( prefersReducedMotion() ) {
+			other.classList.remove( 'is-open' );
+			t.setAttribute( 'aria-expanded', 'false' );
+			p.setAttribute( 'aria-hidden', 'true' );
+			p.style.height = '0px';
+			return;
+		}
+
+		const h = readAnimatedHeightPx( p );
+		p.style.height = `${ h }px`;
+		void p.offsetHeight;
+		requestAnimationFrame( () => {
+			p.style.height = '0px';
+		} );
+		other.classList.remove( 'is-open' );
+		t.setAttribute( 'aria-expanded', 'false' );
+		p.setAttribute( 'aria-hidden', 'true' );
+	} );
+}
+
+/**
+ * @param {HTMLElement} root
+ */
 function initHotelierFaq( root ) {
 	const items = root.querySelectorAll( '[data-hotel-faq-item]' );
 
@@ -115,6 +155,8 @@ function initHotelierFaq( root ) {
 				setOpen( false );
 				return;
 			}
+
+			closeSiblingItems( root, item );
 
 			if ( prefersReducedMotion() ) {
 				setOpen( true );
