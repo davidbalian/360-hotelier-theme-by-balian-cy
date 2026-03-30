@@ -1,51 +1,69 @@
 /**
- * FAQ accordions: height animation using @chenglou/pretext (avoids DOM measurement reflow).
+ * FAQ accordions: animate panel height using a single off-screen layout read.
+ *
+ * Plain-text layout (e.g. @chenglou/pretext) cannot match block margins, list
+ * rhythm, and wrapper padding; undershooting causes mid-animation clipping and
+ * a snap when switching to height: auto. scrollHeight on the panel after a
+ * width-locked auto-height pass matches the real layout.
  */
-import { clearCache, prepare, layout } from '@chenglou/pretext';
 
 const DURATION_MS = 380;
 const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
 
-/** @type {WeakMap<Element, { text: string, font: string, prepared: ReturnType<typeof prepare> }>} */
-let preparedCache = new WeakMap();
+/**
+ * Natural height of the panel including .hotel-faq__panel-inner padding and
+ * block margins — one layout pass, visually hidden.
+ *
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} item
+ * @returns {number}
+ */
+function measurePanelNaturalHeight( panel, item ) {
+	const widthPx = Math.round( item.getBoundingClientRect().width );
+	const prev = {
+		overflow: panel.style.overflow,
+		visibility: panel.style.visibility,
+		position: panel.style.position,
+		left: panel.style.left,
+		width: panel.style.width,
+		height: panel.style.height,
+	};
 
-function fontString( el ) {
-	const cs = getComputedStyle( el );
-	return `${ cs.fontStyle } ${ cs.fontWeight } ${ cs.fontSize } ${ cs.fontFamily }`;
+	panel.style.overflow = 'visible';
+	panel.style.visibility = 'hidden';
+	panel.style.position = 'absolute';
+	panel.style.left = '-9999px';
+	panel.style.width = `${ widthPx }px`;
+	panel.style.height = 'auto';
+
+	const h = Math.ceil( panel.scrollHeight );
+
+	panel.style.overflow = prev.overflow;
+	panel.style.visibility = prev.visibility;
+	panel.style.position = prev.position;
+	panel.style.left = prev.left;
+	panel.style.width = prev.width;
+	panel.style.height = prev.height;
+	void panel.offsetHeight;
+
+	return Math.max( 0, h );
 }
 
-function lineHeightPx( el ) {
-	const cs = getComputedStyle( el );
-	const fs = parseFloat( cs.fontSize ) || 16;
-	const lh = cs.lineHeight;
-	if ( lh === 'normal' ) {
-		return Math.round( fs * 1.45 );
+/**
+ * Pixel height to animate from when closing (handles inline height "auto").
+ *
+ * @param {HTMLElement} panel
+ * @returns {number}
+ */
+function readAnimatedHeightPx( panel ) {
+	const inline = panel.style.height;
+	if ( inline && inline !== 'auto' && inline.endsWith( 'px' ) ) {
+		const n = parseFloat( inline );
+		if ( Number.isFinite( n ) ) {
+			return Math.ceil( n );
+		}
 	}
-	const n = parseFloat( lh );
-	return Number.isFinite( n ) ? n : Math.round( fs * 1.45 );
-}
-
-function getPrepared( inner ) {
-	const text = inner.innerText.replace( /\r\n/g, '\n' ).trim();
-	const font = fontString( inner );
-	const prev = preparedCache.get( inner );
-	if ( prev && prev.text === text && prev.font === font ) {
-		return prev.prepared;
-	}
-	const prepared = prepare( text, font );
-	preparedCache.set( inner, { text, font, prepared } );
-	return prepared;
-}
-
-function measureContentHeight( inner ) {
-	const w = inner.clientWidth;
-	if ( w <= 0 ) {
-		return 0;
-	}
-	const lh = lineHeightPx( inner );
-	const prep = getPrepared( inner );
-	const { height } = layout( prep, w, lh );
-	return Math.max( 0, Math.ceil( height ) );
+	return Math.ceil( panel.scrollHeight );
 }
 
 function prefersReducedMotion() {
@@ -61,8 +79,7 @@ function initHotelierFaq( root ) {
 	items.forEach( ( item ) => {
 		const trigger = item.querySelector( '.hotel-faq__trigger' );
 		const panel = item.querySelector( '.hotel-faq__panel' );
-		const inner = item.querySelector( '.hotel-faq__answer-inner' );
-		if ( ! trigger || ! panel || ! inner ) {
+		if ( ! trigger || ! panel ) {
 			return;
 		}
 
@@ -89,7 +106,7 @@ function initHotelierFaq( root ) {
 					panel.style.height = '0px';
 					return;
 				}
-				const h = measureContentHeight( inner );
+				const h = readAnimatedHeightPx( panel );
 				panel.style.height = `${ h }px`;
 				void panel.offsetHeight;
 				requestAnimationFrame( () => {
@@ -105,22 +122,13 @@ function initHotelierFaq( root ) {
 				return;
 			}
 
-			const target = measureContentHeight( inner );
+			const target = measurePanelNaturalHeight( panel, item );
 			panel.style.height = '0px';
 			void panel.offsetHeight;
 			requestAnimationFrame( () => {
 				panel.style.height = `${ target }px`;
 			} );
 			setOpen( true );
-		} );
-
-		panel.addEventListener( 'transitionend', ( e ) => {
-			if ( e.propertyName !== 'height' ) {
-				return;
-			}
-			if ( item.classList.contains( 'is-open' ) ) {
-				panel.style.height = 'auto';
-			}
 		} );
 	} );
 
@@ -130,9 +138,9 @@ function initHotelierFaq( root ) {
 		resizeTimer = window.setTimeout( () => {
 			root.querySelectorAll( '[data-hotel-faq-item].is-open' ).forEach( ( openItem ) => {
 				const p = openItem.querySelector( '.hotel-faq__panel' );
-				const inn = openItem.querySelector( '.hotel-faq__answer-inner' );
-				if ( p && inn ) {
-					p.style.height = `${ measureContentHeight( inn ) }px`;
+				if ( p ) {
+					const h = measurePanelNaturalHeight( p, openItem );
+					p.style.height = `${ h }px`;
 				}
 			} );
 		}, 120 );
@@ -153,13 +161,10 @@ if ( document.readyState === 'loading' ) {
 
 if ( document.fonts && document.fonts.ready ) {
 	document.fonts.ready.then( () => {
-		clearCache();
-		preparedCache = new WeakMap();
 		document.querySelectorAll( '[data-hotel-faq-item].is-open' ).forEach( ( openItem ) => {
 			const p = openItem.querySelector( '.hotel-faq__panel' );
-			const inn = openItem.querySelector( '.hotel-faq__answer-inner' );
-			if ( p && inn ) {
-				p.style.height = `${ measureContentHeight( inn ) }px`;
+			if ( p ) {
+				p.style.height = `${ measurePanelNaturalHeight( p, openItem ) }px`;
 			}
 		} );
 	} );
