@@ -33,16 +33,17 @@ final class Hotelier_Page_Meta_Schema {
 		'page-templates/template-founder.php'       => 'founder',
 	);
 
+	/** @var string Relative to theme root; same file as site content sync. */
+	private const SYNC_FILE_RELATIVE = '/inc/hotelier-db-defaults.sync.php';
+
 	/**
+	 * Schema field definitions without generated DB sync (for tooling).
+	 *
 	 * @return array<string, array<string, mixed>>
 	 */
-	public static function all_contexts(): array {
-		static $cache = null;
-		if ( null !== $cache ) {
-			return $cache;
-		}
-		$dir  = __DIR__ . '/schema/';
-		$cache = array(
+	public static function baseline_contexts(): array {
+		$dir = __DIR__ . '/schema/';
+		return array(
 			'home'      => require $dir . 'schema-home.php',
 			'about'     => require $dir . 'schema-about.php',
 			'services'  => require $dir . 'schema-services.php',
@@ -51,7 +52,48 @@ final class Hotelier_Page_Meta_Schema {
 			'contact'   => require $dir . 'schema-contact.php',
 			'founder'   => require $dir . 'schema-founder.php',
 		);
+	}
+
+	/**
+	 * @return array<string, array<string, mixed>>
+	 */
+	public static function all_contexts(): array {
+		static $cache = null;
+		if ( null !== $cache ) {
+			return $cache;
+		}
+		$cache = self::baseline_contexts();
+		self::merge_synced_page_meta( $cache );
 		return $cache;
+	}
+
+	/**
+	 * @param array<string, array<string, mixed>> $cache Baseline contexts (modified in place).
+	 */
+	private static function merge_synced_page_meta( array &$cache ): void {
+		if ( ! defined( 'HOTELIER_THEME_DIR' ) ) {
+			return;
+		}
+		$path = HOTELIER_THEME_DIR . self::SYNC_FILE_RELATIVE;
+		if ( ! is_readable( $path ) ) {
+			return;
+		}
+		/** @var mixed $data */
+		$data = require $path;
+		if ( ! is_array( $data ) || ! isset( $data['page_meta'] ) || ! is_array( $data['page_meta'] ) ) {
+			return;
+		}
+		foreach ( $data['page_meta'] as $ctx => $fields ) {
+			if ( ! is_string( $ctx ) || ! isset( $cache[ $ctx ] ) || ! is_array( $fields ) ) {
+				continue;
+			}
+			foreach ( $fields as $field => $patch ) {
+				if ( ! is_string( $field ) || ! isset( $cache[ $ctx ][ $field ] ) || ! is_array( $patch ) ) {
+					continue;
+				}
+				$cache[ $ctx ][ $field ] = array_merge( $cache[ $ctx ][ $field ], $patch );
+			}
+		}
 	}
 
 	/**
@@ -64,6 +106,18 @@ final class Hotelier_Page_Meta_Schema {
 
 	public static function meta_key( string $context, string $field ): string {
 		return self::META_PREFIX . $context . '_' . $field;
+	}
+
+	/**
+	 * Page template path for a context (excluding home — use front page).
+	 */
+	public static function page_template_for_context( string $context ): ?string {
+		foreach ( self::TEMPLATE_MAP as $template_file => $ctx ) {
+			if ( $ctx === $context ) {
+				return $template_file;
+			}
+		}
+		return null;
 	}
 
 	/**
