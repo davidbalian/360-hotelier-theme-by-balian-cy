@@ -58,10 +58,11 @@ function hotelier_enqueue_assets() {
     wp_enqueue_script(
         '360-hotelier-navigation',
         HOTELIER_THEME_URI . '/assets/js/navigation.js',
-        array(),
+        array( 'wp-i18n' ),
         HOTELIER_THEME_VERSION,
         true
     );
+    wp_set_script_translations( '360-hotelier-navigation', '360-hotelier', HOTELIER_THEME_DIR . '/languages' );
 
     $lucide_bundle = HOTELIER_THEME_DIR . '/assets/js/lucide-icons.bundle.js';
     $lucide_ver    = file_exists( $lucide_bundle ) ? (string) filemtime( $lucide_bundle ) : HOTELIER_THEME_VERSION;

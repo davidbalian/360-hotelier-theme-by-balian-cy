@@ -2,6 +2,7 @@
   "name": "360-hotelier-theme",
   "private": true,
   "scripts": {
+    "i18n:pot": "wp i18n make-pot . languages/360-hotelier.pot --domain=360-hotelier --exclude=node_modules,.git",
     "build": "npm run build:icons && npm run build:faq",
     "build:icons": "esbuild assets/js/src/lucide-icons.js --bundle --minify --outfile=assets/js/lucide-icons.bundle.js --format=iife --global-name=HotelierLucide",
     "build:faq": "esbuild assets/js/src/faq-accordions.js --bundle --minify --outfile=assets/js/faq-accordions.bundle.js --format=iife"

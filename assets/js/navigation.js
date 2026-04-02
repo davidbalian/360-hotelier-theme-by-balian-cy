@@ -93,7 +93,7 @@
             mobileNav.setAttribute( 'aria-hidden', 'false' );
             toggle.classList.add( 'is-active' );
             toggle.setAttribute( 'aria-expanded', 'true' );
-            toggle.setAttribute( 'aria-label', 'Close menu' );
+            toggle.setAttribute( 'aria-label', wp.i18n.__( 'Close menu', '360-hotelier' ) );
             document.body.style.overflow = 'hidden';
         }
 
@@ -102,7 +102,7 @@
             mobileNav.setAttribute( 'aria-hidden', 'true' );
             toggle.classList.remove( 'is-active' );
             toggle.setAttribute( 'aria-expanded', 'false' );
-            toggle.setAttribute( 'aria-label', 'Open menu' );
+            toggle.setAttribute( 'aria-label', wp.i18n.__( 'Open menu', '360-hotelier' ) );
             document.body.style.overflow = '';
             MobileNavSubmenuToggle.closeAll();
         }

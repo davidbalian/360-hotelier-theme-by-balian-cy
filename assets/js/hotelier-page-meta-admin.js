@@ -9,8 +9,8 @@
 			var $preview = $wrap.find('.hotelier-image-preview');
 
 			var frame = wp.media({
-				title: 'Select image',
-				button: { text: 'Use this image' },
+				title: hotelierPageMetaL10n.selectImage,
+				button: { text: hotelierPageMetaL10n.useThisImage },
 				multiple: false,
 			});
 

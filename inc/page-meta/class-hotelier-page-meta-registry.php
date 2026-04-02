@@ -62,5 +62,14 @@ final class Hotelier_Page_Meta_Registry {
 			$ver,
 			true
 		);
+
+		wp_localize_script(
+			'hotelier-page-meta-admin',
+			'hotelierPageMetaL10n',
+			array(
+				'selectImage'   => __( 'Select image', '360-hotelier' ),
+				'useThisImage'  => __( 'Use this image', '360-hotelier' ),
+			)
+		);
 	}
 }

@@ -57,6 +57,8 @@ function hotelier_theme_setup() {
 
     // Add support for site icon (favicon).
     add_theme_support( 'site-icon' );
+
+    load_theme_textdomain( '360-hotelier', get_template_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'hotelier_theme_setup' );
 
@@ -80,57 +82,57 @@ function hotelier_create_default_pages() {
 
     $pages = array(
         array(
-            'title'    => 'Home',
+            'title'    => __( 'Home', '360-hotelier' ),
             'slug'     => 'home',
             'template' => 'default',
             'front'    => true,
         ),
         array(
-            'title'    => 'About Us',
+            'title'    => __( 'About Us', '360-hotelier' ),
             'slug'     => 'about-us',
             'template' => 'page-templates/template-about.php',
         ),
         array(
-            'title'    => 'Services',
+            'title'    => __( 'Services', '360-hotelier' ),
             'slug'     => 'services',
             'template' => 'page-templates/template-services.php',
         ),
         array(
-            'title'    => 'Revenue Management',
+            'title'    => __( 'Revenue Management', '360-hotelier' ),
             'slug'     => 'revenue-management',
             'template' => 'page-templates/template-service-single.php',
             'parent'   => 'services',
         ),
         array(
-            'title'    => 'Online Sales & Distribution',
+            'title'    => __( 'Online Sales & Distribution', '360-hotelier' ),
             'slug'     => 'online-sales-distribution',
             'template' => 'page-templates/template-service-single.php',
             'parent'   => 'services',
         ),
         array(
-            'title'    => 'Digital Marketing',
+            'title'    => __( 'Digital Marketing', '360-hotelier' ),
             'slug'     => 'digital-marketing',
             'template' => 'page-templates/template-service-single.php',
             'parent'   => 'services',
         ),
         array(
-            'title'    => 'Tour Operator Contracting',
+            'title'    => __( 'Tour Operator Contracting', '360-hotelier' ),
             'slug'     => 'tour-operator-contracting',
             'template' => 'page-templates/template-service-single.php',
             'parent'   => 'services',
         ),
         array(
-            'title'    => 'Portfolio',
+            'title'    => __( 'Portfolio', '360-hotelier' ),
             'slug'     => 'portfolio',
             'template' => 'page-templates/template-portfolio.php',
         ),
         array(
-            'title'    => 'Contact',
+            'title'    => __( 'Contact', '360-hotelier' ),
             'slug'     => 'contact',
             'template' => 'page-templates/template-contact.php',
         ),
         array(
-            'title'    => 'Founder',
+            'title'    => __( 'Founder', '360-hotelier' ),
             'slug'     => 'founder',
             'template' => 'page-templates/template-founder.php',
         ),

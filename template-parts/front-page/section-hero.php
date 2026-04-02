@@ -12,7 +12,7 @@ $hero  = Hotelier_Page_Content::get_image_url( $hpage, $hctx, 'hero_bg' );
 <section class="front-hero card-border" style="background-image: url('<?php echo esc_url( $hero ); ?>');">
     <div class="front-hero__overlay section-overlay"></div>
     <div class="site-container front-hero__content">
-        <h1 class="front-hero__title fade-in fade-in-delay-0"><?php echo esc_html( Hotelier_Page_Content::get_text( $hpage, $hctx, 'hero_title_line1' ) ); ?><br><?php echo esc_html( Hotelier_Page_Content::get_text( $hpage, $hctx, 'hero_title_line2' ) ); ?></h1>
+        <h1 class="front-hero__title fade-in fade-in-delay-0"><?php echo esc_html( Hotelier_Page_Content::get_text( $hpage, $hctx, 'hero_title_line1' ) ); ?><br> <?php echo esc_html( Hotelier_Page_Content::get_text( $hpage, $hctx, 'hero_title_line2' ) ); ?></h1>
         <p class="front-hero__subheadline fade-in fade-in-delay-1"><?php echo esc_html( Hotelier_Page_Content::get_text( $hpage, $hctx, 'hero_subheadline' ) ); ?></p>
         <div class="front-hero__ctas fade-in fade-in-delay-2">
             <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary btn--lg"><?php echo esc_html( Hotelier_Page_Content::get_text( $hpage, $hctx, 'hero_cta_text' ) ); ?></a>
