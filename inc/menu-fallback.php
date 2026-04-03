@@ -134,6 +134,19 @@ function hotelier_get_service_submenu_items() {
 }
 
 /**
+ * Label for the Services submenu “view all” link (explicit Greek on /el/; .mo may be absent on some deploys).
+ *
+ * @return string Plain text.
+ */
+function hotelier_nav_all_services_label(): string {
+    if ( function_exists( 'hotelier_get_current_lang' ) && 'el' === hotelier_get_current_lang() ) {
+        return 'Όλες οι υπηρεσίες';
+    }
+
+    return __( 'All Services', '360-hotelier' );
+}
+
+/**
  * Default primary/footer navigation items (tree: optional `children` per item).
  *
  * @return array<int, array{url: string, label: string, children?: array<int, array{url: string, label: string}>}>
@@ -206,7 +219,7 @@ function hotelier_render_default_nav_item( $item, $flatten ) {
         printf(
             '<a href="%s">%s</a>',
             esc_url( $item['url'] ),
-            esc_html__( 'All Services', '360-hotelier' )
+            esc_html( hotelier_nav_all_services_label() )
         );
         echo '</li>';
         echo '</ul>';

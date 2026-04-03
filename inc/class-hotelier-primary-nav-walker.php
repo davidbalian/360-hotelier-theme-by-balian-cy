@@ -94,9 +94,9 @@ class Hotelier_Primary_Nav_Walker extends Walker_Nav_Menu {
         if ( 0 === (int) $depth ) {
             if ( $this->services_submenu_pending ) {
                 $indent_li = $indent . $t . $t;
-                $url       = hotelier_get_page_url_by_slug( 'services' );
-                $label     = esc_html__( 'All Services', '360-hotelier' );
-                $output   .= $indent_li . '<li class="menu-item menu-item-all-services"><a href="' . esc_url( $url ) . '">' . $label . '</a></li>' . $n;
+                $url   = hotelier_get_page_url_by_slug( 'services' );
+                $label = esc_html( hotelier_nav_all_services_label() );
+                $output .= $indent_li . '<li class="menu-item menu-item-all-services"><a href="' . esc_url( $url ) . '">' . $label . '</a></li>' . $n;
                 $this->services_submenu_pending = false;
             }
             $output .= $indent . $t . '</ul>' . $n;
