@@ -31,8 +31,20 @@ final class Hotelier_Page_Content {
 		}
 		$def = $fields[ $field ];
 		$default = isset( $def['default'] ) ? (string) $def['default'] : '';
-		$raw     = get_post_meta( $post_id, Hotelier_Page_Meta_Schema::meta_key( $context, $field ), true );
+		$raw = get_post_meta( $post_id, Hotelier_Page_Meta_Schema::meta_key( $context, $field ), true );
 		if ( is_string( $raw ) && $raw !== '' ) {
+			// Meta often duplicates the schema default after save — still show Greek on /el/ when it matches.
+			if ( function_exists( 'hotelier_get_current_lang' )
+				&& 'el' === hotelier_get_current_lang()
+				&& class_exists( 'Hotelier_El_Page_Defaults' )
+				&& $default !== ''
+				&& (string) $raw === $default ) {
+				$el = Hotelier_El_Page_Defaults::get( $context, $field );
+				if ( is_string( $el ) && $el !== '' ) {
+					return $el;
+				}
+			}
+
 			return $raw;
 		}
 		if ( function_exists( 'hotelier_get_current_lang' )
