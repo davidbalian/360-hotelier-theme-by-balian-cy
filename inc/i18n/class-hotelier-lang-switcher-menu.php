@@ -52,14 +52,10 @@ final class Hotelier_Lang_Switcher_Menu {
 	}
 
 	/**
-	 * @param string $items HTML.
-	 * @param object $args  Menu args.
+	 * Full &lt;li&gt;…&lt;/li&gt; markup for the language switcher (desktop + mobile nav).
+	 * Shared by wp_nav_menu_items and the primary-menu fallback (WordPress skips filters when using fallback_cb).
 	 */
-	public static function filter_nav_menu_items( string $items, $args ): string {
-		if ( ! is_object( $args ) || empty( $args->theme_location ) || 'primary' !== $args->theme_location ) {
-			return $items;
-		}
-
+	public static function switcher_li_markup(): string {
 		$current = Hotelier_Locale_Detector::current_lang();
 		$label   = Hotelier_Locale_Registry::GREEK_LANG === $current
 			? esc_html__( 'Ελληνικά', '360-hotelier' )
@@ -86,6 +82,18 @@ final class Hotelier_Lang_Switcher_Menu {
 		$block .= '<li class="' . esc_attr( $li_el_classes ) . '"><a href="' . $url_el . '"' . $aria_el . '>' . esc_html__( 'Ελληνικά', '360-hotelier' ) . '</a></li>';
 		$block .= '</ul></div></li>';
 
-		return $items . $block;
+		return $block;
+	}
+
+	/**
+	 * @param string $items HTML.
+	 * @param object $args  Menu args.
+	 */
+	public static function filter_nav_menu_items( string $items, $args ): string {
+		if ( ! is_object( $args ) || empty( $args->theme_location ) || 'primary' !== $args->theme_location ) {
+			return $items;
+		}
+
+		return $items . self::switcher_li_markup();
 	}
 }

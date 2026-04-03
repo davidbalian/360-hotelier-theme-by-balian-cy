@@ -222,15 +222,39 @@ function hotelier_render_default_nav_item( $item, $flatten ) {
  * @param array $args Nav menu arguments.
  */
 function hotelier_default_nav_fallback( $args ) {
-    $items      = hotelier_get_default_nav_items();
-    $menu_class = isset( $args['menu_class'] ) ? $args['menu_class'] : 'nav-menu';
-    $menu_id    = isset( $args['menu_id'] ) ? $args['menu_id'] : 'primary-menu';
-    $depth      = isset( $args['depth'] ) ? (int) $args['depth'] : 0;
-    $flatten    = ( 1 === $depth );
+    $items = hotelier_get_default_nav_items();
+    // wp_nav_menu passes $args as object; support array for direct calls.
+    $menu_class = '';
+    $menu_id    = 'primary-menu';
+    $depth      = 0;
+    if ( is_object( $args ) ) {
+        $menu_class = isset( $args->menu_class ) ? (string) $args->menu_class : '';
+        $menu_id    = isset( $args->menu_id ) ? (string) $args->menu_id : 'primary-menu';
+        $depth      = isset( $args->depth ) ? (int) $args->depth : 0;
+    } elseif ( is_array( $args ) ) {
+        $menu_class = isset( $args['menu_class'] ) ? (string) $args['menu_class'] : '';
+        $menu_id    = isset( $args['menu_id'] ) ? (string) $args['menu_id'] : 'primary-menu';
+        $depth      = isset( $args['depth'] ) ? (int) $args['depth'] : 0;
+    }
+    if ( '' === $menu_class ) {
+        $menu_class = 'nav-menu';
+    }
+    $flatten = ( 1 === $depth );
+
+    $theme_location = '';
+    if ( is_object( $args ) && isset( $args->theme_location ) ) {
+        $theme_location = (string) $args->theme_location;
+    } elseif ( is_array( $args ) && ! empty( $args['theme_location'] ) ) {
+        $theme_location = (string) $args['theme_location'];
+    }
 
     echo '<ul id="' . esc_attr( $menu_id ) . '" class="' . esc_attr( $menu_class ) . '">';
     foreach ( $items as $item ) {
         hotelier_render_default_nav_item( $item, $flatten );
+    }
+    // When no menu is assigned, WordPress never runs wp_nav_menu_items — append switcher here.
+    if ( 'primary' === $theme_location && class_exists( 'Hotelier_Lang_Switcher_Menu' ) ) {
+        echo Hotelier_Lang_Switcher_Menu::switcher_li_markup();
     }
     echo '</ul>';
 }
