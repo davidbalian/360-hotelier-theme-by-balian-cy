@@ -21,9 +21,11 @@ if ( $ft_tel !== '' && strpos( $ft_tel, 'tel:' ) !== 0 ) {
                     <p class="footer-col__heading text-xs fade-in fade-in-delay-0"><?php echo esc_html( $h_opt['footer_heading_nav'] ); ?></p>
                     <nav class="fade-in fade-in-delay-1" aria-label="<?php esc_attr_e( 'Footer Menu', '360-hotelier' ); ?>">
                         <?php
-                        if ( has_nav_menu( 'footer' ) ) {
+                        $f_lang     = hotelier_get_lang();
+                        $f_loc      = ( $f_lang === 'el' && has_nav_menu( 'footer_el' ) ) ? 'footer_el' : 'footer';
+                        if ( has_nav_menu( $f_loc ) ) {
                             wp_nav_menu( array(
-                                'theme_location' => 'footer',
+                                'theme_location' => $f_loc,
                                 'menu_id'        => 'footer-menu',
                                 'menu_class'     => 'footer-nav-menu text-base-sm',
                                 'container'      => false,

@@ -23,10 +23,12 @@ function hotelier_theme_setup() {
     // Enable support for Post Thumbnails on posts and pages.
     add_theme_support( 'post-thumbnails' );
 
-    // Register navigation menus.
+    // Register navigation menus (EN + EL pairs).
     register_nav_menus( array(
-        'primary' => __( 'Primary Menu', '360-hotelier' ),
-        'footer'  => __( 'Footer Menu', '360-hotelier' ),
+        'primary'    => __( 'Primary Menu', '360-hotelier' ),
+        'primary_el' => __( 'Primary Menu (Greek)', '360-hotelier' ),
+        'footer'     => __( 'Footer Menu', '360-hotelier' ),
+        'footer_el'  => __( 'Footer Menu (Greek)', '360-hotelier' ),
     ) );
 
     // Switch default core markup for search form, comment form, and comments to output valid HTML5.

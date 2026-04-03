@@ -1,0 +1,17 @@
+{
+    "translation-revision-date": "2026-04-02T00:00:00+00:00",
+    "generator": "Manual",
+    "source": "assets/js/navigation.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "el",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Close menu": ["Κλείσιμο μενού"],
+            "Open menu": ["Άνοιγμα μενού"]
+        }
+    }
+}

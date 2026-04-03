@@ -15,8 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Hotelier_Page_Meta_Sanitizer {
 
 	public const NONCE_ACTION   = 'hotelier_save_page_ctx';
-	public const NONCE_FIELD  = 'hotelier_page_ctx_nonce';
-	public const INPUT_PREFIX = 'hotelier_ctx';
+	public const NONCE_FIELD    = 'hotelier_page_ctx_nonce';
+	public const INPUT_PREFIX   = 'hotelier_ctx';
+	public const INPUT_PREFIX_EL = 'hotelier_ctx_el';
 
 	public static function register(): void {
 		add_action( 'save_post_page', array( self::class, 'save' ), 10, 2 );
@@ -95,6 +96,32 @@ final class Hotelier_Page_Meta_Sanitizer {
 				update_post_meta( $post_id, $key, $raw );
 			} else {
 				delete_post_meta( $post_id, $key );
+			}
+		}
+
+		// Save Greek (_el) text/textarea fields from the EL input group.
+		$input_el = isset( $_POST[ self::INPUT_PREFIX_EL ] ) && is_array( $_POST[ self::INPUT_PREFIX_EL ] )
+			? wp_unslash( $_POST[ self::INPUT_PREFIX_EL ] )
+			: array();
+
+		foreach ( $fields as $field => $def ) {
+			$type = isset( $def['type'] ) ? $def['type'] : 'text';
+			// Images and selects are language-neutral — skip.
+			if ( 'image' === $type || 'select' === $type ) {
+				continue;
+			}
+			$key_el = Hotelier_Page_Meta_Schema::meta_key( $context, $field ) . '_el';
+
+			if ( 'textarea' === $type ) {
+				$raw = isset( $input_el[ $field ] ) ? sanitize_textarea_field( (string) $input_el[ $field ] ) : '';
+			} else {
+				$raw = isset( $input_el[ $field ] ) ? sanitize_text_field( (string) $input_el[ $field ] ) : '';
+			}
+
+			if ( $raw !== '' ) {
+				update_post_meta( $post_id, $key_el, $raw );
+			} else {
+				delete_post_meta( $post_id, $key_el );
 			}
 		}
 	}
