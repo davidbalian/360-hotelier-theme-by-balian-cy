@@ -21,22 +21,16 @@ if ( $ft_tel !== '' && strpos( $ft_tel, 'tel:' ) !== 0 ) {
                     <p class="footer-col__heading text-xs fade-in fade-in-delay-0"><?php echo esc_html( $h_opt['footer_heading_nav'] ); ?></p>
                     <nav class="fade-in fade-in-delay-1" aria-label="<?php esc_attr_e( 'Footer Menu', '360-hotelier' ); ?>">
                         <?php
-                        if ( has_nav_menu( 'footer' ) ) {
-                            wp_nav_menu( array(
+                        wp_nav_menu(
+                            array(
                                 'theme_location' => 'footer',
                                 'menu_id'        => 'footer-menu',
                                 'menu_class'     => 'footer-nav-menu text-base-sm',
                                 'container'      => false,
                                 'depth'          => 1,
-                                'fallback_cb'    => false,
-                            ) );
-                        } else {
-                            hotelier_default_nav_fallback( array(
-                                'menu_class' => 'footer-nav-menu text-base-sm',
-                                'menu_id'    => 'footer-menu',
-                                'depth'      => 1,
-                            ) );
-                        }
+                                'fallback_cb'    => 'hotelier_default_nav_fallback',
+                            )
+                        );
                         ?>
                     </nav>
                 </div>

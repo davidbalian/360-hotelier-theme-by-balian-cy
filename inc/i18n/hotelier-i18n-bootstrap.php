@@ -16,6 +16,7 @@ require_once __DIR__ . '/class-hotelier-locale-routing.php';
 require_once __DIR__ . '/class-hotelier-locale-wordpress.php';
 require_once __DIR__ . '/class-hotelier-locale-seo.php';
 require_once __DIR__ . '/class-hotelier-lang-switcher-menu.php';
+require_once __DIR__ . '/class-hotelier-greek-nav-sync.php';
 require_once HOTELIER_THEME_DIR . '/inc/translations/el/class-hotelier-el-page-defaults.php';
 
 /**
