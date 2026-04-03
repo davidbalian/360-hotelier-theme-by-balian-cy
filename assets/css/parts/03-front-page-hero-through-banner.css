@@ -128,6 +128,8 @@
 }
 
 .front-hero__title {
+    /* ~15% smaller than global h1 (--text-5xl); hero-only */
+    font-size: calc(var(--text-5xl) * 0.85);
     margin-bottom: 1rem;
     line-height: 1.1;
     color: #fff;
