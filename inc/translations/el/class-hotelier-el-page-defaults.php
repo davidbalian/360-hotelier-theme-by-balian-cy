@@ -14,6 +14,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 final class Hotelier_El_Page_Defaults {
 
+	/**
+	 * Suffix of home hero title line 2 (broken to its own row on desktop via CSS).
+	 */
+	public const FRONT_HERO_HOME_LINE2_TAIL = 'Ξενοδοχεία στην Κύπρο';
+
 	/** @var array<string, string>|null */
 	private static $map = null;
 
@@ -24,9 +29,9 @@ final class Hotelier_El_Page_Defaults {
 		return array(
 			// Front page (home).
 			'home.hero_title_line1'       => 'Έσοδα, Διανομή & ',
-			'home.hero_title_line2'       => 'Ψηφιακή Ανάπτυξη για Ξενοδοχεία στην Κύπρο',
+			'home.hero_title_line2'       => 'Ψηφιακή Ανάπτυξη για ' . self::FRONT_HERO_HOME_LINE2_TAIL,
 			'home.hero_subheadline'       => 'Διαχείριση εσόδων και B2B διανομή για ξενοδοχεία στην Κύπρο. Λειτουργούμε ως εξωτερική εμπορική ομάδα.',
-			'home.hero_cta_text'          => 'Κλείστε δωρεάν στρατηγική συνεδρία',
+			'home.hero_cta_text'          => 'Κλείστε δωρεάν στρατηγική συνάντηση',
 			'home.services_title'         => 'Οι βασικές μας υπηρεσίες',
 			'home.services_subtitle'      => 'Πλήρης εμπορική υποστήριξη σε έσοδα, διανομή και ψηφιακά.',
 			'home.services_cta_text'      => 'Δείτε τις υπηρεσίες μας',
@@ -84,7 +89,7 @@ final class Hotelier_El_Page_Defaults {
 			'home.founder_profile_cta_text' => 'Προφίλ ιδρυτή',
 			'home.contact_band_title'     => 'Αυξήστε τα έσοδα του ξενοδοχείου σας.',
 			'home.contact_band_text'      => 'Πείτε μας για την ιδιοκτησία σας. Θα εντοπίσουμε πού χάνετε έσοδα.',
-			'home.contact_band_cta'       => 'Κλείστε δωρεάν στρατηγική συνεδρία',
+			'home.contact_band_cta'       => 'Κλείστε δωρεάν στρατηγική συνάντηση',
 
 			// About (subset — extend in same class if needed).
 			'about.hero_kicker'           => 'Σχετικά με εμάς',

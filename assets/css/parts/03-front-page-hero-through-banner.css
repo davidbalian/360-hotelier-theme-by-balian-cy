@@ -134,6 +134,13 @@
     font-weight: 800;
 }
 
+/* Greek: “Ξενοδοχεία στην Κύπρο” on its own row (desktop only; stays inline on small screens). */
+@media (min-width: 769px) {
+    .front-hero__title .front-hero__title-el-tail {
+        display: block;
+    }
+}
+
 .front-hero__subheadline {
     font-size: var(--text-lg);
     margin-bottom: 2rem;
