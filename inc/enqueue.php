@@ -64,6 +64,16 @@ function hotelier_enqueue_assets() {
     );
     wp_set_script_translations( '360-hotelier-navigation', '360-hotelier', HOTELIER_THEME_DIR . '/languages' );
 
+    if ( function_exists( 'hotelier_get_current_lang' ) ) {
+        wp_localize_script(
+            '360-hotelier-navigation',
+            'hotelierPathLocale',
+            array(
+                'lang' => hotelier_get_current_lang(),
+            )
+        );
+    }
+
     $lucide_bundle = HOTELIER_THEME_DIR . '/assets/js/lucide-icons.bundle.js';
     $lucide_ver    = file_exists( $lucide_bundle ) ? (string) filemtime( $lucide_bundle ) : HOTELIER_THEME_VERSION;
 

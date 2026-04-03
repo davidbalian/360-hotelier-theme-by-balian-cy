@@ -75,15 +75,18 @@ function hotelier_get_page_url_by_slug( $slug ) {
     foreach ( $candidates as $path ) {
         $page = get_page_by_path( $path, OBJECT, 'page' );
         if ( $page instanceof WP_Post && 'publish' === $page->post_status ) {
-            return get_permalink( $page );
+            $url = get_permalink( $page );
+            return function_exists( 'hotelier_localize_internal_url' ) ? hotelier_localize_internal_url( $url ) : $url;
         }
     }
 
     if ( in_array( $slug, hotelier_get_service_child_slugs(), true ) ) {
-        return home_url( user_trailingslashit( 'services/' . $slug ) );
+        $url = home_url( user_trailingslashit( 'services/' . $slug ) );
+    } else {
+        $url = home_url( user_trailingslashit( $slug ) );
     }
 
-    return home_url( user_trailingslashit( $slug ) );
+    return function_exists( 'hotelier_localize_internal_url' ) ? hotelier_localize_internal_url( $url ) : $url;
 }
 
 /**
@@ -98,6 +101,8 @@ function hotelier_get_footer_legal_urls() {
     }
     if ( ! is_string( $privacy ) || '' === $privacy ) {
         $privacy = hotelier_get_page_url_by_slug( 'privacy-policy' );
+    } elseif ( function_exists( 'hotelier_localize_internal_url' ) ) {
+        $privacy = hotelier_localize_internal_url( $privacy );
     }
 
     return array(
@@ -136,7 +141,7 @@ function hotelier_get_service_submenu_items() {
 function hotelier_get_default_nav_items() {
     return array(
         array(
-            'url'   => home_url( '/' ),
+            'url'   => function_exists( 'hotelier_get_localized_home_url' ) ? hotelier_get_localized_home_url() : home_url( '/' ),
             'label' => __( 'Home', '360-hotelier' ),
         ),
         array(

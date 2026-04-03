@@ -46,6 +46,10 @@ final class Hotelier_Contact_Form_Handler {
 		$email   = isset( $_POST['hotelier_contact_email'] ) ? sanitize_email( wp_unslash( $_POST['hotelier_contact_email'] ) ) : '';
 		$subject = isset( $_POST['hotelier_contact_subject'] ) ? sanitize_text_field( wp_unslash( $_POST['hotelier_contact_subject'] ) ) : '';
 		$message = isset( $_POST['hotelier_contact_message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['hotelier_contact_message'] ) ) : '';
+		$lang    = isset( $_POST['hotelier_contact_lang'] ) ? sanitize_text_field( wp_unslash( $_POST['hotelier_contact_lang'] ) ) : 'en';
+		if ( ! in_array( $lang, array( 'en', 'el' ), true ) ) {
+			$lang = 'en';
+		}
 
 		$name    = mb_substr( $name, 0, self::MAX_NAME_LEN );
 		$subject = mb_substr( $subject, 0, self::MAX_SUBJECT_LEN );
@@ -75,6 +79,11 @@ final class Hotelier_Contact_Form_Handler {
 			$email,
 			$message
 		);
+		$body .= "\n\n" . sprintf(
+			/* translators: %s: language code (en or el) */
+			__( 'Form language: %s', '360-hotelier' ),
+			$lang
+		);
 
 		$headers = array(
 			'Content-Type: text/plain; charset=UTF-8',
@@ -93,7 +102,7 @@ final class Hotelier_Contact_Form_Handler {
 	private static function redirect_with_status( string $status ): void {
 		$url = function_exists( 'hotelier_get_page_url_by_slug' ) ? hotelier_get_page_url_by_slug( 'contact' ) : '';
 		if ( '' === $url ) {
-			$url = home_url( '/' );
+			$url = function_exists( 'hotelier_get_localized_home_url' ) ? hotelier_get_localized_home_url() : home_url( '/' );
 		}
 		wp_safe_redirect( add_query_arg( 'contact', $status, $url ) );
 		exit;

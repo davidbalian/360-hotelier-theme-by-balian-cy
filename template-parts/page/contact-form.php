@@ -33,6 +33,7 @@ $contact_status = isset( $_GET['contact'] ) ? sanitize_text_field( wp_unslash( $
 		action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>"
 	>
 		<input type="hidden" name="action" value="<?php echo esc_attr( Hotelier_Contact_Form_Handler::ACTION ); ?>">
+		<input type="hidden" name="hotelier_contact_lang" value="<?php echo esc_attr( function_exists( 'hotelier_get_current_lang' ) ? hotelier_get_current_lang() : 'en' ); ?>">
 		<?php wp_nonce_field( Hotelier_Contact_Form_Handler::NONCE_ACTION, 'hotelier_contact_nonce' ); ?>
 
 		<div class="page-contact__hp" aria-hidden="true">

@@ -166,6 +166,18 @@
         background-image: none !important;
         background-size: auto !important;
     }
+
+    /* Language switcher: compact panel, right-aligned (last nav item) */
+    .primary-navigation .nav-menu > li.nav-lang-switcher .nav-submenu-clip > .sub-menu {
+        left: auto;
+        right: 0;
+        min-width: min(12rem, 85vw);
+        transform: translateX(0) translateY(-8px);
+    }
+
+    .primary-navigation .nav-menu > li.nav-lang-switcher.menu-item-has-children.is-submenu-open > .nav-submenu-clip > .sub-menu {
+        transform: translateX(0) translateY(0);
+    }
 }
 
 /* Mobile overlay: clip + grid height; submenu pushes list below (overlay top-aligned) */

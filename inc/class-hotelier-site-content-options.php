@@ -123,7 +123,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		if ( ! is_array( $stored ) ) {
 			$stored = array();
 		}
-		return array_merge( self::defaults(), $stored );
+		$merged = array_merge( self::defaults(), $stored );
+
+		return apply_filters( 'hotelier_site_content', $merged );
 	}
 
 	public static function get_text( string $key, string $fallback = '' ): string {

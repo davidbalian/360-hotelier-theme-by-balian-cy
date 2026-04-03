@@ -35,6 +35,15 @@ final class Hotelier_Page_Content {
 		if ( is_string( $raw ) && $raw !== '' ) {
 			return $raw;
 		}
+		if ( function_exists( 'hotelier_get_current_lang' )
+			&& 'el' === hotelier_get_current_lang()
+			&& class_exists( 'Hotelier_El_Page_Defaults' ) ) {
+			$el = Hotelier_El_Page_Defaults::get( $context, $field );
+			if ( is_string( $el ) && $el !== '' ) {
+				return $el;
+			}
+		}
+
 		return $default;
 	}
 

@@ -19,7 +19,7 @@ function hotelier_output_schema() {
         '@context'    => 'https://schema.org',
         '@type'       => 'LocalBusiness',
         'name'        => '360° Hotelier Consulting',
-        'url'         => home_url( '/' ),
+        'url'         => function_exists( 'hotelier_get_localized_home_url' ) ? hotelier_get_localized_home_url() : home_url( '/' ),
         'image'       => has_custom_logo() ? wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ), 'full' ) : content_url( '/uploads/2026/03/360-hotelier-horizontal-logo.webp' ),
         'priceRange'  => '$$',
         'telephone'   => '+35770001818',
@@ -31,7 +31,7 @@ function hotelier_output_schema() {
             'postalCode'      => '3075',
             'addressCountry'  => 'CY',
         ),
-        'description' => 'Hotel revenue management, digital marketing, online sales and tour operator contracting services for hotels in Cyprus.',
+        'description' => __( 'Hotel revenue management, digital marketing, online sales and tour operator contracting services for hotels in Cyprus.', '360-hotelier' ),
         'areaServed'  => 'Cyprus',
     );
 

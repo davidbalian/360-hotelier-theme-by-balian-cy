@@ -21,7 +21,7 @@ $h_404 = Hotelier_Site_Content_Options::get();
             <div class="page-content">
                 <p><?php echo esc_html( $h_404['error_text'] ); ?></p>
                 <p>
-                    <a class="btn btn--primary" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html( $h_404['error_btn'] ); ?></a>
+                    <a class="btn btn--primary" href="<?php echo esc_url( hotelier_get_localized_home_url() ); ?>"><?php echo esc_html( $h_404['error_btn'] ); ?></a>
                 </p>
 
                 <?php get_search_form(); ?>

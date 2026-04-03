@@ -24,6 +24,9 @@ require_once HOTELIER_THEME_DIR . '/inc/service-content.php';
 // Include menu fallback
 require_once HOTELIER_THEME_DIR . '/inc/menu-fallback.php';
 
+// Path-prefix locale (en default, Greek /el/)
+require_once HOTELIER_THEME_DIR . '/inc/i18n/hotelier-i18n-bootstrap.php';
+
 // Primary nav walker (Services submenu footer link)
 require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-primary-nav-walker.php';
 
