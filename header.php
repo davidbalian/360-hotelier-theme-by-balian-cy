@@ -48,27 +48,14 @@
             </div>
 
             <nav id="primary-navigation" class="primary-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', '360-hotelier' ); ?>">
-                <?php
-                $h_lang          = hotelier_get_lang();
-                $h_nav_location  = ( $h_lang === 'el' ) ? 'primary_el' : 'primary';
-                wp_nav_menu( array(
-                    'theme_location' => $h_nav_location,
+                <?php wp_nav_menu( array(
+                    'theme_location' => 'primary',
                     'menu_id'        => 'primary-menu',
                     'menu_class'     => 'nav-menu text-body',
                     'container'      => false,
                     'fallback_cb'    => 'hotelier_default_nav_fallback',
                     'walker'         => new Hotelier_Primary_Nav_Walker(),
                 ) ); ?>
-
-                <?php
-                $h_en_url = hotelier_lang_switcher_url( 'en' );
-                $h_el_url = hotelier_lang_switcher_url( 'el' );
-                ?>
-                <div class="lang-switcher" aria-label="Language switcher">
-                    <a href="<?php echo esc_url( $h_en_url ); ?>" class="lang-switcher__btn<?php echo $h_lang === 'en' ? ' lang-switcher__btn--active' : ''; ?>" <?php echo $h_lang === 'en' ? 'aria-current="true"' : ''; ?> hreflang="en">EN</a>
-                    <span class="lang-switcher__sep" aria-hidden="true">|</span>
-                    <a href="<?php echo esc_url( $h_el_url ); ?>" class="lang-switcher__btn<?php echo $h_lang === 'el' ? ' lang-switcher__btn--active' : ''; ?>" <?php echo $h_lang === 'el' ? 'aria-current="true"' : ''; ?> hreflang="el">EL</a>
-                </div>
 
                 <button
                     type="button"
@@ -90,7 +77,7 @@
         <div class="mobile-nav__content">
             <nav class="mobile-nav__menu" aria-label="<?php esc_attr_e( 'Mobile Menu', '360-hotelier' ); ?>">
                 <?php wp_nav_menu( array(
-                    'theme_location' => $h_nav_location,
+                    'theme_location' => 'primary',
                     'menu_id'        => 'mobile-primary-menu',
                     'menu_class'     => 'mobile-nav__links',
                     'container'      => false,

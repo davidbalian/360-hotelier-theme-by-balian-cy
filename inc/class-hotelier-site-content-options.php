@@ -50,45 +50,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 */
 	public static function builtin_defaults(): array {
 		return array(
-			'topbar_email'               => 'info@360hotelier.com',
-			'topbar_phone_display'       => '7000 1818',
-			'topbar_phone_href'          => '+35770001818',
-			'contact_phone_display'      => '7000 1818',
-			'contact_phone_href'         => '+35770001818',
-			'contact_email'              => 'info@360hotelier.com',
-			'contact_address'            => '9, Epaminondou street, 3075, Limassol, Cyprus',
-			'contact_map_query'          => '360° Hotelier Consulting Limassol',
-			'label_phone'                => 'Phone',
-			'label_email'                => 'Email',
-			'label_address'              => 'Address',
-			'footer_heading_nav'         => 'Navigation',
-			'footer_heading_follow'      => 'Follow Us',
-			'footer_heading_legal'       => 'Legal',
-			'footer_heading_contact'     => 'Contact',
-			'footer_copyright_name'      => '360° Hotelier Consulting.',
-			'footer_rights'              => 'All Rights Reserved.',
-			'footer_credit_html'         => '<a href="https://balian.cy/" rel="noopener noreferrer" target="_blank">Balian Web Development Co.</a>',
-			'footer_logo_id'             => 0,
-			'social_facebook'            => '',
-			'social_linkedin'            => '',
-			'social_instagram'           => '',
-			'error_title'                => '404 — Page Not Found',
-			'error_text'                 => 'It looks like nothing was found at this location.',
-			'error_btn'                  => 'Back to home',
-			// Greek (_el) variants — empty defaults (fall back to English when not set).
-			'contact_address_el'         => '',
-			'label_phone_el'             => '',
-			'label_email_el'             => '',
-			'label_address_el'           => '',
-			'footer_heading_nav_el'      => '',
-			'footer_heading_follow_el'   => '',
-			'footer_heading_legal_el'    => '',
-			'footer_heading_contact_el'  => '',
-			'footer_copyright_name_el'   => '',
-			'footer_rights_el'           => '',
-			'error_title_el'             => '',
-			'error_text_el'              => '',
-			'error_btn_el'               => '',
+			'topbar_email'          => 'info@360hotelier.com',
+			'topbar_phone_display'  => '7000 1818',
+			'topbar_phone_href'     => '+35770001818',
+			'contact_phone_display' => '7000 1818',
+			'contact_phone_href'    => '+35770001818',
+			'contact_email'         => 'info@360hotelier.com',
+			'contact_address'       => '9, Epaminondou street, 3075, Limassol, Cyprus',
+			'contact_map_query'     => '360° Hotelier Consulting Limassol',
+			'label_phone'           => 'Phone',
+			'label_email'           => 'Email',
+			'label_address'         => 'Address',
+			'footer_heading_nav'    => 'Navigation',
+			'footer_heading_follow' => 'Follow Us',
+			'footer_heading_legal'  => 'Legal',
+			'footer_heading_contact'  => 'Contact',
+			'footer_copyright_name' => '360° Hotelier Consulting.',
+			'footer_rights'         => 'All Rights Reserved.',
+			'footer_credit_html'    => '<a href="https://balian.cy/" rel="noopener noreferrer" target="_blank">Balian Web Development Co.</a>',
+			'footer_logo_id'        => 0,
+			'social_facebook'       => '',
+			'social_linkedin'       => '',
+			'social_instagram'      => '',
+			'error_title'           => '404 — Page Not Found',
+			'error_text'            => 'It looks like nothing was found at this location.',
+			'error_btn'             => 'Back to home',
 		);
 	}
 
@@ -116,12 +102,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'footer_copyright_name', 'footer_rights',
 			'error_title', 'error_text', 'error_btn',
 			'social_facebook', 'social_linkedin', 'social_instagram',
-			// Greek variants.
-			'contact_address_el',
-			'label_phone_el', 'label_email_el', 'label_address_el',
-			'footer_heading_nav_el', 'footer_heading_follow_el', 'footer_heading_legal_el', 'footer_heading_contact_el',
-			'footer_copyright_name_el', 'footer_rights_el',
-			'error_title_el', 'error_text_el', 'error_btn_el',
 		);
 		foreach ( $text as $k ) {
 			if ( isset( $input[ $k ] ) ) {
@@ -143,22 +123,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		if ( ! is_array( $stored ) ) {
 			$stored = array();
 		}
-		$merged = array_merge( self::defaults(), $stored );
-
-		// On the front end, overlay Greek values when language is Greek.
-		if ( ! is_admin() && function_exists( 'hotelier_get_lang' ) && hotelier_get_lang() === 'el' ) {
-			foreach ( $merged as $key => $value ) {
-				if ( substr( $key, -3 ) === '_el' ) {
-					continue; // skip the _el keys themselves
-				}
-				$el_key = $key . '_el';
-				if ( isset( $merged[ $el_key ] ) && is_string( $merged[ $el_key ] ) && $merged[ $el_key ] !== '' ) {
-					$merged[ $key ] = $merged[ $el_key ];
-				}
-			}
-		}
-
-		return $merged;
+		return array_merge( self::defaults(), $stored );
 	}
 
 	public static function get_text( string $key, string $fallback = '' ): string {
@@ -256,47 +221,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<td><textarea class="large-text" rows="2" id="h-404-x" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[error_text]"><?php echo esc_textarea( $v['error_text'] ); ?></textarea></td></tr>
 					<tr><th><label for="h-404-b"><?php esc_html_e( 'Button label', '360-hotelier' ); ?></label></th>
 						<td><input class="regular-text" id="h-404-b" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[error_btn]" type="text" value="<?php echo esc_attr( $v['error_btn'] ); ?>"></td></tr>
-				</table>
-
-				<hr>
-				<h2 class="title">🇬🇷 Ελληνικά (EL) — Greek overrides</h2>
-				<p class="description" style="margin-bottom:16px;">Leave a field empty to inherit the English value.</p>
-
-				<h3 class="title" style="font-size:14px;"><?php esc_html_e( 'Contact details (Contact page, footer, map)', '360-hotelier' ); ?></h3>
-				<table class="form-table" role="presentation">
-					<tr><th><label for="h-c-addr-el"><?php esc_html_e( 'Address', '360-hotelier' ); ?> (EL)</label></th>
-						<td><textarea class="large-text" rows="2" id="h-c-addr-el" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[contact_address_el]"><?php echo esc_textarea( $v['contact_address_el'] ); ?></textarea></td></tr>
-					<tr><th><?php esc_html_e( 'Detail labels', '360-hotelier' ); ?> (EL)</th>
-						<td>
-							<label><?php esc_html_e( 'Phone', '360-hotelier' ); ?> <input class="regular-text" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[label_phone_el]" type="text" value="<?php echo esc_attr( $v['label_phone_el'] ); ?>"></label><br><br>
-							<label><?php esc_html_e( 'Email', '360-hotelier' ); ?> <input class="regular-text" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[label_email_el]" type="text" value="<?php echo esc_attr( $v['label_email_el'] ); ?>"></label><br><br>
-							<label><?php esc_html_e( 'Address', '360-hotelier' ); ?> <input class="regular-text" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[label_address_el]" type="text" value="<?php echo esc_attr( $v['label_address_el'] ); ?>"></label>
-						</td></tr>
-				</table>
-
-				<h3 class="title" style="font-size:14px;"><?php esc_html_e( 'Footer', '360-hotelier' ); ?></h3>
-				<table class="form-table" role="presentation">
-					<tr><th><?php esc_html_e( 'Column headings', '360-hotelier' ); ?> (EL)</th>
-						<td>
-							<label><?php esc_html_e( 'Navigation', '360-hotelier' ); ?> <input class="regular-text" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[footer_heading_nav_el]" type="text" value="<?php echo esc_attr( $v['footer_heading_nav_el'] ); ?>"></label><br><br>
-							<label><?php esc_html_e( 'Follow Us', '360-hotelier' ); ?> <input class="regular-text" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[footer_heading_follow_el]" type="text" value="<?php echo esc_attr( $v['footer_heading_follow_el'] ); ?>"></label><br><br>
-							<label><?php esc_html_e( 'Legal', '360-hotelier' ); ?> <input class="regular-text" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[footer_heading_legal_el]" type="text" value="<?php echo esc_attr( $v['footer_heading_legal_el'] ); ?>"></label><br><br>
-							<label><?php esc_html_e( 'Contact', '360-hotelier' ); ?> <input class="regular-text" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[footer_heading_contact_el]" type="text" value="<?php echo esc_attr( $v['footer_heading_contact_el'] ); ?>"></label>
-						</td></tr>
-					<tr><th><label for="h-f-copy-el"><?php esc_html_e( 'Copyright name line', '360-hotelier' ); ?> (EL)</label></th>
-						<td><input class="large-text" id="h-f-copy-el" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[footer_copyright_name_el]" type="text" value="<?php echo esc_attr( $v['footer_copyright_name_el'] ); ?>"></td></tr>
-					<tr><th><label for="h-f-rights-el"><?php esc_html_e( 'Rights reserved text', '360-hotelier' ); ?> (EL)</label></th>
-						<td><input class="large-text" id="h-f-rights-el" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[footer_rights_el]" type="text" value="<?php echo esc_attr( $v['footer_rights_el'] ); ?>"></td></tr>
-				</table>
-
-				<h3 class="title" style="font-size:14px;"><?php esc_html_e( '404 page', '360-hotelier' ); ?></h3>
-				<table class="form-table" role="presentation">
-					<tr><th><label for="h-404-t-el"><?php esc_html_e( 'Title', '360-hotelier' ); ?> (EL)</label></th>
-						<td><input class="large-text" id="h-404-t-el" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[error_title_el]" type="text" value="<?php echo esc_attr( $v['error_title_el'] ); ?>"></td></tr>
-					<tr><th><label for="h-404-x-el"><?php esc_html_e( 'Message', '360-hotelier' ); ?> (EL)</label></th>
-						<td><textarea class="large-text" rows="2" id="h-404-x-el" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[error_text_el]"><?php echo esc_textarea( $v['error_text_el'] ); ?></textarea></td></tr>
-					<tr><th><label for="h-404-b-el"><?php esc_html_e( 'Button label', '360-hotelier' ); ?> (EL)</label></th>
-						<td><input class="regular-text" id="h-404-b-el" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[error_btn_el]" type="text" value="<?php echo esc_attr( $v['error_btn_el'] ); ?>"></td></tr>
 				</table>
 
 				<?php submit_button(); ?>

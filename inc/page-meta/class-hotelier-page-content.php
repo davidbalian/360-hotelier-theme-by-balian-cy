@@ -29,19 +29,9 @@ final class Hotelier_Page_Content {
 		if ( ! $fields || ! isset( $fields[ $field ] ) ) {
 			return '';
 		}
-		$def     = $fields[ $field ];
+		$def = $fields[ $field ];
 		$default = isset( $def['default'] ) ? (string) $def['default'] : '';
-
-		// On the front end, try the Greek (_el) meta value first when language is Greek.
-		if ( ! is_admin() && function_exists( 'hotelier_get_lang' ) && hotelier_get_lang() === 'el' ) {
-			$el_key = Hotelier_Page_Meta_Schema::meta_key( $context, $field ) . '_el';
-			$raw_el = get_post_meta( $post_id, $el_key, true );
-			if ( is_string( $raw_el ) && $raw_el !== '' ) {
-				return $raw_el;
-			}
-		}
-
-		$raw = get_post_meta( $post_id, Hotelier_Page_Meta_Schema::meta_key( $context, $field ), true );
+		$raw     = get_post_meta( $post_id, Hotelier_Page_Meta_Schema::meta_key( $context, $field ), true );
 		if ( is_string( $raw ) && $raw !== '' ) {
 			return $raw;
 		}

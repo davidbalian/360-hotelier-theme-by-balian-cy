@@ -15,9 +15,6 @@ define( 'HOTELIER_THEME_VERSION', '1.0.0' );
 define( 'HOTELIER_THEME_DIR', get_template_directory() );
 define( 'HOTELIER_THEME_URI', get_template_directory_uri() );
 
-// Language detection and locale switching — must load before theme setup.
-require_once HOTELIER_THEME_DIR . '/inc/language.php';
-
 // Include theme setup functions
 require_once HOTELIER_THEME_DIR . '/inc/theme-setup.php';
 
