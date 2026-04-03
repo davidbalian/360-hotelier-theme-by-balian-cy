@@ -34,11 +34,12 @@ final class Hotelier_Page_Content {
 		$raw = get_post_meta( $post_id, Hotelier_Page_Meta_Schema::meta_key( $context, $field ), true );
 		if ( is_string( $raw ) && $raw !== '' ) {
 			// Meta often duplicates the schema default after save — still show Greek on /el/ when it matches.
+			// rtrim: hero line 1 default ends with a trailing space; editors/DB often strip it.
 			if ( function_exists( 'hotelier_get_current_lang' )
 				&& 'el' === hotelier_get_current_lang()
 				&& class_exists( 'Hotelier_El_Page_Defaults' )
 				&& $default !== ''
-				&& (string) $raw === $default ) {
+				&& self::raw_matches_schema_default( (string) $raw, $default ) ) {
 				$el = Hotelier_El_Page_Defaults::get( $context, $field );
 				if ( is_string( $el ) && $el !== '' ) {
 					return $el;
@@ -57,6 +58,19 @@ final class Hotelier_Page_Content {
 		}
 
 		return $default;
+	}
+
+	/**
+	 * True when saved meta is the same as the English schema default (trim-tolerant).
+	 */
+	private static function raw_matches_schema_default( string $raw, string $default ): bool {
+		if ( '' === $default ) {
+			return false;
+		}
+		if ( $raw === $default ) {
+			return true;
+		}
+		return rtrim( $raw ) === rtrim( $default );
 	}
 
 	public static function get_select( int $post_id, string $context, string $field ): string {

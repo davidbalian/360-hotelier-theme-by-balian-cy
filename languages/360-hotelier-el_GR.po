@@ -6,8 +6,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/360-hotelier-theme-by-balian-cy\n"
 "POT-Creation-Date: 2026-04-02T08:45:37+00:00\n"
 "PO-Revision-Date: 2026-04-02T08:45:37+00:00\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"Last-Translator: Balian Web Development Co.\n"
+"Language-Team: Greek\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,13 +19,13 @@ msgstr ""
 #. Theme Name of the theme
 #: style.css
 msgid "360 Hotelier"
-msgstr ""
+msgstr "360 Hotelier"
 
 #. Theme URI of the theme
 #. Author URI of the theme
 #: style.css
 msgid "https://balian.cy/"
-msgstr ""
+msgstr "https://balian.cy/"
 
 #. Description of the theme
 #: style.css
@@ -33,11 +33,13 @@ msgid ""
 "A custom WordPress theme for 360 Hotelier, built with modern standards and "
 "modular architecture."
 msgstr ""
+"Προσαρμοσμένο θέμα WordPress για την 360 Hotelier, χτισμένο με σύγχρονα "
+"πρότυπα και αρθρωτή αρχιτεκτονική."
 
 #. Author of the theme
 #: style.css
 msgid "Balian Web Development Co."
-msgstr ""
+msgstr "Balian Web Development Co."
 
 #: footer.php:22 inc/theme-setup.php:29
 msgid "Footer Menu"
@@ -121,51 +123,58 @@ msgstr ""
 
 #: inc/class-hotelier-defaults-export-admin.php:26
 msgid "You do not have permission to export."
-msgstr ""
+msgstr "Δεν έχετε δικαίωμα εξαγωγής."
 
 #: inc/class-hotelier-defaults-export-admin.php:87
 msgid "Export site content & page fields"
-msgstr ""
+msgstr "Εξαγωγή περιεχομένου ιστότοπου & πεδίων σελίδων"
 
 #: inc/class-hotelier-defaults-export-admin.php:89
 msgid ""
 "Download a JSON snapshot of Settings → Site content values and editable page"
 " field defaults from your database (backup or handoff to a developer)."
 msgstr ""
+"Λήψη στιγμιότυπου JSON των τιμών Ρυθμίσεις → Περιεχόμενο ιστότοπου και των "
+"προεπιλογών πεδίων σελίδων από τη βάση (αντίγραφο ασφαλείας ή παράδοση σε "
+"developer)."
 
 #: inc/class-hotelier-defaults-export-admin.php:96
 msgid "Service page context"
-msgstr ""
+msgstr "Πλαίσιο σελίδας υπηρεσίας"
 
 #: inc/class-hotelier-defaults-export-admin.php:100
 msgid "Auto (first by menu order)"
-msgstr ""
+msgstr "Αυτόματα (πρώτη κατά σειρά μενού)"
 
 #: inc/class-hotelier-defaults-export-admin.php:105
 msgid ""
 "Which single service page to use when exporting the “service” template "
 "fields."
 msgstr ""
+"Ποια μοναδική σελίδα υπηρεσίας να χρησιμοποιηθεί κατά την εξαγωγή πεδίων του"
+" προτύπου «service»."
 
 #: inc/class-hotelier-defaults-export-admin.php:108
 msgid "No service template pages found."
-msgstr ""
+msgstr "Δεν βρέθηκαν σελίδες με πρότυπο υπηρεσίας."
 
 #: inc/class-hotelier-defaults-export-admin.php:113
 msgid "Attachment IDs"
-msgstr ""
+msgstr "ID συνημμένων"
 
 #: inc/class-hotelier-defaults-export-admin.php:117
 msgid "Export footer logo ID as 0 (more portable across WordPress installs)"
 msgstr ""
+"Εξαγωγή ID λογότυπου υποσέλιδου ως 0 (πιο φορητό μεταξύ εγκαταστάσεων "
+"WordPress)"
 
 #: inc/class-hotelier-defaults-export-admin.php:123
 msgid "Download JSON export"
-msgstr ""
+msgstr "Λήψη εξαγωγής JSON"
 
 #: inc/class-hotelier-faq-content.php:45
 msgid "How can I increase my hotel occupancy?"
-msgstr ""
+msgstr "Πώς μπορώ να αυξήσω την πληρότητα του ξενοδοχείου μου;"
 
 #: inc/class-hotelier-faq-content.php:48
 msgid ""
@@ -173,6 +182,10 @@ msgid ""
 "competitors, and your demand patterns. Most hotels struggle because pricing,"
 " distribution, and online visibility are not properly aligned."
 msgstr ""
+"Η αύξηση της πληρότητας ξεκινά από την κατανόηση της αγοράς σας, των "
+"ανταγωνιστών και των μοτίβων ζήτησης. Τα περισσότερα ξενοδοχεία "
+"δυσκολεύονται επειδή τιμολόγηση, διανομή και online ορατότητα δεν είναι "
+"ευθυγραμμισμένα."
 
 #: inc/class-hotelier-faq-content.php:51
 msgid ""
@@ -180,543 +193,587 @@ msgid ""
 "pricing, OTA optimization, targeted promotions, and a clear commercial "
 "strategy that attracts the right guests at the right time of the year."
 msgstr ""
+"Στην 360 Hotelier Consulting βοηθάμε ξενοδοχεία να βελτιώσουν την πληρότητα "
+"μέσω έξυπνης τιμολόγησης, βελτιστοποίησης OTA, στοχευμένων προσφορών και "
+"ξεκάθαρης εμπορικής στρατηγικής που προσελκύει τους σωστούς επισκέπτες τη "
+"σωστή εποχή."
 
 #: inc/class-hotelier-faq-content.php:57
 msgid "What is hotel revenue management in simple terms?"
-msgstr ""
+msgstr "Τι είναι η διαχείριση εσόδων ξενοδοχείου με απλά λόγια;"
 
 #: inc/class-hotelier-faq-content.php:60
 msgid ""
 "Hotel revenue management means selling your rooms at the best possible price"
 " depending on demand, season, and market conditions."
 msgstr ""
+"Η διαχείριση εσόδων σημαίνει να πουλάτε τα δωμάτιά σας στην καλύτερη δυνατή "
+"τιμή ανάλογα με τη ζήτηση, την εποχή και τις συνθήκες αγοράς."
 
 #: inc/class-hotelier-faq-content.php:63
 msgid "In simple terms, it helps you:"
-msgstr ""
+msgstr "Με απλά λόγια, σας βοηθά να:"
 
 #: inc/class-hotelier-faq-content.php:67
 msgid "sell more rooms"
-msgstr ""
+msgstr "πουλήσετε περισσότερα δωμάτια"
 
 #: inc/class-hotelier-faq-content.php:68
 msgid "earn more money per booking"
-msgstr ""
+msgstr "κερδίσετε περισσότερα ανά κράτηση"
 
 #: inc/class-hotelier-faq-content.php:69
 msgid "stay competitive in Cyprus and Greece"
-msgstr ""
+msgstr "μείνετε ανταγωνιστικοί στην Κύπρο και την Ελλάδα"
 
 #: inc/class-hotelier-faq-content.php:70
 msgid "avoid unnecessary discounts"
-msgstr ""
+msgstr "αποφύγετε περιττές εκπτώσεις"
 
 #: inc/class-hotelier-faq-content.php:74
 msgid ""
 "It’s one of the most important strategies for increasing hotel "
 "profitability."
 msgstr ""
+"Είναι μία από τις σημαντικότερες στρατηγικές για την αύξηση της κερδοφορίας "
+"του ξενοδοχείου."
 
 #: inc/class-hotelier-faq-content.php:80
 msgid "My hotel is not full. What should I do first?"
-msgstr ""
+msgstr "Το ξενοδοχείο μου δεν είναι γεμάτο. Τι να κάνω πρώτα;"
 
 #: inc/class-hotelier-faq-content.php:83
 msgid "The first step is a hotel performance and pricing analysis."
-msgstr ""
+msgstr "Το πρώτο βήμα είναι ανάλυση απόδοσης και τιμολόγησης."
 
 #: inc/class-hotelier-faq-content.php:86
 msgid "Most of the time, low occupancy is caused by:"
-msgstr ""
+msgstr "Στις περισσότερες περιπτώσεις, η χαμηλή πληρότητα οφείλεται σε:"
 
 #: inc/class-hotelier-faq-content.php:90
 msgid "incorrect pricing"
-msgstr ""
+msgstr "λανθασμένη τιμολόγηση"
 
 #: inc/class-hotelier-faq-content.php:91
 msgid "weak OTA positioning"
-msgstr ""
+msgstr "αδύναμη θέση στα OTA"
 
 #: inc/class-hotelier-faq-content.php:92
 msgid "limited promotions"
-msgstr ""
+msgstr "περιορισμένες προσφορές"
 
 #: inc/class-hotelier-faq-content.php:93
 msgid "poor distribution strategy"
-msgstr ""
+msgstr "αδύναμη στρατηγική διανομής"
 
 #: inc/class-hotelier-faq-content.php:94
 msgid "lack of market targeting"
-msgstr ""
+msgstr "έλλειψη στοχευμένης αγοράς"
 
 #: inc/class-hotelier-faq-content.php:98
 msgid ""
 "A structured revenue and e-commerce strategy can quickly identify the "
 "problem and create a clear action plan to improve bookings."
 msgstr ""
+"Μια δομημένη στρατηγική εσόδων και e-commerce εντοπίζει γρήγορα το πρόβλημα "
+"και δημιουργεί σαφές πλάνο δράσης για περισσότερες κρατήσεις."
 
 #: inc/class-hotelier-faq-content.php:104
 msgid "Can I increase hotel revenue without lowering my prices?"
-msgstr ""
+msgstr "Μπορώ να αυξήσω τα έσοδα χωρίς να ρίξω τις τιμές;"
 
 #: inc/class-hotelier-faq-content.php:107
 msgid "Yes, and this is actually the goal of professional hotel consulting."
-msgstr ""
+msgstr "Ναι — και αυτός είναι ο στόχος του επαγγελματικού hotel consulting."
 
 #: inc/class-hotelier-faq-content.php:110
 msgid "Instead of lowering prices, we focus on:"
-msgstr ""
+msgstr "Αντί να ρίχνουμε τιμές, εστιάζουμε σε:"
 
 #: inc/class-hotelier-faq-content.php:114
 msgid "better market positioning"
-msgstr ""
+msgstr "καλύτερη θέση στην αγορά"
 
 #: inc/class-hotelier-faq-content.php:115
 msgid "optimized OTA ranking"
-msgstr ""
+msgstr "βελτιστοποιημένη κατάταξη στα OTA"
 
 #: inc/class-hotelier-faq-content.php:116
 msgid "value-added offers"
-msgstr ""
+msgstr "προσφορές με προστιθέμενη αξία"
 
 #: inc/class-hotelier-faq-content.php:117
 msgid "demand-based pricing"
-msgstr ""
+msgstr "τιμολόγηση βάσει ζήτησης"
 
 #: inc/class-hotelier-faq-content.php:118
 msgid "stronger direct booking strategy"
-msgstr ""
+msgstr "ισχυρότερη στρατηγική άμεσων κρατήσεων"
 
 #: inc/class-hotelier-faq-content.php:119
 msgid "targeted promotions"
-msgstr ""
+msgstr "στοχευμένες προσφορές"
 
 #: inc/class-hotelier-faq-content.php:123
 msgid ""
 "This allows hotels to increase revenue while maintaining healthy average "
 "room rates."
 msgstr ""
+"Έτσι τα ξενοδοχεία αυξάνουν έσοδα διατηρώντας υγιείς μέσους ναύλους "
+"δωματίου."
 
 #: inc/class-hotelier-faq-content.php:129
 msgid "Do small hotels really need revenue management?"
-msgstr ""
+msgstr "Χρειάζονται πραγματικά revenue management τα μικρά ξενοδοχεία;"
 
 #: inc/class-hotelier-faq-content.php:132
 msgid "Absolutely."
-msgstr ""
+msgstr "Απολύτως."
 
 #: inc/class-hotelier-faq-content.php:135
 msgid ""
 "Small and boutique hotels in Cyprus and Greece often benefit the most "
 "because every room counts."
 msgstr ""
+"Τα μικρά και boutique ξενοδοχεία στην Κύπρο και την Ελλάδα συχνά ωφελούνται "
+"περισσότερο — κάθε δωμάτιο μετράει."
 
 #: inc/class-hotelier-faq-content.php:138
 msgid "With proper revenue management, small hotels can:"
-msgstr ""
+msgstr "Με σωστή διαχείριση εσόδων, τα μικρά ξενοδοχεία μπορούν να:"
 
 #: inc/class-hotelier-faq-content.php:142
 msgid "compete with larger properties"
-msgstr ""
+msgstr "ανταγωνιστούν μεγαλύτερες μονάδες"
 
 #: inc/class-hotelier-faq-content.php:143
 msgid "improve Booking.com ranking"
-msgstr ""
+msgstr "βελτιώσουν την κατάταξη στο Booking.com"
 
 #: inc/class-hotelier-faq-content.php:144
 msgid "increase occupancy"
-msgstr ""
+msgstr "αυξήσουν την πληρότητα"
 
 #: inc/class-hotelier-faq-content.php:145
 msgid "grow direct bookings"
-msgstr ""
+msgstr "αναπτύξουν τις άμεσες κρατήσεις"
 
 #: inc/class-hotelier-faq-content.php:146
 msgid "stabilize low season performance"
-msgstr ""
+msgstr "σταθεροποιήσουν την απόδοση στη χαμηλή σεζόν"
 
 #: inc/class-hotelier-faq-content.php:150
 msgid ""
 "Even a 30–50 room hotel can significantly increase revenue with the right "
 "strategy."
 msgstr ""
+"Ακόμη και ξενοδοχείο 30–50 δωματίων μπορεί να αυξήσει σημαντικά τα έσοδα με "
+"τη σωστή στρατηγική."
 
 #: inc/class-hotelier-faq-content.php:156
 msgid "How can I improve my hotel’s performance on Booking.com and OTAs?"
-msgstr ""
+msgstr "Πώς βελτιώνω την απόδοσή μου στο Booking.com και στα OTA;"
 
 #: inc/class-hotelier-faq-content.php:159
 msgid ""
 "OTA performance improves when your hotel is properly optimized and actively "
 "managed."
 msgstr ""
+"Η απόδοση στα OTA βελτιώνεται όταν το ξενοδοχείο είναι σωστά "
+"βελτιστοποιημένο και ενεργά διαχειριζόμενο."
 
 #: inc/class-hotelier-faq-content.php:162
 msgid "This includes:"
-msgstr ""
+msgstr "Συμπεριλαμβάνει:"
 
 #: inc/class-hotelier-faq-content.php:166
 msgid "strong content and descriptions"
-msgstr ""
+msgstr "ισχυρό περιεχόμενο και περιγραφές"
 
 #: inc/class-hotelier-faq-content.php:167
 msgid "competitive pricing"
-msgstr ""
+msgstr "ανταγωνιστική τιμολόγηση"
 
 #: inc/class-hotelier-faq-content.php:168
 msgid "correct rate plans"
-msgstr ""
+msgstr "σωστά πλάνα τιμών"
 
 #: inc/class-hotelier-faq-content.php:169
 msgid "promotions and visibility tools"
-msgstr ""
+msgstr "προσφορές και εργαλεία ορατότητας"
 
 #: inc/class-hotelier-faq-content.php:170
 msgid "availability and restrictions"
-msgstr ""
+msgstr "διαθεσιμότητα και περιορισμούς"
 
 #: inc/class-hotelier-faq-content.php:171
 msgid "high-quality photos"
-msgstr ""
+msgstr "φωτογραφίες υψηλής ποιότητας"
 
 #: inc/class-hotelier-faq-content.php:172
 msgid "ranking strategy"
-msgstr ""
+msgstr "στρατηγική κατάταξης"
 
 #: inc/class-hotelier-faq-content.php:176
 msgid ""
 "360 Hotelier Consulting helps hotels improve their OTA presence and increase"
 " booking conversion."
 msgstr ""
+"Η 360 Hotelier Consulting βοηθά ξενοδοχεία να βελτιώσουν την παρουσία στα "
+"OTA και τη μετατροπή κρατήσεων."
 
 #: inc/class-hotelier-faq-content.php:182
 msgid "What exactly does 360 Hotelier Consulting do for hotels?"
-msgstr ""
+msgstr "Τι ακριβώς κάνει η 360 Hotelier Consulting για τα ξενοδοχεία;"
 
 #: inc/class-hotelier-faq-content.php:185
 msgid ""
 "360 Hotelier Consulting helps hotels grow their occupancy and revenue "
 "through a complete commercial strategy."
 msgstr ""
+"Η 360 Hotelier Consulting βοηθά ξενοδοχεία να αυξήσουν πληρότητα και έσοδα "
+"μέσω ολοκληρωμένης εμπορικής στρατηγικής."
 
 #: inc/class-hotelier-faq-content.php:188
 msgid "Services include:"
-msgstr ""
+msgstr "Οι υπηρεσίες περιλαμβάνουν:"
 
 #: inc/class-hotelier-faq-content.php:192
 msgid "revenue management"
-msgstr ""
+msgstr "διαχείριση εσόδων"
 
 #: inc/class-hotelier-faq-content.php:193
 msgid "OTA and e-commerce management"
-msgstr ""
+msgstr "διαχείριση OTA και e-commerce"
 
 #: inc/class-hotelier-faq-content.php:194
 msgid "pricing strategy"
-msgstr ""
+msgstr "στρατηγική τιμολόγησης"
 
 #: inc/class-hotelier-faq-content.php:195
 msgid "market and competitor analysis"
-msgstr ""
+msgstr "ανάλυση αγοράς και ανταγωνισμού"
 
 #: inc/class-hotelier-faq-content.php:196
 msgid "hotel opening support"
-msgstr ""
+msgstr "υποστήριξη νέου ανοίγματος ξενοδοχείου"
 
 #: inc/class-hotelier-faq-content.php:197
 msgid "sales and distribution strategy"
-msgstr ""
+msgstr "στρατηγική πωλήσεων και διανομής"
 
 #: inc/class-hotelier-faq-content.php:198
 msgid "direct booking growth"
-msgstr ""
+msgstr "ανάπτυξη άμεσων κρατήσεων"
 
 #: inc/class-hotelier-faq-content.php:199
 msgid "performance audits"
-msgstr ""
+msgstr "ελέγχους απόδοσης"
 
 #: inc/class-hotelier-faq-content.php:203
 msgid ""
 "The main objective is simple: increase occupancy, increase revenue, and "
 "improve profitability."
 msgstr ""
+"Ο κύριος στόχος είναι απλός: περισσότερη πληρότητα, περισσότερα έσοδα, "
+"καλύτερη κερδοφορία."
 
 #: inc/class-hotelier-faq-content.php:209
 msgid "Can you help with a new hotel opening?"
-msgstr ""
+msgstr "Μπορείτε να βοηθήσετε σε νέο άνοιγμα ξενοδοχείου;"
 
 #: inc/class-hotelier-faq-content.php:212
 msgid ""
 "Yes, new hotel openings need a strong commercial strategy from the "
 "beginning."
 msgstr ""
+"Ναι — τα νέα ανοίγματα χρειάζονται ισχυρή εμπορική στρατηγική από την αρχή."
 
 #: inc/class-hotelier-faq-content.php:215
 msgid "We support new hotels with:"
-msgstr ""
+msgstr "Υποστηρίζουμε νέα ξενοδοχεία με:"
 
 #: inc/class-hotelier-faq-content.php:219
 msgid "pricing structure"
-msgstr ""
+msgstr "δομή τιμολόγησης"
 
 #: inc/class-hotelier-faq-content.php:220
 msgid "OTA setup"
-msgstr ""
+msgstr "ρύθμιση OTA"
 
 #: inc/class-hotelier-faq-content.php:221
 #: inc/class-hotelier-faq-content.php:272
 msgid "market positioning"
-msgstr ""
+msgstr "θέση στην αγορά"
 
 #: inc/class-hotelier-faq-content.php:222
 msgid "revenue planning"
-msgstr ""
+msgstr "σχεδιασμό εσόδων"
 
 #: inc/class-hotelier-faq-content.php:223
 msgid "distribution strategy"
-msgstr ""
+msgstr "στρατηγική διανομής"
 
 #: inc/class-hotelier-faq-content.php:224
 msgid "online presence"
-msgstr ""
+msgstr "online παρουσία"
 
 #: inc/class-hotelier-faq-content.php:225
 msgid "pre-opening strategy"
-msgstr ""
+msgstr "στρατηγική pre-opening"
 
 #: inc/class-hotelier-faq-content.php:229
 msgid ""
 "This ensures the hotel enters the market with strong visibility and "
 "competitive pricing."
 msgstr ""
+"Έτσι το ξενοδοχείο μπαίνει στην αγορά με ισχυρή ορατότητα και ανταγωνιστική "
+"τιμολόγηση."
 
 #: inc/class-hotelier-faq-content.php:235
 msgid "How can I increase direct bookings and reduce OTA commissions?"
-msgstr ""
+msgstr "Πώς αυξάνω τις άμεσες κρατήσεις και μειώνω τις προμήθειες OTA;"
 
 #: inc/class-hotelier-faq-content.php:238
 msgid ""
 "Direct bookings grow when your website and strategy are properly structured."
 msgstr ""
+"Οι άμεσες κρατήσεις αυξάνονται όταν ο ιστότοπος και η στρατηγική είναι σωστά"
+" δομημένοι."
 
 #: inc/class-hotelier-faq-content.php:241
 msgid "Key actions include:"
-msgstr ""
+msgstr "Βασικές ενέργειες:"
 
 #: inc/class-hotelier-faq-content.php:245
 msgid "website optimization"
-msgstr ""
+msgstr "βελτιστοποίηση ιστότοπου"
 
 #: inc/class-hotelier-faq-content.php:246
 msgid "booking engine improvement"
-msgstr ""
+msgstr "βελτίωση μηχανής κρατήσεων"
 
 #: inc/class-hotelier-faq-content.php:247
 msgid "exclusive direct offers"
-msgstr ""
+msgstr "αποκλειστικές άμεσες προσφορές"
 
 #: inc/class-hotelier-faq-content.php:248
 msgid "SEO and Google visibility"
-msgstr ""
+msgstr "SEO και ορατότητα στη Google"
 
 #: inc/class-hotelier-faq-content.php:249
 msgid "rate parity strategy"
-msgstr ""
+msgstr "στρατηγική ισότητας τιμών (parity)"
 
 #: inc/class-hotelier-faq-content.php:250
 msgid "digital marketing support"
-msgstr ""
+msgstr "υποστήριξη ψηφιακού μάρκετινγκ"
 
 #: inc/class-hotelier-faq-content.php:254
 msgid "The goal is to reduce OTA dependency and increase profitability."
 msgstr ""
+"Στόχος είναι να μειωθεί η εξάρτηση από OTA και να αυξηθεί η κερδοφορία."
 
 #: inc/class-hotelier-faq-content.php:260
 msgid ""
 "What is the difference between hotel consulting and revenue management?"
-msgstr ""
+msgstr "Ποια η διαφορά μεταξύ hotel consulting και revenue management;"
 
 #: inc/class-hotelier-faq-content.php:263
 msgid "Revenue management focuses mainly on pricing and demand strategy."
 msgstr ""
+"Το revenue management εστιάζει κυρίως σε τιμολόγηση και στρατηγική ζήτησης."
 
 #: inc/class-hotelier-faq-content.php:266
 msgid "Hotel consulting goes further and includes:"
-msgstr ""
+msgstr "Το hotel consulting πάει παραπέρα και περιλαμβάνει:"
 
 #: inc/class-hotelier-faq-content.php:270
 msgid "sales strategy"
-msgstr ""
+msgstr "στρατηγική πωλήσεων"
 
 #: inc/class-hotelier-faq-content.php:271
 msgid "OTA management"
-msgstr ""
+msgstr "διαχείριση OTA"
 
 #: inc/class-hotelier-faq-content.php:273
 msgid "distribution planning"
-msgstr ""
+msgstr "σχεδιασμό διανομής"
 
 #: inc/class-hotelier-faq-content.php:274
 msgid "commercial strategy"
-msgstr ""
+msgstr "εμπορική στρατηγική"
 
 #: inc/class-hotelier-faq-content.php:275
 msgid "performance improvement"
-msgstr ""
+msgstr "βελτίωση απόδοσης"
 
 #: inc/class-hotelier-faq-content.php:279
 msgid ""
 "In short, revenue management is one part of hotel consulting, while "
 "consulting covers the full growth strategy."
 msgstr ""
+"Συνοπτικά, το revenue management είναι μέρος του consulting, ενώ το "
+"consulting καλύπτει ολόκληρη τη στρατηγική ανάπτυξης."
 
 #: inc/class-hotelier-faq-content.php:285
 msgid "How often should hotel prices be updated?"
-msgstr ""
+msgstr "Πόσο συχνά πρέπει να ενημερώνονται οι τιμές;"
 
 #: inc/class-hotelier-faq-content.php:288
 msgid ""
 "Hotel prices should be reviewed at least once per week and more frequently "
 "during high season."
 msgstr ""
+"Οι τιμές πρέπει να ελέγχονται τουλάχιστον μία φορά την εβδομάδα και "
+"συχνότερα σε υψηλή σεζόν."
 
 #: inc/class-hotelier-faq-content.php:291
 msgid "Pricing usually changes based on:"
-msgstr ""
+msgstr "Η τιμολόγηση αλλάζει συνήθως βάσει:"
 
 #: inc/class-hotelier-faq-content.php:295
 msgid "demand"
-msgstr ""
+msgstr "ζήτησης"
 
 #: inc/class-hotelier-faq-content.php:296
 msgid "competitor pricing"
-msgstr ""
+msgstr "τιμών ανταγωνιστών"
 
 #: inc/class-hotelier-faq-content.php:297
 msgid "booking pace"
-msgstr ""
+msgstr "ρυθμού κρατήσεων"
 
 #: inc/class-hotelier-faq-content.php:298
 msgid "events"
-msgstr ""
+msgstr "εκδηλώσεων"
 
 #: inc/class-hotelier-faq-content.php:299
 msgid "seasonality"
-msgstr ""
+msgstr "εποχικότητας"
 
 #: inc/class-hotelier-faq-content.php:300
 msgid "market trends"
-msgstr ""
+msgstr "τάσεων αγοράς"
 
 #: inc/class-hotelier-faq-content.php:304
 msgid ""
 "Active pricing management helps hotels maximize both occupancy and revenue."
-msgstr ""
+msgstr "Η ενεργή διαχείριση τιμών μεγιστοποιεί πληρότητα και έσοδα."
 
 #: inc/class-hotelier-faq-content.php:310
 msgid "Can hotel consulting improve low season performance?"
-msgstr ""
+msgstr "Μπορεί το consulting να βελτιώσει τη χαμηλή σεζόν;"
 
 #: inc/class-hotelier-faq-content.php:313
 msgid ""
 "Yes, low season strategy is one of the most important areas of hotel "
 "consulting."
 msgstr ""
+"Ναι — η στρατηγική χαμηλής σεζόν είναι από τους πιο σημαντικούς τομείς."
 
 #: inc/class-hotelier-faq-content.php:316
 msgid "Solutions include:"
-msgstr ""
+msgstr "Λύσεις που περιλαμβάνουμε:"
 
 #: inc/class-hotelier-faq-content.php:320
 msgid "long stay offers"
-msgstr ""
+msgstr "προσφορές long stay"
 
 #: inc/class-hotelier-faq-content.php:321
 msgid "winter promotions"
-msgstr ""
+msgstr "χειμερινές προσφορές"
 
 #: inc/class-hotelier-faq-content.php:322
 msgid "niche markets"
-msgstr ""
+msgstr "θέσεις niche"
 
 #: inc/class-hotelier-faq-content.php:323
 msgid "corporate and special segments"
-msgstr ""
+msgstr "επιχειρηματικά και ειδικά τμήματα"
 
 #: inc/class-hotelier-faq-content.php:324
 msgid "targeted campaigns"
-msgstr ""
+msgstr "στοχευμένες καμπάνιες"
 
 #: inc/class-hotelier-faq-content.php:325
 msgid "dynamic pricing"
-msgstr ""
+msgstr "δυναμική τιμολόγηση"
 
 #: inc/class-hotelier-faq-content.php:329
 msgid "This helps hotels generate demand even during slower periods."
-msgstr ""
+msgstr "Έτσι δημιουργείται ζήτηση ακόμη και σε πιο ήσυχες περιόδους."
 
 #: inc/class-hotelier-faq-content.php:335
 msgid "Why should I work with an external hotel consultant?"
-msgstr ""
+msgstr "Γιατί να συνεργαστώ με εξωτερικό σύμβουλο ξενοδοχείου;"
 
 #: inc/class-hotelier-faq-content.php:338
 msgid ""
 "An external consultant brings experience, market knowledge, and a fresh "
 "perspective without the cost of a full-time employee."
 msgstr ""
+"Ένας εξωτερικός σύμβουλος φέρνει εμπειρία, γνώση αγοράς και νέα οπτική χωρίς"
+" το κόστος πλήρους απασχόλησης."
 
 #: inc/class-hotelier-faq-content.php:341
 msgid "Benefits include:"
-msgstr ""
+msgstr "Οφέλη:"
 
 #: inc/class-hotelier-faq-content.php:345
 msgid "professional revenue strategy"
-msgstr ""
+msgstr "επαγγελματική στρατηγική εσόδων"
 
 #: inc/class-hotelier-faq-content.php:346
 msgid "OTA expertise"
-msgstr ""
+msgstr "τεχνογνωσία OTA"
 
 #: inc/class-hotelier-faq-content.php:347
 msgid "objective analysis"
-msgstr ""
+msgstr "αντικειμενική ανάλυση"
 
 #: inc/class-hotelier-faq-content.php:348
 msgid "faster decision making"
-msgstr ""
+msgstr "ταχύτερες αποφάσεις"
 
 #: inc/class-hotelier-faq-content.php:349
 msgid "cost-effective support"
-msgstr ""
+msgstr "οικονομική υποστήριξη"
 
 #: inc/class-hotelier-faq-content.php:350
 msgid "improved performance"
-msgstr ""
+msgstr "βελτιωμένη απόδοση"
 
 #: inc/class-hotelier-faq-content.php:354
 msgid ""
 "Many hotels prefer external consulting because it is flexible and efficient."
 msgstr ""
+"Πολλά ξενοδοχεία προτιμούν εξωτερικό consulting για ευελιξία και "
+"αποδοτικότητα."
 
 #: inc/class-hotelier-faq-content.php:360
 msgid "How long does it take to see results?"
-msgstr ""
+msgstr "Πόσο χρειάζεται για να φανούν αποτελέσματα;"
 
 #: inc/class-hotelier-faq-content.php:363
 msgid ""
 "Most hotels start seeing improvements within 2 to 4 months after "
 "implementing a structured revenue and OTA strategy."
 msgstr ""
+"Τα περισσότερα ξενοδοχεία βλέπουν βελτίωση εντός 2–4 μηνών μετά την εφαρμογή"
+" δομημένης στρατηγικής εσόδων και OTA."
 
 #: inc/class-hotelier-faq-content.php:366
 msgid ""
 "Stronger long-term results usually appear within 6 to 12 months, depending "
 "on market conditions and implementation speed."
 msgstr ""
+"Ισχυρότερα μακροπρόθεσμα αποτελέσματα συνήθως εντός 6–12 μηνών, ανάλογα με "
+"την αγορά και την ταχύτητα υλοποίησης."
 
 #: inc/class-hotelier-faq-content.php:372
 msgid "Do you work with hotels in Cyprus and Greece?"
-msgstr ""
+msgstr "Δουλεύετε με ξενοδοχεία στην Κύπρο και την Ελλάδα;"
 
 #: inc/class-hotelier-faq-content.php:375
 msgid ""
@@ -724,6 +781,9 @@ msgid ""
 "supporting independent hotels, boutique hotels, and new hotel openings with "
 "revenue management, OTA optimization, and commercial strategy development."
 msgstr ""
+"Ναι — η 360 Hotelier Consulting συνεργάζεται με ξενοδοχεία σε Κύπρο και "
+"Ελλάδα, υποστηρίζοντας ανεξάρτητα, boutique και νέα ανοίγματα με revenue "
+"management, βελτιστοποίηση OTA και εμπορική στρατηγική."
 
 #: inc/class-hotelier-primary-nav-walker.php:98 inc/menu-fallback.php:204
 msgid "All Services"
@@ -736,67 +796,67 @@ msgstr "Περιεχόμενο ιστότοπου"
 
 #: inc/class-hotelier-site-content-options.php:161
 msgid "Top bar"
-msgstr ""
+msgstr "Άνω μπάρα"
 
 #: inc/class-hotelier-site-content-options.php:163
 #: inc/class-hotelier-site-content-options.php:177
 #: inc/class-hotelier-site-content-options.php:186
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: inc/class-hotelier-site-content-options.php:165
 #: inc/class-hotelier-site-content-options.php:173
 msgid "Phone (display)"
-msgstr ""
+msgstr "Τηλέφωνο (εμφάνιση)"
 
 #: inc/class-hotelier-site-content-options.php:167
 msgid "Phone (tel: href, e.g. +35770001818)"
-msgstr ""
+msgstr "Τηλέφωνο (href tel:, π.χ. +35770001818)"
 
 #: inc/class-hotelier-site-content-options.php:171
 msgid "Contact details (Contact page, footer, map)"
-msgstr ""
+msgstr "Στοιχεία επικοινωνίας (σελίδα επικοινωνίας, υποσέλιδο, χάρτης)"
 
 #: inc/class-hotelier-site-content-options.php:175
 msgid "Phone (tel: href)"
-msgstr ""
+msgstr "Τηλέφωνο (href tel:)"
 
 #: inc/class-hotelier-site-content-options.php:179
 #: inc/class-hotelier-site-content-options.php:187
 msgid "Address"
-msgstr ""
+msgstr "Διεύθυνση"
 
 #: inc/class-hotelier-site-content-options.php:181
 msgid "Map search query"
-msgstr ""
+msgstr "Ερώτημα αναζήτησης χάρτη"
 
 #: inc/class-hotelier-site-content-options.php:183
 msgid "Detail labels"
-msgstr ""
+msgstr "Ετικέτες λεπτομερειών"
 
 #: inc/class-hotelier-site-content-options.php:185
 msgid "Phone"
-msgstr ""
+msgstr "Τηλέφωνο"
 
 #: inc/class-hotelier-site-content-options.php:191
 msgid "Footer"
-msgstr ""
+msgstr "Υποσέλιδο"
 
 #: inc/class-hotelier-site-content-options.php:193
 msgid "Column headings"
-msgstr ""
+msgstr "Επικεφαλίδες στηλών"
 
 #: inc/class-hotelier-site-content-options.php:195
 msgid "Navigation"
-msgstr ""
+msgstr "Πλοήγηση"
 
 #: inc/class-hotelier-site-content-options.php:196
 msgid "Follow Us"
-msgstr ""
+msgstr "Ακολουθήστε μας"
 
 #: inc/class-hotelier-site-content-options.php:197
 msgid "Legal"
-msgstr ""
+msgstr "Νομικά"
 
 #. Template Name of the theme
 #: inc/class-hotelier-site-content-options.php:198 inc/menu-fallback.php:157
@@ -806,47 +866,47 @@ msgstr "Επικοινωνία"
 
 #: inc/class-hotelier-site-content-options.php:200
 msgid "Copyright name line"
-msgstr ""
+msgstr "Γραμμή ονόματος πνευματικών δικαιωμάτων"
 
 #: inc/class-hotelier-site-content-options.php:201
 msgid "Shown after the © year."
-msgstr ""
+msgstr "Εμφανίζεται μετά το έτος ©."
 
 #: inc/class-hotelier-site-content-options.php:202
 msgid "Rights reserved text"
-msgstr ""
+msgstr "Κείμενο «διατηρούνται πάντα δικαιώματα»"
 
 #: inc/class-hotelier-site-content-options.php:204
 msgid "Credit HTML"
-msgstr ""
+msgstr "HTML πιστώσεων"
 
 #: inc/class-hotelier-site-content-options.php:206
 msgid "Footer logo attachment ID"
-msgstr ""
+msgstr "ID συνημμένου λογότυπου υποσέλιδου"
 
 #: inc/class-hotelier-site-content-options.php:207
 msgid "0 = default theme asset."
-msgstr ""
+msgstr "0 = προεπιλογή πόρου θέματος."
 
 #: inc/class-hotelier-site-content-options.php:208
 msgid "Social URLs"
-msgstr ""
+msgstr "URL κοινωνικών δικτύων"
 
 #: inc/class-hotelier-site-content-options.php:216
 msgid "404 page"
-msgstr ""
+msgstr "Σελίδα 404"
 
 #: inc/class-hotelier-site-content-options.php:218
 msgid "Title"
-msgstr ""
+msgstr "Τίτλος"
 
 #: inc/class-hotelier-site-content-options.php:220
 msgid "Message"
-msgstr ""
+msgstr "Μήνυμα"
 
 #: inc/class-hotelier-site-content-options.php:222
 msgid "Button label"
-msgstr ""
+msgstr "Κείμενο κουμπιού"
 
 #: inc/enqueue.php:119
 msgid ""
@@ -1110,11 +1170,11 @@ msgstr "Συχνές ερωτήσεις πριν επικοινωνήσετε."
 
 #: page-templates/template-portfolio.php:116
 msgid "Partner hotel"
-msgstr ""
+msgstr "Συνεργαζόμενο ξενοδοχείο"
 
 #. Template Name of the theme
 msgid "Service Single"
-msgstr ""
+msgstr "Μονή σελίδα υπηρεσίας"
 
 #: page-templates/template-services.php:107
 msgid "How we support hotels with revenue, OTAs, and commercial strategy."
@@ -1122,25 +1182,27 @@ msgstr "Πώς υποστηρίζουμε ξενοδοχεία σε έσοδα, 
 
 #. Template Name of the theme
 msgid "Style Guide"
-msgstr ""
+msgstr "Οδηγός στυλ"
 
 #: template-parts/content/content-none.php:11
 msgid "Nothing Found"
-msgstr ""
+msgstr "Δεν βρέθηκε τίποτα"
 
 #: template-parts/content/content-none.php:16
 msgid ""
 "Sorry, nothing matched your search terms. Please try again with different "
 "keywords."
 msgstr ""
+"Λυπούμαστε, κανένα αποτέλεσμα δεν ταιριάζει με τους όρους αναζήτησης. "
+"Δοκιμάστε άλλες λέξεις-κλειδιά."
 
 #: template-parts/content/content-none.php:19
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
-msgstr ""
+msgstr "Φαίνεται πως δεν μπορούμε να βρούμε αυτό που ψάχνετε."
 
 #: template-parts/content/content-page.php:16
 msgid "Pages:"
-msgstr ""
+msgstr "Σελίδες:"
 
 #: template-parts/content/content.php:36
 msgid "Read more"
@@ -1148,7 +1210,7 @@ msgstr "Διαβάστε περισσότερα"
 
 #: template-parts/page/page-hero.php:31
 msgid "360° Hotelier"
-msgstr ""
+msgstr "360° Hotelier"
 
 #: assets/js/navigation.js:96
 msgid "Close menu"
