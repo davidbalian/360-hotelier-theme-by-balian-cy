@@ -20,12 +20,25 @@
 }
 
 .hotel-faq {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
     max-width: 46rem;
     margin-inline: auto;
     padding: 0.35rem 0.5rem;
     background: var(--color-white);
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-card);
+}
+
+@media (min-width: 992px) {
+    .hotel-faq {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2.5rem;
+        max-width: none;
+        width: 100%;
+        margin-inline: 0;
+    }
 }
 
 .hotel-faq__item {
