@@ -1,0 +1,182 @@
+/* ==========================================================================
+   Portfolio — testimonials carousel
+   ========================================================================== */
+
+.page-portfolio-testimonials__carousel {
+    padding-bottom: 0.5rem;
+}
+
+.page-portfolio-testimonials__carousel-inner {
+    position: relative;
+}
+
+.page-portfolio-testimonials__chrome {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.35rem;
+    align-items: stretch;
+    margin-top: 1.5rem;
+}
+
+@media ( max-width: 640px ) {
+    .page-portfolio-testimonials__chrome {
+        display: block;
+        position: relative;
+        padding-inline: 2.75rem;
+    }
+
+    .page-portfolio-testimonials__arrow {
+        position: absolute;
+        top: 42%;
+        transform: translateY( -50% );
+        z-index: 2;
+    }
+
+    .page-portfolio-testimonials__arrow--prev {
+        left: 0;
+    }
+
+    .page-portfolio-testimonials__arrow--next {
+        right: 0;
+    }
+}
+
+.page-portfolio-testimonials__viewport {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    outline: none;
+}
+
+.page-portfolio-testimonials__viewport::-webkit-scrollbar {
+    display: none;
+}
+
+.page-portfolio-testimonials__track {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+
+.page-portfolio-testimonials__slide {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    box-sizing: border-box;
+    padding-inline: 0.25rem;
+}
+
+.page-portfolio-testimonials__card {
+    margin: 0;
+    padding: 2rem 2rem 2.25rem;
+    border-radius: var(--radius-card);
+    background: var(--color-white);
+    box-shadow: var(--shadow-card);
+    position: relative;
+    min-height: 14rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-portfolio-testimonials__quote-icon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--color-orange);
+    opacity: 0.85;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+.page-portfolio-testimonials__quote {
+    margin: 0 0 1.5rem;
+    font-size: var(--text-md);
+    line-height: 1.55;
+    color: var(--color-charcoal);
+    flex: 1;
+}
+
+.page-portfolio-testimonials__footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.page-portfolio-testimonials__name {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    font-style: normal;
+    color: var(--color-purple);
+}
+
+.page-portfolio-testimonials__role {
+    font-size: var(--text-sm);
+    color: var(--color-charcoal);
+    opacity: 0.72;
+}
+
+.page-portfolio-testimonials__arrow {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    background: var(--color-white);
+    color: var(--color-purple);
+    cursor: pointer;
+    transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.page-portfolio-testimonials__arrow:hover {
+    box-shadow: var(--shadow-card);
+    transform: translateY(-1px);
+}
+
+.page-portfolio-testimonials__arrow:focus-visible {
+    outline: 2px solid var(--color-orange);
+    outline-offset: 2px;
+}
+
+.page-portfolio-testimonials__arrow-icon {
+    width: 1.35rem;
+    height: 1.35rem;
+}
+
+.page-portfolio-testimonials__dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+}
+
+.page-portfolio-testimonials__dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-border);
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.page-portfolio-testimonials__dot[aria-selected='true'] {
+    background: var(--color-purple);
+    transform: scale(1.25);
+}
+
+.page-portfolio-testimonials__dot:focus-visible {
+    outline: 2px solid var(--color-orange);
+    outline-offset: 2px;
+}

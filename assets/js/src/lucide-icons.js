@@ -6,6 +6,8 @@ import {
 	Briefcase,
 	Check,
 	ChevronDown,
+	ChevronLeft,
+	ChevronRight,
 	Clock,
 	Euro,
 	Facebook,
@@ -16,6 +18,7 @@ import {
 	MapPin,
 	Monitor,
 	Phone,
+	Quote,
 	Users,
 } from 'lucide';
 
@@ -25,6 +28,8 @@ function initLucideIcons() {
 			Briefcase,
 			Check,
 			ChevronDown,
+			ChevronLeft,
+			ChevronRight,
 			Clock,
 			Euro,
 			Facebook,
@@ -35,6 +40,7 @@ function initLucideIcons() {
 			MapPin,
 			Monitor,
 			Phone,
+			Quote,
 			Users,
 		},
 		attrs: {

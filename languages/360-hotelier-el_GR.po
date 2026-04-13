@@ -1239,3 +1239,36 @@ msgstr "Κλείσιμο μενού"
 
 msgid "Form language: %s"
 msgstr "Γλώσσα φόρμας: %s"
+
+#: template-parts/page/portfolio-section-testimonials.php
+msgid "carousel"
+msgstr "καρουζέλ"
+
+#: template-parts/page/portfolio-section-testimonials.php
+msgid "slide"
+msgstr "διαφάνεια"
+
+#: template-parts/page/portfolio-section-testimonials.php
+msgid "Testimonials"
+msgstr "Σχόλια πελατών"
+
+#: template-parts/page/portfolio-section-testimonials.php
+msgid "Previous testimonial"
+msgstr "Προηγούμενο σχόλιο"
+
+#: template-parts/page/portfolio-section-testimonials.php
+msgid "Next testimonial"
+msgstr "Επόμενο σχόλιο"
+
+#: template-parts/page/portfolio-section-testimonials.php
+msgid "Choose testimonial"
+msgstr "Επιλέξτε σχόλιο"
+
+#: template-parts/page/portfolio-section-testimonials.php
+msgid "Go to testimonial %d"
+msgstr "Μετάβαση στο σχόλιο %d"
+
+#: template-parts/page/portfolio-section-testimonials.php
+msgid "Testimonial %d"
+msgstr "Σχόλιο %d"
+

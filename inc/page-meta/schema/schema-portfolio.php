@@ -31,6 +31,25 @@ for ( $i = 1; $i <= 8; $i++ ) {
 	$hotels[ "hotel_{$i}_variant" ]  = array( 'type' => 'text', 'label' => "Hotel {$i} — CSS variant (optional, e.g. serbellas)", 'default' => '' );
 }
 
+$testimonials = array();
+for ( $i = 1; $i <= 5; $i++ ) {
+	$testimonials[ "testimonial_{$i}_quote" ] = array(
+		'type'    => 'textarea',
+		'label'   => "Testimonial {$i} — quote",
+		'default' => '',
+	);
+	$testimonials[ "testimonial_{$i}_name" ] = array(
+		'type'    => 'text',
+		'label'   => "Testimonial {$i} — name",
+		'default' => '',
+	);
+	$testimonials[ "testimonial_{$i}_role" ] = array(
+		'type'    => 'text',
+		'label'   => "Testimonial {$i} — role / property",
+		'default' => '',
+	);
+}
+
 $defaults = array(
 	'hero_title'             => array( 'type' => 'text', 'label' => 'Hero — title', 'default' => 'Our Hotel Partners' ),
 	'hero_subtitle'          => array( 'type' => 'textarea', 'label' => 'Hero — subtitle', 'default' => 'Boutique, independent and resort hotels across Cyprus and beyond, each delivering measurable results.' ),
@@ -43,6 +62,8 @@ $defaults = array(
 
 	'partners_title'         => array( 'type' => 'text', 'label' => 'Partners section — title', 'default' => 'Hotels & Partners' ),
 	'partners_subtitle'      => array( 'type' => 'textarea', 'label' => 'Partners section — subtitle', 'default' => 'Independent, boutique and resort properties we support with revenue, distribution and digital strategy.' ),
+	'testimonials_title'     => array( 'type' => 'text', 'label' => 'Testimonials — title', 'default' => 'What partners say' ),
+	'testimonials_subtitle'  => array( 'type' => 'textarea', 'label' => 'Testimonials — subtitle', 'default' => 'Feedback from hotel leaders on revenue, distribution and working with our team.' ),
 	'visit_website_text'     => array( 'type' => 'text', 'label' => 'Partner card — button', 'default' => 'Visit Website' ),
 	'pendeli_aria'           => array( 'type' => 'text', 'label' => 'Pendeli logo — aria label', 'default' => 'Pendeli Resort Hotel Cyprus' ),
 	'pendeli_svg'            => array(
@@ -57,7 +78,7 @@ $defaults = array(
 	'cta_feat_primary'       => array( 'type' => 'text', 'label' => 'Bottom CTA — button', 'default' => 'Book a Free Consultation' ),
 );
 
-$out = array_merge( $defaults, $hotels );
+$out = array_merge( $defaults, $testimonials, $hotels );
 
 $out['hotel_1_name']['default']          = 'Cap St. Georges Hotel & Resort';
 $out['hotel_1_location']['default']      = 'Paphos, Cyprus';
@@ -115,5 +136,25 @@ $out['hotel_8_url']['default']           = 'https://chiccentresuites.com/';
 $out['hotel_8_logo']['default_url']      = $u . 'chic-centre-suites-athens-hotel-logo.webp';
 $out['hotel_8_photo']['default_url']     = $u . 'chic-centre-suites-athens-hotel-consulting-project.webp';
 $out['hotel_8_alt']['default']           = 'Chic Centre Suites Athens';
+
+$out['testimonial_1_quote']['default']  = '360° Hotelier gave us the pricing discipline and pace-of-sales rhythm we were missing in-house. RevPAR progress has been clear quarter on quarter.';
+$out['testimonial_1_name']['default']  = 'Alexandra M.';
+$out['testimonial_1_role']['default']   = 'General Manager, boutique resort · Cyprus';
+
+$out['testimonial_2_quote']['default']  = 'Tour-operator terms and contracting finally align with how we actually fill the hotel. Less leakage, a healthier channel mix.';
+$out['testimonial_2_name']['default']  = 'Dimitrios K.';
+$out['testimonial_2_role']['default']   = 'Commercial Director, city hotel · Greece';
+
+$out['testimonial_3_quote']['default']  = 'Direct bookings and website conversion improved once distribution and messaging were one plan—not separate projects run in parallel.';
+$out['testimonial_3_name']['default']  = 'Elena V.';
+$out['testimonial_3_role']['default']   = 'Owner, independent hotel · Cyprus';
+
+$out['testimonial_4_quote']['default']  = 'They understand seasonality and source markets for this island; the guidance is practical, not generic slide decks.';
+$out['testimonial_4_name']['default']  = 'Michael P.';
+$out['testimonial_4_role']['default']   = 'Operations Manager, coastal property · Cyprus';
+
+$out['testimonial_5_quote']['default']  = 'It feels like an extension of our leadership team: revenue, digital and B2B in a single, coherent conversation.';
+$out['testimonial_5_name']['default']  = 'Sophia L.';
+$out['testimonial_5_role']['default']   = 'Managing Director, resort group · Cyprus';
 
 return $out;

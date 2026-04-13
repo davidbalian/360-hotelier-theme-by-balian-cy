@@ -55,6 +55,15 @@ function hotelier_enqueue_assets() {
         );
     }
 
+    if ( hotelier_should_enqueue_portfolio_testimonials_assets() ) {
+        wp_enqueue_style(
+            '360-hotelier-portfolio-testimonials',
+            HOTELIER_THEME_URI . '/assets/css/parts/05c-portfolio-testimonials.css',
+            array( $last_main_css_handle ),
+            HOTELIER_THEME_VERSION
+        );
+    }
+
     // Navigation JS (mobile menu toggle)
     wp_enqueue_script(
         '360-hotelier-navigation',
@@ -98,6 +107,19 @@ function hotelier_enqueue_assets() {
             true
         );
     }
+
+    if ( hotelier_should_enqueue_portfolio_testimonials_assets() ) {
+        $pt_js = HOTELIER_THEME_DIR . '/assets/js/portfolio-testimonials-carousel.js';
+        $pt_ver = file_exists( $pt_js ) ? (string) filemtime( $pt_js ) : HOTELIER_THEME_VERSION;
+
+        wp_enqueue_script(
+            '360-hotelier-portfolio-testimonials',
+            HOTELIER_THEME_URI . '/assets/js/portfolio-testimonials-carousel.js',
+            array( '360-hotelier-lucide-icons' ),
+            $pt_ver,
+            true
+        );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'hotelier_enqueue_assets' );
 
@@ -115,6 +137,13 @@ function hotelier_should_enqueue_faq_assets() {
 
     return is_page_template( 'page-templates/template-contact.php' )
         || is_page_template( 'page-templates/template-services.php' );
+}
+
+/**
+ * Portfolio template: testimonials carousel CSS/JS.
+ */
+function hotelier_should_enqueue_portfolio_testimonials_assets() {
+    return is_page() && is_page_template( 'page-templates/template-portfolio.php' );
 }
 
 /**

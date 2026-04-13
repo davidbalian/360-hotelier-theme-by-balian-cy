@@ -126,6 +126,16 @@ get_template_part(
         </div>
     </section>
 
+    <?php
+    get_template_part(
+        'template-parts/page/portfolio-section-testimonials',
+        null,
+        array(
+            'page_id' => $page_id,
+        )
+    );
+    ?>
+
     <section class="front-featured-banner card-border">
         <?php Hotelier_Cta_Band_Image::render( Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'cta_feat_img' ) ); ?>
         <div class="front-featured-banner__overlay section-overlay"></div>
