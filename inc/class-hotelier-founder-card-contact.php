@@ -16,8 +16,10 @@ final class Hotelier_Founder_Card_Contact {
 
 	/**
 	 * Echo contact block markup.
+	 *
+	 * @param string $wrapper_extra_classes Optional space-separated classes on the root div (e.g. fade-in helpers).
 	 */
-	public static function render(): void {
+	public static function render( string $wrapper_extra_classes = '' ): void {
 		$o = Hotelier_Site_Content_Options::get();
 
 		$tb_tel = preg_replace( '/\s+/', '', (string) $o['topbar_phone_href'] );
@@ -25,7 +27,15 @@ final class Hotelier_Founder_Card_Contact {
 			$tb_tel = 'tel:' . $tb_tel;
 		}
 
-		echo '<div class="founder-card-contact">';
+		$root_class = 'founder-card-contact';
+		if ( $wrapper_extra_classes !== '' ) {
+			$tokens = preg_split( '/\s+/', trim( $wrapper_extra_classes ), -1, PREG_SPLIT_NO_EMPTY );
+			foreach ( $tokens as $token ) {
+				$root_class .= ' ' . sanitize_html_class( $token );
+			}
+		}
+
+		echo '<div class="' . esc_attr( $root_class ) . '">';
 		echo '<div class="founder-card-contact__list">';
 
 		if ( ! empty( $o['topbar_email'] ) ) {

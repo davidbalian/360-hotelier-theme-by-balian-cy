@@ -44,11 +44,11 @@ $profile_cta  = Hotelier_Page_Content::get_text( $founder_pid, $hctx, 'founder_p
                 </li>
                 <?php endfor; ?>
             </ul>
-            <?php Hotelier_Founder_Card_Contact::render(); ?>
+            <?php Hotelier_Founder_Card_Contact::render( 'fade-in fade-in-delay-9' ); ?>
             <?php if ( ! $hide_about_cta ) : ?>
-            <a href="<?php echo esc_url( $about_url ); ?>" class="btn btn--primary front-founder__cta fade-in fade-in-delay-9"><?php echo esc_html( Hotelier_Page_Content::get_text( $founder_pid, $hctx, 'founder_cta_text' ) ); ?></a>
+            <a href="<?php echo esc_url( $about_url ); ?>" class="btn btn--primary front-founder__cta fade-in fade-in-delay-10"><?php echo esc_html( Hotelier_Page_Content::get_text( $founder_pid, $hctx, 'founder_cta_text' ) ); ?></a>
             <?php elseif ( $founder_url !== '' ) : ?>
-            <a href="<?php echo esc_url( $founder_url ); ?>" class="btn btn--primary front-founder__cta fade-in fade-in-delay-9"><?php echo esc_html( $profile_cta ); ?></a>
+            <a href="<?php echo esc_url( $founder_url ); ?>" class="btn btn--primary front-founder__cta fade-in fade-in-delay-10"><?php echo esc_html( $profile_cta ); ?></a>
             <?php endif; ?>
         </div>
         </div>
