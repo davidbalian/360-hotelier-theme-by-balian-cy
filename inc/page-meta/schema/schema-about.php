@@ -21,7 +21,7 @@ return array(
 	'intro_p1'               => array( 'type' => 'textarea', 'label' => 'Intro — paragraph 1', 'default' => '360° Hotelier Consulting is a Cyprus-based hotel consultancy providing strategic commercial support to independent hotels, boutique properties and resorts across the island.' ),
 	'intro_p2'               => array( 'type' => 'textarea', 'label' => 'Intro — paragraph 2', 'default' => 'We specialize in hotel revenue management, online sales & B2B distribution, e-commerce, digital marketing and tour-operator contracting — helping hotels increase revenue and improve profitability.' ),
 	'intro_p3'               => array( 'type' => 'textarea', 'label' => 'Intro — paragraph 3', 'default' => "With 15+ years in hospitality, we work hands-on across pricing, channels and digital. We keep our client list small to stay fully accountable to each hotel." ),
-	'intro_side_img'         => array( 'type' => 'image', 'label' => 'Intro — side image', 'default_url' => $u . 'why-choose-360-hotelier.webp' ),
+	'intro_side_img'         => array( 'type' => 'image', 'label' => 'Intro — side image', 'default_url' => $u . 'boutique-hotel-room-cyprus-partner-property.webp' ),
 
 	'what_title'             => array( 'type' => 'text', 'label' => 'What we do — title', 'default' => 'What We Do' ),
 	'what_subtitle'          => array( 'type' => 'textarea', 'label' => 'What we do — subtitle', 'default' => "End-to-end commercial consulting tailored to each property's market and goals." ),
@@ -33,11 +33,11 @@ return array(
 	'what_3_text'            => array( 'type' => 'textarea', 'label' => 'What box 3 — text', 'default' => 'Direct booking optimization, SEO & SEM, social media marketing and digital performance analysis.' ),
 	'what_4_title'           => array( 'type' => 'text', 'label' => 'What box 4 — title', 'default' => 'Contracting & Tour Operator Negotiations' ),
 	'what_4_text'            => array( 'type' => 'textarea', 'label' => 'What box 4 — text', 'default' => "Professional representation and negotiation with tour operators and wholesalers, acting in the hotel's best commercial interest." ),
-	'what_banner_img'        => array( 'type' => 'image', 'label' => 'What we do — wide image (below grid, full width of block)', 'default_url' => '' ),
-	'what_banner_alt'        => array( 'type' => 'text', 'label' => 'What we do — wide image alt text', 'default' => '' ),
+	'what_banner_img'        => array( 'type' => 'image', 'label' => 'What we do — wide image (below grid, full width of block)', 'default_url' => $u . 'cyprus-hotel-lobby-commercial-strategy.webp' ),
+	'what_banner_alt'        => array( 'type' => 'text', 'label' => 'What we do — wide image alt text', 'default' => 'Luxury hotel lobby — commercial strategy and positioning' ),
 	'what_cta_text'          => array( 'type' => 'text', 'label' => 'What we do — CTA', 'default' => 'View All Services' ),
 
-	'cta_feat_img'           => array( 'type' => 'image', 'label' => 'Bottom CTA — image', 'default_url' => $u . 'featured-360-hotelier.webp' ),
+	'cta_feat_img'           => array( 'type' => 'image', 'label' => 'Bottom CTA — image', 'default_url' => $u . 'cyprus-hotel-consulting-partner-hotel.webp' ),
 	'cta_feat_title'         => array( 'type' => 'textarea', 'label' => 'Bottom CTA — title', 'default' => 'Work With a Hotel Consultant in Cyprus.' ),
 	'cta_feat_text'          => array( 'type' => 'textarea', 'label' => 'Bottom CTA — text', 'default' => "360° Hotelier Consulting covers revenue, distribution and digital for hotels across Cyprus. Let's talk." ),
 	'cta_feat_primary'       => array( 'type' => 'text', 'label' => 'Bottom CTA — primary button', 'default' => 'Book a Free Consultation' ),
