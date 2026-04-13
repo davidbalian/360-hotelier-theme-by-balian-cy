@@ -13,16 +13,16 @@
 .front-services-overview,
 .front-featured-banner,
 .front-results {
-    max-width: 1500px;
-    margin-inline: max(1rem, calc((100% - 1500px) / 2));
+    max-width: 1920px;
+    margin-inline: max(1rem, calc((100% - 1920px) / 2));
     border-radius: 4rem;
 }
 
 .front-why-choose,
 .front-founder,
 .front-approach {
-    max-width: 1500px;
-    margin-inline: max(1rem, calc((100% - 1500px) / 2));
+    max-width: 1920px;
+    margin-inline: max(1rem, calc((100% - 1920px) / 2));
 }
 
 .front-section__title,
@@ -58,8 +58,8 @@
     background-position: center center;
     background-repeat: no-repeat;
     overflow: hidden;
-    max-width: 1500px;
-    margin-inline: max(1rem, calc((100% - 1500px) / 2));
+    max-width: 1920px;
+    margin-inline: max(1rem, calc((100% - 1920px) / 2));
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-left-radius: 4rem;

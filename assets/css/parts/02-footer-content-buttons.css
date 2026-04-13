@@ -3,10 +3,10 @@
    ========================================================================== */
 
 .site-footer {
-    --footer-gutter: max(1rem, calc((100% - 1500px) / 2));
+    --footer-gutter: max(1rem, calc((100% - 1920px) / 2));
     background-color: #1a1a1a;
     color: #ccc;
-    max-width: 1500px;
+    max-width: 1920px;
     margin: var(--footer-gutter);
     margin-top: calc(var(--footer-gutter) * 2);
     border-radius: 4rem;
