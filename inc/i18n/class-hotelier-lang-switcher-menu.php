@@ -16,7 +16,8 @@ final class Hotelier_Lang_Switcher_Menu {
 
 	public static function register(): void {
 		add_filter( 'wp_nav_menu_objects', array( self::class, 'filter_nav_menu_objects' ), 10, 2 );
-		add_filter( 'wp_nav_menu_items', array( self::class, 'filter_nav_menu_items' ), 10, 2 );
+		// Language switcher moved to top bar — not injected into nav menu.
+		// add_filter( 'wp_nav_menu_items', array( self::class, 'filter_nav_menu_items' ), 10, 2 );
 	}
 
 	/**

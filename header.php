@@ -43,21 +43,15 @@
                     <a href="<?php echo esc_url( $tb_tel ); ?>" class="top-bar__phone"><?php echo esc_html( $h_site['topbar_phone_display'] ); ?></a>
                 <?php endif; ?>
                 <div class="top-bar__social">
-                    <?php if ( ! empty( $h_site['social_facebook'] ) ) : ?>
-                        <a href="<?php echo esc_url( $h_site['social_facebook'] ); ?>" class="top-bar__social-link" rel="noopener noreferrer" target="_blank" aria-label="Facebook">
-                            <i data-lucide="facebook"></i>
-                        </a>
-                    <?php endif; ?>
-                    <?php if ( ! empty( $h_site['social_linkedin'] ) ) : ?>
-                        <a href="<?php echo esc_url( $h_site['social_linkedin'] ); ?>" class="top-bar__social-link" rel="noopener noreferrer" target="_blank" aria-label="LinkedIn">
-                            <i data-lucide="linkedin"></i>
-                        </a>
-                    <?php endif; ?>
-                    <?php if ( ! empty( $h_site['social_instagram'] ) ) : ?>
-                        <a href="<?php echo esc_url( $h_site['social_instagram'] ); ?>" class="top-bar__social-link" rel="noopener noreferrer" target="_blank" aria-label="Instagram">
-                            <i data-lucide="instagram"></i>
-                        </a>
-                    <?php endif; ?>
+                    <a href="<?php echo esc_url( ! empty( $h_site['social_facebook'] ) ? $h_site['social_facebook'] : '#' ); ?>" class="top-bar__social-link" rel="noopener noreferrer" target="_blank" aria-label="Facebook">
+                        <i data-lucide="facebook"></i>
+                    </a>
+                    <a href="<?php echo esc_url( ! empty( $h_site['social_linkedin'] ) ? $h_site['social_linkedin'] : '#' ); ?>" class="top-bar__social-link" rel="noopener noreferrer" target="_blank" aria-label="LinkedIn">
+                        <i data-lucide="linkedin"></i>
+                    </a>
+                    <a href="<?php echo esc_url( ! empty( $h_site['social_instagram'] ) ? $h_site['social_instagram'] : '#' ); ?>" class="top-bar__social-link" rel="noopener noreferrer" target="_blank" aria-label="Instagram">
+                        <i data-lucide="instagram"></i>
+                    </a>
                 </div>
             </div>
 
