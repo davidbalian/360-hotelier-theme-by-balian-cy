@@ -20,6 +20,13 @@ $banner_id      = Hotelier_Cookie_Consent::BANNER_ID;
 	aria-label="<?php esc_attr_e( 'Cookie consent', '360-hotelier' ); ?>"
 	hidden
 >
+	<button
+		type="button"
+		class="cookie-banner__close"
+		aria-label="<?php esc_attr_e( 'Dismiss cookie banner', '360-hotelier' ); ?>"
+	>
+		&times;
+	</button>
 	<p class="cookie-banner__text text-base-sm">
 		<?php
 		echo wp_kses(
@@ -41,12 +48,8 @@ $banner_id      = Hotelier_Cookie_Consent::BANNER_ID;
 		<button type="button" class="cookie-banner__accept btn btn--primary btn--sm">
 			<?php esc_html_e( 'Accept', '360-hotelier' ); ?>
 		</button>
-		<button
-			type="button"
-			class="cookie-banner__close"
-			aria-label="<?php esc_attr_e( 'Dismiss cookie banner', '360-hotelier' ); ?>"
-		>
-			&times;
+		<button type="button" class="cookie-banner__reject btn btn--outline btn--sm">
+			<?php esc_html_e( 'Reject', '360-hotelier' ); ?>
 		</button>
 	</div>
 </div>

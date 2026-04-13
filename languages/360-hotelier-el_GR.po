@@ -61,7 +61,7 @@ msgstr "Instagram"
 msgid "Privacy Policy"
 msgstr "Πολιτική απορρήτου"
 
-#: footer.php:62 inc/theme-setup.php:194 template-parts/components/cookie-banner.php:29
+#: footer.php:62 inc/theme-setup.php:194 template-parts/components/cookie-banner.php:36
 msgid "Cookie Policy"
 msgstr "Πολιτική cookies"
 
@@ -70,15 +70,19 @@ msgid "Cookie consent"
 msgstr "Συναίνεση cookies"
 
 #. translators: %s: Cookie policy link HTML.
-#: template-parts/components/cookie-banner.php:28
+#: template-parts/components/cookie-banner.php:35
 msgid "We use cookies to improve your experience and for analytics. %s"
 msgstr "Χρησιμοποιούμε cookies για να βελτιώσουμε την εμπειρία σας και για αναλυτικά στοιχεία. %s"
 
-#: template-parts/components/cookie-banner.php:42
+#: template-parts/components/cookie-banner.php:49
 msgid "Accept"
 msgstr "Αποδοχή"
 
-#: template-parts/components/cookie-banner.php:47
+#: template-parts/components/cookie-banner.php:52
+msgid "Reject"
+msgstr "Απόρριψη"
+
+#: template-parts/components/cookie-banner.php:26
 msgid "Dismiss cookie banner"
 msgstr "Απόρριψη ειδοποίησης cookies"
 

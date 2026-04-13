@@ -59,7 +59,7 @@ msgstr ""
 
 #: footer.php:62
 #: inc/theme-setup.php:194
-#: template-parts/components/cookie-banner.php:29
+#: template-parts/components/cookie-banner.php:36
 msgid "Cookie Policy"
 msgstr ""
 
@@ -68,15 +68,19 @@ msgid "Cookie consent"
 msgstr ""
 
 #. translators: %s: Cookie policy link HTML.
-#: template-parts/components/cookie-banner.php:28
+#: template-parts/components/cookie-banner.php:35
 msgid "We use cookies to improve your experience and for analytics. %s"
 msgstr ""
 
-#: template-parts/components/cookie-banner.php:42
+#: template-parts/components/cookie-banner.php:49
 msgid "Accept"
 msgstr ""
 
-#: template-parts/components/cookie-banner.php:47
+#: template-parts/components/cookie-banner.php:52
+msgid "Reject"
+msgstr ""
+
+#: template-parts/components/cookie-banner.php:26
 msgid "Dismiss cookie banner"
 msgstr ""
 

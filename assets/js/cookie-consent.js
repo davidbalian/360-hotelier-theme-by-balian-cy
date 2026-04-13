@@ -41,9 +41,13 @@
 	}
 
 	var accept = banner.querySelector('.cookie-banner__accept');
+	var reject = banner.querySelector('.cookie-banner__reject');
 	var closeBtn = banner.querySelector('.cookie-banner__close');
 	if (accept) {
 		accept.addEventListener('click', dismissBanner);
+	}
+	if (reject) {
+		reject.addEventListener('click', dismissBanner);
 	}
 	if (closeBtn) {
 		closeBtn.addEventListener('click', dismissBanner);
