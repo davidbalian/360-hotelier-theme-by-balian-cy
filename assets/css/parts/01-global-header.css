@@ -102,24 +102,12 @@
 .top-bar__email,
 .top-bar__phone,
 .top-bar__social-link {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
     color: #fff;
     text-decoration: none;
     font-size: 0.8rem;
     transition: color 0.3s ease;
     position: relative;
     background-image: none !important;
-}
-
-.top-bar__email i[data-lucide],
-.top-bar__phone i[data-lucide],
-.top-bar__social-link i[data-lucide] {
-    width: 11px;
-    height: 11px;
-    flex-shrink: 0;
-    display: block;
 }
 
 .top-bar__email::after,
@@ -235,6 +223,18 @@
 
 .admin-bar {
     --wp-admin-bar-offset: 32px;
+}
+
+@media (max-width: 1024px) {
+    .top-bar__social {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar__email {
+        display: none;
+    }
 }
 
 @media (max-width: 782px) {
