@@ -7,8 +7,10 @@
     background-color: #1a1a1a;
     color: #ccc;
     max-width: 1920px;
-    margin: var(--footer-gutter);
-    margin-top: calc(var(--footer-gutter) * 2);
+    margin-left: var(--footer-gutter);
+    margin-right: var(--footer-gutter);
+    margin-top: 4rem;
+    margin-bottom: 2rem;
     border-radius: 4rem;
     overflow: hidden;
     padding: 2rem 0 2rem;
