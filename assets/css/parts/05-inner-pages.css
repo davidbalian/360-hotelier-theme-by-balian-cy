@@ -352,12 +352,31 @@
     align-items: stretch;
 }
 
-.page-portfolio__row--flip .page-portfolio__row-media,
+/* Portfolio desktop: explicit columns so text|image and image|text alternate reliably */
+@media ( min-width: 769px ) {
+    .page-portfolio__row > .page-portfolio__hotel-card {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .page-portfolio__row > .page-portfolio__row-media {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .page-portfolio__row--flip > .page-portfolio__hotel-card {
+        grid-column: 2;
+    }
+
+    .page-portfolio__row--flip > .page-portfolio__row-media {
+        grid-column: 1;
+    }
+}
+
 .page-services__row--flip .page-services__row-media {
     order: 1;
 }
 
-.page-portfolio__row--flip .page-portfolio__hotel-card,
 .page-services__row--flip .page-services__offer-card {
     order: 2;
 }

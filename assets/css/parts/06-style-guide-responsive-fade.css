@@ -438,13 +438,21 @@
         grid-template-columns: 1fr;
     }
 
-    /* Image always above the card on small screens (overrides row--flip order) */
-    .page-portfolio__row .page-portfolio__row-media {
-        order: -1;
+    /* Portfolio: preserve alternating text→image vs image→text (same as desktop) */
+    .page-portfolio__row:not( .page-portfolio__row--flip ) .page-portfolio__hotel-card {
+        order: 0;
     }
 
-    .page-portfolio__row .page-portfolio__hotel-card {
+    .page-portfolio__row:not( .page-portfolio__row--flip ) .page-portfolio__row-media {
+        order: 1;
+    }
+
+    .page-portfolio__row--flip .page-portfolio__row-media {
         order: 0;
+    }
+
+    .page-portfolio__row--flip .page-portfolio__hotel-card {
+        order: 1;
     }
 
     .page-services__row .page-services__row-media {
