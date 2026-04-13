@@ -70,7 +70,7 @@
   height: 1.1em;
   flex-shrink: 0;
   margin-top: 0.15em;
-  color: var(--color-purple);
+  color: var(--color-orange);
 }
 
 .front-founder__cta {
@@ -120,7 +120,7 @@
 
 .front-approach__step-number {
   font-size: var(--text-3xl);
-  color: var(--color-purple);
+  color: var(--color-orange);
   font-weight: 600;
   line-height: 1;
   min-width: 40px;
@@ -229,7 +229,7 @@
 .front-results__stat {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--color-purple);
+  color: var(--color-orange);
   line-height: 1;
 }
 

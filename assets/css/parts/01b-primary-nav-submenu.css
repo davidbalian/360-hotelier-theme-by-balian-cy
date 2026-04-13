@@ -265,3 +265,8 @@
         margin-top: 0.125rem;
     }
 }
+
+/* Submenu disclosure chevrons (SVG uses currentColor) */
+.nav-submenu-chevron {
+    color: var(--color-orange);
+}
