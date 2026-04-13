@@ -33,7 +33,7 @@ return array(
 	'form_message_ph'        => array( 'type' => 'textarea', 'label' => 'Form — message placeholder', 'default' => 'Tell us about your property, your goals, and how we can help…' ),
 	'form_submit'            => array( 'type' => 'text', 'label' => 'Form — submit button', 'default' => 'Send message' ),
 
-	'cta_feat_img'           => array( 'type' => 'image', 'label' => 'Bottom CTA — image', 'default_url' => $u . 'featured-360-hotelier.webp' ),
+	'cta_feat_img'           => array( 'type' => 'image', 'label' => 'Bottom CTA — image', 'default_url' => $u . 'hotel-consulting-services-cyprus-360hotelier-2.webp' ),
 	'cta_feat_title'         => array( 'type' => 'text', 'label' => 'Bottom CTA — title', 'default' => 'Book a Free Strategy Session' ),
 	'cta_feat_text'          => array( 'type' => 'textarea', 'label' => 'Bottom CTA — text', 'default' => "Tell us about your hotel. We'll show you where the revenue opportunity is — no cost, no commitment." ),
 	'cta_feat_primary'       => array( 'type' => 'text', 'label' => 'Bottom CTA — button', 'default' => 'Book a Free Strategy Session' ),
