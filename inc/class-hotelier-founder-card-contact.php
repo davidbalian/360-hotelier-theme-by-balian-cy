@@ -26,7 +26,6 @@ final class Hotelier_Founder_Card_Contact {
 		}
 
 		echo '<div class="founder-card-contact">';
-		echo '<h3 class="founder-card-contact__title">' . esc_html( __( 'Contact', '360-hotelier' ) ) . '</h3>';
 		echo '<div class="founder-card-contact__list">';
 
 		if ( ! empty( $o['topbar_email'] ) ) {
