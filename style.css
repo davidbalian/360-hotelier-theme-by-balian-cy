@@ -322,6 +322,19 @@ a:has(img):focus-visible {
     transform: none;
 }
 
+/* Top bar links — no global gradient underline (has its own ::after underline) */
+.top-bar__email,
+.top-bar__email:hover,
+.top-bar__email:focus,
+.top-bar__email:focus-visible,
+.top-bar__phone,
+.top-bar__phone:hover,
+.top-bar__phone:focus,
+.top-bar__phone:focus-visible {
+    background-image: none;
+    background-size: auto;
+}
+
 .btn:active {
     transform: scale(0.98);
 }
