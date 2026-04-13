@@ -42,6 +42,17 @@
     filter: brightness(0) invert(1);
 }
 
+@media (max-width: 768px) {
+    .footer-cols {
+        padding-top: 0;
+    }
+
+    .footer-logo img {
+        width: 100%;
+        max-width: none;
+    }
+}
+
 .footer-col__heading {
     font-weight: 600;
     text-transform: uppercase;
