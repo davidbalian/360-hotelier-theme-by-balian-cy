@@ -1,70 +1,149 @@
 /**
- * Portfolio testimonials: horizontal snap carousel with auto-advance.
+ * Portfolio testimonials: infinite horizontal snap carousel (tripled track).
  */
 ( function () {
     'use strict';
 
     var INTERVAL_MS = 5500;
 
+    /**
+     * @param {HTMLElement} track
+     * @returns {number} Original slide count n (before clone).
+     */
+    function buildInfiniteTrack( track ) {
+        var originals = Array.from( track.querySelectorAll( '[data-testimonial-slide]:not([data-testimonial-clone])' ) );
+        var n = originals.length;
+        if ( n === 0 ) {
+            return 0;
+        }
+
+        var fragPre = document.createDocumentFragment();
+        var fragPost = document.createDocumentFragment();
+        var i;
+        for ( i = 0; i < n; i++ ) {
+            var cPre = originals[ i ].cloneNode( true );
+            cPre.removeAttribute( 'id' );
+            cPre.setAttribute( 'data-testimonial-clone', '1' );
+            cPre.setAttribute( 'aria-hidden', 'true' );
+            fragPre.appendChild( cPre );
+
+            var cPost = originals[ i ].cloneNode( true );
+            cPost.removeAttribute( 'id' );
+            cPost.setAttribute( 'data-testimonial-clone', '1' );
+            cPost.setAttribute( 'aria-hidden', 'true' );
+            fragPost.appendChild( cPost );
+        }
+        track.insertBefore( fragPre, track.firstChild );
+        track.appendChild( fragPost );
+
+        if ( typeof window.hotelierLucideHydrate === 'function' ) {
+            window.hotelierLucideHydrate( track );
+        }
+
+        return n;
+    }
+
     function initCarousel( root ) {
         var viewport = root.querySelector( '[data-testimonial-viewport]' );
         var track = root.querySelector( '[data-testimonial-track]' );
-        var slides = track ? track.querySelectorAll( '[data-testimonial-slide]' ) : [];
+
+        if ( !viewport || !track ) {
+            return;
+        }
+
+        var n = buildInfiniteTrack( track );
+        var slides = track.querySelectorAll( '[data-testimonial-slide]' );
+        if ( n === 0 || slides.length === 0 ) {
+            return;
+        }
+
         var dots = root.querySelectorAll( '[data-testimonial-dot]' );
         var btnPrev = root.querySelector( '[data-testimonial-prev]' );
         var btnNext = root.querySelector( '[data-testimonial-next]' );
-
-        if ( !viewport || !track || slides.length === 0 ) {
-            return;
-        }
 
         var reducedMotion = window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
         var paused = false;
         var timer = null;
         var scrollSyncScheduled = false;
+        var activeLogical = 0;
 
-        function slideWidth() {
-            return viewport.clientWidth || 0;
-        }
-
-        function nearestIndex() {
-            var w = slideWidth();
-            if ( !w ) {
-                return 0;
+        function nearestDomIndex() {
+            var left = viewport.scrollLeft;
+            var best = 0;
+            var bestDelta = Infinity;
+            var i;
+            for ( i = 0; i < slides.length; i++ ) {
+                var d = Math.abs( slides[ i ].offsetLeft - left );
+                if ( d < bestDelta ) {
+                    bestDelta = d;
+                    best = i;
+                }
             }
-            return Math.round( viewport.scrollLeft / w );
+            return best;
         }
 
-        function updateDots( activeIndex ) {
+        function logicalFromDom( domIdx ) {
+            var raw = slides[ domIdx ].getAttribute( 'data-testimonial-index' );
+            return raw ? parseInt( raw, 10 ) : 0;
+        }
+
+        function nearestLogicalIndex() {
+            return logicalFromDom( nearestDomIndex() );
+        }
+
+        function checkInfiniteJump() {
+            var midStart = slides[ n ].offsetLeft;
+            var thirdStart = slides[ 2 * n ].offsetLeft;
+            var shift = midStart - slides[ 0 ].offsetLeft;
+            var left = viewport.scrollLeft;
+            if ( left < midStart - 0.5 ) {
+                viewport.scrollLeft = left + shift;
+            } else if ( left >= thirdStart - 0.5 ) {
+                viewport.scrollLeft = left - shift;
+            }
+        }
+
+        function updateDots( logicalIdx ) {
             dots.forEach( function ( dot, i ) {
-                var on = i === activeIndex;
-                dot.setAttribute( 'aria-selected', on ? 'true' : 'false' );
+                dot.setAttribute( 'aria-selected', i === logicalIdx ? 'true' : 'false' );
             } );
         }
 
-        function goTo( index, smooth ) {
-            var n = slides.length;
-            if ( n === 0 ) {
+        function scrollToDom( domIdx, smooth ) {
+            var el = slides[ domIdx ];
+            if ( !el ) {
                 return;
             }
-            var idx = ( ( index % n ) + n ) % n;
-            var w = slideWidth();
-            if ( !w ) {
-                return;
-            }
+            activeLogical = logicalFromDom( domIdx );
             var behavior = reducedMotion || !smooth ? 'auto' : 'smooth';
-            viewport.scrollTo( { left: idx * w, behavior: behavior } );
-            updateDots( idx );
+            viewport.scrollTo( { left: el.offsetLeft, behavior: behavior } );
+            updateDots( activeLogical );
+        }
+
+        function goToLogical( logicalIdx, smooth ) {
+            var idx = ( ( logicalIdx % n ) + n ) % n;
+            scrollToDom( n + idx, smooth );
+        }
+
+        function goRelative( delta, smooth ) {
+            var D = nearestDomIndex();
+            if ( delta > 0 ) {
+                if ( D >= slides.length - 1 ) {
+                    scrollToDom( n, false );
+                } else {
+                    scrollToDom( D + 1, smooth );
+                }
+            } else {
+                if ( D <= 0 ) {
+                    scrollToDom( 3 * n - 1, smooth );
+                } else {
+                    scrollToDom( D - 1, smooth );
+                }
+            }
         }
 
         function advance() {
-            var i = nearestIndex();
-            if ( i >= slides.length - 1 ) {
-                viewport.scrollTo( { left: 0, behavior: 'auto' } );
-                updateDots( 0 );
-            } else {
-                goTo( i + 1, true );
-            }
+            goRelative( 1, !reducedMotion );
         }
 
         function startTimer() {
@@ -88,18 +167,20 @@
             scrollSyncScheduled = true;
             window.requestAnimationFrame( function () {
                 scrollSyncScheduled = false;
-                updateDots( nearestIndex() );
+                checkInfiniteJump();
+                activeLogical = nearestLogicalIndex();
+                updateDots( activeLogical );
             } );
         }
 
         if ( btnPrev ) {
             btnPrev.addEventListener( 'click', function () {
-                goTo( nearestIndex() - 1, true );
+                goRelative( -1, !reducedMotion );
             } );
         }
         if ( btnNext ) {
             btnNext.addEventListener( 'click', function () {
-                goTo( nearestIndex() + 1, true );
+                goRelative( 1, !reducedMotion );
             } );
         }
 
@@ -107,7 +188,7 @@
             dot.addEventListener( 'click', function () {
                 var raw = dot.getAttribute( 'data-testimonial-dot' );
                 var idx = raw ? parseInt( raw, 10 ) : 0;
-                goTo( idx, true );
+                goToLogical( idx, true );
             } );
         } );
 
@@ -116,10 +197,10 @@
         viewport.addEventListener( 'keydown', function ( e ) {
             if ( e.key === 'ArrowLeft' ) {
                 e.preventDefault();
-                goTo( nearestIndex() - 1, true );
+                goRelative( -1, !reducedMotion );
             } else if ( e.key === 'ArrowRight' ) {
                 e.preventDefault();
-                goTo( nearestIndex() + 1, true );
+                goRelative( 1, !reducedMotion );
             }
         } );
 
@@ -141,19 +222,25 @@
             }
         } );
 
+        function syncScrollAfterResize() {
+            scrollToDom( n + activeLogical, false );
+        }
+
         if ( typeof ResizeObserver !== 'undefined' ) {
             var ro = new ResizeObserver( function () {
-                goTo( nearestIndex(), false );
+                syncScrollAfterResize();
             } );
             ro.observe( viewport );
         } else {
-            window.addEventListener( 'resize', function () {
-                goTo( nearestIndex(), false );
-            } );
+            window.addEventListener( 'resize', syncScrollAfterResize );
         }
 
-        updateDots( 0 );
-        startTimer();
+        requestAnimationFrame( function () {
+            viewport.scrollLeft = slides[ n ].offsetLeft;
+            activeLogical = 0;
+            updateDots( 0 );
+            startTimer();
+        } );
     }
 
     document.querySelectorAll( '[data-testimonial-carousel]' ).forEach( initCarousel );

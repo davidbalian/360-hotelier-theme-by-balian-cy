@@ -76,6 +76,7 @@ $carousel_label = $title !== '' ? $title : __( 'Testimonials', '360-hotelier' );
 								id="<?php echo esc_attr( $slide_id ); ?>"
 								class="page-portfolio-testimonials__slide"
 								data-testimonial-slide
+								data-testimonial-index="<?php echo esc_attr( (string) $idx ); ?>"
 								role="group"
 								aria-roledescription="<?php echo esc_attr__( 'slide', '360-hotelier' ); ?>"
 								aria-label="<?php echo esc_attr( $slide_label ); ?>"
