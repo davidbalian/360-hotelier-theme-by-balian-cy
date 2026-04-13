@@ -44,6 +44,7 @@ $profile_cta  = Hotelier_Page_Content::get_text( $founder_pid, $hctx, 'founder_p
                 </li>
                 <?php endfor; ?>
             </ul>
+            <?php Hotelier_Founder_Card_Contact::render(); ?>
             <?php if ( ! $hide_about_cta ) : ?>
             <a href="<?php echo esc_url( $about_url ); ?>" class="btn btn--primary front-founder__cta fade-in fade-in-delay-9"><?php echo esc_html( Hotelier_Page_Content::get_text( $founder_pid, $hctx, 'founder_cta_text' ) ); ?></a>
             <?php elseif ( $founder_url !== '' ) : ?>

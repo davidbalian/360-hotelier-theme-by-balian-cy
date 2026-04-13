@@ -78,6 +78,41 @@
   display: inline-block;
 }
 
+/* Founder card contact (Founder page + Meet the Founder) */
+.founder-card-contact {
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.founder-card-contact__title {
+  margin: 0 0 0.85rem;
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-purple);
+}
+
+.founder-card-contact__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.45rem;
+}
+
+.founder-card-contact__link {
+  font-size: 0.8rem;
+  color: var(--color-charcoal);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-color: rgba(0, 0, 0, 0.25);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.founder-card-contact__link:hover {
+  color: var(--color-purple);
+  text-decoration-color: var(--color-purple);
+}
+
 /* Approach */
 .front-approach {
   padding-block: var(--section-padding-y);

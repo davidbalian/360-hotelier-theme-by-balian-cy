@@ -1,6 +1,6 @@
 <?php
 /**
- * Primary menu: internal URL prefixing and language switcher markup.
+ * Primary menu: internal URL prefixing for locale-aware links.
  *
  * @package 360-hotelier
  */
@@ -10,14 +10,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Nav menu filters for locale-aware links and switcher item.
+ * Nav menu filters for locale-aware internal links.
  */
 final class Hotelier_Lang_Switcher_Menu {
 
 	public static function register(): void {
 		add_filter( 'wp_nav_menu_objects', array( self::class, 'filter_nav_menu_objects' ), 10, 2 );
-		// Language switcher moved to top bar — not injected into nav menu.
-		// add_filter( 'wp_nav_menu_items', array( self::class, 'filter_nav_menu_items' ), 10, 2 );
 	}
 
 	/**
@@ -50,51 +48,5 @@ final class Hotelier_Lang_Switcher_Menu {
 		}
 
 		return $items;
-	}
-
-	/**
-	 * Full &lt;li&gt;…&lt;/li&gt; markup for the language switcher (desktop + mobile nav).
-	 * Shared by wp_nav_menu_items and the primary-menu fallback (WordPress skips filters when using fallback_cb).
-	 */
-	public static function switcher_li_markup(): string {
-		$current = Hotelier_Locale_Detector::current_lang();
-		$label   = Hotelier_Locale_Registry::GREEK_LANG === $current
-			? esc_html__( 'Ελληνικά', '360-hotelier' )
-			: esc_html__( 'English', '360-hotelier' );
-
-		$url_en = esc_url( Hotelier_Local_Urls::lang_url( Hotelier_Locale_Registry::DEFAULT_LANG ) );
-		$url_el = esc_url( Hotelier_Local_Urls::lang_url( Hotelier_Locale_Registry::GREEK_LANG ) );
-
-		$parent_href = esc_url( Hotelier_Local_Urls::lang_url( $current ) );
-
-		$li_en_classes = 'menu-item menu-item-lang-en' . ( Hotelier_Locale_Registry::DEFAULT_LANG === $current ? ' current-menu-item' : '' );
-		$li_el_classes = 'menu-item menu-item-lang-el' . ( Hotelier_Locale_Registry::GREEK_LANG === $current ? ' current-menu-item' : '' );
-
-		$aria_en = Hotelier_Locale_Registry::DEFAULT_LANG === $current ? ' aria-current="page"' : '';
-		$aria_el = Hotelier_Locale_Registry::GREEK_LANG === $current ? ' aria-current="page"' : '';
-
-		$chevron = hotelier_get_nav_submenu_chevron_markup();
-
-		$block  = '<li class="menu-item menu-item-has-children nav-lang-switcher">';
-		$block .= '<a href="' . $parent_href . '" class="nav-lang-switcher__toggle">' . $label . $chevron . '</a>';
-		$block .= '<div class="nav-submenu-clip">';
-		$block .= '<ul class="sub-menu">';
-		$block .= '<li class="' . esc_attr( $li_en_classes ) . '"><a href="' . $url_en . '"' . $aria_en . '>' . esc_html__( 'English', '360-hotelier' ) . '</a></li>';
-		$block .= '<li class="' . esc_attr( $li_el_classes ) . '"><a href="' . $url_el . '"' . $aria_el . '>' . esc_html__( 'Ελληνικά', '360-hotelier' ) . '</a></li>';
-		$block .= '</ul></div></li>';
-
-		return $block;
-	}
-
-	/**
-	 * @param string $items HTML.
-	 * @param object $args  Menu args.
-	 */
-	public static function filter_nav_menu_items( string $items, $args ): string {
-		if ( ! is_object( $args ) || empty( $args->theme_location ) || 'primary' !== $args->theme_location ) {
-			return $items;
-		}
-
-		return $items . self::switcher_li_markup();
 	}
 }

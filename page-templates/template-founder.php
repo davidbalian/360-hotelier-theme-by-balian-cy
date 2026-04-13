@@ -65,6 +65,8 @@ get_template_part(
                         </div>
                     </div>
 
+                    <?php Hotelier_Founder_Card_Contact::render(); ?>
+
                     <div class="page-founder__bio-actions">
                         <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'contact' ) ); ?>" class="btn btn--primary"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'bio_cta_primary' ) ); ?></a>
                         <a href="<?php echo esc_url( hotelier_get_page_url_by_slug( 'about-us' ) ); ?>" class="btn btn--outline"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'bio_cta_secondary' ) ); ?></a>

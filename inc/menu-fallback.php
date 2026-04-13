@@ -254,20 +254,9 @@ function hotelier_default_nav_fallback( $args ) {
     }
     $flatten = ( 1 === $depth );
 
-    $theme_location = '';
-    if ( is_object( $args ) && isset( $args->theme_location ) ) {
-        $theme_location = (string) $args->theme_location;
-    } elseif ( is_array( $args ) && ! empty( $args['theme_location'] ) ) {
-        $theme_location = (string) $args['theme_location'];
-    }
-
     echo '<ul id="' . esc_attr( $menu_id ) . '" class="' . esc_attr( $menu_class ) . '">';
     foreach ( $items as $item ) {
         hotelier_render_default_nav_item( $item, $flatten );
-    }
-    // When no menu is assigned, WordPress never runs wp_nav_menu_items — append switcher here.
-    if ( 'primary' === $theme_location && class_exists( 'Hotelier_Lang_Switcher_Menu' ) ) {
-        echo Hotelier_Lang_Switcher_Menu::switcher_li_markup();
     }
     echo '</ul>';
 }
