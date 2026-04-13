@@ -121,13 +121,13 @@
 }
 
 .top-bar.is-scrolled {
-    background-color: #1a1a1a;
-    color: #ccc;
+    background-color: #3a0968;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .top-bar.is-scrolled .top-bar__email,
 .top-bar.is-scrolled .top-bar__phone {
-    color: #ccc;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .top-bar.is-scrolled .top-bar__email:hover,
