@@ -302,12 +302,23 @@
     opacity: 0.92;
 }
 
-.page-founder__experience-steps .front-approach__step:first-child {
-    padding-top: 0;
+.page-founder__experience-heading {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-purple);
+    margin: 0 0 0.35rem;
+    line-height: 1.35;
 }
 
-.page-founder__experience-steps .front-approach__step:last-child {
-    padding-bottom: 0;
+.page-founder__experience-body {
+    margin: 0;
+    color: var(--color-charcoal);
+}
+
+.page-founder__experience-divider {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 1.25rem 0;
 }
 
 /* ==========================================================================

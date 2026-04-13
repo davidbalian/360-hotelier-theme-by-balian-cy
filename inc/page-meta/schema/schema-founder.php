@@ -27,7 +27,7 @@ return array(
 	'bio_cta_secondary'      => array( 'type' => 'text', 'label' => 'Bio — secondary button', 'default' => 'About 360° Hotelier' ),
 
 	'tl_title'               => array( 'type' => 'text', 'label' => 'Timeline — title (not shown on site; legacy)', 'default' => 'Professional Experience' ),
-	'tl_subtitle'            => array( 'type' => 'textarea', 'label' => 'Timeline — subtitle', 'default' => '15+ years building expertise across distribution, revenue and digital strategy.' ),
+	'tl_subtitle'            => array( 'type' => 'textarea', 'label' => 'Experience — lead line', 'default' => 'Past experience' ),
 	'tl_image'               => array( 'type' => 'image', 'label' => 'Timeline — image', 'default_url' => content_url( 'uploads/2026/03/person-at-hotel-reception-scaled.webp' ) ),
 	'tl_image_alt'           => array( 'type' => 'text', 'label' => 'Timeline — image alt', 'default' => 'Hotel consultant at work' ),
 	'tl_1_title'             => array( 'type' => 'text', 'label' => 'Timeline 1 — title', 'default' => 'Booking.com · 2013–2021' ),

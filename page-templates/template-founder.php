@@ -50,17 +50,14 @@ get_template_part(
 
                     <div class="page-founder__experience">
                         <p class="page-founder__experience-lead text-body"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'tl_subtitle' ) ); ?></p>
-                        <div class="page-founder__experience-steps">
+                        <div class="page-founder__experience-items">
                             <?php for ( $i = 1; $i <= 3; $i++ ) : ?>
-                            <div class="front-approach__step">
-                                <span class="front-approach__step-number"><?php echo esc_html( str_pad( (string) $i, 2, '0', STR_PAD_LEFT ) ); ?></span>
-                                <div class="front-approach__step-body">
-                                    <h3 class="front-approach__step-title"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'tl_' . $i . '_title' ) ); ?></h3>
-                                    <p class="front-approach__step-text text-body"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'tl_' . $i . '_text' ) ); ?></p>
-                                </div>
+                            <div class="page-founder__experience-item">
+                                <h3 class="page-founder__experience-heading"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'tl_' . $i . '_title' ) ); ?></h3>
+                                <p class="page-founder__experience-body text-body"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'tl_' . $i . '_text' ) ); ?></p>
                             </div>
                             <?php if ( $i < 3 ) : ?>
-                            <hr class="front-approach__divider">
+                            <hr class="page-founder__experience-divider" />
                             <?php endif; ?>
                             <?php endfor; ?>
                         </div>

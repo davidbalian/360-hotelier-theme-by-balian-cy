@@ -184,7 +184,7 @@ final class Hotelier_El_Page_Defaults {
 			'founder.bio_cta_primary'     => 'Επικοινωνία',
 			'founder.bio_cta_secondary'   => 'Σχετικά με εμάς',
 			'founder.tl_title'            => 'Επαγγελματική Εμπειρία',
-			'founder.tl_subtitle'         => '15+ χρόνια εμπειρίας σε distribution, έσοδα και ψηφιακή στρατηγική.',
+			'founder.tl_subtitle'         => 'Προηγούμενη εμπειρία',
 			'founder.tl_image_alt'        => 'Σύμβουλος ξενοδοχείων στη δουλειά',
 			'founder.tl_1_title'          => 'Booking.com · 2013–2021',
 			'founder.tl_1_text'           => 'Στρατηγική πωλήσεων, διαχείριση διανομής και ανάπτυξη συνεργατών. Υλοποίηση workshops και εκπροσώπηση της Booking.com σε διεθνή συνέδρια και εκδηλώσεις.',
