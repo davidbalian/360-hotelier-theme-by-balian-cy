@@ -254,7 +254,7 @@
     }
 }
 
-/* Submenu disclosure chevrons (SVG uses currentColor) */
-.nav-submenu-chevron {
+/* Submenu disclosure chevrons (SVG uses currentColor) — inherit link color when not scrolled; orange on scrolled bar */
+.site-header.is-scrolled .primary-navigation .nav-menu .nav-submenu-chevron {
     color: var(--color-orange);
 }
