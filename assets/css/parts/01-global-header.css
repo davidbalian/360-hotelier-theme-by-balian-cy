@@ -22,7 +22,7 @@
         to right,
         var(--hero-overlay-start-soft) 0%,
         var(--hero-overlay-start-soft) 50%,
-        rgba(58, 9, 104, 0) 100%
+        rgba(58, 9, 104, 0.25) 100%
     );
 }
 
@@ -31,7 +31,7 @@
         to right,
         var(--hero-overlay-start-strong) 0%,
         var(--hero-overlay-start-strong) 50%,
-        rgba(58, 9, 104, 0) 100%
+        rgba(58, 9, 104, 0.25) 100%
     );
 }
 
