@@ -330,7 +330,15 @@ a:has(img):focus-visible {
 .top-bar__phone,
 .top-bar__phone:hover,
 .top-bar__phone:focus,
-.top-bar__phone:focus-visible {
+.top-bar__phone:focus-visible,
+.top-bar__social-link,
+.top-bar__social-link:hover,
+.top-bar__social-link:focus,
+.top-bar__social-link:focus-visible,
+.top-bar__lang-switcher,
+.top-bar__lang-switcher:hover,
+.top-bar__lang-switcher:focus,
+.top-bar__lang-switcher:focus-visible {
     background-image: none;
     background-size: auto;
 }

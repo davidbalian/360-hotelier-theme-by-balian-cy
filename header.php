@@ -26,11 +26,45 @@
 	if ( $tb_tel !== '' && strpos( $tb_tel, 'tel:' ) !== 0 ) {
 		$tb_tel = 'tel:' . $tb_tel;
 	}
+
+	$tb_current_lang   = Hotelier_Locale_Detector::current_lang();
+	$tb_inactive_lang  = Hotelier_Locale_Registry::GREEK_LANG === $tb_current_lang
+		? Hotelier_Locale_Registry::DEFAULT_LANG
+		: Hotelier_Locale_Registry::GREEK_LANG;
+	$tb_inactive_label = Hotelier_Locale_Registry::GREEK_LANG === $tb_inactive_lang ? 'ΕΛ' : 'EN';
+	$tb_inactive_url   = esc_url( Hotelier_Local_Urls::lang_url( $tb_inactive_lang ) );
 	?>
     <div class="top-bar">
         <div class="site-container top-bar__inner">
-            <a href="<?php echo esc_url( 'mailto:' . antispambot( $h_site['topbar_email'] ) ); ?>" class="top-bar__email"><?php echo esc_html( $h_site['topbar_email'] ); ?></a>
-            <a href="<?php echo esc_url( $tb_tel ); ?>" class="top-bar__phone"><?php echo esc_html( $h_site['topbar_phone_display'] ); ?></a>
+
+            <div class="top-bar__left">
+                <a href="<?php echo esc_url( 'mailto:' . antispambot( $h_site['topbar_email'] ) ); ?>" class="top-bar__email"><?php echo esc_html( $h_site['topbar_email'] ); ?></a>
+                <?php if ( $h_site['topbar_phone_display'] ) : ?>
+                    <a href="<?php echo esc_url( $tb_tel ); ?>" class="top-bar__phone"><?php echo esc_html( $h_site['topbar_phone_display'] ); ?></a>
+                <?php endif; ?>
+                <div class="top-bar__social">
+                    <?php if ( ! empty( $h_site['social_facebook'] ) ) : ?>
+                        <a href="<?php echo esc_url( $h_site['social_facebook'] ); ?>" class="top-bar__social-link" rel="noopener noreferrer" target="_blank" aria-label="Facebook">
+                            <i data-lucide="facebook"></i>
+                        </a>
+                    <?php endif; ?>
+                    <?php if ( ! empty( $h_site['social_linkedin'] ) ) : ?>
+                        <a href="<?php echo esc_url( $h_site['social_linkedin'] ); ?>" class="top-bar__social-link" rel="noopener noreferrer" target="_blank" aria-label="LinkedIn">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+                    <?php endif; ?>
+                    <?php if ( ! empty( $h_site['social_instagram'] ) ) : ?>
+                        <a href="<?php echo esc_url( $h_site['social_instagram'] ); ?>" class="top-bar__social-link" rel="noopener noreferrer" target="_blank" aria-label="Instagram">
+                            <i data-lucide="instagram"></i>
+                        </a>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+            <a href="<?php echo $tb_inactive_url; ?>" class="top-bar__lang-switcher">
+                <?php echo esc_html( $tb_inactive_label ); ?>
+            </a>
+
         </div>
     </div>
 
