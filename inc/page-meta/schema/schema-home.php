@@ -112,7 +112,7 @@ return array(
 	'results_tick_6'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 6', 'default_url' => $u . 'napa-jay-hotel-logo-cropped.png' ),
 	'results_tick_6_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 6 alt', 'default' => 'Napa Jay Hotel Ayia Napa Cyprus' ),
 	'results_tick_7'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 7', 'default_url' => $u . 'mito-developers-paphos-logo-partner-hotel-of-360-Hotelier-Consulting.png' ),
-	'results_tick_7_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 7 alt', 'default' => 'Mito Developers Paphos' ),
+	'results_tick_7_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 7 alt', 'default' => 'MITO Seaview Paphos' ),
 
 	'approach_title'         => array( 'type' => 'text', 'label' => 'How we work — title', 'default' => 'How We Work' ),
 	'approach_subtitle'      => array( 'type' => 'textarea', 'label' => 'How we work — subtitle', 'default' => 'Four steps, clearly laid out.' ),
