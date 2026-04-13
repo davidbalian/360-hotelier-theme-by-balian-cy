@@ -75,6 +75,10 @@ if ( $ft_tel !== '' && strpos( $ft_tel, 'tel:' ) !== 0 ) {
 
             </div><!-- .footer-cols -->
 
+            <div class="footer-logo fade-in fade-in-delay-0">
+                <img src="<?php echo esc_url( Hotelier_Site_Content_Options::footer_logo_url() ); ?>" alt="<?php echo esc_attr( $h_opt['footer_copyright_name'] ); ?>" width="180" height="50">
+            </div><!-- .footer-logo -->
+
             <div class="footer-bottom text-sm fade-in fade-in-delay-0">
                 <span class="footer-copyright">
                     &copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( $h_opt['footer_copyright_name'] ); ?> <?php echo esc_html( $h_opt['footer_rights'] ); ?>
@@ -83,10 +87,6 @@ if ( $ft_tel !== '' && strpos( $ft_tel, 'tel:' ) !== 0 ) {
                     <?php echo wp_kses_post( $h_opt['footer_credit_html'] ); ?>
                 </span>
             </div><!-- .footer-bottom -->
-
-            <div class="footer-logo fade-in fade-in-delay-1" aria-hidden="true">
-                <img src="<?php echo esc_url( Hotelier_Site_Content_Options::footer_logo_url() ); ?>" alt="" width="180" height="50">
-            </div><!-- .footer-logo -->
 
         </div><!-- .site-container -->
     </footer>
