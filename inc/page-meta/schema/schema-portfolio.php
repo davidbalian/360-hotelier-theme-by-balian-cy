@@ -72,7 +72,7 @@ $defaults = array(
 		'default_url' => '',
 	),
 
-	'cta_feat_img'           => array( 'type' => 'image', 'label' => 'Bottom CTA — image', 'default_url' => $u . 'featured-360-hotelier.webp' ),
+	'cta_feat_img'           => array( 'type' => 'image', 'label' => 'Bottom CTA — image', 'default_url' => $u . 'hotel-consulting-services-cyprus-360hotelier-1.webp' ),
 	'cta_feat_title'         => array( 'type' => 'textarea', 'label' => 'Bottom CTA — title', 'default' => 'Add Your Hotel to Our Portfolio.' ),
 	'cta_feat_text'          => array( 'type' => 'textarea', 'label' => 'Bottom CTA — text', 'default' => 'We keep our client list small. Every hotel gets direct access to Giorgos and full commercial support.' ),
 	'cta_feat_primary'       => array( 'type' => 'text', 'label' => 'Bottom CTA — button', 'default' => 'Book a Free Consultation' ),
