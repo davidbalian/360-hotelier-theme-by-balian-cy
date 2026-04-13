@@ -24,7 +24,7 @@ return array(
 	'deliver_4'              => array( 'type' => 'textarea', 'label' => 'Deliverable 4', 'default' => '' ),
 	'deliver_5'              => array( 'type' => 'textarea', 'label' => 'Deliverable 5', 'default' => '' ),
 
-	'cta_feat_img'           => array( 'type' => 'image', 'label' => 'Bottom CTA — image', 'default_url' => $u . 'featured-360-hotelier.webp' ),
+	'cta_feat_img'           => array( 'type' => 'image', 'label' => 'Bottom CTA — image', 'default_url' => $u . 'hotel-consulting-services-cyprus-360hotelier.webp' ),
 	'cta_feat_title'         => array( 'type' => 'textarea', 'label' => 'Bottom CTA — title', 'default' => "Let's Build Your Hotel's Commercial Strategy" ),
 	'cta_feat_text'          => array( 'type' => 'textarea', 'label' => 'Bottom CTA — text', 'default' => "Book a free strategy session and let's discuss how we can help your hotel grow." ),
 	'cta_feat_primary'       => array( 'type' => 'text', 'label' => 'Bottom CTA — primary button', 'default' => 'Get in Touch' ),

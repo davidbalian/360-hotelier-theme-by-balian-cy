@@ -36,7 +36,7 @@ return array(
 	'row_4_alt'              => array( 'type' => 'text', 'label' => 'Row 4 — alt', 'default' => 'Contracting & Negotiations' ),
 	'learn_more_text'        => array( 'type' => 'text', 'label' => 'Row — “Learn more” button', 'default' => 'Learn more' ),
 
-	'cta_feat_img'           => array( 'type' => 'image', 'label' => 'Bottom CTA — image', 'default_url' => $u . 'featured-360-hotelier.webp' ),
+	'cta_feat_img'           => array( 'type' => 'image', 'label' => 'Bottom CTA — image', 'default_url' => $u . 'hotel-consulting-services-cyprus-360hotelier.webp' ),
 	'cta_feat_title'         => array( 'type' => 'textarea', 'label' => 'Bottom CTA — title', 'default' => "Grow Your Hotel's Revenue." ),
 	'cta_feat_text'          => array( 'type' => 'textarea', 'label' => 'Bottom CTA — text', 'default' => "We'll build a commercial strategy around your property, market and goals." ),
 	'cta_feat_primary'       => array( 'type' => 'text', 'label' => 'Bottom CTA — button', 'default' => 'Book a Free Consultation' ),
