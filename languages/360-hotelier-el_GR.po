@@ -57,15 +57,32 @@ msgstr "LinkedIn"
 msgid "Instagram"
 msgstr "Instagram"
 
-#: footer.php:67 inc/theme-setup.php:193
+#: footer.php:61 inc/theme-setup.php:193
 msgid "Privacy Policy"
 msgstr "Πολιτική απορρήτου"
 
-#: footer.php:68 inc/theme-setup.php:194
+#: footer.php:62 inc/theme-setup.php:194 template-parts/components/cookie-banner.php:29
 msgid "Cookie Policy"
 msgstr "Πολιτική cookies"
 
-#: footer.php:69
+#: template-parts/components/cookie-banner.php:20
+msgid "Cookie consent"
+msgstr "Συναίνεση cookies"
+
+#. translators: %s: Cookie policy link HTML.
+#: template-parts/components/cookie-banner.php:28
+msgid "We use cookies to improve your experience and for analytics. %s"
+msgstr "Χρησιμοποιούμε cookies για να βελτιώσουμε την εμπειρία σας και για αναλυτικά στοιχεία. %s"
+
+#: template-parts/components/cookie-banner.php:42
+msgid "Accept"
+msgstr "Αποδοχή"
+
+#: template-parts/components/cookie-banner.php:47
+msgid "Dismiss cookie banner"
+msgstr "Απόρριψη ειδοποίησης cookies"
+
+#: footer.php:63
 msgid "Terms"
 msgstr "Όροι"
 

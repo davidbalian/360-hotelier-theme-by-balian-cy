@@ -32,6 +32,7 @@ function hotelier_enqueue_assets() {
         '360-hotelier-main-05'  => '/assets/css/parts/05-inner-pages.css',
         '360-hotelier-main-05b' => '/assets/css/parts/05b-contact-page.css',
         '360-hotelier-main-06'  => '/assets/css/parts/06-style-guide-responsive-fade.css',
+        '360-hotelier-main-08'  => '/assets/css/parts/08-cookie-banner.css',
     );
     $last_main_css_handle = '360-hotelier-style';
     foreach ( $main_css_parts as $handle => $relative_path ) {

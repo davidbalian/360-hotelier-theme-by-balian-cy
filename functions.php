@@ -24,6 +24,9 @@ require_once HOTELIER_THEME_DIR . '/inc/service-content.php';
 // Include menu fallback
 require_once HOTELIER_THEME_DIR . '/inc/menu-fallback.php';
 
+// Cookie consent banner (assets + constants)
+require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-cookie-consent.php';
+
 // Path-prefix locale (en default, Greek /el/)
 require_once HOTELIER_THEME_DIR . '/inc/i18n/hotelier-i18n-bootstrap.php';
 
@@ -47,6 +50,8 @@ require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-cta-band-image.php';
 
 // Include enqueue functions
 require_once HOTELIER_THEME_DIR . '/inc/enqueue.php';
+
+Hotelier_Cookie_Consent::register();
 
 // Editable page content (post meta) + site-wide content options
 require_once HOTELIER_THEME_DIR . '/inc/page-meta/hotelier-page-meta.php';

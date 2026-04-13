@@ -52,17 +52,35 @@ msgstr ""
 msgid "Instagram"
 msgstr ""
 
-#: footer.php:67
+#: footer.php:61
 #: inc/theme-setup.php:193
 msgid "Privacy Policy"
 msgstr ""
 
-#: footer.php:68
+#: footer.php:62
 #: inc/theme-setup.php:194
+#: template-parts/components/cookie-banner.php:29
 msgid "Cookie Policy"
 msgstr ""
 
-#: footer.php:69
+#: template-parts/components/cookie-banner.php:20
+msgid "Cookie consent"
+msgstr ""
+
+#. translators: %s: Cookie policy link HTML.
+#: template-parts/components/cookie-banner.php:28
+msgid "We use cookies to improve your experience and for analytics. %s"
+msgstr ""
+
+#: template-parts/components/cookie-banner.php:42
+msgid "Accept"
+msgstr ""
+
+#: template-parts/components/cookie-banner.php:47
+msgid "Dismiss cookie banner"
+msgstr ""
+
+#: footer.php:63
 msgid "Terms"
 msgstr ""
 
