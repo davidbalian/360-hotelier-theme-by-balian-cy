@@ -62,9 +62,11 @@ get_template_part(
                 </div>
 				<?php endfor; ?>
 				<?php
-				$what_banner_id = Hotelier_Page_Content::get_attachment_id( $page_id, $ctx, 'what_banner_img' );
-				if ( $what_banner_id > 0 ) :
-					$what_banner_alt = Hotelier_Page_Content::get_text( $page_id, $ctx, 'what_banner_alt' );
+				$what_banner_url = Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'what_banner_img' );
+				$what_banner_id  = Hotelier_Page_Content::get_attachment_id( $page_id, $ctx, 'what_banner_img' );
+				$what_banner_alt = Hotelier_Page_Content::get_text( $page_id, $ctx, 'what_banner_alt' );
+
+				if ( $what_banner_id > 0 ) {
 					if ( '' === $what_banner_alt ) {
 						$what_banner_alt = (string) get_post_meta( $what_banner_id, '_wp_attachment_image_alt', true );
 					}
@@ -79,14 +81,24 @@ get_template_part(
 							'class'    => 'page-about__what-banner-img',
 						)
 					);
-					if ( $what_banner_markup !== '' ) :
-						?>
+					if ( $what_banner_markup !== '' ) {
+						echo '<figure class="page-about__what-banner fade-in fade-in-delay-5">';
+						echo $what_banner_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						echo '</figure>';
+					}
+				} elseif ( '' !== $what_banner_url ) {
+					?>
                 <figure class="page-about__what-banner fade-in fade-in-delay-5">
-						<?php echo $what_banner_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                    <img
+                        src="<?php echo esc_url( $what_banner_url ); ?>"
+                        alt="<?php echo esc_attr( $what_banner_alt ); ?>"
+                        loading="lazy"
+                        decoding="async"
+                        class="page-about__what-banner-img"
+                    />
                 </figure>
-						<?php
-					endif;
-				endif;
+					<?php
+				}
 				?>
             </div>
             <p class="front-services-overview__cta fade-in fade-in-delay-5">
