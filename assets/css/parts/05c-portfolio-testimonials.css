@@ -40,11 +40,6 @@
     .page-portfolio-testimonials__arrow--next {
         right: 0;
     }
-
-    /* Keep vertical centering; global :hover replaces transform otherwise */
-    .page-portfolio-testimonials__arrow:hover {
-        transform: translateY( calc( -50% - 1px ) );
-    }
 }
 
 .page-portfolio-testimonials__viewport {
@@ -158,12 +153,12 @@
     background: var(--color-white);
     color: var(--color-purple);
     cursor: pointer;
-    transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    transition: background 0.15s ease, box-shadow 0.15s ease;
 }
 
+/* No transform on hover: a later global rule would override mobile translateY(-50%) */
 .page-portfolio-testimonials__arrow:hover {
     box-shadow: var(--shadow-card);
-    transform: translateY(-1px);
 }
 
 .page-portfolio-testimonials__arrow:focus-visible {
