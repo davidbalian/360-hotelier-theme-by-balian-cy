@@ -65,15 +65,20 @@
         var paused = false;
         var timer = null;
         var scrollSyncScheduled = false;
+        var applyingInfiniteJump = false;
         var activeLogical = 0;
 
+        function slideScrollLeft( domIdx ) {
+            return Math.round( slides[ domIdx ].offsetLeft );
+        }
+
         function nearestDomIndex() {
-            var left = viewport.scrollLeft;
+            var left = Math.round( viewport.scrollLeft );
             var best = 0;
             var bestDelta = Infinity;
             var i;
             for ( i = 0; i < slides.length; i++ ) {
-                var d = Math.abs( slides[ i ].offsetLeft - left );
+                var d = Math.abs( slideScrollLeft( i ) - left );
                 if ( d < bestDelta ) {
                     bestDelta = d;
                     best = i;
@@ -92,14 +97,25 @@
         }
 
         function checkInfiniteJump() {
-            var midStart = slides[ n ].offsetLeft;
-            var thirdStart = slides[ 2 * n ].offsetLeft;
-            var shift = midStart - slides[ 0 ].offsetLeft;
-            var left = viewport.scrollLeft;
-            if ( left < midStart - 0.5 ) {
+            if ( applyingInfiniteJump ) {
+                return;
+            }
+            var midStart = slideScrollLeft( n );
+            var thirdStart = slideScrollLeft( 2 * n );
+            var shift = midStart - slideScrollLeft( 0 );
+            var left = Math.round( viewport.scrollLeft );
+            if ( left < midStart - 1 ) {
+                applyingInfiniteJump = true;
                 viewport.scrollLeft = left + shift;
-            } else if ( left >= thirdStart - 0.5 ) {
+                window.requestAnimationFrame( function () {
+                    applyingInfiniteJump = false;
+                } );
+            } else if ( left >= thirdStart - 1 ) {
+                applyingInfiniteJump = true;
                 viewport.scrollLeft = left - shift;
+                window.requestAnimationFrame( function () {
+                    applyingInfiniteJump = false;
+                } );
             }
         }
 
@@ -116,7 +132,8 @@
             }
             activeLogical = logicalFromDom( domIdx );
             var behavior = reducedMotion || !smooth ? 'auto' : 'smooth';
-            viewport.scrollTo( { left: el.offsetLeft, behavior: behavior } );
+            var left = slideScrollLeft( domIdx );
+            viewport.scrollTo( { left: left, behavior: behavior } );
             updateDots( activeLogical );
         }
 
@@ -236,7 +253,7 @@
         }
 
         requestAnimationFrame( function () {
-            viewport.scrollLeft = slides[ n ].offsetLeft;
+            viewport.scrollLeft = slideScrollLeft( n );
             activeLogical = 0;
             updateDots( 0 );
             startTimer();

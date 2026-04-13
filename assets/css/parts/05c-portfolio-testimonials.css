@@ -40,6 +40,11 @@
     .page-portfolio-testimonials__arrow--next {
         right: 0;
     }
+
+    /* Keep vertical centering; global :hover replaces transform otherwise */
+    .page-portfolio-testimonials__arrow:hover {
+        transform: translateY( calc( -50% - 1px ) );
+    }
 }
 
 .page-portfolio-testimonials__viewport {
@@ -48,7 +53,7 @@
     overflow-x: auto;
     overflow-y: visible;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     outline: none;
@@ -60,6 +65,7 @@
 }
 
 .page-portfolio-testimonials__track {
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -95,7 +101,7 @@
     padding: 2rem 2rem 2.25rem;
     border-radius: var(--radius-card);
     background: #ffffff;
-    box-shadow: var(--shadow-card);
+    box-shadow: none;
     position: relative;
     min-height: 0;
     display: flex;
