@@ -5,7 +5,17 @@
 .site-footer {
     background-color: #1a1a1a;
     color: #ccc;
+    max-width: 1500px;
+    margin: max(1rem, calc((100% - 1500px) / 2));
+    border-radius: 4rem;
+    overflow: hidden;
     padding: 4rem 0 0;
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        border-radius: 2rem;
+    }
 }
 
 /* Footer columns */
