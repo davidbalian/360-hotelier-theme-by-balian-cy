@@ -247,6 +247,16 @@
 }
 
 .page-founder__photo-wrap {
+    position: sticky;
+    top: calc(
+        var(--wp-admin-bar-offset, 0px) + var(--top-bar-height) + var(--header-height) + 2rem
+    );
+    align-self: start;
+    width: 100%;
+    z-index: 1;
+}
+
+.page-founder__photo-frame {
     position: relative;
     width: 100%;
     aspect-ratio: 1 / 1;

@@ -428,6 +428,11 @@
         grid-template-columns: 1fr;
     }
 
+    .page-founder__photo-wrap {
+        position: static;
+        top: auto;
+    }
+
     .page-portfolio__row,
     .page-services__row {
         grid-template-columns: 1fr;

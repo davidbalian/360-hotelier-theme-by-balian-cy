@@ -32,13 +32,15 @@ get_template_part(
         <div class="site-container">
             <div class="page-founder__bio-grid">
 
-                <div class="page-founder__photo-wrap fade-in fade-in-delay-0">
-                    <img
-                        class="page-founder__photo"
-                        src="<?php echo esc_url( Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'bio_photo' ) ); ?>"
-                        alt="<?php echo esc_attr( Hotelier_Page_Content::get_text( $page_id, $ctx, 'bio_photo_alt' ) ); ?>"
-                        loading="lazy"
-                    />
+                <div class="page-founder__photo-wrap">
+                    <div class="page-founder__photo-frame fade-in fade-in-delay-0">
+                        <img
+                            class="page-founder__photo"
+                            src="<?php echo esc_url( Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'bio_photo' ) ); ?>"
+                            alt="<?php echo esc_attr( Hotelier_Page_Content::get_text( $page_id, $ctx, 'bio_photo_alt' ) ); ?>"
+                            loading="lazy"
+                        />
+                    </div>
                 </div>
 
                 <div class="page-founder__bio-card card-border fade-in fade-in-delay-1">
