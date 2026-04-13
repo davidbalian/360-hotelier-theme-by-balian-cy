@@ -72,41 +72,41 @@ $out['hotel_2_logo']['default_url']      = $u . 'serbellas-boutique-hotel-logo-p
 $out['hotel_2_alt']['default']           = 'Serbellas Boutique Hotel';
 $out['hotel_2_variant']['default']       = 'serbellas';
 
-$out['hotel_3_name']['default']          = 'MITOSeaview by Serbellas';
-$out['hotel_3_location']['default']      = 'MITOSeaview';
-$out['hotel_3_url']['default']           = 'https://mitodevelopers.com/';
-$out['hotel_3_logo']['default_url']      = $u . 'mito-developers-paphos-logo-partner-hotel-of-360-Hotelier-Consulting.png';
-$out['hotel_3_photo']['default_url']     = $u . 'mito-seaview-villas-by-serbellas-paphos-hotel-consulting.webp';
-$out['hotel_3_alt']['default']           = 'MITOSeaview by Serbellas';
+$out['hotel_3_name']['default']          = 'TSANotel';
+$out['hotel_3_location']['default']      = 'Limassol, Cyprus';
+$out['hotel_3_url']['default']           = 'https://www.tsanotel.com/';
+$out['hotel_3_logo']['default_url']      = $u . 'tsanotel-hd-logo.webp';
+$out['hotel_3_alt']['default']           = 'Tsanotel Cyprus';
 
-$out['hotel_4_name']['default']          = 'TSANotel';
-$out['hotel_4_location']['default']      = 'Limassol, Cyprus';
-$out['hotel_4_url']['default']           = 'https://www.tsanotel.com/';
-$out['hotel_4_logo']['default_url']      = $u . 'tsanotel-hd-logo.webp';
-$out['hotel_4_alt']['default']           = 'Tsanotel Cyprus';
+$out['hotel_4_name']['default']          = 'Pendeli Resort';
+$out['hotel_4_location']['default']      = 'Platres, Cyprus';
+$out['hotel_4_url']['default']           = 'https://www.pendeliresort.com/';
+$out['hotel_4_mode']['default']          = 'pendeli';
+$out['hotel_4_logo']['default_url']      = '';
 
-$out['hotel_5_name']['default']          = 'Pendeli Resort';
+$out['hotel_5_name']['default']          = 'Petit Palais Platres Boutique Hotel';
 $out['hotel_5_location']['default']      = 'Platres, Cyprus';
-$out['hotel_5_url']['default']           = 'https://www.pendeliresort.com/';
-$out['hotel_5_mode']['default']          = 'pendeli';
-$out['hotel_5_logo']['default_url']      = '';
+$out['hotel_5_url']['default']           = 'https://www.petitpalais.com.cy/';
+$out['hotel_5_logo']['default_url']      = $u . 'petit-palais-platres-hotel-logo-color-cyprus.webp';
+$out['hotel_5_alt']['default']           = 'Petit Palais Hotel Platres Cyprus';
 
-$out['hotel_6_name']['default']          = 'Petit Palais Platres Boutique Hotel';
-$out['hotel_6_location']['default']      = 'Platres, Cyprus';
-$out['hotel_6_url']['default']           = 'https://www.petitpalais.com.cy/';
-$out['hotel_6_logo']['default_url']      = $u . 'petit-palais-platres-hotel-logo-color-cyprus.webp';
-$out['hotel_6_alt']['default']           = 'Petit Palais Hotel Platres Cyprus';
+$out['hotel_6_name']['default']          = 'Napa Jay Hotel';
+$out['hotel_6_location']['default']      = 'Ayia Napa, Cyprus';
+$out['hotel_6_url']['default']           = 'https://napajayhotel.com/';
+$out['hotel_6_logo']['default_url']      = $u . 'napa-jay-hotel-logo-cropped.png';
+$out['hotel_6_alt']['default']           = 'Napa Jay Hotel Ayia Napa Cyprus';
 
-$out['hotel_7_name']['default']          = 'Napa Jay Hotel';
-$out['hotel_7_location']['default']      = 'Ayia Napa, Cyprus';
-$out['hotel_7_url']['default']           = 'https://napajayhotel.com/';
-$out['hotel_7_logo']['default_url']      = $u . 'napa-jay-hotel-logo-cropped.png';
-$out['hotel_7_alt']['default']           = 'Napa Jay Hotel Ayia Napa Cyprus';
+$out['hotel_7_name']['default']          = 'Chic Centre Suites Athens';
+$out['hotel_7_location']['default']      = 'Athens, Greece';
+$out['hotel_7_url']['default']           = 'https://chiccentresuites.com/';
+$out['hotel_7_logo']['default_url']      = $u . 'chic-centre-suites-athens-hotel-logo.webp';
+$out['hotel_7_alt']['default']           = 'Chic Centre Suites Athens';
 
-$out['hotel_8_name']['default']          = 'Chic Centre Suites Athens';
-$out['hotel_8_location']['default']      = 'Athens, Greece';
-$out['hotel_8_url']['default']           = 'https://chiccentresuites.com/';
-$out['hotel_8_logo']['default_url']      = $u . 'chic-centre-suites-athens-hotel-logo.webp';
-$out['hotel_8_alt']['default']           = 'Chic Centre Suites Athens';
+$out['hotel_8_name']['default']          = 'Mito Developers';
+$out['hotel_8_location']['default']      = 'Paphos, Cyprus';
+$out['hotel_8_url']['default']           = 'https://mitodevelopers.com/';
+$out['hotel_8_logo']['default_url']      = $u . 'mito-developers-paphos-logo-partner-hotel-of-360-Hotelier-Consulting.png';
+$out['hotel_8_photo']['default_url']     = $u . 'mito-seaview-villas-by-serbellas-paphos-hotel-consulting.webp';
+$out['hotel_8_alt']['default']           = 'Mito Developers Paphos';
 
 return $out;
