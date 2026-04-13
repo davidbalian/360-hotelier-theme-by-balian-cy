@@ -272,12 +272,8 @@
     box-shadow: var(--shadow-card);
 }
 
-.page-founder__bio-card p {
+.page-founder__bio-card > p {
     margin-bottom: 1.25rem;
-}
-
-.page-founder__bio-card p:last-child {
-    margin-bottom: 0;
 }
 
 .page-founder__role {
@@ -291,12 +287,27 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 1.75rem;
 }
 
-.page-founder__timeline {
-    padding-block: var(--section-padding-y);
-    background: var(--color-sand);
+.page-founder__experience {
+    margin-top: 1.75rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.page-founder__experience-lead {
+    margin: 0 0 1.25rem;
+    color: var(--color-charcoal);
+    opacity: 0.92;
+}
+
+.page-founder__experience-steps .front-approach__step:first-child {
+    padding-top: 0;
+}
+
+.page-founder__experience-steps .front-approach__step:last-child {
+    padding-bottom: 0;
 }
 
 /* ==========================================================================
