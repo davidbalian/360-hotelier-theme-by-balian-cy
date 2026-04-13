@@ -101,7 +101,8 @@
 
 .top-bar__email,
 .top-bar__phone,
-.top-bar__social-link {
+.top-bar__social-link,
+.top-bar__lang-switcher {
     color: #fff;
     text-decoration: none;
     font-size: 0.8rem;
@@ -112,7 +113,8 @@
 
 .top-bar__email::after,
 .top-bar__phone::after,
-.top-bar__social-link::after {
+.top-bar__social-link::after,
+.top-bar__lang-switcher::after {
     content: '';
     position: absolute;
     bottom: -1px;
@@ -125,13 +127,15 @@
 
 .top-bar__email:hover::after,
 .top-bar__phone:hover::after,
-.top-bar__social-link:hover::after {
+.top-bar__social-link:hover::after,
+.top-bar__lang-switcher:hover::after {
     width: 100%;
 }
 
 .top-bar__email:hover,
 .top-bar__phone:hover,
-.top-bar__social-link:hover {
+.top-bar__social-link:hover,
+.top-bar__lang-switcher:hover {
     color: rgba(255, 255, 255, 0.75);
     background-image: none !important;
 }
@@ -142,34 +146,6 @@
     gap: 1.5rem;
 }
 
-.top-bar__lang-switcher {
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.8rem;
-    transition: color 0.3s ease;
-    position: relative;
-    background-image: none !important;
-}
-
-.top-bar__lang-switcher::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: currentColor;
-    transition: width 0.25s ease;
-}
-
-.top-bar__lang-switcher:hover::after {
-    width: 100%;
-}
-
-.top-bar__lang-switcher:hover {
-    color: rgba(255, 255, 255, 0.75);
-    background-image: none !important;
-}
 
 .top-bar.is-scrolled {
     background-color: #3a0968;
