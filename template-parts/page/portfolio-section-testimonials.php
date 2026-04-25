@@ -12,6 +12,7 @@ $ctx     = 'portfolio';
 
 $title    = Hotelier_Page_Content::get_text( $page_id, $ctx, 'testimonials_title' );
 $subtitle = Hotelier_Page_Content::get_text( $page_id, $ctx, 'testimonials_subtitle' );
+$closing  = Hotelier_Page_Content::get_text( $page_id, $ctx, 'testimonials_closing' );
 
 $slides = array();
 for ( $i = 1; $i <= 8; $i++ ) {
@@ -127,4 +128,10 @@ $carousel_label = $title !== '' ? $title : __( 'Testimonials', '360-hotelier' );
 			</div>
 		</div>
 	</div>
+
+	<?php if ( $closing !== '' ) : ?>
+		<div class="site-container page-portfolio-testimonials__closing-wrap fade-in fade-in-delay-0">
+			<p class="page-portfolio-testimonials__closing"><?php echo esc_html( $closing ); ?></p>
+		</div>
+	<?php endif; ?>
 </section>

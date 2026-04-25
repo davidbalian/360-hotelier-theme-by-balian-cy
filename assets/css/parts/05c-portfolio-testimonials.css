@@ -199,3 +199,25 @@
     outline: 2px solid var(--color-orange);
     outline-offset: 2px;
 }
+
+/* Closing line: same register as intro body copy; centered from sm, left on narrow screens */
+.page-portfolio-testimonials__closing-wrap {
+    margin-top: 2.5rem;
+    padding-bottom: 0.25rem;
+}
+
+.page-portfolio-testimonials__closing {
+    margin: 0 auto;
+    max-width: 60ch;
+    font-size: var(--text-body);
+    line-height: 1.6;
+    color: var(--color-charcoal);
+    text-align: center;
+}
+
+@media ( max-width: 639px ) {
+    .page-portfolio-testimonials__closing {
+        margin-inline: 0;
+        text-align: left;
+    }
+}

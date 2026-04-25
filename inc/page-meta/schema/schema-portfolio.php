@@ -64,6 +64,7 @@ $defaults = array(
 	'partners_subtitle'      => array( 'type' => 'textarea', 'label' => 'Partners section — subtitle', 'default' => 'Independent, boutique and resort properties we support with revenue, distribution and digital strategy.' ),
 	'testimonials_title'     => array( 'type' => 'text', 'label' => 'Testimonials — title', 'default' => 'What partners say' ),
 	'testimonials_subtitle'  => array( 'type' => 'textarea', 'label' => 'Testimonials — subtitle', 'default' => 'Feedback from hotel leaders on revenue, distribution and working with our team.' ),
+	'testimonials_closing'   => array( 'type' => 'textarea', 'label' => 'Testimonials — closing paragraph (below carousel)', 'default' => '360 Hotelier Consulting collaborates with boutique hotels, independent hotels, and hospitality partners across Cyprus and Greece, helping them increase occupancy, optimize OTA performance, and improve revenue strategy.' ),
 	'visit_website_text'     => array( 'type' => 'text', 'label' => 'Partner card — button', 'default' => 'Visit Website' ),
 	'pendeli_aria'           => array( 'type' => 'text', 'label' => 'Pendeli logo — aria label', 'default' => 'Pendeli Resort Hotel Cyprus' ),
 	'pendeli_svg'            => array(
