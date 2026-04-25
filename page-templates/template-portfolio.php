@@ -89,7 +89,7 @@ get_template_part(
 						$logo_mods[] = 'page-portfolio__hotel-logo--pendeli';
 					}
 					$logo_class = implode( ' ', $logo_mods );
-					$row_class  = 'page-portfolio__row fade-in fade-in-delay-' . min( $index + 1, 10 );
+					$row_class  = 'page-portfolio__row fade-in fade-in-delay-0';
 					if ( 1 === ( $index % 2 ) ) {
 						$row_class .= ' page-portfolio__row--flip';
 					}
