@@ -32,6 +32,9 @@ final class Hotelier_Hero_Image_Field {
 	/** ACF field name (also the postmeta key written by ACF). */
 	public const FIELD_NAME = 'hotelier_hero_image';
 
+	/** ACF field key (selector fallback if the name key collides in the DB). */
+	private const FIELD_KEY = 'field_hotelier_hero_image';
+
 	/** Schema context that should always read from the All Services page. */
 	private const SERVICE_CHILD_CONTEXT = 'service';
 
@@ -87,8 +90,8 @@ final class Hotelier_Hero_Image_Field {
 					),
 				),
 				'location'              => self::build_location_rules(),
-				'position'              => 'side',
-				'menu_order'            => 0,
+				'position'              => 'normal',
+				'menu_order'            => 999,
 				'label_placement'       => 'top',
 				'instruction_placement' => 'label',
 				'active'                => true,
@@ -123,21 +126,130 @@ final class Hotelier_Hero_Image_Field {
 	}
 
 	/**
-	 * Read the ACF-saved attachment URL for a page (full size, no rescale).
+	 * Read the ACF-saved image URL for a page.
+	 *
+	 * Uses ACF's `get_field()` first: `get_post_meta` alone is unreliable for image fields
+	 * (ACF may format, filter, or store values the plain meta read will miss).
+	 * Supports return format id, array, and url.
 	 */
 	private static function saved_url_for_page( int $page_id ): string {
 		if ( $page_id <= 0 ) {
 			return '';
 		}
 
-		$attachment_id = (int) get_post_meta( $page_id, self::FIELD_NAME, true );
+		$raw = self::get_acf_hero_stored_value( $page_id );
+		if ( null === $raw || false === $raw || '' === $raw ) {
+			return '';
+		}
+
+		// Return format: URL (string).
+		if ( is_string( $raw ) && self::string_looks_like_url( $raw ) ) {
+			return $raw;
+		}
+
+		$attachment_id = 0;
+		if ( is_numeric( $raw ) ) {
+			$attachment_id = (int) $raw;
+		} elseif ( is_array( $raw ) ) {
+			if ( ! empty( $raw['ID'] ) ) {
+				$attachment_id = (int) $raw['ID'];
+			} elseif ( ! empty( $raw['id'] ) ) {
+				$attachment_id = (int) $raw['id'];
+			} elseif ( ! empty( $raw['url'] ) && is_string( $raw['url'] ) ) {
+				return $raw['url'];
+			}
+		}
+
 		if ( $attachment_id <= 0 ) {
 			return '';
 		}
 
-		$url = wp_get_attachment_image_url( $attachment_id, 'full' );
+		if ( function_exists( 'wp_attachment_is_image' ) && wp_attachment_is_image( $attachment_id ) ) {
+			$url = wp_get_attachment_image_url( $attachment_id, 'full' );
+		} else {
+			// SVG or other file types: fall back to direct file URL.
+			$url = wp_get_attachment_url( $attachment_id );
+		}
 
-		return is_string( $url ) ? $url : '';
+		return is_string( $url ) && $url !== '' ? $url : '';
+	}
+
+	/**
+	 * Raw / formatted value for this field, whichever ACF exposes.
+	 */
+	private static function get_acf_hero_stored_value( int $page_id ) {
+		if ( function_exists( 'get_field' ) ) {
+			$unformatted = self::get_field_hero_unformatted( $page_id );
+			if ( self::is_nonempty_acf_value( $unformatted ) ) {
+				return $unformatted;
+			}
+			$formatted = self::get_field_hero_formatted( $page_id );
+			if ( self::is_nonempty_acf_value( $formatted ) ) {
+				return $formatted;
+			}
+		}
+
+		// get_post_meta fallback (e.g. ACF not loaded); value may be serialized.
+		return maybe_unserialize( get_post_meta( $page_id, self::FIELD_NAME, true ) );
+	}
+
+	/**
+	 * @return mixed
+	 */
+	private static function get_field_hero_unformatted( int $page_id ) {
+		$by_name = get_field( self::FIELD_NAME, $page_id, false );
+		if ( self::is_nonempty_acf_value( $by_name ) ) {
+			return $by_name;
+		}
+
+		return get_field( self::FIELD_KEY, $page_id, false );
+	}
+
+	/**
+	 * @return mixed
+	 */
+	private static function get_field_hero_formatted( int $page_id ) {
+		$by_name = get_field( self::FIELD_NAME, $page_id, true );
+		if ( self::is_nonempty_acf_value( $by_name ) ) {
+			return $by_name;
+		}
+
+		return get_field( self::FIELD_KEY, $page_id, true );
+	}
+
+	/**
+	 * @param mixed $val Value from get_field.
+	 */
+	private static function is_nonempty_acf_value( $val ): bool {
+		if ( null === $val || false === $val || '' === $val ) {
+			return false;
+		}
+		if ( is_array( $val ) && array() === $val ) {
+			return false;
+		}
+		if ( 0 === $val || '0' === $val ) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * @param string $s String to test.
+	 */
+	private static function string_looks_like_url( string $s ): bool {
+		$s = ltrim( $s );
+		if ( '' === $s ) {
+			return false;
+		}
+		if ( 0 === strpos( $s, 'http://' ) || 0 === strpos( $s, 'https://' ) || 0 === strpos( $s, '//' ) ) {
+			return true;
+		}
+		if ( 0 === strpos( $s, '/' ) && ! ctype_digit( $s ) ) {
+			return true;
+		}
+
+		return false;
 	}
 
 	private static function schema_default_url( int $page_id, string $context ): string {
