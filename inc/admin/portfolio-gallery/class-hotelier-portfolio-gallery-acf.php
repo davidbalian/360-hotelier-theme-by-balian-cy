@@ -2,12 +2,14 @@
 /**
  * ACF field group registration for the Portfolio gallery.
  *
- * Single responsibility: declare the ACF Pro Gallery field that drives the
+ * Single responsibility: declare the gallery field that drives the
  * portfolio marquee. Registered in PHP (not the ACF UI) so the field is
  * version-controlled and self-bootstrapping the moment ACF is active.
  *
- * Requires ACF Pro (the free version of ACF does not include the Gallery
- * field type). When ACF is not loaded, this class no-ops cleanly.
+ * Uses the free "ACF Photo Gallery Field" plugin by Navneil Naicker
+ * (field type slug: `acf_photo_gallery`). Compatible with ACF free 4/5/6.
+ * When neither ACF nor the gallery plugin is loaded, this class no-ops
+ * cleanly and the front-end section simply renders nothing.
  *
  * @package 360-hotelier
  */
@@ -42,19 +44,12 @@ final class Hotelier_Portfolio_Gallery_Acf {
 				'description'           => __( 'Images for the marquee gallery below the partner cards on the Portfolio page.', '360-hotelier' ),
 				'fields'                => array(
 					array(
-						'key'           => self::FIELD_KEY,
-						'label'         => __( 'Gallery images', '360-hotelier' ),
-						'name'          => self::FIELD_NAME,
-						'type'          => 'gallery',
-						'instructions'  => __( 'Pick the images that appear in the marquee below the partner cards. The first half of your selection appears in the top row, the second half in the bottom row. Drag thumbnails to reorder. Shared between English and Greek versions of the page.', '360-hotelier' ),
-						'required'      => 0,
-						'min'           => 0,
-						'max'           => 0,
-						'preview_size'  => 'medium',
-						'library'       => 'all',
-						'return_format' => 'id',
-						'insert'        => 'append',
-						'mime_types'    => 'jpg,jpeg,png,webp,avif,gif',
+						'key'          => self::FIELD_KEY,
+						'label'        => __( 'Gallery images', '360-hotelier' ),
+						'name'         => self::FIELD_NAME,
+						'type'         => 'acf_photo_gallery',
+						'instructions' => __( 'Pick the images that appear in the marquee below the partner cards. The first half of your selection appears in the top row, the second half in the bottom row. Drag thumbnails to reorder. Shared between English and Greek versions of the page.', '360-hotelier' ),
+						'required'     => 0,
 					),
 				),
 				'location'              => array(
