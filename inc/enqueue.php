@@ -413,3 +413,84 @@ function hotelier_services_page_title_parts( $title_parts ) {
     return $title_parts;
 }
 add_filter( 'document_title_parts', 'hotelier_services_page_title_parts', 22 );
+
+/**
+ * Portfolio page meta description by current language.
+ */
+function hotelier_portfolio_page_meta_description() {
+    if ( function_exists( 'hotelier_get_current_lang' ) && 'el' === hotelier_get_current_lang() ) {
+        return 'Δείτε το portfolio της 360 Hotelier Consulting και πώς βοηθάμε ξενοδοχεία στην Κύπρο να αυξήσουν έσοδα, απευθείας κρατήσεις και απόδοση καναλιών πώλησης.';
+    }
+
+    return 'Explore the portfolio of 360 Hotelier Consulting and discover how we help hotels in Cyprus improve revenue, optimize distribution and increase direct bookings.';
+}
+
+/**
+ * Portfolio page SEO title by current language.
+ */
+function hotelier_portfolio_page_meta_title() {
+    if ( function_exists( 'hotelier_get_current_lang' ) && 'el' === hotelier_get_current_lang() ) {
+        return 'Portfolio Ξενοδοχειακών Συνεργασιών | 360 Hotelier Consulting Cyprus';
+    }
+
+    return 'Hotel Consulting Portfolio | 360 Hotelier Consulting Cyprus';
+}
+
+/**
+ * About page meta description by current language.
+ */
+function hotelier_about_page_meta_description() {
+    if ( function_exists( 'hotelier_get_current_lang' ) && 'el' === hotelier_get_current_lang() ) {
+        return 'Η 360 Hotelier Consulting είναι εταιρεία συμβουλευτικών υπηρεσιών ξενοδοχείων στην Κύπρο με εξειδίκευση σε revenue management, online πωλήσεις και στρατηγική διανομής.';
+    }
+
+    return '360° Hotelier Consulting is a leading hotel consultant in Cyprus, specializing in revenue management, online sales, digital marketing and tour-operator contracting.';
+}
+
+/**
+ * About page SEO title by current language.
+ */
+function hotelier_about_page_meta_title() {
+    if ( function_exists( 'hotelier_get_current_lang' ) && 'el' === hotelier_get_current_lang() ) {
+        return 'Συμβουλευτικές Υπηρεσίες Ξενοδοχείων στην Κύπρο | 360 Hotelier Consulting';
+    }
+
+    return 'Hotel Consultant Cyprus | 360 Hotelier Consulting';
+}
+
+/**
+ * Outputs meta descriptions for about and portfolio page templates.
+ */
+function hotelier_about_portfolio_page_head() {
+    if ( is_page_template( 'page-templates/template-portfolio.php' ) ) {
+        echo '<meta name="description" content="' . esc_attr( hotelier_portfolio_page_meta_description() ) . '">' . "\n";
+        return;
+    }
+
+    if ( is_page_template( 'page-templates/template-about.php' ) ) {
+        echo '<meta name="description" content="' . esc_attr( hotelier_about_page_meta_description() ) . '">' . "\n";
+    }
+}
+add_action( 'wp_head', 'hotelier_about_portfolio_page_head', 1 );
+
+/**
+ * Overrides browser title for about and portfolio page templates.
+ *
+ * @param array<string, string> $title_parts Title parts from WordPress.
+ * @return array<string, string>
+ */
+function hotelier_about_portfolio_page_title_parts( $title_parts ) {
+    if ( is_page_template( 'page-templates/template-portfolio.php' ) ) {
+        $title_parts['title'] = hotelier_portfolio_page_meta_title();
+        unset( $title_parts['site'], $title_parts['tagline'] );
+        return $title_parts;
+    }
+
+    if ( is_page_template( 'page-templates/template-about.php' ) ) {
+        $title_parts['title'] = hotelier_about_page_meta_title();
+        unset( $title_parts['site'], $title_parts['tagline'] );
+    }
+
+    return $title_parts;
+}
+add_filter( 'document_title_parts', 'hotelier_about_portfolio_page_title_parts', 23 );
