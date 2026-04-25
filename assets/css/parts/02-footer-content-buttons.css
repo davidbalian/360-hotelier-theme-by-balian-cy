@@ -12,7 +12,8 @@
     margin-top: 4rem;
     margin-bottom: 2rem;
     border-radius: 4rem;
-    corner-shape: round; /* not squircle (see 01-global * { corner-shape: squircle }) */
+    /* Squircle on the footer card (align with global * { corner-shape: squircle } in 01-global) */
+    corner-shape: squircle;
     overflow: hidden;
     padding: 2rem 0 2rem;
 }
@@ -79,7 +80,7 @@
     gap: 0.75rem;
 }
 
-/* Orange circle + white icon (mask), same upload SVGs as top bar; corner-shape: round beats global * squircle */
+/* True circles, not squircles: beat global * */
 .footer-social-bubble {
     display: inline-flex;
     align-items: center;
