@@ -109,8 +109,8 @@
 /* External SVGs tint via currentColor: luminance → alpha mask, fill from `color` */
 .top-bar__icon {
     display: block;
-    width: 1em;
-    height: 1em;
+    width: 0.85em;
+    height: 0.85em;
     flex-shrink: 0;
     line-height: 0;
     background-color: currentColor;
@@ -122,13 +122,6 @@
     mask-size: contain;
     mask-position: center;
     mask-repeat: no-repeat;
-}
-
-/* Slightly smaller mail/phone glyphs (1em − 0.15em); social icons stay at 1em */
-.top-bar__email .top-bar__icon,
-.top-bar__phone .top-bar__icon {
-    width: 0.85em;
-    height: 0.85em;
 }
 
 .top-bar__link-label {
