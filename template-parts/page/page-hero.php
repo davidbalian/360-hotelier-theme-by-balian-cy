@@ -2,8 +2,10 @@
 /**
  * Inner page hero section.
  *
- * Pass these via get_template_part( ..., null, array( ... ) ) (WP 5.5+). Parent template
- * variables are not in scope here because the partial loads inside load_template().
+ * Pass these via get_template_part( ..., null, array( ... ) ) (WP 5.5+). WordPress
+ * load_template() does not extract() the $args array into variables — only
+ * $wp_query->query_vars are extracted. This file extracts $args at the top; see
+ * template-parts/page/portfolio-section-gallery.php.
  *
  *   page_hero_title    (string) — H1: short document title (e.g. About Us, Contact)
  *   page_hero_tagline  (string) — Optional marketing line below the H1
@@ -19,6 +21,11 @@
  *
  * @package 360-hotelier
  */
+
+if ( isset( $args ) && is_array( $args ) && $args !== array() ) {
+	// phpcs:ignore WordPress.PHP.DontExtract.extract_extract
+	extract( $args, EXTR_OVERWRITE );
+}
 
 if ( ! isset( $page_hero_image ) || '' === $page_hero_image ) {
     $page_hero_image = content_url( '/uploads/2026/03/featured-360-hotelier.webp' );
