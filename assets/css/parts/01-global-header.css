@@ -262,17 +262,9 @@
 }
 
 @media (max-width: 1024px) {
-    /* Wide + tablet: "Facebook" etc. hidden; icon-only chips stay */
-    .top-bar__social .top-bar__link-label {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        border: 0;
-        white-space: nowrap;
+    /* Hide full social group (text + icons). Avoid orphan icons when space is tight. */
+    .top-bar__social {
+        display: none;
     }
 }
 
@@ -283,16 +275,9 @@
         font-size: 0.7rem;
     }
 
-    .top-bar__email .top-bar__link-label {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        border: 0;
-        white-space: nowrap;
+    /* Hide full email (text + icon), not label-only — matches old top-bar__email { display: none; } */
+    .top-bar__email {
+        display: none;
     }
 }
 
