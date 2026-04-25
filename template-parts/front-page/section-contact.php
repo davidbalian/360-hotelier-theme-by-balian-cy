@@ -7,7 +7,7 @@
 
 $hctx  = 'home';
 $hpage = (int) get_queried_object_id();
-$band  = Hotelier_Page_Content::get_image_url( $hpage, $hctx, 'contact_band_img' );
+$band  = Hotelier_Cta_Feat_Image_Field::resolve_url( $hpage, $hctx );
 ?>
 <section class="front-featured-banner card-border">
     <?php Hotelier_Cta_Band_Image::render( $band ); ?>
