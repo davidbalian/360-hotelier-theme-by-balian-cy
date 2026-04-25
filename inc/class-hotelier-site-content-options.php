@@ -62,7 +62,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'label_email'           => 'Email',
 			'label_address'         => 'Address',
 			'footer_heading_nav'    => 'Navigation',
-			'footer_heading_follow' => 'Follow Us',
+			'footer_heading_follow' => 'Social Media',
 			'footer_heading_legal'  => 'Legal',
 			'footer_heading_contact'  => 'Contact',
 			'footer_copyright_name' => '360° Hotelier Consulting.',
@@ -195,7 +195,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<tr><th><?php esc_html_e( 'Column headings', '360-hotelier' ); ?></th>
 						<td>
 							<label><?php esc_html_e( 'Navigation', '360-hotelier' ); ?> <input class="regular-text" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[footer_heading_nav]" type="text" value="<?php echo esc_attr( $v['footer_heading_nav'] ); ?>"></label><br><br>
-							<label><?php esc_html_e( 'Follow Us', '360-hotelier' ); ?> <input class="regular-text" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[footer_heading_follow]" type="text" value="<?php echo esc_attr( $v['footer_heading_follow'] ); ?>"></label><br><br>
+							<label><?php esc_html_e( 'Social Media', '360-hotelier' ); ?> <input class="regular-text" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[footer_heading_follow]" type="text" value="<?php echo esc_attr( $v['footer_heading_follow'] ); ?>"></label><br><br>
 							<label><?php esc_html_e( 'Legal', '360-hotelier' ); ?> <input class="regular-text" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[footer_heading_legal]" type="text" value="<?php echo esc_attr( $v['footer_heading_legal'] ); ?>"></label><br><br>
 							<label><?php esc_html_e( 'Contact', '360-hotelier' ); ?> <input class="regular-text" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[footer_heading_contact]" type="text" value="<?php echo esc_attr( $v['footer_heading_contact'] ); ?>"></label>
 						</td></tr>
