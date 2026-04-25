@@ -228,3 +228,55 @@ function hotelier_front_page_title_parts( $title_parts ) {
     return $title_parts;
 }
 add_filter( 'document_title_parts', 'hotelier_front_page_title_parts', 20 );
+
+/**
+ * Founder page meta description by current language.
+ */
+function hotelier_founder_page_meta_description() {
+    if ( function_exists( 'hotelier_get_current_lang' ) && 'el' === hotelier_get_current_lang() ) {
+        return 'Γνωρίστε τον Γιώργο Πεγιαζή, ιδρυτή της 360 Hotelier Consulting και σύμβουλο ξενοδοχείων με εξειδίκευση σε revenue management και online πωλήσεις.';
+    }
+
+    return 'Meet Giorgos Peyiazis, founder of 360 Hotelier Consulting. Hospitality consultant specialising in hotel revenue management, online sales and digital distribution.';
+}
+
+/**
+ * Founder page SEO title by current language.
+ */
+function hotelier_founder_page_meta_title() {
+    if ( function_exists( 'hotelier_get_current_lang' ) && 'el' === hotelier_get_current_lang() ) {
+        return 'Γιώργος Πεγιαζής | Ιδρυτής 360 Hotelier Consulting';
+    }
+
+    return 'Giorgos Peyiazis | Founder of 360 Hotelier Consulting Cyprus';
+}
+
+/**
+ * Outputs founder page meta tags.
+ */
+function hotelier_founder_page_head() {
+    if ( ! is_page_template( 'page-templates/template-founder.php' ) ) {
+        return;
+    }
+
+    echo '<meta name="description" content="' . esc_attr( hotelier_founder_page_meta_description() ) . '">' . "\n";
+}
+add_action( 'wp_head', 'hotelier_founder_page_head', 1 );
+
+/**
+ * Overrides the browser title for the founder page.
+ *
+ * @param array<string, string> $title_parts Title parts from WordPress.
+ * @return array<string, string>
+ */
+function hotelier_founder_page_title_parts( $title_parts ) {
+    if ( ! is_page_template( 'page-templates/template-founder.php' ) ) {
+        return $title_parts;
+    }
+
+    $title_parts['title'] = hotelier_founder_page_meta_title();
+    unset( $title_parts['site'], $title_parts['tagline'] );
+
+    return $title_parts;
+}
+add_filter( 'document_title_parts', 'hotelier_founder_page_title_parts', 21 );
