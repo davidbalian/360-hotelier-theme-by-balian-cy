@@ -30,7 +30,7 @@ final class Hotelier_El_Page_Defaults {
 			// Front page (home).
 			'home.hero_title_line1'       => 'Έσοδα, Διανομή & ',
 			'home.hero_title_line2'       => 'Ψηφιακή Ανάπτυξη για ' . self::FRONT_HERO_HOME_LINE2_TAIL,
-			'home.hero_subheadline'       => 'Διαχείριση εσόδων και B2B διανομή για ξενοδοχεία στην Κύπρο. Λειτουργούμε ως εξωτερική εμπορική ομάδα.',
+			'home.hero_subheadline'       => 'Διαχείριση εσόδων και B2B διανομή για ξενοδοχεία στην Κύπρο. Η εξωτερική σας εμπορική ομάδα, σχεδιασμένη γύρω από μετρήσιμα αποτελέσματα.',
 			'home.hero_cta_text'          => 'Κλείστε δωρεάν στρατηγική συνάντηση',
 			'home.services_title'         => 'Οι βασικές μας υπηρεσίες',
 			'home.services_subtitle'      => 'Πλήρης εμπορική υποστήριξη σε έσοδα, διανομή και ψηφιακά.',

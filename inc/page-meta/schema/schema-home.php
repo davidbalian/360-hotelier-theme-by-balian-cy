@@ -25,7 +25,7 @@ return array(
 	'hero_subheadline'       => array(
 		'type'    => 'textarea',
 		'label'   => 'Hero — subheadline',
-		'default' => 'Revenue management and B2B distribution for hotels in Cyprus. We act as your external commercial team.',
+		'default' => 'Revenue management and B2B distribution for hotels in Cyprus. Your external commercial team, built around measurable results.',
 	),
 	'hero_cta_text'          => array(
 		'type'    => 'text',
