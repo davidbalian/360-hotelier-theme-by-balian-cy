@@ -136,6 +136,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 		return $fallback;
 	}
 
+	/**
+	 * Default brand mark when no Customizer logo and no footer attachment (header fallback, footer, JSON-LD).
+	 */
+	public static function default_brand_logo_url(): string {
+		return content_url( '/uploads/2026/04/360-hotelier-new-logo.webp' );
+	}
+
 	public static function footer_logo_url(): string {
 		$all = self::get();
 		$id  = isset( $all['footer_logo_id'] ) ? (int) $all['footer_logo_id'] : 0;
@@ -145,7 +152,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				return $url;
 			}
 		}
-		return content_url( '/uploads/2026/03/360-hotelier-logo-hd.svg' );
+		return self::default_brand_logo_url();
 	}
 
 	public static function render_page(): void {

@@ -322,7 +322,8 @@
     width: auto;
     display: block;
     transition: height 0.15s ease, filter 0.3s ease;
-    filter: brightness(0) invert(1); /* Initial state: White */
+    /* White mark on hero: works for WebP/PNG/SVG (not SVG-only) */
+    filter: brightness(0) invert(1);
 }
 
 .site-header.is-scrolled .site-branding img {

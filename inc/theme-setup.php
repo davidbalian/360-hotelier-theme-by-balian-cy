@@ -67,7 +67,7 @@ add_action( 'after_setup_theme', 'hotelier_theme_setup' );
  */
 function hotelier_favicon() {
     if ( ! has_site_icon() ) {
-        echo '<link rel="icon" href="' . esc_url( content_url( '/uploads/2026/03/360-hotelier-favi-on.png' ) ) . '" type="image/png">' . "\n";
+        echo '<link rel="icon" href="' . esc_url( content_url( '/uploads/2026/04/360-HOTELIER_Favicon.jpg' ) ) . '" type="image/jpeg">' . "\n";
     }
 }
 add_action( 'wp_head', 'hotelier_favicon', 1 );

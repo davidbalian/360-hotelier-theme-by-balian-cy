@@ -111,7 +111,7 @@ $li_href  = ! empty( $hotelier_social['linkedin'] ) ? $hotelier_social['linkedin
             </div><!-- .footer-cols -->
 
             <div class="footer-logo fade-in fade-in-delay-0">
-                <img src="<?php echo esc_url( Hotelier_Site_Content_Options::footer_logo_url() ); ?>" alt="<?php echo esc_attr( $h_opt['footer_copyright_name'] ); ?>" width="180" height="50">
+                <img src="<?php echo esc_url( Hotelier_Site_Content_Options::footer_logo_url() ); ?>" alt="<?php echo esc_attr( $h_opt['footer_copyright_name'] ); ?>" height="50" loading="eager" decoding="async">
             </div><!-- .footer-logo -->
 
             <div class="footer-bottom text-sm fade-in fade-in-delay-0">

@@ -118,7 +118,7 @@
                     <?php hotelier_output_custom_logo_link(); ?>
                 <?php else : ?>
                     <a href="<?php echo esc_url( hotelier_get_localized_home_url() ); ?>" class="site-title-link site-logo-fallback" rel="home">
-                        <img src="<?php echo esc_url( Hotelier_Site_Content_Options::footer_logo_url() ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" width="180" height="50">
+                        <img src="<?php echo esc_url( Hotelier_Site_Content_Options::footer_logo_url() ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" height="50" loading="eager" decoding="async">
                     </a>
                 <?php endif; ?>
             </div>

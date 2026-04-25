@@ -20,7 +20,7 @@ function hotelier_output_schema() {
         '@type'       => 'LocalBusiness',
         'name'        => '360° Hotelier Consulting',
         'url'         => function_exists( 'hotelier_get_localized_home_url' ) ? hotelier_get_localized_home_url() : home_url( '/' ),
-        'image'       => has_custom_logo() ? wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ), 'full' ) : content_url( '/uploads/2026/03/360-hotelier-horizontal-logo.webp' ),
+        'image'       => has_custom_logo() ? wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ), 'full' ) : Hotelier_Site_Content_Options::default_brand_logo_url(),
         'priceRange'  => '$$',
         'telephone'   => '+35770001818',
         'address'     => array(

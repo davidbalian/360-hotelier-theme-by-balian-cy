@@ -43,6 +43,7 @@
     max-width: min(220px, 100%);
     height: auto;
     display: block;
+    /* Monochrome on purple: WebP/PNG/SVG (not SVG-only) */
     filter: brightness(0) invert(1);
 }
 
