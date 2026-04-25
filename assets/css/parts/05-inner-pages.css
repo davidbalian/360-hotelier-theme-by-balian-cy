@@ -491,7 +491,13 @@
     color: var(--color-purple);
     font-weight: 600;
     margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
+}
+
+.page-portfolio__hotel-tagline {
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+    color: var(--color-charcoal);
 }
 
 .page-portfolio__hotel-location {

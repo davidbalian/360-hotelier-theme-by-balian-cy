@@ -29,6 +29,7 @@ for ( $i = 1; $i <= 8; $i++ ) {
 	$hotels[ "hotel_{$i}_photo" ]    = array( 'type' => 'image', 'label' => "Hotel {$i} — partner photo (large image beside card)", 'default_url' => '' );
 	$hotels[ "hotel_{$i}_alt" ]      = array( 'type' => 'text', 'label' => "Hotel {$i} — logo alt", 'default' => '' );
 	$hotels[ "hotel_{$i}_variant" ]  = array( 'type' => 'text', 'label' => "Hotel {$i} — CSS variant (optional, e.g. serbellas)", 'default' => '' );
+	$hotels[ "hotel_{$i}_tagline" ]  = array( 'type' => 'textarea', 'label' => "Hotel {$i} — short description (under title)", 'default' => '' );
 }
 
 $testimonials = array();
@@ -137,6 +138,15 @@ $out['hotel_8_url']['default']           = 'https://chiccentresuites.com/';
 $out['hotel_8_logo']['default_url']      = $u . 'chic-centre-suites-athens-hotel-logo.webp';
 $out['hotel_8_photo']['default_url']     = $u . 'chic-centre-suites-athens-hotel-consulting-project.webp';
 $out['hotel_8_alt']['default']           = 'Chic Centre Suites Athens';
+
+$out['hotel_1_tagline']['default']  = 'Cyprus\' most luxurious beachfront hotel with breathtaking sea views.';
+$out['hotel_2_tagline']['default']  = 'Newly opened boutique luxury hotel in Paphos with stylish design.';
+$out['hotel_3_tagline']['default']  = 'Exclusive seaside residences in Paphos with panoramic sea views.';
+$out['hotel_4_tagline']['default']  = 'Hotel in Limassol\'s vibrant tourist area with modern comforts.';
+$out['hotel_5_tagline']['default']  = 'Iconic historical mountain resort in Platres surrounded by scenic beauty.';
+$out['hotel_6_tagline']['default']  = 'Charming historical boutique hotel in Platres with cozy elegance.';
+$out['hotel_7_tagline']['default']  = 'Affordable hotel near Ayia Napa\'s top attractions and nightlife.';
+$out['hotel_8_tagline']['default']  = 'Stylish city-centre suites in Athens, Greece\'s capital, ideal for urban stays.';
 
 $out['testimonial_1_quote']['default']  = 'Working with 360 Hotelier Consulting has been a professional and productive experience. The hands-on involvement in revenue strategy, contracting, and commercial planning provided valuable insights and practical solutions that supported our resort. Strong industry knowledge, strategic thinking, and close cooperation make this collaboration highly effective.';
 $out['testimonial_1_name']['default']  = 'Panayiotis Markou';

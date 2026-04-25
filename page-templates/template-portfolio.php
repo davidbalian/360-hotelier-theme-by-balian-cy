@@ -34,6 +34,7 @@ for ( $i = 1; $i <= 8; $i++ ) {
 	}
 	$hotels[] = array(
 		'name'      => Hotelier_Page_Content::get_text( $page_id, $ctx, 'hotel_' . $i . '_name' ),
+		'tagline'   => Hotelier_Page_Content::get_text( $page_id, $ctx, 'hotel_' . $i . '_tagline' ),
 		'location'  => Hotelier_Page_Content::get_text( $page_id, $ctx, 'hotel_' . $i . '_location' ),
 		'url'       => Hotelier_Page_Content::get_text( $page_id, $ctx, 'hotel_' . $i . '_url' ),
 		'logo'      => $logo,
@@ -105,6 +106,9 @@ get_template_part(
                                 </div>
                             <?php endif; ?>
                             <h3 class="page-portfolio__hotel-name"><?php echo esc_html( $hotel['name'] ); ?></h3>
+                            <?php if ( $hotel['tagline'] !== '' ) : ?>
+                                <p class="page-portfolio__hotel-tagline"><?php echo esc_html( $hotel['tagline'] ); ?></p>
+                            <?php endif; ?>
                             <span class="page-portfolio__hotel-location">
                                 <?php Hotelier_Lucide_Icon::render( 'map-pin', 'page-portfolio__location-icon' ); ?>
                                 <?php echo esc_html( $hotel['location'] ); ?>
