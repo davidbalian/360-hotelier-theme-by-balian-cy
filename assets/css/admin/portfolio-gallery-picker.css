@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Portfolio gallery admin picker
+   Loaded only on the Portfolio page edit screen.
+   ========================================================================== */
+
+.hotelier-pg-picker {
+    --hotelier-pg-thumb: 110px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.hotelier-pg-picker__caption {
+    margin: 0 0 0.75rem;
+    color: #50575e;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.hotelier-pg-picker__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.hotelier-pg-picker__count {
+    color: #646970;
+    font-size: 12px;
+    margin-left: 0.25rem;
+}
+
+.hotelier-pg-picker__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--hotelier-pg-thumb), 1fr));
+    gap: 8px;
+    min-height: 110px;
+    background: #f6f7f7;
+    border: 1px dashed #c3c4c7;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+.hotelier-pg-picker__grid:empty::before {
+    content: 'No images selected yet.';
+    grid-column: 1 / -1;
+    align-self: center;
+    text-align: center;
+    color: #8c8f94;
+    font-size: 12px;
+    padding: 1.5rem 0;
+}
+
+.hotelier-pg-picker__thumb {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 4px;
+    background: #fff;
+    border: 1px solid #dcdcde;
+    cursor: grab;
+    user-select: none;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.hotelier-pg-picker__thumb:hover {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
+}
+
+.hotelier-pg-picker__thumb.is-dragging {
+    opacity: 0.45;
+    cursor: grabbing;
+}
+
+.hotelier-pg-picker__thumb.is-drop-before {
+    box-shadow: -3px 0 0 0 #2271b1;
+}
+
+.hotelier-pg-picker__thumb.is-drop-after {
+    box-shadow: 3px 0 0 0 #2271b1;
+}
+
+.hotelier-pg-picker__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.hotelier-pg-picker__remove {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 22px;
+    height: 22px;
+    line-height: 1;
+    padding: 0;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease, background 0.15s ease;
+}
+
+.hotelier-pg-picker__thumb:hover .hotelier-pg-picker__remove,
+.hotelier-pg-picker__thumb:focus-within .hotelier-pg-picker__remove {
+    opacity: 1;
+}
+
+.hotelier-pg-picker__remove:hover,
+.hotelier-pg-picker__remove:focus {
+    background: #d63638;
+    outline: none;
+}

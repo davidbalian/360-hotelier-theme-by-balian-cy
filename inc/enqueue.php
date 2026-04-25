@@ -64,6 +64,15 @@ function hotelier_enqueue_assets() {
         );
     }
 
+    if ( hotelier_should_enqueue_portfolio_gallery_assets() ) {
+        wp_enqueue_style(
+            '360-hotelier-portfolio-gallery',
+            HOTELIER_THEME_URI . '/assets/css/parts/05d-portfolio-gallery-marquee.css',
+            array( $last_main_css_handle ),
+            HOTELIER_THEME_VERSION
+        );
+    }
+
     // Navigation JS (mobile menu toggle)
     wp_enqueue_script(
         '360-hotelier-navigation',
@@ -143,6 +152,13 @@ function hotelier_should_enqueue_faq_assets() {
  * Portfolio template: testimonials carousel CSS/JS.
  */
 function hotelier_should_enqueue_portfolio_testimonials_assets() {
+    return is_page() && is_page_template( 'page-templates/template-portfolio.php' );
+}
+
+/**
+ * Portfolio template: image marquee gallery CSS.
+ */
+function hotelier_should_enqueue_portfolio_gallery_assets() {
     return is_page() && is_page_template( 'page-templates/template-portfolio.php' );
 }
 

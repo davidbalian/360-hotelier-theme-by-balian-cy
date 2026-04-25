@@ -132,6 +132,16 @@ get_template_part(
 
     <?php
     get_template_part(
+        'template-parts/page/portfolio-section-gallery',
+        null,
+        array(
+            'page_id' => $page_id,
+        )
+    );
+    ?>
+
+    <?php
+    get_template_part(
         'template-parts/page/portfolio-section-testimonials',
         null,
         array(

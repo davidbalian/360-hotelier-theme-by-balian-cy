@@ -63,6 +63,8 @@ $defaults = array(
 
 	'partners_title'         => array( 'type' => 'text', 'label' => 'Partners section — title', 'default' => 'Hotels & Partners' ),
 	'partners_subtitle'      => array( 'type' => 'textarea', 'label' => 'Partners section — subtitle', 'default' => 'Independent, boutique and resort properties we support with revenue, distribution and digital strategy.' ),
+	'gallery_title'          => array( 'type' => 'text', 'label' => 'Gallery — title', 'default' => 'Inside Our Properties' ),
+	'gallery_subtitle'       => array( 'type' => 'textarea', 'label' => 'Gallery — subtitle', 'default' => 'A look at the rooms, suites and spaces of the hotels we work with across Cyprus and Greece.' ),
 	'testimonials_title'     => array( 'type' => 'text', 'label' => 'Testimonials — title', 'default' => 'What partners say' ),
 	'testimonials_subtitle'  => array( 'type' => 'textarea', 'label' => 'Testimonials — subtitle', 'default' => 'Feedback from hotel leaders on revenue, distribution and working with our team.' ),
 	'testimonials_closing'   => array( 'type' => 'textarea', 'label' => 'Testimonials — closing paragraph (below carousel)', 'default' => '360 Hotelier Consulting collaborates with boutique hotels, independent hotels, and hospitality partners across Cyprus and Greece, helping them increase occupancy, optimize OTA performance, and improve revenue strategy.' ),

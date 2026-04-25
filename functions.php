@@ -58,3 +58,6 @@ require_once HOTELIER_THEME_DIR . '/inc/page-meta/hotelier-page-meta.php';
 require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-site-content-options.php';
 require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-founder-card-contact.php';
 
+// Portfolio gallery picker (admin meta box + postmeta-backed image list)
+require_once HOTELIER_THEME_DIR . '/inc/admin/portfolio-gallery/hotelier-portfolio-gallery-bootstrap.php';
+

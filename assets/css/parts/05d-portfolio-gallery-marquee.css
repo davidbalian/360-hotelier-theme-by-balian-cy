@@ -1,0 +1,103 @@
+/* ==========================================================================
+   Portfolio — gallery marquee (two rows, same height, native aspect ratios)
+   ========================================================================== */
+
+.page-portfolio-gallery {
+    --pgm-row-height: 280px;
+    --pgm-gap: 16px;
+    --pgm-radius: 12px;
+    --pgm-duration-top: 90s;
+    --pgm-duration-bottom: 110s;
+}
+
+.portfolio-gallery-marquee {
+    display: flex;
+    flex-direction: column;
+    gap: var(--pgm-gap);
+    width: 100%;
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+.portfolio-gallery-marquee__rail {
+    overflow: hidden;
+    width: 100%;
+}
+
+.portfolio-gallery-marquee__row {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: var(--pgm-gap);
+    width: max-content;
+    will-change: transform;
+}
+
+.portfolio-gallery-marquee__row--top {
+    animation: hotelier-pgm-scroll var(--pgm-duration-top) linear infinite;
+}
+
+.portfolio-gallery-marquee__row--bottom {
+    animation: hotelier-pgm-scroll var(--pgm-duration-bottom) linear infinite;
+    animation-direction: reverse;
+}
+
+.portfolio-gallery-marquee:hover .portfolio-gallery-marquee__row,
+.portfolio-gallery-marquee:focus-within .portfolio-gallery-marquee__row {
+    animation-play-state: paused;
+}
+
+.portfolio-gallery-marquee__item {
+    flex: 0 0 auto;
+    line-height: 0;
+}
+
+.portfolio-gallery-marquee__image {
+    height: var(--pgm-row-height);
+    width: auto;
+    display: block;
+    border-radius: var(--pgm-radius);
+    object-fit: cover;
+    box-shadow: var(--shadow-card);
+    background: var(--color-section-gray);
+}
+
+@keyframes hotelier-pgm-scroll {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-50%, 0, 0); }
+}
+
+/* ==========================================================================
+   Responsive — shorter rows on tablet/mobile
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .page-portfolio-gallery {
+        --pgm-row-height: 220px;
+        --pgm-gap: 14px;
+    }
+}
+
+@media (max-width: 640px) {
+    .page-portfolio-gallery {
+        --pgm-row-height: 160px;
+        --pgm-gap: 10px;
+        --pgm-radius: 10px;
+    }
+
+    .portfolio-gallery-marquee {
+        margin-top: 1.25rem;
+    }
+}
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-gallery-marquee__row {
+        animation: none;
+        transform: none;
+    }
+}
