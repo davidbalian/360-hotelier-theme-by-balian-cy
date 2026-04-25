@@ -115,7 +115,8 @@
         align-items: center;
     }
 
-    .front-contact__text {
+    .front-contact__text,
+    .front-featured-banner__text {
         max-width: 30ch;
     }
 }
