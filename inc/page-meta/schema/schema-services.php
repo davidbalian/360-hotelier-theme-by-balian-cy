@@ -15,7 +15,6 @@ return array(
 	'hero_title'             => array( 'type' => 'text', 'label' => 'Hero — title', 'default' => 'Our Core Services' ),
 	'hero_subtitle'          => array( 'type' => 'textarea', 'label' => 'Hero — subtitle', 'default' => 'Revenue, distribution and digital growth for hotels in Cyprus. We act as your external commercial team.' ),
 	'hero_bg'                => array( 'type' => 'image', 'label' => 'Hero — background', 'default_url' => $u . 'cyprus-hotel-revenue-consulting.webp' ),
-
 	'offer_title'            => array( 'type' => 'text', 'label' => 'What we offer — title', 'default' => 'What We Offer' ),
 	'offer_subtitle'         => array( 'type' => 'textarea', 'label' => 'What we offer — subtitle', 'default' => 'We help hotels drive direct bookings, optimise channel mix and negotiate stronger tour-operator & B2B agreements.' ),
 	'row_1_title'            => array( 'type' => 'text', 'label' => 'Row 1 — title', 'default' => 'Yield & Revenue Management' ),

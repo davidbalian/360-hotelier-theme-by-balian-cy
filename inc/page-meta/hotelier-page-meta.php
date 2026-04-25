@@ -11,6 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 require_once __DIR__ . '/class-hotelier-page-meta-schema.php';
 require_once __DIR__ . '/class-hotelier-page-content.php';
+require_once __DIR__ . '/class-hotelier-acf-image-location-rules.php';
 require_once __DIR__ . '/class-hotelier-hero-image-field.php';
+require_once __DIR__ . '/class-hotelier-cta-feat-image-field.php';
 
 Hotelier_Hero_Image_Field::register();
+Hotelier_Cta_Feat_Image_Field::register();

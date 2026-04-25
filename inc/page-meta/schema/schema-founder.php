@@ -15,7 +15,6 @@ return array(
 	'hero_title'             => array( 'type' => 'text', 'label' => 'Hero — title', 'default' => 'Giorgos Peyiazis' ),
 	'hero_subtitle'          => array( 'type' => 'textarea', 'label' => 'Hero — subtitle', 'default' => 'Founder & Hospitality Consultant · 15+ years in hotel revenue management, online sales and digital strategy.' ),
 	'hero_bg'                => array( 'type' => 'image', 'label' => 'Hero — background', 'default_url' => $u . 'giorgos-peyiazis-hotel-consultant-founder-of-360-hotelier-consulting-cyprus.webp' ),
-
 	'bio_photo'              => array( 'type' => 'image', 'label' => 'Bio — photo', 'default_url' => $u . 'giorgos-peyiazis-hotel-consultant-founder-of-360-hotelier-consulting-cyprus.webp' ),
 	'bio_photo_alt'          => array( 'type' => 'text', 'label' => 'Bio — photo alt', 'default' => 'Giorgos Peyiazis, Founder of 360 Hotelier Consulting' ),
 	'bio_h2'                 => array( 'type' => 'text', 'label' => 'Bio — heading', 'default' => 'About Giorgos' ),

@@ -119,7 +119,7 @@ function hotelier_get_service_page_content( int $post_id, string $slug ): ?array
 		'overview_heading' => $overview_h !== '' ? $overview_h : __( 'Overview', '360-hotelier' ),
 		'deliver_heading'  => $deliver_h !== '' ? $deliver_h : __( 'What We Deliver', '360-hotelier' ),
 		'hero_image_url'   => Hotelier_Hero_Image_Field::resolve_url( $post_id, $ctx ),
-		'cta_img'          => Hotelier_Page_Content::get_image_url( $post_id, $ctx, 'cta_feat_img' ),
+		'cta_img'          => Hotelier_Cta_Feat_Image_Field::resolve_url( $post_id, $ctx ),
 		'cta_title'        => Hotelier_Page_Content::get_text( $post_id, $ctx, 'cta_feat_title' ),
 		'cta_text'         => Hotelier_Page_Content::get_text( $post_id, $ctx, 'cta_feat_text' ),
 		'cta_primary'      => Hotelier_Page_Content::get_text( $post_id, $ctx, 'cta_feat_primary' ),

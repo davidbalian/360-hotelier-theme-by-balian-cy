@@ -55,7 +55,6 @@ $defaults = array(
 	'hero_title'             => array( 'type' => 'text', 'label' => 'Hero — title', 'default' => 'Our Hotel Partners' ),
 	'hero_subtitle'          => array( 'type' => 'textarea', 'label' => 'Hero — subtitle', 'default' => 'Boutique, independent and resort hotels across Cyprus and beyond, each delivering measurable results.' ),
 	'hero_bg'                => array( 'type' => 'image', 'label' => 'Hero — background', 'default_url' => $u . 'why-choose-360-hotelier.webp' ),
-
 	'intro_h2'               => array( 'type' => 'text', 'label' => 'Intro — heading', 'default' => 'Hotels We Work With' ),
 	'intro_p1'               => array( 'type' => 'textarea', 'label' => 'Intro — paragraph 1', 'default' => 'We work with independent, boutique and resort hotels in Cyprus across revenue management, online sales & B2B distribution, digital marketing and tour-operator contracting.' ),
 	'intro_p2'               => array( 'type' => 'textarea', 'label' => 'Intro — paragraph 2', 'default' => "Each engagement is built around the hotel's market, seasonality and commercial goals." ),

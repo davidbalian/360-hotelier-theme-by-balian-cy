@@ -116,7 +116,7 @@ get_template_part(
 	?>
 
     <section class="front-featured-banner card-border">
-        <?php Hotelier_Cta_Band_Image::render( Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'cta_feat_img' ) ); ?>
+        <?php Hotelier_Cta_Band_Image::render( Hotelier_Cta_Feat_Image_Field::resolve_url( $page_id, $ctx ) ); ?>
         <div class="front-featured-banner__overlay section-overlay"></div>
         <div class="site-container front-featured-banner__content fade-in fade-in-delay-0">
             <h2 class="front-featured-banner__title"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'cta_feat_title' ) ); ?></h2>

@@ -16,7 +16,6 @@ return array(
 	'hero_tagline'           => array( 'type' => 'textarea', 'label' => 'Hero — tagline', 'default' => "Grow Your Hotel's Revenue & Distribution." ),
 	'hero_subtitle'          => array( 'type' => 'textarea', 'label' => 'Hero — subtitle', 'default' => "Tell us about your property. We'll identify where the revenue opportunity is." ),
 	'hero_bg'                => array( 'type' => 'image', 'label' => 'Hero — background', 'default_url' => $u . 'featured-360-hotelier.webp' ),
-
 	'card_title'             => array( 'type' => 'text', 'label' => 'Details card — title', 'default' => 'Contact Us Directly' ),
 
 	'form_title'             => array( 'type' => 'text', 'label' => 'Form — title', 'default' => 'Send us a message' ),

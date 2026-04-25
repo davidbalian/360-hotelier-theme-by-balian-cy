@@ -48,20 +48,6 @@ final class Hotelier_Hero_Image_Field {
 	/** Slug of the All Services page (parent of every service sub-page). */
 	private const SERVICES_PARENT_SLUG = 'services';
 
-	/**
-	 * Page templates that should expose the hero image picker.
-	 *
-	 * Service sub-pages are intentionally excluded because they inherit
-	 * the hero image from the All Services page.
-	 */
-	private const PAGE_TEMPLATES = array(
-		'page-templates/template-about.php',
-		'page-templates/template-services.php',
-		'page-templates/template-portfolio.php',
-		'page-templates/template-contact.php',
-		'page-templates/template-founder.php',
-	);
-
 	/** @var int|null Cached All Services page ID. */
 	private static $services_page_id_cache = null;
 
@@ -164,7 +150,7 @@ final class Hotelier_Hero_Image_Field {
 						'instructions'  => __( 'Used as the background image for this page\'s hero section. The same image is shown on both the English and Greek versions of this page. On the All Services page, the image is also reused as the hero on every individual service sub-page.', '360-hotelier' ),
 					),
 				),
-				'location'              => self::build_location_rules(),
+				'location'              => Hotelier_Acf_Image_Location_Rules::build(),
 				'position'              => 'normal',
 				'menu_order'            => 999,
 				'label_placement'       => 'top',
@@ -376,35 +362,5 @@ final class Hotelier_Hero_Image_Field {
 		self::$services_page_id_cache = $page instanceof WP_Post ? (int) $page->ID : 0;
 
 		return self::$services_page_id_cache;
-	}
-
-	/**
-	 * Build the ACF location rules: each page template gets its own OR group,
-	 * and the static front page is added as one final OR group.
-	 *
-	 * @return array<int, array<int, array<string, string>>>
-	 */
-	private static function build_location_rules(): array {
-		$rules = array();
-
-		foreach ( self::PAGE_TEMPLATES as $template ) {
-			$rules[] = array(
-				array(
-					'param'    => 'page_template',
-					'operator' => '==',
-					'value'    => $template,
-				),
-			);
-		}
-
-		$rules[] = array(
-			array(
-				'param'    => 'page_type',
-				'operator' => '==',
-				'value'    => 'front_page',
-			),
-		);
-
-		return $rules;
 	}
 }

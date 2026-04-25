@@ -48,13 +48,20 @@ final class Hotelier_Page_Content {
 	/**
 	 * Returns the image URL for a schema field.
 	 *
-	 * For `hero_bg`, ACF (post meta) is read first; only if unset does the
-	 * theme use the hardcoded `default_url` from the schema. All other image
-	 * fields remain schema-only.
+	 * For `hero_bg` and `cta_feat_img`, ACF (post meta) is read first; only if
+	 * unset does the theme use the hardcoded `default_url` from the schema. All
+	 * other image fields remain schema-only.
 	 */
 	public static function get_image_url( int $post_id, string $context, string $field ): string {
 		if ( 'hero_bg' === $field && $post_id > 0 && class_exists( 'Hotelier_Hero_Image_Field' ) ) {
 			$from_acf = Hotelier_Hero_Image_Field::url_for_post( $post_id );
+			if ( is_string( $from_acf ) && $from_acf !== '' ) {
+				return $from_acf;
+			}
+		}
+
+		if ( 'cta_feat_img' === $field && $post_id > 0 && class_exists( 'Hotelier_Cta_Feat_Image_Field' ) ) {
+			$from_acf = Hotelier_Cta_Feat_Image_Field::url_for_post( $post_id );
 			if ( is_string( $from_acf ) && $from_acf !== '' ) {
 				return $from_acf;
 			}
