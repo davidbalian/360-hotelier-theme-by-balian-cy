@@ -4,7 +4,7 @@
 
 .site-footer {
     --footer-gutter: max(1rem, calc((100% - 1920px) / 2));
-    background-color: var(--color-topbar-scrolled, #362457);
+    background-color: var(--color-topbar-scrolled, #3a0968);
     color: rgba(255, 255, 255, 0.88);
     max-width: 1920px;
     margin-left: var(--footer-gutter);

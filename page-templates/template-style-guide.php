@@ -30,7 +30,7 @@ get_header();
                     <div class="sg-color-swatch">
                         <div class="sg-color-swatch__preview" style="background-color: var(--color-purple);"></div>
                         <span class="sg-color-swatch__name text-body">Purple</span>
-                        <code class="text-sm">#362457</code>
+                        <code class="text-sm">#5a2a82</code>
                     </div>
                     <div class="sg-color-swatch">
                         <div class="sg-color-swatch__preview" style="background-color: var(--color-orange);"></div>
