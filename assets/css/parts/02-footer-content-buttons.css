@@ -4,7 +4,7 @@
 
 .site-footer {
     --footer-gutter: max(1rem, calc((100% - 1920px) / 2));
-    background-color: var(--color-purple);
+    background-color: var(--color-topbar-scrolled, #3a0968);
     color: rgba(255, 255, 255, 0.88);
     max-width: 1920px;
     margin-left: var(--footer-gutter);
@@ -12,6 +12,7 @@
     margin-top: 4rem;
     margin-bottom: 2rem;
     border-radius: 4rem;
+    corner-shape: round; /* not squircle (see 01-global * { corner-shape: squircle }) */
     overflow: hidden;
     padding: 2rem 0 2rem;
 }
@@ -19,15 +20,6 @@
 @media (max-width: 768px) {
     .site-footer {
         border-radius: 2rem;
-    }
-
-    .footer-col--social-bubbles {
-        justify-self: stretch;
-        text-align: left;
-    }
-
-    .footer-col--social-bubbles .footer-col__heading {
-        text-align: left;
     }
 }
 
@@ -87,18 +79,7 @@
     gap: 0.75rem;
 }
 
-.footer-col--social-bubbles {
-    justify-self: end;
-    text-align: right;
-}
-
-@media (min-width: 769px) {
-    .footer-col--social-bubbles .footer-col__heading {
-        text-align: right;
-    }
-}
-
-/* Orange circle + white icon (mask), same upload SVGs as top bar */
+/* Orange circle + white icon (mask), same upload SVGs as top bar; corner-shape: round beats global * squircle */
 .footer-social-bubble {
     display: inline-flex;
     align-items: center;
@@ -106,16 +87,16 @@
     width: 2.75rem;
     height: 2.75rem;
     border-radius: 50%;
+    corner-shape: round;
     background-color: var(--color-orange);
     text-decoration: none;
     line-height: 0;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    transition: box-shadow 0.2s ease, opacity 0.2s ease;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
     background-image: none !important;
 }
 
 .footer-social-bubble:hover {
-    transform: scale(1.05);
     opacity: 0.95;
     background-image: none !important;
 }

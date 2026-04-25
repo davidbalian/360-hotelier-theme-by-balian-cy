@@ -99,28 +99,11 @@
     gap: 2rem;
 }
 
-.top-bar__icons {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-    flex-shrink: 0;
-    font-size: 0.8rem;
-}
-
-.top-bar__icon-link {
+/* Icon (0.35rem) + label in one control */
+.top-bar__link-with-icon {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    line-height: 0;
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    background-image: none !important;
-}
-
-.top-bar__icon-link:hover {
-    color: rgba(255, 255, 255, 0.75);
-    background-image: none !important;
+    gap: 0.35rem;
 }
 
 /* External SVGs tint via currentColor: luminance → alpha mask, fill from `color` */
@@ -129,6 +112,7 @@
     width: 1em;
     height: 1em;
     flex-shrink: 0;
+    line-height: 0;
     background-color: currentColor;
     -webkit-mask-image: var(--top-bar-ico);
     -webkit-mask-size: contain;
@@ -140,6 +124,17 @@
     mask-repeat: no-repeat;
 }
 
+/* Slightly smaller mail/phone glyphs (1em − 0.15em); social icons stay at 1em */
+.top-bar__email .top-bar__icon,
+.top-bar__phone .top-bar__icon {
+    width: 0.85em;
+    height: 0.85em;
+}
+
+.top-bar__link-label {
+    white-space: nowrap;
+}
+
 .top-bar__email,
 .top-bar__phone,
 .top-bar__social-link,
@@ -147,6 +142,7 @@
     color: #fff;
     text-decoration: none;
     font-size: 0.8rem;
+    line-height: 1.2;
     transition: color 0.3s ease;
     position: relative;
     background-image: none !important;
@@ -189,32 +185,32 @@
 
 
 .top-bar.is-scrolled {
-    background-color: #3a0968;
+    background-color: var(--color-topbar-scrolled, #3a0968);
     color: rgba(255, 255, 255, 0.85);
 }
 
-.top-bar.is-scrolled .top-bar__icon-link,
 .top-bar.is-scrolled .top-bar__email,
-.top-bar.is-scrolled .top-bar__phone {
+.top-bar.is-scrolled .top-bar__phone,
+.top-bar.is-scrolled .top-bar__social-link {
     color: rgba(255, 255, 255, 0.85);
 }
 
-.top-bar.is-scrolled .top-bar__icon-link:hover,
 .top-bar.is-scrolled .top-bar__email:hover,
-.top-bar.is-scrolled .top-bar__phone:hover {
+.top-bar.is-scrolled .top-bar__phone:hover,
+.top-bar.is-scrolled .top-bar__social-link:hover {
     color: #fff;
 }
 
 /* Top bar text goes dark when mobile nav is open (non-scrolled state) */
-.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__icon-link,
 .site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__email,
-.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__phone {
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__phone,
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__social-link {
     color: var(--color-charcoal);
 }
 
-.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__icon-link:hover,
 .site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__email:hover,
-.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__phone:hover {
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__phone:hover,
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__social-link:hover {
     color: rgba(0, 0, 0, 0.6);
 }
 
@@ -255,18 +251,36 @@
 }
 
 @media (max-width: 1024px) {
-    .top-bar__social {
-        display: none;
+    /* Wide + tablet: "Facebook" etc. hidden; icon-only chips stay */
+    .top-bar__social .top-bar__link-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+        white-space: nowrap;
     }
 }
 
 @media (max-width: 768px) {
-    .top-bar__icons {
-        font-size: 0.7rem; /* align with .top-bar mobile size in 06 */
+    .top-bar__link-with-icon,
+    .top-bar__left {
+        font-size: 0.7rem;
     }
 
-    .top-bar__email {
-        display: none;
+    .top-bar__email .top-bar__link-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+        white-space: nowrap;
     }
 }
 
