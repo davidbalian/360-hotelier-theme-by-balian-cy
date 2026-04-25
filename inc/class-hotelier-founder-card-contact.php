@@ -21,6 +21,7 @@ final class Hotelier_Founder_Card_Contact {
 	 */
 	public static function render( string $wrapper_extra_classes = '' ): void {
 		$o = Hotelier_Site_Content_Options::get();
+		$email = isset( $o['topbar_email'] ) ? self::get_founder_email( (string) $o['topbar_email'] ) : '';
 
 		$tb_tel = preg_replace( '/\s+/', '', (string) $o['topbar_phone_href'] );
 		if ( $tb_tel !== '' && strpos( $tb_tel, 'tel:' ) !== 0 ) {
@@ -38,8 +39,8 @@ final class Hotelier_Founder_Card_Contact {
 		echo '<div class="' . esc_attr( $root_class ) . '">';
 		echo '<div class="founder-card-contact__list">';
 
-		if ( ! empty( $o['topbar_email'] ) ) {
-			echo '<a class="founder-card-contact__link" href="' . esc_url( 'mailto:' . antispambot( $o['topbar_email'] ) ) . '">' . esc_html( $o['topbar_email'] ) . '</a>';
+		if ( $email !== '' ) {
+			echo '<a class="founder-card-contact__link" href="' . esc_url( 'mailto:' . antispambot( $email ) ) . '">' . esc_html( $email ) . '</a>';
 		}
 
 		if ( ! empty( $o['topbar_phone_display'] ) && $tb_tel !== '' ) {
@@ -70,5 +71,20 @@ final class Hotelier_Founder_Card_Contact {
 		}
 
 		echo '</div></div>';
+	}
+
+	/**
+	 * Use founder-specific mailbox for founder cards.
+	 *
+	 * @param string $email Site-level configured email.
+	 * @return string
+	 */
+	private static function get_founder_email( string $email ): string {
+		$email = trim( $email );
+		if ( $email === '' ) {
+			return '';
+		}
+
+		return (string) preg_replace( '/^info@/i', 'giorgos@', $email, 1 );
 	}
 }
