@@ -12,7 +12,7 @@ $opt     = Hotelier_Site_Content_Options::get();
 $page_hero_title    = Hotelier_Page_Content::get_text( $page_id, $ctx, 'hero_title' );
 $page_hero_tagline  = Hotelier_Page_Content::get_text( $page_id, $ctx, 'hero_tagline' );
 $page_hero_subtitle = Hotelier_Page_Content::get_text( $page_id, $ctx, 'hero_subtitle' );
-$page_hero_image    = Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'hero_bg' );
+$page_hero_image    = Hotelier_Hero_Image_Field::resolve_url( $page_id, $ctx );
 
 $contact_street_address  = $opt['contact_address'];
 $contact_map_place_query = $opt['contact_map_query'];

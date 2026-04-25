@@ -10,7 +10,7 @@ $ctx     = 'founder';
 
 $page_hero_title    = Hotelier_Page_Content::get_text( $page_id, $ctx, 'hero_title' );
 $page_hero_subtitle = Hotelier_Page_Content::get_text( $page_id, $ctx, 'hero_subtitle' );
-$page_hero_image    = Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'hero_bg' );
+$page_hero_image    = Hotelier_Hero_Image_Field::resolve_url( $page_id, $ctx );
 
 get_header();
 get_template_part(

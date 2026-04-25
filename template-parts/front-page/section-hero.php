@@ -7,7 +7,7 @@
 
 $hctx  = 'home';
 $hpage = (int) get_queried_object_id();
-$hero = Hotelier_Page_Content::get_image_url( $hpage, $hctx, 'hero_bg' );
+$hero  = Hotelier_Hero_Image_Field::resolve_url( $hpage, $hctx );
 $line_2 = Hotelier_Page_Content::get_text( $hpage, $hctx, 'hero_title_line2' );
 ?>
 <section class="front-hero card-border" style="background-image: url('<?php echo esc_url( $hero ); ?>');">
