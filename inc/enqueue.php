@@ -494,3 +494,157 @@ function hotelier_about_portfolio_page_title_parts( $title_parts ) {
     return $title_parts;
 }
 add_filter( 'document_title_parts', 'hotelier_about_portfolio_page_title_parts', 23 );
+
+/**
+ * SEO map for contact and legal pages.
+ *
+ * @return array<string, array<string, array<string, string>>>
+ */
+function hotelier_page_seo_map() {
+    return array(
+        'contact' => array(
+            'en' => array(
+                'title'       => 'Contact 360 Hotelier Consulting | Book Your Hotel Strategy Session',
+                'description' => 'Contact 360 Hotelier Consulting to discuss revenue management, distribution strategy and digital growth for your hotel in Cyprus.',
+            ),
+            'el' => array(
+                'title'       => 'Επικοινωνία με την 360 Hotelier Consulting | Κλείστε Στρατηγική Συνεδρία',
+                'description' => 'Επικοινωνήστε με την 360 Hotelier Consulting για revenue management, στρατηγική διανομής και digital ανάπτυξη του ξενοδοχείου σας στην Κύπρο.',
+            ),
+        ),
+        'privacy-policy' => array(
+            'en' => array(
+                'title'       => 'Privacy Policy | 360 Hotelier Consulting',
+                'description' => 'Read the Privacy Policy of 360 Hotelier Consulting to understand how we collect, use and protect your personal data.',
+            ),
+            'el' => array(
+                'title'       => 'Πολιτική Απορρήτου | 360 Hotelier Consulting',
+                'description' => 'Διαβάστε την Πολιτική Απορρήτου της 360 Hotelier Consulting για το πώς συλλέγουμε, χρησιμοποιούμε και προστατεύουμε τα προσωπικά σας δεδομένα.',
+            ),
+        ),
+        'cookie-policy' => array(
+            'en' => array(
+                'title'       => 'Cookie Policy | 360 Hotelier Consulting',
+                'description' => 'Learn how 360 Hotelier Consulting uses cookies and similar technologies to improve site performance and user experience.',
+            ),
+            'el' => array(
+                'title'       => 'Πολιτική Cookies | 360 Hotelier Consulting',
+                'description' => 'Μάθετε πώς η 360 Hotelier Consulting χρησιμοποιεί cookies και παρόμοιες τεχνολογίες για βελτίωση απόδοσης και εμπειρίας χρήσης.',
+            ),
+        ),
+        'terms' => array(
+            'en' => array(
+                'title'       => 'Terms & Conditions | 360 Hotelier Consulting',
+                'description' => 'Review the Terms & Conditions of 360 Hotelier Consulting for the rules governing use of this website and its services.',
+            ),
+            'el' => array(
+                'title'       => 'Όροι & Προϋποθέσεις | 360 Hotelier Consulting',
+                'description' => 'Δείτε τους Όρους & Προϋποθέσεις της 360 Hotelier Consulting για τους κανόνες χρήσης της ιστοσελίδας και των υπηρεσιών της.',
+            ),
+        ),
+    );
+}
+
+/**
+ * Resolve SEO page key for contact + legal pages.
+ */
+function hotelier_current_page_seo_key() {
+    if ( ! is_page() ) {
+        return '';
+    }
+
+    if ( is_page_template( 'page-templates/template-contact.php' ) ) {
+        return 'contact';
+    }
+
+    $post = get_post();
+    if ( ! $post instanceof WP_Post ) {
+        return '';
+    }
+
+    $slug = (string) $post->post_name;
+    if ( in_array( $slug, array( 'privacy-policy', 'cookie-policy', 'terms' ), true ) ) {
+        return $slug;
+    }
+
+    return '';
+}
+
+/**
+ * Returns current page SEO metadata for mapped pages.
+ *
+ * @return array{title: string, description: string}|null
+ */
+function hotelier_current_page_seo_meta() {
+    $key = hotelier_current_page_seo_key();
+    if ( '' === $key ) {
+        return null;
+    }
+
+    $map = hotelier_page_seo_map();
+    if ( ! isset( $map[ $key ] ) ) {
+        return null;
+    }
+
+    $lang = function_exists( 'hotelier_get_current_lang' ) ? hotelier_get_current_lang() : 'en';
+    if ( 'el' !== $lang ) {
+        $lang = 'en';
+    }
+
+    if ( ! isset( $map[ $key ][ $lang ]['title'], $map[ $key ][ $lang ]['description'] ) ) {
+        return null;
+    }
+
+    return array(
+        'title'       => $map[ $key ][ $lang ]['title'],
+        'description' => $map[ $key ][ $lang ]['description'],
+    );
+}
+
+/**
+ * Output meta description for contact and legal pages.
+ */
+function hotelier_page_seo_meta_head() {
+    $meta = hotelier_current_page_seo_meta();
+    if ( ! is_array( $meta ) ) {
+        return;
+    }
+
+    echo '<meta name="description" content="' . esc_attr( $meta['description'] ) . '">' . "\n";
+}
+add_action( 'wp_head', 'hotelier_page_seo_meta_head', 1 );
+
+/**
+ * Override title parts for contact and legal pages.
+ *
+ * @param array<string, string> $title_parts Title parts from WordPress.
+ * @return array<string, string>
+ */
+function hotelier_page_seo_title_parts( $title_parts ) {
+    $meta = hotelier_current_page_seo_meta();
+    if ( ! is_array( $meta ) ) {
+        return $title_parts;
+    }
+
+    $title_parts['title'] = $meta['title'];
+    unset( $title_parts['site'], $title_parts['tagline'] );
+
+    return $title_parts;
+}
+add_filter( 'document_title_parts', 'hotelier_page_seo_title_parts', 24 );
+
+/**
+ * Apply noindex directives to the style guide page.
+ *
+ * @param array<string, bool> $robots The robots directives.
+ * @return array<string, bool>
+ */
+function hotelier_style_guide_noindex_robots( $robots ) {
+    if ( is_page_template( 'page-templates/template-style-guide.php' ) ) {
+        $robots['noindex']  = true;
+        $robots['nofollow'] = true;
+    }
+
+    return $robots;
+}
+add_filter( 'wp_robots', 'hotelier_style_guide_noindex_robots' );
