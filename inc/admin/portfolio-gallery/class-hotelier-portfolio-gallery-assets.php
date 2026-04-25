@@ -53,7 +53,7 @@ final class Hotelier_Portfolio_Gallery_Assets {
 		wp_enqueue_script(
 			self::HANDLE_JS,
 			HOTELIER_THEME_URI . $js_rel,
-			array( 'jquery' ),
+			array( 'jquery', 'media-editor', 'media-views' ),
 			$js_ver,
 			true
 		);

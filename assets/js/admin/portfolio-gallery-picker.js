@@ -112,6 +112,14 @@
 
     PortfolioGalleryPicker.prototype.openFrame = function () {
         var self = this;
+
+        if ( !window.wp || !window.wp.media ) {
+            window.console && window.console.error(
+                '[Portfolio Gallery] wp.media is not available. The "media-editor" script dependency was not loaded.'
+            );
+            return;
+        }
+
         if ( this.frame ) {
             this.preselectInFrame();
             this.frame.open();
