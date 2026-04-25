@@ -6,8 +6,8 @@
     --pgm-row-height: 280px;
     --pgm-gap: 16px;
     --pgm-radius: 12px;
-    --pgm-duration-top: 220s;
-    --pgm-duration-bottom: 260s;
+    --pgm-duration-top: 340s;
+    --pgm-duration-bottom: 400s;
 }
 
 .portfolio-gallery-marquee {

@@ -23,7 +23,7 @@
 		rowSelector:     '.portfolio-gallery-marquee__row',
 		bottomRowClass:  'portfolio-gallery-marquee__row--bottom',
 		jsDrivenClass:   'is-js-driven',
-		pauseTweenMs:    900
+		pauseTweenMs:    350
 	};
 
 	/**
