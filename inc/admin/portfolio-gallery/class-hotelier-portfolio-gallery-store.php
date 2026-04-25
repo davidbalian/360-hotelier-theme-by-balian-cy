@@ -7,6 +7,10 @@
  * front-end template only knows "give me the ordered list of attachment
  * IDs for this page".
  *
+ * The plugin's `acf_photo_gallery()` reader always returns an array of
+ * associative arrays, each with at minimum an `id` key — independent of
+ * any field-level "return format" setting — so we always extract IDs.
+ *
  * If the plugin is not active or the field is empty, returns an empty
  * array (the marquee section then renders nothing — safe default).
  *
@@ -23,6 +27,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Hotelier_Portfolio_Gallery_Store {
 
 	/**
+	 * ACF field name (set in the ACF field group editor in WP admin).
+	 */
+	public const FIELD_NAME = 'portfolio_gallery';
+
+	/**
 	 * @param int $post_id Page ID.
 	 * @return int[] Ordered attachment IDs (deduped, all > 0).
 	 */
@@ -31,7 +40,7 @@ final class Hotelier_Portfolio_Gallery_Store {
 			return array();
 		}
 
-		$images = acf_photo_gallery( Hotelier_Portfolio_Gallery_Acf::FIELD_NAME, $post_id );
+		$images = acf_photo_gallery( self::FIELD_NAME, $post_id );
 		if ( ! is_array( $images ) ) {
 			return array();
 		}
