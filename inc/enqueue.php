@@ -280,3 +280,136 @@ function hotelier_founder_page_title_parts( $title_parts ) {
     return $title_parts;
 }
 add_filter( 'document_title_parts', 'hotelier_founder_page_title_parts', 21 );
+
+/**
+ * SEO map for services overview and service single pages.
+ *
+ * @return array<string, array<string, array<string, string>>>
+ */
+function hotelier_services_seo_map() {
+    return array(
+        'services' => array(
+            'en' => array(
+                'title'       => 'Hotel Consulting Services | Revenue Management & Hotel Sales Strategy',
+                'description' => 'Discover hotel consulting services including revenue management, OTA optimisation, digital marketing and tour operator contracting to increase hotel revenue and direct bookings.',
+            ),
+            'el' => array(
+                'title'       => 'Υπηρεσίες Hotel Consulting | Revenue Management & Online Sales Strategy',
+                'description' => 'Ανακαλύψτε τις υπηρεσίες hotel consulting της 360 Hotelier: revenue management, online sales, OTA optimization, digital marketing και contracting με tour operators.',
+            ),
+        ),
+        'revenue-management' => array(
+            'en' => array(
+                'title'       => 'Hotel Revenue Management Services | Pricing Strategy & RevPAR Growth',
+                'description' => 'Professional revenue management for hotels: dynamic pricing, forecasting, competitor benchmarking and channel optimisation to increase RevPAR and overall profitability.',
+            ),
+            'el' => array(
+                'title'       => 'Revenue Management για Ξενοδοχεία | Pricing Strategy & RevPAR Growth',
+                'description' => 'Επαγγελματικές υπηρεσίες revenue management για ξενοδοχεία. Dynamic pricing, forecasting, competitor benchmarking και στρατηγική αύξησης RevPAR και πληρότητας.',
+            ),
+        ),
+        'online-sales-distribution' => array(
+            'en' => array(
+                'title'       => 'Hotel Online Sales & Distribution Strategy | OTA & B2B Partnerships',
+                'description' => 'Improve your hotel distribution strategy with OTA optimisation, wholesaler contracts and B2B partnerships that increase visibility and reduce OTA dependency.',
+            ),
+            'el' => array(
+                'title'       => 'Digital Marketing για Ξενοδοχεία | SEO, Direct Bookings & Online Growth',
+                'description' => 'Αυξήστε τις απευθείας κρατήσεις του ξενοδοχείου σας με στρατηγικές SEO, Google Ads, social media marketing και βελτιστοποίηση booking engine.',
+            ),
+        ),
+        'digital-marketing' => array(
+            'en' => array(
+                'title'       => 'Hotel Digital Marketing Services | SEO, Direct Bookings & Growth',
+                'description' => 'Increase direct hotel bookings with SEO, Google Ads, social media strategy and booking engine optimisation designed to boost your hotel’s online performance.',
+            ),
+            'el' => array(
+                'title'       => 'Digital Marketing για Ξενοδοχεία | SEO, Direct Bookings & Online Growth',
+                'description' => 'Αυξήστε τις απευθείας κρατήσεις του ξενοδοχείου σας με στρατηγικές SEO, Google Ads, social media marketing και βελτιστοποίηση booking engine.',
+            ),
+        ),
+        'tour-operator-contracting' => array(
+            'en' => array(
+                'title'       => 'Tour Operator Contracting for Hotels | Negotiation & Distribution',
+                'description' => 'Expert negotiation and contracting with tour operators and travel partners to secure competitive rates, optimise allotments and grow hotel revenue.',
+            ),
+            'el' => array(
+                'title'       => 'Tour Operator Contracting για Ξενοδοχεία | Συμβόλαια & Διαπραγματεύσεις',
+                'description' => 'Διαπραγμάτευση συμβολαίων με tour operators και ταξιδιωτικούς οργανισμούς. Βελτιστοποίηση allotments, τιμών και συνεργασιών για αύξηση εσόδων ξενοδοχείων.',
+            ),
+        ),
+    );
+}
+
+/**
+ * Returns current page services SEO metadata when applicable.
+ *
+ * @return array{title: string, description: string}|null
+ */
+function hotelier_current_services_seo_meta() {
+    $slug = '';
+
+    if ( is_page_template( 'page-templates/template-services.php' ) ) {
+        $slug = 'services';
+    } elseif ( is_page_template( 'page-templates/template-service-single.php' ) ) {
+        $post = get_post();
+        if ( $post instanceof WP_Post ) {
+            $slug = (string) $post->post_name;
+        }
+    }
+
+    if ( '' === $slug ) {
+        return null;
+    }
+
+    $map = hotelier_services_seo_map();
+    if ( ! isset( $map[ $slug ] ) ) {
+        return null;
+    }
+
+    $lang = function_exists( 'hotelier_get_current_lang' ) ? hotelier_get_current_lang() : 'en';
+    if ( 'el' !== $lang ) {
+        $lang = 'en';
+    }
+
+    if ( ! isset( $map[ $slug ][ $lang ]['title'], $map[ $slug ][ $lang ]['description'] ) ) {
+        return null;
+    }
+
+    return array(
+        'title'       => $map[ $slug ][ $lang ]['title'],
+        'description' => $map[ $slug ][ $lang ]['description'],
+    );
+}
+
+/**
+ * Outputs services page meta description for mapped pages.
+ */
+function hotelier_services_page_head() {
+    $meta = hotelier_current_services_seo_meta();
+    if ( ! is_array( $meta ) ) {
+        return;
+    }
+
+    echo '<meta name="description" content="' . esc_attr( $meta['description'] ) . '">' . "\n";
+}
+add_action( 'wp_head', 'hotelier_services_page_head', 1 );
+
+/**
+ * Overrides title parts for mapped services pages.
+ *
+ * @param array<string, string> $title_parts Title parts from WordPress.
+ * @return array<string, string>
+ */
+function hotelier_services_page_title_parts( $title_parts ) {
+    $meta = hotelier_current_services_seo_meta();
+    if ( ! is_array( $meta ) ) {
+        return $title_parts;
+    }
+
+    $title_parts['title'] = $meta['title'];
+    unset( $title_parts['site'], $title_parts['tagline'] );
+
+    return $title_parts;
+}
+add_filter( 'document_title_parts', 'hotelier_services_page_title_parts', 22 );
