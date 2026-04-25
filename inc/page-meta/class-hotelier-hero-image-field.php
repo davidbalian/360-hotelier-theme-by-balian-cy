@@ -35,6 +35,13 @@ final class Hotelier_Hero_Image_Field {
 	/** ACF field key (selector fallback if the name key collides in the DB). */
 	private const FIELD_KEY = 'field_hotelier_hero_image';
 
+	/**
+	 * Optional meta key fallbacks (e.g. hand-built ACF using schema field name "hero_bg").
+	 *
+	 * @var string[]
+	 */
+	private const ALT_META_KEYS = array( 'hero_bg', 'hero_image' );
+
 	/** Schema context that should always read from the All Services page. */
 	private const SERVICE_CHILD_CONTEXT = 'service';
 
@@ -106,33 +113,27 @@ final class Hotelier_Hero_Image_Field {
 	 * @param string $context Schema context: home | about | services | service | portfolio | contact | founder.
 	 */
 	public static function resolve_url( int $page_id, string $context ): string {
+		// Sub-service pages: inherit the All Services page hero, then fall back to schema in get_image_url().
 		if ( self::SERVICE_CHILD_CONTEXT === $context ) {
 			$services_id = self::services_page_id();
 			if ( $services_id > 0 ) {
-				$services_url = self::saved_url_for_page( $services_id );
+				$services_url = self::url_for_post( $services_id );
 				if ( $services_url !== '' ) {
 					return $services_url;
 				}
 			}
-			return self::schema_default_url( $page_id, $context );
 		}
 
-		$own_url = self::saved_url_for_page( $page_id );
-		if ( $own_url !== '' ) {
-			return $own_url;
-		}
-
-		return self::schema_default_url( $page_id, $context );
+		// ACF (post meta) first, then hardcoded theme default from schema.
+		return Hotelier_Page_Content::get_image_url( $page_id, $context, 'hero_bg' );
 	}
 
 	/**
-	 * Read the ACF-saved image URL for a page.
+	 * Public: URL for this page's hero from ACF / post meta only (no theme schema fallback).
 	 *
-	 * Uses ACF's `get_field()` first: `get_post_meta` alone is unreliable for image fields
-	 * (ACF may format, filter, or store values the plain meta read will miss).
-	 * Supports return format id, array, and url.
+	 * @param int $page_id Post ID.
 	 */
-	private static function saved_url_for_page( int $page_id ): string {
+	public static function url_for_post( int $page_id ): string {
 		if ( $page_id <= 0 ) {
 			return '';
 		}
@@ -158,6 +159,12 @@ final class Hotelier_Hero_Image_Field {
 			} elseif ( ! empty( $raw['url'] ) && is_string( $raw['url'] ) ) {
 				return $raw['url'];
 			}
+		} elseif ( is_object( $raw ) && isset( $raw->ID ) ) {
+			$attachment_id = (int) $raw->ID;
+		} elseif ( is_object( $raw ) && isset( $raw->id ) ) {
+			$attachment_id = (int) $raw->id;
+		} elseif ( is_object( $raw ) && isset( $raw->url ) && is_string( $raw->url ) ) {
+			return $raw->url;
 		}
 
 		if ( $attachment_id <= 0 ) {
@@ -175,46 +182,86 @@ final class Hotelier_Hero_Image_Field {
 	}
 
 	/**
-	 * Raw / formatted value for this field, whichever ACF exposes.
+	 * Raw value from ACF / post meta (ID, array, or URL), using every reliable read path.
+	 *
+	 * @return mixed Null or empty string if nothing is stored.
 	 */
 	private static function get_acf_hero_stored_value( int $page_id ) {
+		$all_keys = array_values( array_unique( array_merge( array( self::FIELD_NAME ), self::ALT_META_KEYS ) ) );
+
+		// 1) Bulk load: often succeeds when get_field() or get_post_meta() is filtered.
+		if ( function_exists( 'get_fields' ) ) {
+			foreach ( array( false, true ) as $format_value ) {
+				$all = get_fields( $page_id, $format_value );
+				if ( ! is_array( $all ) ) {
+					continue;
+				}
+				foreach ( $all_keys as $k ) {
+					if ( ! isset( $all[ $k ] ) ) {
+						continue;
+					}
+					if ( self::is_nonempty_acf_value( $all[ $k ] ) ) {
+						return $all[ $k ];
+					}
+				}
+			}
+		}
+
+		// 2) get_field( name, id ) first — avoids ACF 5/6 / arg-order quirks with 3+ args.
 		if ( function_exists( 'get_field' ) ) {
-			$unformatted = self::get_field_hero_unformatted( $page_id );
-			if ( self::is_nonempty_acf_value( $unformatted ) ) {
-				return $unformatted;
+			foreach ( array( self::FIELD_NAME, self::FIELD_KEY ) as $selector ) {
+				$v = get_field( $selector, $page_id );
+				if ( self::is_nonempty_acf_value( $v ) ) {
+					return $v;
+				}
 			}
-			$formatted = self::get_field_hero_formatted( $page_id );
-			if ( self::is_nonempty_acf_value( $formatted ) ) {
-				return $formatted;
+			foreach ( array( self::FIELD_NAME, self::FIELD_KEY ) as $selector ) {
+				$v = get_field( $selector, $page_id, false );
+				if ( self::is_nonempty_acf_value( $v ) ) {
+					return $v;
+				}
+				$v = get_field( $selector, $page_id, true );
+				if ( self::is_nonempty_acf_value( $v ) ) {
+					return $v;
+				}
 			}
 		}
 
-		// get_post_meta fallback (e.g. ACF not loaded); value may be serialized.
-		return maybe_unserialize( get_post_meta( $page_id, self::FIELD_NAME, true ) );
-	}
-
-	/**
-	 * @return mixed
-	 */
-	private static function get_field_hero_unformatted( int $page_id ) {
-		$by_name = get_field( self::FIELD_NAME, $page_id, false );
-		if ( self::is_nonempty_acf_value( $by_name ) ) {
-			return $by_name;
+		// 3) Low-level ACF (field definition + value pipeline).
+		if ( function_exists( 'acf_get_field' ) && function_exists( 'acf_get_value' ) ) {
+			$field = acf_get_field( self::FIELD_KEY );
+			if ( is_array( $field ) && $field !== array() ) {
+				$v = acf_get_value( $page_id, $field );
+				if ( self::is_nonempty_acf_value( $v ) ) {
+					return $v;
+				}
+			}
 		}
 
-		return get_field( self::FIELD_KEY, $page_id, false );
-	}
-
-	/**
-	 * @return mixed
-	 */
-	private static function get_field_hero_formatted( int $page_id ) {
-		$by_name = get_field( self::FIELD_NAME, $page_id, true );
-		if ( self::is_nonempty_acf_value( $by_name ) ) {
-			return $by_name;
+		// 4) WordPress post meta (ACF or manual).
+		foreach ( $all_keys as $k ) {
+			$raw = maybe_unserialize( get_post_meta( $page_id, $k, true ) );
+			if ( self::is_nonempty_acf_value( $raw ) ) {
+				return $raw;
+			}
 		}
 
-		return get_field( self::FIELD_KEY, $page_id, true );
+		// 5) Unfiltered DB read (bypasses get_post_metadata filters).
+		global $wpdb;
+		if ( $wpdb instanceof \wpdb ) {
+			foreach ( $all_keys as $k ) {
+				$raw = $wpdb->get_var( $wpdb->prepare( "SELECT meta_value FROM {$wpdb->postmeta} WHERE post_id = %d AND meta_key = %s LIMIT 1", $page_id, $k ) );
+				if ( null === $raw || ! is_string( $raw ) || '' === $raw ) {
+					continue;
+				}
+				$raw = maybe_unserialize( $raw );
+				if ( self::is_nonempty_acf_value( $raw ) ) {
+					return $raw;
+				}
+			}
+		}
+
+		return null;
 	}
 
 	/**
@@ -250,10 +297,6 @@ final class Hotelier_Hero_Image_Field {
 		}
 
 		return false;
-	}
-
-	private static function schema_default_url( int $page_id, string $context ): string {
-		return Hotelier_Page_Content::get_image_url( $page_id, $context, 'hero_bg' );
 	}
 
 	private static function services_page_id(): int {
