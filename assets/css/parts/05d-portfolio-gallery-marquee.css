@@ -43,9 +43,11 @@
     animation-direction: reverse;
 }
 
-.portfolio-gallery-marquee:hover .portfolio-gallery-marquee__row,
-.portfolio-gallery-marquee:focus-within .portfolio-gallery-marquee__row {
-    animation-play-state: paused;
+/* When the JS controller takes over (after first paint), it drives the row's
+   transform via inline style and we must disable the CSS keyframe so the two
+   don't fight. The row's pause-on-hover easing is then handled in JS. */
+.portfolio-gallery-marquee.is-js-driven .portfolio-gallery-marquee__row {
+    animation: none;
 }
 
 .portfolio-gallery-marquee__item {

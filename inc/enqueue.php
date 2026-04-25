@@ -129,6 +129,19 @@ function hotelier_enqueue_assets() {
             true
         );
     }
+
+    if ( hotelier_should_enqueue_portfolio_gallery_assets() ) {
+        $pg_js  = HOTELIER_THEME_DIR . '/assets/js/portfolio-gallery-marquee.js';
+        $pg_ver = file_exists( $pg_js ) ? (string) filemtime( $pg_js ) : HOTELIER_THEME_VERSION;
+
+        wp_enqueue_script(
+            '360-hotelier-portfolio-gallery',
+            HOTELIER_THEME_URI . '/assets/js/portfolio-gallery-marquee.js',
+            array(),
+            $pg_ver,
+            true
+        );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'hotelier_enqueue_assets' );
 
