@@ -32,7 +32,7 @@ for ( $i = 1; $i <= 8; $i++ ) {
 }
 
 $testimonials = array();
-for ( $i = 1; $i <= 5; $i++ ) {
+for ( $i = 1; $i <= 8; $i++ ) {
 	$testimonials[ "testimonial_{$i}_quote" ] = array(
 		'type'    => 'textarea',
 		'label'   => "Testimonial {$i} — quote",
@@ -137,24 +137,36 @@ $out['hotel_8_logo']['default_url']      = $u . 'chic-centre-suites-athens-hotel
 $out['hotel_8_photo']['default_url']     = $u . 'chic-centre-suites-athens-hotel-consulting-project.webp';
 $out['hotel_8_alt']['default']           = 'Chic Centre Suites Athens';
 
-$out['testimonial_1_quote']['default']  = '360° Hotelier gave us the pricing discipline and pace-of-sales rhythm we were missing in-house. RevPAR progress has been clear quarter on quarter.';
-$out['testimonial_1_name']['default']  = 'Alexandra M.';
-$out['testimonial_1_role']['default']   = 'General Manager, boutique resort · Cyprus';
+$out['testimonial_1_quote']['default']  = 'Working with 360 Hotelier Consulting has been a professional and productive experience. The hands-on involvement in revenue strategy, contracting, and commercial planning provided valuable insights and practical solutions that supported our resort. Strong industry knowledge, strategic thinking, and close cooperation make this collaboration highly effective.';
+$out['testimonial_1_name']['default']  = 'Panayiotis Markou';
+$out['testimonial_1_role']['default']   = 'Sales & Marketing Director · Cap St. Georges Hotel & Resort · Paphos, Cyprus';
 
-$out['testimonial_2_quote']['default']  = 'Tour-operator terms and contracting finally align with how we actually fill the hotel. Less leakage, a healthier channel mix.';
-$out['testimonial_2_name']['default']  = 'Dimitrios K.';
-$out['testimonial_2_role']['default']   = 'Commercial Director, city hotel · Greece';
+$out['testimonial_2_quote']['default']  = 'The pre-opening support from 360 Hotelier Consulting has been essential for our hotel development. Giorgos provided valuable support in building our commercial and revenue strategy. The guidance in pricing, OTA structure, and market positioning helped us develop a clear and competitive approach. The collaboration is professional, transparent, and focused on long-term results.';
+$out['testimonial_2_name']['default']  = 'Marios Vassiliou';
+$out['testimonial_2_role']['default']   = 'General Manager · Serbellas Boutique Hotel · Paphos, Cyprus';
 
-$out['testimonial_3_quote']['default']  = 'Direct bookings and website conversion improved once distribution and messaging were one plan—not separate projects run in parallel.';
-$out['testimonial_3_name']['default']  = 'Elena V.';
-$out['testimonial_3_role']['default']   = 'Owner, independent hotel · Cyprus';
+$out['testimonial_3_quote']['default']  = '360 Hotelier Consulting demonstrated a practical approach in supporting our commercial and revenue strategy. The collaboration was focused, structured, and result-driven, with strong attention to OTA performance, pricing strategy, and market positioning. A reliable partner who understands the needs of the market and actively works alongside the team to improve performance.';
+$out['testimonial_3_name']['default']  = 'Stavros G. Tsanos';
+$out['testimonial_3_role']['default']   = 'Director · George Tsanos Hotels Group (TSANotel, Pendeli Resort & Petit Palais Platres Boutique Hotel) · Limassol, Cyprus';
 
-$out['testimonial_4_quote']['default']  = 'They understand seasonality and source markets for this island; the guidance is practical, not generic slide decks.';
-$out['testimonial_4_name']['default']  = 'Michael P.';
-$out['testimonial_4_role']['default']   = 'Operations Manager, coastal property · Cyprus';
+$out['testimonial_4_quote']['default']  = 'Working with 360 Hotelier Consulting has significantly improved our hotel\'s online presence and pricing strategy. The structured approach to OTA management and revenue planning increased our visibility and strengthened our market positioning. Within the first year of collaboration, revenue from OTAs and direct bookings increased by more than 45%.';
+$out['testimonial_4_name']['default']  = 'Zacharias Papadopoulos';
+$out['testimonial_4_role']['default']   = 'General Manager · Napa Jay Hotel · Ayia Napa, Cyprus';
 
-$out['testimonial_5_quote']['default']  = 'It feels like an extension of our leadership team: revenue, digital and B2B in a single, coherent conversation.';
-$out['testimonial_5_name']['default']  = 'Sophia L.';
-$out['testimonial_5_role']['default']   = 'Managing Director, resort group · Cyprus';
+$out['testimonial_5_quote']['default']  = 'Collaborating with Giorgos was a must due to his extensive knowledge of the Athens market through his Booking.com experience, which brought valuable insights and clear strategic direction. A reliable and professional partner for business growth.';
+$out['testimonial_5_name']['default']  = 'Miranda Yiatrou-Grammatikopoulou';
+$out['testimonial_5_role']['default']   = 'CEO Yiatros Group · Chic Centre Suites Athens · Athens, Greece';
+
+$out['testimonial_6_quote']['default']  = 'Giorgos brings deep knowledge of the Cyprus hospitality market and strong expertise in revenue management and OTA strategy. The collaboration helped us better understand our pricing structure and improve our commercial decision-making. A valuable partner for any hotel looking to grow.';
+$out['testimonial_6_name']['default']  = 'Constantinos Droussiotis';
+$out['testimonial_6_role']['default']   = 'General Manager · Alinea Hospitality Group · Limassol, Cyprus';
+
+$out['testimonial_7_quote']['default']  = 'Professional, structured, and highly experienced in hotel contracting and commercial strategy. Giorgos demonstrates strong industry knowledge and excellent communication, making cooperation smooth and efficient. A reliable partner in the hospitality sector.';
+$out['testimonial_7_name']['default']  = 'Kratinos Socratous';
+$out['testimonial_7_role']['default']   = 'General Manager · Capo Bay Hotel · Protaras, Cyprus';
+
+$out['testimonial_8_quote']['default']  = 'A highly experienced hotel professional with deep understanding of revenue management, OTA performance, and market dynamics in Cyprus and Greece. Giorgos\' strategic approach and commercial mindset make 360 Hotelier Consulting a strong partner for hotels aiming to improve occupancy and revenue.';
+$out['testimonial_8_name']['default']  = 'Omiros Omirou';
+$out['testimonial_8_role']['default']   = 'Business Development Manager · STADEMOS HOTELS LTD · Limassol, Cyprus';
 
 return $out;

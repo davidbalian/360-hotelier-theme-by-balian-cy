@@ -14,7 +14,7 @@ $title    = Hotelier_Page_Content::get_text( $page_id, $ctx, 'testimonials_title
 $subtitle = Hotelier_Page_Content::get_text( $page_id, $ctx, 'testimonials_subtitle' );
 
 $slides = array();
-for ( $i = 1; $i <= 5; $i++ ) {
+for ( $i = 1; $i <= 8; $i++ ) {
 	$slides[] = array(
 		'quote' => Hotelier_Page_Content::get_text( $page_id, $ctx, 'testimonial_' . $i . '_quote' ),
 		'name'  => Hotelier_Page_Content::get_text( $page_id, $ctx, 'testimonial_' . $i . '_name' ),
