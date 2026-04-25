@@ -96,12 +96,12 @@ $out['hotel_2_photo']['default_url']     = $u . 'serbellas-boutique-hotel-paphos
 $out['hotel_2_alt']['default']           = 'Serbellas Boutique Hotel';
 $out['hotel_2_variant']['default']       = 'serbellas';
 
-$out['hotel_3_name']['default']          = 'MITO Seaview';
+$out['hotel_3_name']['default']          = 'MITO Seaview by Serbellas';
 $out['hotel_3_location']['default']      = 'Paphos, Cyprus';
 $out['hotel_3_url']['default']           = 'https://mitodevelopers.com/';
 $out['hotel_3_logo']['default_url']      = $u . 'mito-developers-paphos-logo-partner-hotel-of-360-Hotelier-Consulting.png';
 $out['hotel_3_photo']['default_url']     = $u . 'mito-seaview-villas-by-serbellas-paphos-hotel-consulting.webp';
-$out['hotel_3_alt']['default']           = 'MITO Seaview Paphos';
+$out['hotel_3_alt']['default']           = 'MITO Seaview by Serbellas Paphos';
 
 $out['hotel_4_name']['default']          = 'TSANotel';
 $out['hotel_4_location']['default']      = 'Limassol, Cyprus';
