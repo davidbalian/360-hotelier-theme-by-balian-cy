@@ -12,6 +12,7 @@
  *   page_hero_bg_fit   (string) — Optional: pass 'contain' for background-size: contain (default: cover)
  *   page_hero_square   (bool)   — Optional: 1:1 aspect ratio box (founder photo hero)
  *   page_hero_label    (string) — Optional small kicker above the H1
+ *   page_hero_context  (string) — Optional schema context for hero debug (e.g. about, contact); helps the HTML comment.
  *
  * Do not use .fade-in here: hero copy sits low in the viewport and scroll observers
  * often never reveal it (opacity stays 0).
@@ -56,3 +57,10 @@ if ( $page_hero_square ) {
         <?php endif; ?>
     </div>
 </section>
+<?php
+if ( class_exists( 'Hotelier_Hero_Image_Field' ) ) {
+	$hotelier_hero_dbg_id  = isset( $page_hero_debug_page_id ) ? (int) $page_hero_debug_page_id : (int) get_queried_object_id();
+	$hotelier_hero_dbg_ctx = isset( $page_hero_context ) ? (string) $page_hero_context : '';
+	Hotelier_Hero_Image_Field::print_hero_debug_html_comment( $hotelier_hero_dbg_id, $hotelier_hero_dbg_ctx, (string) $page_hero_image );
+}
+?>

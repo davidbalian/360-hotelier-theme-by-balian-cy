@@ -34,3 +34,8 @@ $line_2 = Hotelier_Page_Content::get_text( $hpage, $hctx, 'hero_title_line2' );
         </div>
     </div>
 </section>
+<?php
+if ( class_exists( 'Hotelier_Hero_Image_Field' ) ) {
+	Hotelier_Hero_Image_Field::print_hero_debug_html_comment( $hpage, $hctx, (string) $hero );
+}
+?>

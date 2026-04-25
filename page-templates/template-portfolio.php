@@ -52,6 +52,7 @@ get_template_part(
 		'page_hero_title'    => $page_hero_title,
 		'page_hero_subtitle' => $page_hero_subtitle,
 		'page_hero_image'    => $page_hero_image,
+		'page_hero_context'  => $ctx,
 	)
 );
 ?>

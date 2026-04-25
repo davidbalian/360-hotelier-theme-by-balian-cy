@@ -22,6 +22,7 @@ get_template_part(
 		'page_hero_image'    => $page_hero_image,
 		'page_hero_bg_fit'   => 'contain',
 		'page_hero_square'   => true,
+		'page_hero_context'  => $ctx,
 	)
 );
 ?>

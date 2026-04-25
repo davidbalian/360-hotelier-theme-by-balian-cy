@@ -70,6 +70,74 @@ final class Hotelier_Hero_Image_Field {
 	}
 
 	/**
+	 * Emit an HTML comment with hero resolution diagnostics (view source in the browser).
+	 *
+	 * Shown when: `HOTELIER_HERO_DEBUG` is true in `wp-config.php`, or the current user
+	 * is logged in and can `manage_options` (avoids leaking meta in view source to guests).
+	 *
+	 * @param int    $page_id   Page (post) ID the hero is for.
+	 * @param string $context   Schema context, e.g. `home` or `about` (use '' if unknown).
+	 * @param string $final_url The URL actually used for the background image.
+	 */
+	public static function print_hero_debug_html_comment( int $page_id, string $context, string $final_url ): void {
+		if ( ! self::is_hero_debug_enabled() ) {
+			return;
+		}
+
+		$meta_keys = array_values( array_unique( array_merge( array( self::FIELD_NAME ), self::ALT_META_KEYS ) ) );
+		$pm        = array();
+		foreach ( $meta_keys as $k ) {
+			$pm[ $k ] = maybe_unserialize( get_post_meta( $page_id, $k, true ) );
+		}
+
+		$get_field_raw = null;
+		if ( function_exists( 'get_field' ) ) {
+			$get_field_raw = get_field( self::FIELD_NAME, $page_id, false );
+		}
+
+		$payload = array(
+			'what'                 => '360-hotelier-hero',
+			'page_id'              => $page_id,
+			'context'              => $context,
+			'queried_object_id'   => (int) get_queried_object_id(),
+			'is_front_page'        => (bool) is_front_page(),
+			'page_template'        => is_singular( 'page' ) ? (string) get_page_template_slug() : '',
+			'final_hero_url'      => $final_url,
+			'acf_url_only'        => self::url_for_post( $page_id ),
+			'get_field_raw'        => $get_field_raw,
+			'post_meta_hero_keys'  => $pm,
+			'all_services_page_id' => self::services_page_id(),
+			'acf_get_field'        => function_exists( 'get_field' ) ? 1 : 0,
+			'WP_DEBUG'             => ( defined( 'WP_DEBUG' ) && WP_DEBUG ),
+		);
+		if ( defined( 'HOTELIER_HERO_DEBUG' ) ) {
+			$payload['HOTELIER_HERO_DEBUG'] = (bool) constant( 'HOTELIER_HERO_DEBUG' );
+		}
+
+		if ( $context !== '' && $page_id > 0 ) {
+			$payload['resolve_url_full'] = self::resolve_url( $page_id, $context );
+		}
+
+		$json = wp_json_encode( $payload, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_SUBSTITUTE );
+		if ( ! is_string( $json ) ) {
+			$json = '{}';
+		}
+		$json = str_replace( '--', "\xe2\x80\x93\xe2\x80\x93", $json );
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- gated debug: JSON of attachment/meta IDs for admins or HOTELIER_HERO_DEBUG only.
+		echo "\n<!-- 360-hotelier-hero-debug " . $json . " -->\n";
+	}
+
+	/**
+	 * @return bool
+	 */
+	private static function is_hero_debug_enabled(): bool {
+		if ( defined( 'HOTELIER_HERO_DEBUG' ) && constant( 'HOTELIER_HERO_DEBUG' ) ) {
+			return true;
+		}
+		return is_user_logged_in() && current_user_can( 'manage_options' );
+	}
+
+	/**
 	 * Register the ACF Local Field Group.
 	 *
 	 * Runs on `acf/init`. No-op when ACF isn't active.
