@@ -77,7 +77,7 @@
 }
 
 .hotel-faq__trigger:hover {
-    background: rgba(90, 42, 130, 0.05);
+    background: rgba(54, 36, 87, 0.05);
     color: var(--color-purple);
 }
 
@@ -99,7 +99,7 @@
     width: 2rem;
     height: 2rem;
     border-radius: 999px;
-    background: rgba(90, 42, 130, 0.08);
+    background: rgba(54, 36, 87, 0.08);
     color: var(--color-purple);
     transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s ease;
 }

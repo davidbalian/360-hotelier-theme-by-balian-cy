@@ -85,9 +85,9 @@ main.site-main.page-contact {
 }
 
 .page-contact__form-notice--success {
-    background: rgba(58, 9, 104, 0.08);
+    background: rgba(54, 36, 87, 0.08);
     color: var(--color-purple);
-    border: 1px solid rgba(58, 9, 104, 0.2);
+    border: 1px solid rgba(54, 36, 87, 0.2);
 }
 
 .page-contact__form-notice--error {
