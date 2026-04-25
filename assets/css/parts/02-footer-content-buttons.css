@@ -144,13 +144,22 @@
     color: rgba(255, 255, 255, 0.6);
 }
 
-.footer-bottom a {
+/* Credit link (e.g. Balian): on-bar colors + site smooth underline from style.css `a` (no longer stripped for .footer-bottom a) */
+.footer-credit a {
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
 }
 
-.footer-bottom a:hover {
+.footer-credit a:hover {
     color: #fff;
+}
+
+/* Global 768px rule sets a:hover a:focus-visible background-size 0% — keep the bar for this text link */
+@media (max-width: 768px) {
+    .footer-credit a:hover,
+    .footer-credit a:focus-visible {
+        background-size: 100% 1px;
+    }
 }
 
 /* ==========================================================================

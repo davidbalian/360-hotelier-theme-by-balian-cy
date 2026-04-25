@@ -324,15 +324,11 @@ a:has(img):focus-visible {
     transform: none;
 }
 
-/* Footer — orange social chips: no site-wide link gradient */
+/* Footer — orange social chips: no site-wide link gradient. Credit link in .footer-credit uses global smooth underline. */
 .footer-social-bubble,
 .footer-social-bubble:hover,
 .footer-social-bubble:focus,
 .footer-social-bubble:focus-visible,
-.footer-bottom a,
-.footer-bottom a:hover,
-.footer-bottom a:focus,
-.footer-bottom a:focus-visible,
 /* Top bar links — no global gradient underline (has its own ::after underline) */
 .top-bar__email,
 .top-bar__email:hover,
