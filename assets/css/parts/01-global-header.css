@@ -132,6 +132,9 @@
 .top-bar__phone,
 .top-bar__social-link,
 .top-bar__lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     color: #fff;
     text-decoration: none;
     font-size: 0.8rem;
@@ -139,6 +142,17 @@
     transition: color 0.3s ease;
     position: relative;
     background-image: none !important;
+}
+
+/* Flag height matches top bar SVG icons (~0.85em); width follows aspect ratio */
+.top-bar__lang-switcher__flag {
+    display: block;
+    height: 0.85em;
+    width: auto;
+    max-width: 1.5em;
+    object-fit: contain;
+    flex-shrink: 0;
+    pointer-events: none;
 }
 
 .top-bar__email::after,
@@ -184,26 +198,30 @@
 
 .top-bar.is-scrolled .top-bar__email,
 .top-bar.is-scrolled .top-bar__phone,
-.top-bar.is-scrolled .top-bar__social-link {
+.top-bar.is-scrolled .top-bar__social-link,
+.top-bar.is-scrolled .top-bar__lang-switcher {
     color: rgba(255, 255, 255, 0.85);
 }
 
 .top-bar.is-scrolled .top-bar__email:hover,
 .top-bar.is-scrolled .top-bar__phone:hover,
-.top-bar.is-scrolled .top-bar__social-link:hover {
+.top-bar.is-scrolled .top-bar__social-link:hover,
+.top-bar.is-scrolled .top-bar__lang-switcher:hover {
     color: #fff;
 }
 
 /* Top bar text goes dark when mobile nav is open (non-scrolled state) */
 .site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__email,
 .site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__phone,
-.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__social-link {
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__social-link,
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__lang-switcher {
     color: var(--color-charcoal);
 }
 
 .site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__email:hover,
 .site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__phone:hover,
-.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__social-link:hover {
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__social-link:hover,
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__lang-switcher:hover {
     color: rgba(0, 0, 0, 0.6);
 }
 
@@ -260,7 +278,8 @@
 
 @media (max-width: 768px) {
     .top-bar__link-with-icon,
-    .top-bar__left {
+    .top-bar__left,
+    .top-bar__lang-switcher {
         font-size: 0.7rem;
     }
 

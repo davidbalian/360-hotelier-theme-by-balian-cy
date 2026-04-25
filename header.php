@@ -36,6 +36,9 @@
 	$topbar_icon        = static function ( $file ) {
 		return content_url( '/uploads/2026/04/' . ltrim( $file, '/' ) );
 	};
+	$tb_lang_flag = ( Hotelier_Locale_Registry::GREEK_LANG === $tb_inactive_lang )
+		? $topbar_icon( 'greek-flag.png' )
+		: $topbar_icon( 'uk-flag.png' );
 	$tb_fb_href  = ! empty( $h_site['social_facebook'] ) ? $h_site['social_facebook'] : '#';
 	$tb_ig_href  = ! empty( $h_site['social_instagram'] ) ? $h_site['social_instagram'] : '#';
 	$tb_li_href  = ! empty( $h_site['social_linkedin'] ) ? $h_site['social_linkedin'] : '#';
@@ -91,8 +94,17 @@
                 </div>
             </div>
 
-            <a href="<?php echo $tb_inactive_url; ?>" class="top-bar__lang-switcher">
-                <?php echo esc_html( $tb_inactive_label ); ?>
+            <a class="top-bar__lang-switcher" href="<?php echo esc_url( $tb_inactive_url ); ?>">
+                <img
+                    class="top-bar__lang-switcher__flag"
+                    src="<?php echo esc_url( $tb_lang_flag ); ?>"
+                    alt=""
+                    width="24"
+                    height="16"
+                    loading="eager"
+                    decoding="async"
+                >
+                <span class="top-bar__lang-switcher__label"><?php echo esc_html( $tb_inactive_label ); ?></span>
             </a>
 
         </div>
