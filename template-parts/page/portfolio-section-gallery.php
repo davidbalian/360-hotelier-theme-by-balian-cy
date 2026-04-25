@@ -15,8 +15,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$page_id = isset( $page_id ) ? (int) $page_id : get_the_ID();
-$ctx     = 'portfolio';
+// Resolve page ID with a robust fallback chain. WordPress's
+// get_template_part( $slug, $name, $args ) does NOT extract the third
+// arg into the partial's variable scope — it only exposes it as $args.
+// We must read $args['page_id'] explicitly, otherwise we fall through
+// to get_the_ID(), which can be 0 when the loop isn't authoritative
+// at this point in the template (e.g. after another template part
+// has rendered).
+$page_id = 0;
+if ( isset( $args ) && is_array( $args ) && isset( $args['page_id'] ) ) {
+	$page_id = (int) $args['page_id'];
+}
+if ( $page_id <= 0 ) {
+	$page_id = (int) get_the_ID();
+}
+if ( $page_id <= 0 ) {
+	$page_id = (int) get_queried_object_id();
+}
+
+$ctx = 'portfolio';
 
 $ids = Hotelier_Portfolio_Gallery_Store::get_attachment_ids( $page_id );
 
