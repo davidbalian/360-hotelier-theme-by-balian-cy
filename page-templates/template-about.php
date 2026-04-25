@@ -8,21 +8,15 @@
 $page_id = get_the_ID();
 $ctx     = 'about';
 
-$page_hero_title    = Hotelier_Page_Content::get_text( $page_id, $ctx, 'hero_title' );
-$page_hero_tagline  = Hotelier_Page_Content::get_text( $page_id, $ctx, 'hero_tagline' );
-$page_hero_subtitle = Hotelier_Page_Content::get_text( $page_id, $ctx, 'hero_subtitle' );
-$page_hero_image    = Hotelier_Hero_Image_Field::resolve_url( $page_id, $ctx );
+$page_hero_image = Hotelier_Hero_Image_Field::resolve_url( $page_id, $ctx );
 
 get_header();
 get_template_part(
 	'template-parts/page/page-hero',
 	null,
 	array(
-		'page_hero_title'    => $page_hero_title,
-		'page_hero_tagline'  => $page_hero_tagline,
-		'page_hero_subtitle' => $page_hero_subtitle,
-		'page_hero_image'    => $page_hero_image,
-		'page_hero_context'  => $ctx,
+		'page_hero_image'   => $page_hero_image,
+		'page_hero_context' => $ctx,
 	)
 );
 ?>

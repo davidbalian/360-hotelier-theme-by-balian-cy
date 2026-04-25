@@ -13,8 +13,8 @@ $u = content_url( '/uploads/2026/03/' );
 
 return array(
 	'hero_title'             => array( 'type' => 'text', 'label' => 'Hero — title', 'default' => 'About Us' ),
-	'hero_tagline'           => array( 'type' => 'textarea', 'label' => 'Hero — tagline', 'default' => 'Hotel Consulting Built for Cyprus' ),
-	'hero_subtitle'          => array( 'type' => 'textarea', 'label' => 'Hero — subtitle', 'default' => '15+ years of hospitality experience. We grow revenue for independent hotels across Cyprus.' ),
+	'hero_tagline'           => array( 'type' => 'textarea', 'label' => 'Hero — tagline (optional; not used in hero — use intro below)', 'default' => '' ),
+	'hero_subtitle'          => array( 'type' => 'textarea', 'label' => 'Hero — subtitle (optional; not used in hero — use intro below)', 'default' => '' ),
 	'hero_bg'                => array( 'type' => 'image', 'label' => 'Hero — background', 'default_url' => $u . 'featured-360-hotelier.webp' ),
 
 	'intro_h2'               => array( 'type' => 'text', 'label' => 'Intro — heading', 'default' => 'About 360° Hotelier Consulting' ),

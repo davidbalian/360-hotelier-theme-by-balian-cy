@@ -94,8 +94,8 @@ final class Hotelier_El_Page_Defaults {
 			// About.
 			'about.hero_kicker'           => 'Σχετικά με εμάς',
 			'about.hero_title'            => 'Η εξωτερική εμπορική ομάδα για ξενοδοχεία στην Κύπρο',
-			'about.hero_tagline'          => 'Συμβουλευτικές Υπηρεσίες για Ξενοδοχεία στην Κύπρο',
-			'about.hero_subtitle'         => '15+ χρόνια εμπειρίας στη φιλοξενία. Αυξάνουμε τα έσοδα ανεξάρτητων ξενοδοχείων σε όλη την Κύπρο.',
+			'about.hero_tagline'          => '',
+			'about.hero_subtitle'         => '',
 			'about.intro_h2'              => 'Σχετικά με την 360° Hotelier Consulting',
 			'about.intro_p1'              => 'Η 360° Hotelier Consulting είναι μια εταιρεία συμβουλευτικών υπηρεσιών για ξενοδοχεία με έδρα την Κύπρο, η οποία παρέχει στρατηγική εμπορική υποστήριξη σε ανεξάρτητα ξενοδοχεία, boutique ξενοδοχεία και τουριστικά θέρετρα σε όλο το νησί.',
 			'about.intro_p2'              => 'Εξειδικευόμαστε στο hotel revenue management, τις online πωλήσεις & B2B distribution, το e-commerce, το digital marketing και τη διαχείριση συμβολαίων με tour operators, βοηθώντας τα ξενοδοχεία να αυξήσουν τα έσοδά τους, να βελτιώσουν την κερδοφορία τους και να ενισχύσουν τη θέση τους στην αγορά.',

@@ -22,45 +22,13 @@
 }
 
 .page-hero__title {
-    margin: 0 0 0.65rem;
+    margin: 0;
     line-height: 1.12;
     color: #fff;
     font-weight: 800;
     max-width: 20ch;
     font-size: var(--text-5xl);
     letter-spacing: -0.02em;
-}
-
-.page-hero__tagline {
-    margin: 0 0 0.85rem;
-    line-height: 1.2;
-    color: #fff;
-    font-weight: 700;
-    max-width: 28ch;
-    font-size: clamp(1.2rem, 2.75vw, 1.85rem);
-    opacity: 0.96;
-}
-
-.page-hero__label {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 999px;
-    padding: 0.3rem 0.85rem;
-    margin-bottom: 1.25rem;
-}
-
-.page-hero__subtitle {
-    font-size: var(--text-lg);
-    color: #fff;
-    opacity: 0.85;
-    max-width: 52ch;
-    line-height: 1.6;
-    margin-bottom: 0;
 }
 
 /* ==========================================================================
