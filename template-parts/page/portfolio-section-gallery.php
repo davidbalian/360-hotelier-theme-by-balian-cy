@@ -78,6 +78,7 @@ $render_row = static function ( array $row_ids, string $modifier ): void {
 							'class'    => 'portfolio-gallery-marquee__image',
 							'loading'  => 'lazy',
 							'decoding' => 'async',
+							'sizes'    => '(max-width: 640px) 260px, (max-width: 1024px) 360px, 480px',
 						)
 					);
 					?>
@@ -94,6 +95,7 @@ $render_row = static function ( array $row_ids, string $modifier ): void {
 							'class'    => 'portfolio-gallery-marquee__image',
 							'loading'  => 'lazy',
 							'decoding' => 'async',
+							'sizes'    => '(max-width: 640px) 260px, (max-width: 1024px) 360px, 480px',
 							'alt'      => '',
 						)
 					);

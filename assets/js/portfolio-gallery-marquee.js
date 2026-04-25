@@ -21,10 +21,53 @@
 	var SETTINGS = {
 		rootSelector:    '[data-portfolio-gallery-marquee]',
 		rowSelector:     '.portfolio-gallery-marquee__row',
+		imageSelector:   'img.portfolio-gallery-marquee__image',
 		bottomRowClass:  'portfolio-gallery-marquee__row--bottom',
 		jsDrivenClass:   'is-js-driven',
 		pauseTweenMs:    350
 	};
+
+	/**
+	 * Promotes lazy marquee images to eager loading on the user's first scroll
+	 * intent. Initial HTML keeps loading="lazy" so page-load cost is zero; the
+	 * moment the user shows intent to scroll (wheel, touch, arrow keys, or any
+	 * scroll), images start downloading in parallel — so by the time the
+	 * marquee scrolls into view the bytes are already on the wire.
+	 *
+	 * One-shot, idempotent, per marquee root.
+	 */
+	class MarqueeImagePreloader {
+		constructor( rootEl ) {
+			this.root  = rootEl;
+			this.armed = true;
+			this.fire  = this.promote.bind( this );
+		}
+
+		start() {
+			var opts = { once: true, passive: true };
+			window.addEventListener( 'scroll',     this.fire, opts );
+			window.addEventListener( 'wheel',      this.fire, opts );
+			window.addEventListener( 'touchstart', this.fire, opts );
+			window.addEventListener( 'keydown',    this.fire, opts );
+		}
+
+		promote() {
+			if ( ! this.armed ) {
+				return;
+			}
+			this.armed = false;
+			var imgs = this.root.querySelectorAll( SETTINGS.imageSelector );
+			Array.prototype.forEach.call( imgs, function ( img ) {
+				img.loading = 'eager';
+				if ( 'fetchPriority' in img ) {
+					img.fetchPriority = 'high';
+				}
+				if ( typeof img.decode === 'function' ) {
+					img.decode().catch( function () {} );
+				}
+			} );
+		}
+	}
 
 	/**
 	 * Cubic ease in/out — softens both the entry to pause and the exit from it.
@@ -220,17 +263,21 @@
 	}
 
 	/**
-	 * Bootstrap: instantiate one controller per marquee on the page. Skips
-	 * entirely for users who prefer reduced motion (CSS already disables the
-	 * animation in that case).
+	 * Bootstrap: per marquee on the page, instantiate the image preloader
+	 * (always — image loading is independent of motion preferences) and the
+	 * animation controller (only when reduced-motion isn't requested; CSS
+	 * disables the keyframe animation in that case).
 	 */
 	function init() {
-		if ( window.matchMedia && window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches ) {
-			return;
-		}
+		var prefersReducedMotion = window.matchMedia &&
+			window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
+
 		var roots = document.querySelectorAll( SETTINGS.rootSelector );
 		Array.prototype.forEach.call( roots, function ( root ) {
-			new MarqueeController( root ).start();
+			new MarqueeImagePreloader( root ).start();
+			if ( ! prefersReducedMotion ) {
+				new MarqueeController( root ).start();
+			}
 		} );
 	}
 
