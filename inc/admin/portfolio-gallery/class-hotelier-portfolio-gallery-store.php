@@ -49,25 +49,6 @@ final class Hotelier_Portfolio_Gallery_Store {
 	}
 
 	/**
-	 * Diagnostic snapshot for admin-only debugging in the section template.
-	 *
-	 * @return array{
-	 *     plugin_active: bool,
-	 *     raw_meta: mixed,
-	 *     helper_count: int,
-	 *     fallback_count: int
-	 * }
-	 */
-	public static function debug_snapshot( int $post_id ): array {
-		return array(
-			'plugin_active'  => function_exists( 'acf_photo_gallery' ),
-			'raw_meta'       => $post_id > 0 ? get_post_meta( $post_id, self::FIELD_NAME, true ) : null,
-			'helper_count'   => count( self::ids_via_plugin_helper( $post_id ) ),
-			'fallback_count' => count( self::ids_via_raw_postmeta( $post_id ) ),
-		);
-	}
-
-	/**
 	 * @return int[]
 	 */
 	private static function ids_via_plugin_helper( int $post_id ): array {
