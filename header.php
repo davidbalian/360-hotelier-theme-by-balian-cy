@@ -33,11 +33,57 @@
 		: Hotelier_Locale_Registry::GREEK_LANG;
 	$tb_inactive_label = Hotelier_Locale_Registry::GREEK_LANG === $tb_inactive_lang ? 'ΕΛ' : 'EN';
 	$tb_inactive_url   = esc_url( Hotelier_Local_Urls::lang_url( $tb_inactive_lang ) );
+	$topbar_icon        = static function ( $file ) {
+		return content_url( '/uploads/2026/04/' . ltrim( $file, '/' ) );
+	};
+	$tb_fb_href  = ! empty( $h_site['social_facebook'] ) ? $h_site['social_facebook'] : '#';
+	$tb_ig_href  = ! empty( $h_site['social_instagram'] ) ? $h_site['social_instagram'] : '#';
+	$tb_li_href  = ! empty( $h_site['social_linkedin'] ) ? $h_site['social_linkedin'] : '#';
+	$tb_mail     = 'mailto:' . antispambot( $h_site['topbar_email'] );
 	?>
     <div class="top-bar">
         <div class="site-container top-bar__inner">
 
             <div class="top-bar__left">
+                <nav class="top-bar__icons" aria-label="<?php esc_attr_e( 'Contact and social links', '360-hotelier' ); ?>">
+                    <a
+                        class="top-bar__icon-link"
+                        href="<?php echo esc_url( $tb_fb_href ); ?>"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        <span class="top-bar__icon" style="<?php echo esc_attr( '--top-bar-ico: url( ' . esc_url( $topbar_icon( 'facebook-icon.svg' ) ) . ' )' ); ?>"></span>
+                        <span class="screen-reader-text"><?php esc_html_e( 'Facebook', '360-hotelier' ); ?></span>
+                    </a>
+                    <a
+                        class="top-bar__icon-link"
+                        href="<?php echo esc_url( $tb_ig_href ); ?>"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        <span class="top-bar__icon" style="<?php echo esc_attr( '--top-bar-ico: url( ' . esc_url( $topbar_icon( 'instagram-icon.svg' ) ) . ' )' ); ?>"></span>
+                        <span class="screen-reader-text"><?php esc_html_e( 'Instagram', '360-hotelier' ); ?></span>
+                    </a>
+                    <a
+                        class="top-bar__icon-link"
+                        href="<?php echo esc_url( $tb_li_href ); ?>"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        <span class="top-bar__icon" style="<?php echo esc_attr( '--top-bar-ico: url( ' . esc_url( $topbar_icon( 'linkedin-icon.svg' ) ) . ' )' ); ?>"></span>
+                        <span class="screen-reader-text"><?php esc_html_e( 'LinkedIn', '360-hotelier' ); ?></span>
+                    </a>
+                    <a class="top-bar__icon-link" href="<?php echo esc_url( $tb_mail ); ?>">
+                        <span class="top-bar__icon" style="<?php echo esc_attr( '--top-bar-ico: url( ' . esc_url( $topbar_icon( 'mail-icon.svg' ) ) . ' )' ); ?>"></span>
+                        <span class="screen-reader-text"><?php esc_html_e( 'Email', '360-hotelier' ); ?></span>
+                    </a>
+                <?php if ( $h_site['topbar_phone_display'] ) : ?>
+                    <a class="top-bar__icon-link" href="<?php echo esc_url( $tb_tel ); ?>">
+                        <span class="top-bar__icon" style="<?php echo esc_attr( '--top-bar-ico: url( ' . esc_url( $topbar_icon( 'phone-icon.svg' ) ) . ' )' ); ?>"></span>
+                        <span class="screen-reader-text"><?php esc_html_e( 'Phone', '360-hotelier' ); ?></span>
+                    </a>
+                <?php endif; ?>
+                </nav>
                 <a href="<?php echo esc_url( 'mailto:' . antispambot( $h_site['topbar_email'] ) ); ?>" class="top-bar__email"><?php echo esc_html( $h_site['topbar_email'] ); ?></a>
                 <?php if ( $h_site['topbar_phone_display'] ) : ?>
                     <a href="<?php echo esc_url( $tb_tel ); ?>" class="top-bar__phone"><?php echo esc_html( $h_site['topbar_phone_display'] ); ?></a>

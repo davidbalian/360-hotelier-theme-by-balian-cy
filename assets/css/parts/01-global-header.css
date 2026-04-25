@@ -99,6 +99,47 @@
     gap: 2rem;
 }
 
+.top-bar__icons {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    flex-shrink: 0;
+    font-size: 0.8rem;
+}
+
+.top-bar__icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background-image: none !important;
+}
+
+.top-bar__icon-link:hover {
+    color: rgba(255, 255, 255, 0.75);
+    background-image: none !important;
+}
+
+/* External SVGs tint via currentColor: luminance → alpha mask, fill from `color` */
+.top-bar__icon {
+    display: block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    background-color: currentColor;
+    -webkit-mask-image: var(--top-bar-ico);
+    -webkit-mask-size: contain;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-image: var(--top-bar-ico);
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+}
+
 .top-bar__email,
 .top-bar__phone,
 .top-bar__social-link,
@@ -152,22 +193,26 @@
     color: rgba(255, 255, 255, 0.85);
 }
 
+.top-bar.is-scrolled .top-bar__icon-link,
 .top-bar.is-scrolled .top-bar__email,
 .top-bar.is-scrolled .top-bar__phone {
     color: rgba(255, 255, 255, 0.85);
 }
 
+.top-bar.is-scrolled .top-bar__icon-link:hover,
 .top-bar.is-scrolled .top-bar__email:hover,
 .top-bar.is-scrolled .top-bar__phone:hover {
     color: #fff;
 }
 
 /* Top bar text goes dark when mobile nav is open (non-scrolled state) */
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__icon-link,
 .site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__email,
 .site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__phone {
     color: var(--color-charcoal);
 }
 
+.site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__icon-link:hover,
 .site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__email:hover,
 .site:has(#mobile-nav.is-open) .top-bar:not(.is-scrolled) .top-bar__phone:hover {
     color: rgba(0, 0, 0, 0.6);
@@ -216,6 +261,10 @@
 }
 
 @media (max-width: 768px) {
+    .top-bar__icons {
+        font-size: 0.7rem; /* align with .top-bar mobile size in 06 */
+    }
+
     .top-bar__email {
         display: none;
     }

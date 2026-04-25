@@ -323,6 +323,10 @@ a:has(img):focus-visible {
 }
 
 /* Top bar links — no global gradient underline (has its own ::after underline) */
+.top-bar__icon-link,
+.top-bar__icon-link:hover,
+.top-bar__icon-link:focus,
+.top-bar__icon-link:focus-visible,
 .top-bar__email,
 .top-bar__email:hover,
 .top-bar__email:focus,
