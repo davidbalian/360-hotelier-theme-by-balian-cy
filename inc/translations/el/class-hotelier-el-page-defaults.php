@@ -87,9 +87,9 @@ final class Hotelier_El_Page_Defaults {
 			'home.founder_pt_4'           => 'Σύμβουλος για boutique, resort και ανεξάρτητα ξενοδοχεία',
 			'home.founder_cta_text'       => 'Σχετικά με εμάς',
 			'home.founder_profile_cta_text' => 'Προφίλ ιδρυτή',
-			'home.contact_band_title'     => 'Αυξήστε τα έσοδα του ξενοδοχείου σας.',
-			'home.contact_band_text'      => 'Πείτε μας για την ιδιοκτησία σας. Θα εντοπίσουμε πού χάνετε έσοδα.',
-			'home.contact_band_cta'       => 'Κλείστε δωρεάν στρατηγική συνάντηση',
+			'home.contact_band_title'     => 'Γινόμαστε η εξωτερική εμπορική ομάδα του ξενοδοχείου σας',
+			'home.contact_band_text'      => 'Τιμολόγηση, διανομή, συμβόλαια και ψηφιακό μάρκετινγκ — όλα σε ένα χέρι.',
+			'home.contact_band_cta'       => 'Κλείστε δωρεάν συμβουλευτική',
 
 			// About.
 			'about.hero_kicker'           => 'Σχετικά με εμάς',

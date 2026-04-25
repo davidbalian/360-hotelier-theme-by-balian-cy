@@ -153,7 +153,7 @@ return array(
 	'founder_profile_cta_text' => array( 'type' => 'text', 'label' => 'Founder — Founder page button (About page only)', 'default' => 'Founder profile' ),
 
 	'contact_band_img'       => array( 'type' => 'image', 'label' => 'Contact band — image', 'default_url' => $u . 'contact-360-hotelier.webp' ),
-	'contact_band_title'     => array( 'type' => 'textarea', 'label' => 'Contact band — title', 'default' => "Grow Your Hotel's Revenue." ),
-	'contact_band_text'      => array( 'type' => 'textarea', 'label' => 'Contact band — text', 'default' => "Tell us about your property. We'll identify where you're leaving revenue on the table." ),
-	'contact_band_cta'       => array( 'type' => 'text', 'label' => 'Contact band — CTA', 'default' => 'Book a Free Strategy Session' ),
+	'contact_band_title'     => array( 'type' => 'textarea', 'label' => 'Contact band — title', 'default' => "We Become Your Hotel's External Commercial Team" ),
+	'contact_band_text'      => array( 'type' => 'textarea', 'label' => 'Contact band — text', 'default' => 'Pricing, distribution, contracting and digital marketing — all handled.' ),
+	'contact_band_cta'       => array( 'type' => 'text', 'label' => 'Contact band — CTA', 'default' => 'Book a Free Consultation' ),
 );
