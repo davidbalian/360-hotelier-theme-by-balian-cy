@@ -194,7 +194,7 @@ final class Hotelier_El_Page_Defaults {
 			'portfolio.testimonial_8_quote'   => 'Ένας επαγγελματίας ξενοδοχείων με μεγάλη εμπειρία και βαθιά κατανόηση της διαχείρισης εσόδων, της απόδοσης OTA και της δυναμικής των αγορών στην Κύπρο και την Ελλάδα. Η στρατηγική προσέγγιση και το εμπορικό μυαλό του Γιώργου καθιστούν την 360 Hotelier Consulting ισχυρό συνεργάτη για ξενοδοχεία που στοχεύουν στη βελτίωση της πληρότητας και των εσόδων.',
 			'portfolio.testimonial_8_name'    => 'Όμηρος Ομήρου',
 			'portfolio.testimonial_8_role'    => 'Διευθυντής Ανάπτυξης Επιχειρήσεων · STADEMOS HOTELS LTD · Λεμεσός, Κύπρος',
-			'portfolio.visit_website_text' => 'Επισκεφθείτε τον Ιστότοπο',
+			'portfolio.visit_website_text' => 'Επίσκεψη ιστοσελίδας',
 			'portfolio.pendeli_aria'      => 'Pendeli Resort Hotel Κύπρος',
 			'portfolio.cta_feat_title'    => 'Προσθέστε το Ξενοδοχείο σας στο Portfolio μας.',
 			'portfolio.cta_feat_text'     => 'Κρατάμε μικρό τον κατάλογο πελατών. Κάθε ξενοδοχείο έχει άμεση πρόσβαση στον Γιώργο και πλήρη εμπορική υποστήριξη.',
