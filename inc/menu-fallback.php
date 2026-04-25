@@ -62,7 +62,7 @@ function hotelier_get_service_child_slugs() {
 /**
  * Resolve the front-end URL for a page by slug (supports child pages under Services).
  *
- * @param string $slug Page post_name (e.g. about-us, revenue-management).
+ * @param string $slug Page post_name (e.g. about, revenue-management).
  * @return string
  */
 function hotelier_get_page_url_by_slug( $slug ) {
@@ -158,7 +158,7 @@ function hotelier_get_default_nav_items() {
             'label' => __( 'Home', '360-hotelier' ),
         ),
         array(
-            'url'   => hotelier_get_page_url_by_slug( 'about-us' ),
+            'url'   => hotelier_get_page_url_by_slug( 'about' ),
             'label' => __( 'About Us', '360-hotelier' ),
         ),
         array(

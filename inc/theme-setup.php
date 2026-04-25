@@ -89,7 +89,7 @@ function hotelier_create_default_pages() {
         ),
         array(
             'title'    => __( 'About Us', '360-hotelier' ),
-            'slug'     => 'about-us',
+            'slug'     => 'about',
             'template' => 'page-templates/template-about.php',
         ),
         array(
@@ -212,3 +212,34 @@ function hotelier_ensure_legal_pages_exist() {
     update_option( 'hotelier_legal_pages_ensured_v1', 1 );
 }
 add_action( 'after_setup_theme', 'hotelier_ensure_legal_pages_exist', 11 );
+
+/**
+ * Migrates About page slug from /about-us to /about on existing installs.
+ */
+function hotelier_migrate_about_slug() {
+    if ( get_option( 'hotelier_about_slug_migrated_v1' ) ) {
+        return;
+    }
+
+    $about = get_page_by_path( 'about', OBJECT, 'page' );
+    if ( $about instanceof WP_Post ) {
+        update_option( 'hotelier_about_slug_migrated_v1', 1 );
+        return;
+    }
+
+    $legacy_about = get_page_by_path( 'about-us', OBJECT, 'page' );
+    if ( ! $legacy_about instanceof WP_Post ) {
+        update_option( 'hotelier_about_slug_migrated_v1', 1 );
+        return;
+    }
+
+    wp_update_post(
+        array(
+            'ID'        => (int) $legacy_about->ID,
+            'post_name' => 'about',
+        )
+    );
+
+    update_option( 'hotelier_about_slug_migrated_v1', 1 );
+}
+add_action( 'after_setup_theme', 'hotelier_migrate_about_slug', 12 );

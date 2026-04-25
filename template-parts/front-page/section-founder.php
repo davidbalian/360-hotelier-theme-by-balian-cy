@@ -20,7 +20,7 @@ if ( $founder_pid <= 0 ) {
 }
 
 $hctx         = 'home';
-$about_url    = hotelier_get_page_url_by_slug( 'about-us' );
+$about_url    = hotelier_get_page_url_by_slug( 'about' );
 $founder_url  = hotelier_get_page_url_by_slug( 'founder' );
 $photo        = Hotelier_Page_Content::get_image_url( $founder_pid, $hctx, 'founder_photo' );
 $profile_cta  = Hotelier_Page_Content::get_text( $founder_pid, $hctx, 'founder_profile_cta_text' );

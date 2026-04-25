@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 final class Hotelier_Greek_Nav_Sync {
 
-	public const SYNC_VERSION = 1;
+	public const SYNC_VERSION = 2;
 
 	private const MENU_PRIMARY_NAME = '360 Hotelier — Primary (Ελληνικά)';
 
@@ -128,7 +128,7 @@ final class Hotelier_Greek_Nav_Sync {
 			self::add_custom_item( $menu_id, $labels['home'], home_url( '/' ), 0 );
 		}
 
-		$about = get_page_by_path( 'about-us', OBJECT, 'page' );
+		$about = get_page_by_path( 'about', OBJECT, 'page' );
 		if ( $about instanceof WP_Post ) {
 			self::add_page_item( $menu_id, (int) $about->ID, $labels['about-us'], 0 );
 		}
@@ -181,7 +181,7 @@ final class Hotelier_Greek_Nav_Sync {
 			self::add_custom_item( $menu_id, $labels['home'], home_url( '/' ), 0 );
 		}
 
-		$about = get_page_by_path( 'about-us', OBJECT, 'page' );
+		$about = get_page_by_path( 'about', OBJECT, 'page' );
 		if ( $about instanceof WP_Post ) {
 			self::add_page_item( $menu_id, (int) $about->ID, $labels['about-us'], 0 );
 		}
