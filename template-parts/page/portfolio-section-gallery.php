@@ -19,6 +19,23 @@ $page_id = isset( $page_id ) ? (int) $page_id : get_the_ID();
 $ctx     = 'portfolio';
 
 $ids = Hotelier_Portfolio_Gallery_Store::get_attachment_ids( $page_id );
+
+// Admin-only diagnostic: explains in page source why the marquee is missing.
+// Logged-in admins viewing source on the front-end will see why no images
+// were resolved (plugin missing, empty meta, wrong field name, etc.).
+if ( current_user_can( 'manage_options' ) ) {
+	$debug = Hotelier_Portfolio_Gallery_Store::debug_snapshot( $page_id );
+	echo "\n<!-- portfolio-gallery-debug: " . esc_html( wp_json_encode( array(
+		'page_id'        => $page_id,
+		'field_name'     => Hotelier_Portfolio_Gallery_Store::FIELD_NAME,
+		'plugin_active'  => $debug['plugin_active'],
+		'raw_meta'       => $debug['raw_meta'],
+		'helper_count'   => $debug['helper_count'],
+		'fallback_count' => $debug['fallback_count'],
+		'resolved_ids'   => $ids,
+	) ) ) . " -->\n";
+}
+
 if ( empty( $ids ) ) {
 	return;
 }

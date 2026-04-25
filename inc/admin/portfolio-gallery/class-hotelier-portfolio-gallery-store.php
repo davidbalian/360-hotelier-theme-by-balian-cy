@@ -7,12 +7,11 @@
  * front-end template only knows "give me the ordered list of attachment
  * IDs for this page".
  *
- * The plugin's `acf_photo_gallery()` reader always returns an array of
- * associative arrays, each with at minimum an `id` key — independent of
- * any field-level "return format" setting — so we always extract IDs.
- *
- * If the plugin is not active or the field is empty, returns an empty
- * array (the marquee section then renders nothing — safe default).
+ * The plugin stores the picked attachments as a comma-separated string in
+ * postmeta, where the meta_key is the literal ACF field name (no prefix).
+ * We try the plugin's `acf_photo_gallery()` helper first and fall back to
+ * reading the raw postmeta directly so the marquee still works even if
+ * the plugin's helper is unavailable for any reason on a given request.
  *
  * @package 360-hotelier
  */
@@ -27,7 +26,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Hotelier_Portfolio_Gallery_Store {
 
 	/**
-	 * ACF field name (set in the ACF field group editor in WP admin).
+	 * ACF field name (the "Field Name" slug set in the ACF field group editor).
+	 * The plugin stores the value in postmeta under this exact key.
 	 */
 	public const FIELD_NAME = 'portfolio_gallery';
 
@@ -36,7 +36,42 @@ final class Hotelier_Portfolio_Gallery_Store {
 	 * @return int[] Ordered attachment IDs (deduped, all > 0).
 	 */
 	public static function get_attachment_ids( int $post_id ): array {
-		if ( $post_id <= 0 || ! function_exists( 'acf_photo_gallery' ) ) {
+		if ( $post_id <= 0 ) {
+			return array();
+		}
+
+		$ids = self::ids_via_plugin_helper( $post_id );
+		if ( ! empty( $ids ) ) {
+			return $ids;
+		}
+
+		return self::ids_via_raw_postmeta( $post_id );
+	}
+
+	/**
+	 * Diagnostic snapshot for admin-only debugging in the section template.
+	 *
+	 * @return array{
+	 *     plugin_active: bool,
+	 *     raw_meta: mixed,
+	 *     helper_count: int,
+	 *     fallback_count: int
+	 * }
+	 */
+	public static function debug_snapshot( int $post_id ): array {
+		return array(
+			'plugin_active'  => function_exists( 'acf_photo_gallery' ),
+			'raw_meta'       => $post_id > 0 ? get_post_meta( $post_id, self::FIELD_NAME, true ) : null,
+			'helper_count'   => count( self::ids_via_plugin_helper( $post_id ) ),
+			'fallback_count' => count( self::ids_via_raw_postmeta( $post_id ) ),
+		);
+	}
+
+	/**
+	 * @return int[]
+	 */
+	private static function ids_via_plugin_helper( int $post_id ): array {
+		if ( ! function_exists( 'acf_photo_gallery' ) ) {
 			return array();
 		}
 
@@ -45,17 +80,53 @@ final class Hotelier_Portfolio_Gallery_Store {
 			return array();
 		}
 
-		$seen = array();
-		$ids  = array();
+		$ids = array();
 		foreach ( $images as $image ) {
 			$id = is_array( $image ) && isset( $image['id'] ) ? (int) $image['id'] : 0;
-			if ( $id <= 0 || isset( $seen[ $id ] ) ) {
+			if ( $id > 0 ) {
+				$ids[] = $id;
+			}
+		}
+		return self::dedupe_ids( $ids );
+	}
+
+	/**
+	 * @return int[]
+	 */
+	private static function ids_via_raw_postmeta( int $post_id ): array {
+		$raw = get_post_meta( $post_id, self::FIELD_NAME, true );
+		if ( ! is_string( $raw ) || $raw === '' ) {
+			return array();
+		}
+
+		$parts = array_map( 'trim', explode( ',', $raw ) );
+		$ids   = array();
+		foreach ( $parts as $part ) {
+			if ( $part === '' || ! ctype_digit( $part ) ) {
+				continue;
+			}
+			$id = (int) $part;
+			if ( $id > 0 ) {
+				$ids[] = $id;
+			}
+		}
+		return self::dedupe_ids( $ids );
+	}
+
+	/**
+	 * @param int[] $ids
+	 * @return int[]
+	 */
+	private static function dedupe_ids( array $ids ): array {
+		$seen = array();
+		$out  = array();
+		foreach ( $ids as $id ) {
+			if ( isset( $seen[ $id ] ) ) {
 				continue;
 			}
 			$seen[ $id ] = true;
-			$ids[]       = $id;
+			$out[]       = $id;
 		}
-
-		return $ids;
+		return $out;
 	}
 }
