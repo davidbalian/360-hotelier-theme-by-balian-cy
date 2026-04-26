@@ -209,6 +209,7 @@ final class Hotelier_Home_Text_Acf_Field {
 			'type'              => 'tab',
 			'placement'         => 'top',
 			'endpoint'          => 0,
+			'wrapper'           => array( 'width' => '100' ),
 		);
 	}
 
@@ -225,6 +226,7 @@ final class Hotelier_Home_Text_Acf_Field {
 			'name'          => self::field_name( $schema_key, $lang ),
 			'type'          => $acf_type,
 			'default_value' => $default_value,
+			'wrapper'       => array( 'width' => '50' ),
 		);
 
 		if ( 'textarea' === $acf_type ) {

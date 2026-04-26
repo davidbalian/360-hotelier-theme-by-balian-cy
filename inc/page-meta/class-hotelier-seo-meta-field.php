@@ -36,10 +36,18 @@ final class Hotelier_Seo_Meta_Field {
 				'title'                 => __( 'SEO — document title & meta description', '360-hotelier' ),
 				'fields'                => array(
 					array(
-						'key'   => 'field_hotelier_seo_title_en',
-						'label' => __( 'Meta title (English)', '360-hotelier' ),
-						'name'  => self::FIELD_TITLE_EN,
-						'type'  => 'text',
+						'key'     => 'field_hotelier_seo_title_en',
+						'label'   => __( 'Meta title (English)', '360-hotelier' ),
+						'name'    => self::FIELD_TITLE_EN,
+						'type'    => 'text',
+						'wrapper' => array( 'width' => '50' ),
+					),
+					array(
+						'key'     => 'field_hotelier_seo_title_el',
+						'label'   => __( 'Meta title (Greek)', '360-hotelier' ),
+						'name'    => self::FIELD_TITLE_EL,
+						'type'    => 'text',
+						'wrapper' => array( 'width' => '50' ),
 					),
 					array(
 						'key'          => 'field_hotelier_seo_description_en',
@@ -48,12 +56,7 @@ final class Hotelier_Seo_Meta_Field {
 						'type'         => 'textarea',
 						'rows'         => 3,
 						'new_lines'    => '',
-					),
-					array(
-						'key'   => 'field_hotelier_seo_title_el',
-						'label' => __( 'Meta title (Greek)', '360-hotelier' ),
-						'name'  => self::FIELD_TITLE_EL,
-						'type'  => 'text',
+						'wrapper'      => array( 'width' => '50' ),
 					),
 					array(
 						'key'          => 'field_hotelier_seo_description_el',
@@ -62,6 +65,7 @@ final class Hotelier_Seo_Meta_Field {
 						'type'         => 'textarea',
 						'rows'         => 3,
 						'new_lines'    => '',
+						'wrapper'      => array( 'width' => '50' ),
 					),
 				),
 				'location'              => array(
