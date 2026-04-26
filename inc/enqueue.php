@@ -189,12 +189,14 @@ function hotelier_preload_body_font() {
 add_action( 'wp_head', 'hotelier_preload_body_font', 0 );
 
 /**
- * Preload the hero background image on the front page (meta description is output by Hotelier_Seo_Bootstrap).
+ * Front page head: hero preload, Google Search Console meta verification (meta description is output by Hotelier_Seo_Bootstrap).
  */
 function hotelier_front_page_head() {
     if ( ! is_front_page() ) {
         return;
     }
+
+    echo '<meta name="google-site-verification" content="' . esc_attr( 'V_B3vjRCJxbzEH_XMvVm8qtsgCI2G9dNO4FFqZJw_s4' ) . '" />' . "\n";
 
     $hero_image_url = content_url( '/uploads/2026/03/cyprus-hotel-revenue-consulting.webp' );
     echo '<link rel="preload" as="image" href="' . esc_url( $hero_image_url ) . '" fetchpriority="high">' . "\n";
