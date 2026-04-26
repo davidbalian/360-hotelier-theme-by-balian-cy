@@ -315,22 +315,15 @@ final class Hotelier_Structured_Data_Graph_Builder {
 		$email = isset( $opts['contact_email'] ) ? trim( (string) $opts['contact_email'] ) : '';
 
 		$address_text = isset( $opts['contact_address'] ) ? trim( (string) $opts['contact_address'] ) : '';
-		if ( '' !== $address_text ) {
-			$address = array(
-				'@type'           => 'PostalAddress',
-				'streetAddress'   => $address_text,
-				'addressCountry'  => 'CY',
-			);
-		} else {
-			$address = array(
-				'@type'           => 'PostalAddress',
-				'streetAddress'   => 'Epaminondou 9',
-				'addressLocality' => 'Limassol',
-				'addressRegion'   => 'Limassol District',
-				'postalCode'      => '3075',
-				'addressCountry'  => 'CY',
-			);
-		}
+		$street       = '' !== $address_text ? $address_text : 'Epaminondou 9';
+		$address      = array(
+			'@type'           => 'PostalAddress',
+			'streetAddress'   => $street,
+			'addressLocality' => 'Limassol',
+			'addressRegion'   => 'Limassol District',
+			'postalCode'      => '3075',
+			'addressCountry'  => 'CY',
+		);
 
 		$logo_url = has_custom_logo()
 			? wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ), 'full' )
