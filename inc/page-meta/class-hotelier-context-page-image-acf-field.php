@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Hotelier_Context_Page_Image_Acf_Field {
 
 	/** @var string[] */
-	private const CONTEXTS = array( 'about', 'founder', 'portfolio', 'contact', 'services', 'service' );
+	private const CONTEXTS = array( 'error_404', 'about', 'founder', 'portfolio', 'contact', 'services', 'service' );
 
 	/** Schema keys handled via {@see Hotelier_Hero_Image_Field} and {@see Hotelier_Cta_Feat_Image_Field}. */
 	private const EXCLUDED_SCHEMA_KEYS = array( 'hero_bg', 'cta_feat_img' );
@@ -25,6 +25,7 @@ final class Hotelier_Context_Page_Image_Acf_Field {
 	 * @var array<string, string> context => page template path
 	 */
 	private const CONTEXT_TEMPLATE = array(
+		'error_404' => 'page-templates/template-404-content.php',
 		'about'     => 'page-templates/template-about.php',
 		'founder'   => 'page-templates/template-founder.php',
 		'portfolio' => 'page-templates/template-portfolio.php',
@@ -166,6 +167,7 @@ final class Hotelier_Context_Page_Image_Acf_Field {
 		}
 
 		$titles = array(
+			'error_404' => __( '404 page — images', '360-hotelier' ),
 			'about'     => __( 'About page — images', '360-hotelier' ),
 			'founder'   => __( 'Founder page — images', '360-hotelier' ),
 			'portfolio' => __( 'Portfolio page — images', '360-hotelier' ),
@@ -204,6 +206,9 @@ final class Hotelier_Context_Page_Image_Acf_Field {
 
 	private static function tab_id( string $context, string $key ): string {
 		switch ( $context ) {
+			case 'error_404':
+				return 'hero';
+
 			case 'about':
 				if ( 0 === strpos( $key, 'intro_' ) ) {
 					return 'intro';
@@ -280,6 +285,7 @@ final class Hotelier_Context_Page_Image_Acf_Field {
 		}
 
 		$labels = array(
+			'hero'     => __( 'Hero', '360-hotelier' ),
 			'intro'    => __( 'Intro', '360-hotelier' ),
 			'what'     => __( 'What we do', '360-hotelier' ),
 			'bio'      => __( 'Bio', '360-hotelier' ),

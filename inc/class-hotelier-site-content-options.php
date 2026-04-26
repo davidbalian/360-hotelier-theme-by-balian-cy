@@ -72,9 +72,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'social_facebook'       => '',
 			'social_linkedin'       => '',
 			'social_instagram'      => '',
-			'error_title'           => '404 — Page Not Found',
-			'error_text'            => 'It looks like nothing was found at this location.',
-			'error_btn'             => 'Back to home',
 		);
 	}
 
@@ -100,7 +97,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'label_phone', 'label_email', 'label_address',
 			'footer_heading_nav', 'footer_heading_follow', 'footer_heading_legal', 'footer_heading_contact',
 			'footer_copyright_name', 'footer_rights',
-			'error_title', 'error_text', 'error_btn',
 			'social_facebook', 'social_linkedin', 'social_instagram',
 		);
 		foreach ( $text as $k ) {
@@ -220,16 +216,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<label>LinkedIn <input class="large-text" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[social_linkedin]" type="url" value="<?php echo esc_attr( $v['social_linkedin'] ); ?>"></label><br><br>
 							<label>Instagram <input class="large-text" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[social_instagram]" type="url" value="<?php echo esc_attr( $v['social_instagram'] ); ?>"></label>
 						</td></tr>
-				</table>
-
-				<h2 class="title"><?php esc_html_e( '404 page', '360-hotelier' ); ?></h2>
-				<table class="form-table" role="presentation">
-					<tr><th><label for="h-404-t"><?php esc_html_e( 'Title', '360-hotelier' ); ?></label></th>
-						<td><input class="large-text" id="h-404-t" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[error_title]" type="text" value="<?php echo esc_attr( $v['error_title'] ); ?>"></td></tr>
-					<tr><th><label for="h-404-x"><?php esc_html_e( 'Message', '360-hotelier' ); ?></label></th>
-						<td><textarea class="large-text" rows="2" id="h-404-x" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[error_text]"><?php echo esc_textarea( $v['error_text'] ); ?></textarea></td></tr>
-					<tr><th><label for="h-404-b"><?php esc_html_e( 'Button label', '360-hotelier' ); ?></label></th>
-						<td><input class="regular-text" id="h-404-b" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[error_btn]" type="text" value="<?php echo esc_attr( $v['error_btn'] ); ?>"></td></tr>
 				</table>
 
 				<?php submit_button(); ?>

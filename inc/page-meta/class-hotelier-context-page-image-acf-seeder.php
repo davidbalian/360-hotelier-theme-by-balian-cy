@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Hotelier_Context_Page_Image_Acf_Seeder {
 
 	private const OPTION_KEY   = 'hotelier_context_page_image_acf_seed_version';
-	private const SEED_VERSION = 3;
+	private const SEED_VERSION = 4;
 
 	public static function register(): void {
 		add_action( 'acf/init', array( self::class, 'maybe_seed' ), 20 );

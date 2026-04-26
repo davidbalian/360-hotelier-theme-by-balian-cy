@@ -410,3 +410,89 @@
     opacity: 0.9;
 }
 
+/* --------------------------------------------------------------------------
+   404 page (hero + services-style panel)
+   -------------------------------------------------------------------------- */
+
+.error-page-main {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.error-page__hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    max-width: 1920px;
+    margin-inline: max(1rem, calc((100% - 1920px) / 2));
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+    min-height: min(420px, 55vh);
+    padding: calc(6rem + var(--top-bar-height)) 0 2.5rem;
+}
+
+.error-page__hero .section-overlay {
+    z-index: 0;
+}
+
+.error-page__hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.error-page__hero-title {
+    margin: 0;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--color-white);
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+}
+
+.error-page__panel {
+    text-align: center;
+}
+
+.error-page__panel .error-404 {
+    padding: 0;
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+.error-page__panel-title {
+    margin-bottom: 1rem;
+}
+
+.error-page__panel .page-content .text-body {
+    margin-bottom: 1.25rem;
+    color: var(--color-charcoal);
+}
+
+.error-page__cta {
+    margin: 0 0 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .error-page__hero {
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        min-height: min(320px, 45vh);
+        padding: calc(5rem + var(--top-bar-height)) 0 2rem;
+    }
+}
+

@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Hotelier_Context_Page_Text_Acf_Seeder {
 
 	private const OPTION_KEY   = 'hotelier_context_page_text_acf_seed_version';
-	private const SEED_VERSION = 3;
+	private const SEED_VERSION = 4;
 
 	public static function register(): void {
 		add_action( 'acf/init', array( self::class, 'maybe_seed' ), 20 );
@@ -29,6 +29,8 @@ final class Hotelier_Context_Page_Text_Acf_Seeder {
 		if ( (int) get_option( self::OPTION_KEY, 0 ) >= self::SEED_VERSION ) {
 			return;
 		}
+
+		self::migrate_legacy_404_site_content_into_acf();
 
 		foreach ( Hotelier_Context_Page_Text_Acf_Field::managed_contexts() as $context ) {
 			if ( 'service' === $context ) {
@@ -55,6 +57,43 @@ final class Hotelier_Context_Page_Text_Acf_Seeder {
 		}
 
 		update_option( self::OPTION_KEY, self::SEED_VERSION, true );
+	}
+
+	/**
+	 * Copies former Settings → Site content 404 strings into EN ACF when still empty.
+	 */
+	private static function migrate_legacy_404_site_content_into_acf(): void {
+		if ( ! class_exists( 'Hotelier_Site_Content_Options' ) ) {
+			return;
+		}
+		$raw = get_option( Hotelier_Site_Content_Options::OPTION_NAME, array() );
+		if ( ! is_array( $raw ) ) {
+			return;
+		}
+		$pairs = array(
+			'error_title' => 'error_title',
+			'error_text'  => 'error_text',
+			'error_btn'   => 'error_btn',
+		);
+		foreach ( Hotelier_Context_Page_Text_Acf_Field::page_ids_for_context( 'error_404' ) as $page_id ) {
+			if ( $page_id <= 0 ) {
+				continue;
+			}
+			foreach ( $pairs as $option_key => $schema_key ) {
+				if ( ! isset( $raw[ $option_key ] ) ) {
+					continue;
+				}
+				$val = trim( (string) $raw[ $option_key ] );
+				if ( '' === $val ) {
+					continue;
+				}
+				self::seed_if_empty(
+					$page_id,
+					Hotelier_Context_Page_Text_Acf_Field::field_name( 'error_404', $schema_key, 'en' ),
+					$val
+				);
+			}
+		}
 	}
 
 	private static function seed_service_pages_text(): void {

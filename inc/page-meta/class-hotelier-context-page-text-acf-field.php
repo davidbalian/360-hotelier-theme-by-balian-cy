@@ -16,12 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Hotelier_Context_Page_Text_Acf_Field {
 
 	/** @var string[] */
-	private const CONTEXTS = array( 'about', 'founder', 'portfolio', 'contact', 'services', 'service' );
+	private const CONTEXTS = array( 'error_404', 'about', 'founder', 'portfolio', 'contact', 'services', 'service' );
 
 	/**
 	 * @var array<string, string> context => page template path
 	 */
 	private const CONTEXT_TEMPLATE = array(
+		'error_404' => 'page-templates/template-404-content.php',
 		'about'     => 'page-templates/template-about.php',
 		'founder'   => 'page-templates/template-founder.php',
 		'portfolio' => 'page-templates/template-portfolio.php',
@@ -168,6 +169,7 @@ final class Hotelier_Context_Page_Text_Acf_Field {
 		}
 
 		$titles = array(
+			'error_404' => __( '404 page — text (EN / EL)', '360-hotelier' ),
 			'about'     => __( 'About page — text (EN / EL)', '360-hotelier' ),
 			'founder'   => __( 'Founder page — text (EN / EL)', '360-hotelier' ),
 			'portfolio' => __( 'Portfolio page — text (EN / EL)', '360-hotelier' ),
@@ -206,6 +208,9 @@ final class Hotelier_Context_Page_Text_Acf_Field {
 
 	private static function tab_id( string $context, string $key ): string {
 		switch ( $context ) {
+			case 'error_404':
+				return 'body';
+
 			case 'about':
 				if ( 0 === strpos( $key, 'hero_' ) ) {
 					return 'hero';
@@ -358,6 +363,7 @@ final class Hotelier_Context_Page_Text_Acf_Field {
 		}
 
 		$labels = array(
+			'body'          => __( 'Body', '360-hotelier' ),
 			'hero'          => __( 'Hero', '360-hotelier' ),
 			'intro'         => __( 'Intro', '360-hotelier' ),
 			'what'          => __( 'What we do', '360-hotelier' ),

@@ -21,6 +21,7 @@ final class Hotelier_Page_Meta_Schema {
 		$dir = __DIR__ . '/schema/';
 		return array(
 			'home'      => require $dir . 'schema-home.php',
+			'error_404' => require $dir . 'schema-error-404.php',
 			'about'     => require $dir . 'schema-about.php',
 			'services'  => require $dir . 'schema-services.php',
 			'service'   => require $dir . 'schema-service.php',
