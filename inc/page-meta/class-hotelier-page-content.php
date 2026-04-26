@@ -32,6 +32,15 @@ final class Hotelier_Page_Content {
 			}
 		}
 
+		if ( class_exists( 'Hotelier_Context_Page_Text_Acf_Field' )
+			&& Hotelier_Context_Page_Text_Acf_Field::is_managed_text_field( $context, $field )
+			&& $post_id > 0 ) {
+			$from_acf = Hotelier_Context_Page_Text_Acf_Field::get_acf_value_for_post( $post_id, $context, $field );
+			if ( '' !== $from_acf ) {
+				return $from_acf;
+			}
+		}
+
 		$default = isset( $fields[ $field ]['default'] ) ? (string) $fields[ $field ]['default'] : '';
 
 		if ( function_exists( 'hotelier_get_current_lang' )
@@ -59,7 +68,9 @@ final class Hotelier_Page_Content {
 	 *
 	 * For `hero_bg` and `cta_feat_img`, dedicated ACF fields are read first. For
 	 * other home images, {@see Hotelier_Home_Image_Acf_Field} on the static front
-	 * page is used before schema `default_url`.
+	 * page is used before schema `default_url`. For About, Founder, and Portfolio
+	 * body images, {@see Hotelier_Context_Page_Image_Acf_Field} is used on the
+	 * current page before schema `default_url`.
 	 */
 	public static function get_image_url( int $post_id, string $context, string $field ): string {
 		if ( 'hero_bg' === $field && $post_id > 0 && class_exists( 'Hotelier_Hero_Image_Field' ) ) {
@@ -85,6 +96,15 @@ final class Hotelier_Page_Content {
 			}
 		}
 
+		if ( class_exists( 'Hotelier_Context_Page_Image_Acf_Field' )
+			&& Hotelier_Context_Page_Image_Acf_Field::is_managed_image( $context, $field )
+			&& $post_id > 0 ) {
+			$from_acf = Hotelier_Context_Page_Image_Acf_Field::url_for_post( $post_id, $context, $field );
+			if ( is_string( $from_acf ) && $from_acf !== '' ) {
+				return $from_acf;
+			}
+		}
+
 		$fields = Hotelier_Page_Meta_Schema::fields_for_context( $context );
 		if ( ! $fields || ! isset( $fields[ $field ] ) ) {
 			return '';
@@ -101,6 +121,16 @@ final class Hotelier_Page_Content {
 				return $id;
 			}
 		}
+
+		if ( class_exists( 'Hotelier_Context_Page_Image_Acf_Field' )
+			&& Hotelier_Context_Page_Image_Acf_Field::is_managed_image( $context, $field )
+			&& $post_id > 0 ) {
+			$id = Hotelier_Context_Page_Image_Acf_Field::attachment_id_for_post( $post_id, $context, $field );
+			if ( $id > 0 ) {
+				return $id;
+			}
+		}
+
 		return 0;
 	}
 
