@@ -19,8 +19,12 @@ require_once __DIR__ . '/../seo/class-hotelier-seo-context.php';
 require_once __DIR__ . '/class-hotelier-seo-meta-field.php';
 require_once __DIR__ . '/class-hotelier-seo-meta-resolver.php';
 require_once __DIR__ . '/class-hotelier-seo-meta-seeder.php';
+require_once __DIR__ . '/class-hotelier-home-text-acf-field.php';
+require_once __DIR__ . '/class-hotelier-home-text-acf-seeder.php';
 
 Hotelier_Hero_Image_Field::register();
 Hotelier_Cta_Feat_Image_Field::register();
 Hotelier_Seo_Meta_Field::register();
 Hotelier_Seo_Meta_Seeder::register();
+Hotelier_Home_Text_Acf_Field::register();
+Hotelier_Home_Text_Acf_Seeder::register();

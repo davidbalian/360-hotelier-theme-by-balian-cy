@@ -23,6 +23,15 @@ final class Hotelier_Page_Content {
 		if ( ! $fields || ! isset( $fields[ $field ] ) ) {
 			return '';
 		}
+
+		if ( 'home' === $context && class_exists( 'Hotelier_Home_Text_Acf_Field' )
+			&& Hotelier_Home_Text_Acf_Field::is_text_schema_field( $field ) ) {
+			$from_acf = Hotelier_Home_Text_Acf_Field::get_acf_value_for_request( $field );
+			if ( '' !== $from_acf ) {
+				return $from_acf;
+			}
+		}
+
 		$default = isset( $fields[ $field ]['default'] ) ? (string) $fields[ $field ]['default'] : '';
 
 		if ( function_exists( 'hotelier_get_current_lang' )
