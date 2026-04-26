@@ -438,21 +438,13 @@
         grid-template-columns: 1fr;
     }
 
-    /* Portfolio: preserve alternating text→image vs image→text (same as desktop) */
-    .page-portfolio__row:not( .page-portfolio__row--flip ) .page-portfolio__hotel-card {
+    /* Portfolio mobile: photo first, then card; logo sits at bottom of the card */
+    .page-portfolio__row .page-portfolio__row-media {
+        order: -1;
+    }
+
+    .page-portfolio__row .page-portfolio__hotel-card {
         order: 0;
-    }
-
-    .page-portfolio__row:not( .page-portfolio__row--flip ) .page-portfolio__row-media {
-        order: 1;
-    }
-
-    .page-portfolio__row--flip .page-portfolio__row-media {
-        order: 0;
-    }
-
-    .page-portfolio__row--flip .page-portfolio__hotel-card {
-        order: 1;
     }
 
     .page-services__row .page-services__row-media {
@@ -477,18 +469,31 @@
         align-items: center;
     }
 
-    .page-portfolio__hotel-logo {
-        width: 167px;
-        height: 117px;
-        margin-bottom: 1.5rem;
-        align-self: center;
+    .page-portfolio__hotel-name {
+        order: 1;
+    }
+
+    .page-portfolio__hotel-tagline {
+        order: 2;
     }
 
     .page-portfolio__hotel-location {
+        order: 3;
+        flex: 0 1 auto;
         justify-content: center;
     }
 
     .page-portfolio__hotel-link {
+        order: 4;
+        align-self: center;
+    }
+
+    .page-portfolio__hotel-logo {
+        order: 5;
+        width: 167px;
+        height: 117px;
+        margin-top: 1.5rem;
+        margin-bottom: 0;
         align-self: center;
     }
 }

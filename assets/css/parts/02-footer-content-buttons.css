@@ -48,8 +48,13 @@
 }
 
 @media (max-width: 768px) {
+    .footer-logo {
+        display: flex;
+        justify-content: center;
+    }
+
     .footer-logo img {
-        width: 100%;
+        width: 85%;
         max-width: none;
     }
 }
