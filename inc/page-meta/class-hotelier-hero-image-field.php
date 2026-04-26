@@ -53,6 +53,82 @@ final class Hotelier_Hero_Image_Field {
 
 	public static function register(): void {
 		add_action( 'acf/init', array( self::class, 'register_field_group' ) );
+		add_filter( 'acf/load_value', array( self::class, 'load_image_value' ), 10, 3 );
+	}
+
+	/**
+	 * When the hero field has no stored meta on a managed page, return the attachment
+	 * matching the schema's `hero_bg.default_url` for that page's context.
+	 *
+	 * Skipped for the All Services page so that service sub-pages preserve their existing
+	 * fall-through to the `service` context's own schema default (see {@see resolve_url}).
+	 *
+	 * @param mixed                $value   Stored value.
+	 * @param int|string           $post_id Post ID being loaded.
+	 * @param array<string, mixed> $field   ACF field array.
+	 * @return mixed
+	 */
+	public static function load_image_value( $value, $post_id, $field ) {
+		if ( ! is_array( $field ) || empty( $field['name'] ) ) {
+			return $value;
+		}
+
+		if ( self::FIELD_NAME !== (string) $field['name'] ) {
+			return $value;
+		}
+
+		$pid = (int) $post_id;
+		if ( $pid > 0 && metadata_exists( 'post', $pid, self::FIELD_NAME ) ) {
+			return $value;
+		}
+
+		$context = self::context_for_post( $pid );
+		if ( '' === $context || 'services' === $context ) {
+			return $value;
+		}
+
+		$fields = Hotelier_Page_Meta_Schema::fields_for_context( $context );
+		if ( ! is_array( $fields ) || ! isset( $fields['hero_bg']['default_url'] ) ) {
+			return $value;
+		}
+
+		$url = trim( (string) $fields['hero_bg']['default_url'] );
+		if ( '' === $url ) {
+			return $value;
+		}
+
+		$id = (int) attachment_url_to_postid( $url );
+		if ( $id > 0 ) {
+			return $id;
+		}
+
+		return $value;
+	}
+
+	/**
+	 * Map a post ID to a hero schema context based on front-page status / page template.
+	 * Returns '' when the post is not in a hero-managed location.
+	 */
+	private static function context_for_post( int $post_id ): string {
+		if ( $post_id <= 0 ) {
+			return '';
+		}
+
+		if ( $post_id === (int) get_option( 'page_on_front' ) ) {
+			return 'home';
+		}
+
+		$template = (string) get_post_meta( $post_id, '_wp_page_template', true );
+		$map      = array(
+			'page-templates/template-about.php'          => 'about',
+			'page-templates/template-founder.php'        => 'founder',
+			'page-templates/template-portfolio.php'      => 'portfolio',
+			'page-templates/template-contact.php'        => 'contact',
+			'page-templates/template-services.php'       => 'services',
+			'page-templates/template-service-single.php' => 'service',
+		);
+
+		return isset( $map[ $template ] ) ? $map[ $template ] : '';
 	}
 
 	/**

@@ -36,10 +36,84 @@ final class Hotelier_Context_Page_Image_Acf_Field {
 
 	public static function register(): void {
 		add_action( 'acf/init', array( self::class, 'register_field_groups' ) );
+		add_filter( 'acf/load_value', array( self::class, 'load_image_value' ), 10, 3 );
 	}
 
 	public static function field_name( string $context, string $schema_key ): string {
 		return 'hotelier_' . $context . '_' . $schema_key;
+	}
+
+	/**
+	 * When a managed inner-page image field has no stored meta, fall back to the
+	 * attachment matching its schema default_url (or per-slug overview default for service singles).
+	 *
+	 * @param mixed                $value   Stored value.
+	 * @param int|string           $post_id Post ID.
+	 * @param array<string, mixed> $field   ACF field array.
+	 * @return mixed
+	 */
+	public static function load_image_value( $value, $post_id, $field ) {
+		if ( ! is_array( $field ) || empty( $field['name'] ) ) {
+			return $value;
+		}
+
+		$name = (string) $field['name'];
+		if ( ! preg_match( '/^hotelier_(error_404|about|founder|portfolio|contact|services|service)_(.+)$/', $name, $m ) ) {
+			return $value;
+		}
+
+		$context    = (string) $m[1];
+		$schema_key = (string) $m[2];
+
+		if ( ! self::is_managed_image( $context, $schema_key ) ) {
+			return $value;
+		}
+
+		$pid = (int) $post_id;
+		if ( $pid > 0 && metadata_exists( 'post', $pid, $name ) ) {
+			return $value;
+		}
+
+		$default_id = self::default_attachment_id_for_field( $context, $schema_key, $pid );
+		if ( $default_id > 0 ) {
+			return $default_id;
+		}
+
+		return $value;
+	}
+
+	/**
+	 * Attachment ID for a context + schema key (resolved from default_url, or per-slug for service overview), or 0.
+	 */
+	private static function default_attachment_id_for_field( string $context, string $schema_key, int $post_id ): int {
+		if ( 'service' === $context && 'overview_img' === $schema_key ) {
+			if ( $post_id <= 0 || ! class_exists( 'Hotelier_Service_Single_Defaults' ) ) {
+				return 0;
+			}
+			$slug = (string) get_post_field( 'post_name', $post_id, 'raw' );
+			if ( '' === $slug ) {
+				return 0;
+			}
+			$url = Hotelier_Service_Single_Defaults::default_overview_image_url( $slug );
+			if ( '' === $url ) {
+				return 0;
+			}
+			$id = (int) attachment_url_to_postid( $url );
+			return $id > 0 ? $id : 0;
+		}
+
+		$fields = Hotelier_Page_Meta_Schema::fields_for_context( $context );
+		if ( ! $fields || ! isset( $fields[ $schema_key ]['default_url'] ) ) {
+			return 0;
+		}
+
+		$url = trim( (string) $fields[ $schema_key ]['default_url'] );
+		if ( '' === $url ) {
+			return 0;
+		}
+
+		$id = (int) attachment_url_to_postid( $url );
+		return $id > 0 ? $id : 0;
 	}
 
 	/**
@@ -307,7 +381,7 @@ final class Hotelier_Context_Page_Image_Acf_Field {
 			$mimes .= ',svg';
 		}
 
-		return array(
+		$field = array(
 			'key'           => 'field_hot_ctx_' . $context . '_img_' . $schema_key,
 			'label'         => $label,
 			'name'          => self::field_name( $context, $schema_key ),
@@ -317,6 +391,18 @@ final class Hotelier_Context_Page_Image_Acf_Field {
 			'library'       => 'all',
 			'mime_types'    => $mimes,
 		);
+
+		// Per-page slug-based defaults (service overview) can't be encoded as a static field default.
+		if ( 'service' === $context && 'overview_img' === $schema_key ) {
+			return $field;
+		}
+
+		$default_id = self::default_attachment_id_for_field( $context, $schema_key, 0 );
+		if ( $default_id > 0 ) {
+			$field['default_value'] = $default_id;
+		}
+
+		return $field;
 	}
 
 	private static function allows_svg( string $context, string $schema_key ): bool {
