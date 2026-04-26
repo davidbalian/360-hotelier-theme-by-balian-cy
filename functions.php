@@ -19,6 +19,7 @@ define( 'HOTELIER_THEME_URI', get_template_directory_uri() );
 require_once HOTELIER_THEME_DIR . '/inc/theme-setup.php';
 
 // Include service content (before menu fallback — submenu labels)
+require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-service-single-defaults.php';
 require_once HOTELIER_THEME_DIR . '/inc/service-content.php';
 
 // Include menu fallback

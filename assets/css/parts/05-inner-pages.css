@@ -159,6 +159,20 @@
     margin-bottom: 0;
 }
 
+.page-service-single__overview-media {
+    margin: 1.75rem 0 0;
+    padding: 0;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+}
+
+.page-service-single__overview-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: middle;
+}
+
 .page-service-single__deliverables-card {
     padding: 2.5rem;
     border-radius: var(--radius-card);

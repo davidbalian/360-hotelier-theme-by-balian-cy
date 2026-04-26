@@ -17,6 +17,8 @@ return array(
 	'hero_bg'                => array( 'type' => 'image', 'label' => 'Hero — background', 'default_url' => $u . 'featured-360-hotelier.webp' ),
 	'overview_heading'       => array( 'type' => 'text', 'label' => 'Overview — heading', 'default' => 'Overview' ),
 	'intro'                  => array( 'type' => 'textarea', 'label' => 'Overview — full intro text', 'default' => '' ),
+	'overview_img'           => array( 'type' => 'image', 'label' => 'Overview — image', 'default_url' => '' ),
+	'overview_img_alt'       => array( 'type' => 'text', 'label' => 'Overview — image alt', 'default' => '' ),
 	'deliver_heading'        => array( 'type' => 'text', 'label' => 'Deliverables — heading', 'default' => 'What We Deliver' ),
 	'deliver_1'              => array( 'type' => 'textarea', 'label' => 'Deliverable 1', 'default' => '' ),
 	'deliver_2'              => array( 'type' => 'textarea', 'label' => 'Deliverable 2', 'default' => '' ),

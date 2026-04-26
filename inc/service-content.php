@@ -111,6 +111,19 @@ function hotelier_get_service_page_content( int $post_id, string $slug ): ?array
 	$overview_h = Hotelier_Page_Content::get_text( $post_id, $ctx, 'overview_heading' );
 	$deliver_h  = Hotelier_Page_Content::get_text( $post_id, $ctx, 'deliver_heading' );
 
+	$overview_img_url = Hotelier_Page_Content::get_image_url( $post_id, $ctx, 'overview_img' );
+	if ( $overview_img_url === '' && class_exists( 'Hotelier_Service_Single_Defaults' )
+		&& Hotelier_Service_Single_Defaults::is_known_slug( $slug ) ) {
+		$overview_img_url = Hotelier_Service_Single_Defaults::default_overview_image_url( $slug );
+	}
+
+	$overview_img_alt = Hotelier_Page_Content::get_text( $post_id, $ctx, 'overview_img_alt' );
+	if ( $overview_img_alt === '' && class_exists( 'Hotelier_Service_Single_Defaults' )
+		&& Hotelier_Service_Single_Defaults::is_known_slug( $slug ) ) {
+		$lang             = ( function_exists( 'hotelier_get_current_lang' ) && 'el' === hotelier_get_current_lang() ) ? 'el' : 'en';
+		$overview_img_alt = Hotelier_Service_Single_Defaults::default_overview_image_alt( $slug, $lang );
+	}
+
 	return array(
 		'title'            => $title,
 		'hero_subtitle'    => $hero_subtitle,
@@ -118,6 +131,8 @@ function hotelier_get_service_page_content( int $post_id, string $slug ): ?array
 		'deliverables'     => $deliverables,
 		'overview_heading' => $overview_h !== '' ? $overview_h : __( 'Overview', '360-hotelier' ),
 		'deliver_heading'  => $deliver_h !== '' ? $deliver_h : __( 'What We Deliver', '360-hotelier' ),
+		'overview_img'     => $overview_img_url,
+		'overview_img_alt' => $overview_img_alt,
 		'hero_image_url'   => Hotelier_Hero_Image_Field::resolve_url( $post_id, $ctx ),
 		'cta_img'          => Hotelier_Cta_Feat_Image_Field::resolve_url( $post_id, $ctx ),
 		'cta_title'        => Hotelier_Page_Content::get_text( $post_id, $ctx, 'cta_feat_title' ),

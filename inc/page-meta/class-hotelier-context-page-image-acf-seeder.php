@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Hotelier_Context_Page_Image_Acf_Seeder {
 
 	private const OPTION_KEY   = 'hotelier_context_page_image_acf_seed_version';
-	private const SEED_VERSION = 1;
+	private const SEED_VERSION = 3;
 
 	public static function register(): void {
 		add_action( 'acf/init', array( self::class, 'maybe_seed' ), 20 );
@@ -57,7 +57,30 @@ final class Hotelier_Context_Page_Image_Acf_Seeder {
 			}
 		}
 
+		self::seed_service_overview_images();
+
 		update_option( self::OPTION_KEY, self::SEED_VERSION, true );
+	}
+
+	private static function seed_service_overview_images(): void {
+		if ( ! class_exists( 'Hotelier_Service_Single_Defaults' ) ) {
+			return;
+		}
+		foreach ( Hotelier_Context_Page_Text_Acf_Field::page_ids_for_context( 'service' ) as $page_id ) {
+			if ( $page_id <= 0 ) {
+				continue;
+			}
+			$slug = (string) get_post_field( 'post_name', $page_id, 'raw' );
+			$url  = Hotelier_Service_Single_Defaults::default_overview_image_url( $slug );
+			if ( '' === $url ) {
+				continue;
+			}
+			$attachment_id = attachment_url_to_postid( $url );
+			if ( $attachment_id <= 0 ) {
+				continue;
+			}
+			self::seed_if_empty( $page_id, Hotelier_Context_Page_Image_Acf_Field::field_name( 'service', 'overview_img' ), $attachment_id );
+		}
 	}
 
 	/**

@@ -1,6 +1,7 @@
 <?php
 /**
- * ACF local field groups: body images for About, Founder, and Portfolio (excludes hero + bottom CTA).
+ * ACF local field groups: body images for inner pages (About, Founder, Portfolio,
+ * Services, Service single; Contact has none beyond hero + CTA). Excludes hero + bottom CTA images.
  *
  * @package 360-hotelier
  */
@@ -15,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Hotelier_Context_Page_Image_Acf_Field {
 
 	/** @var string[] */
-	private const CONTEXTS = array( 'about', 'founder', 'portfolio' );
+	private const CONTEXTS = array( 'about', 'founder', 'portfolio', 'contact', 'services', 'service' );
 
 	/** Schema keys handled via {@see Hotelier_Hero_Image_Field} and {@see Hotelier_Cta_Feat_Image_Field}. */
 	private const EXCLUDED_SCHEMA_KEYS = array( 'hero_bg', 'cta_feat_img' );
@@ -27,6 +28,9 @@ final class Hotelier_Context_Page_Image_Acf_Field {
 		'about'     => 'page-templates/template-about.php',
 		'founder'   => 'page-templates/template-founder.php',
 		'portfolio' => 'page-templates/template-portfolio.php',
+		'contact'   => 'page-templates/template-contact.php',
+		'services'  => 'page-templates/template-services.php',
+		'service'   => 'page-templates/template-service-single.php',
 	);
 
 	public static function register(): void {
@@ -165,6 +169,9 @@ final class Hotelier_Context_Page_Image_Acf_Field {
 			'about'     => __( 'About page — images', '360-hotelier' ),
 			'founder'   => __( 'Founder page — images', '360-hotelier' ),
 			'portfolio' => __( 'Portfolio page — images', '360-hotelier' ),
+			'contact'   => __( 'Contact page — images', '360-hotelier' ),
+			'services'  => __( 'Services page — images', '360-hotelier' ),
+			'service'   => __( 'Service page — images', '360-hotelier' ),
 		);
 
 		acf_add_local_field_group(
@@ -226,6 +233,18 @@ final class Hotelier_Context_Page_Image_Acf_Field {
 					return 'hotel_' . $m[1];
 				}
 				return 'misc';
+
+			case 'services':
+				if ( preg_match( '/^row_(\d+)_img$/', $key, $m ) ) {
+					return 'row_' . $m[1];
+				}
+				return 'misc';
+
+			case 'service':
+				if ( 0 === strpos( $key, 'overview_' ) ) {
+					return 'overview';
+				}
+				return 'misc';
 		}
 
 		return 'misc';
@@ -256,6 +275,13 @@ final class Hotelier_Context_Page_Image_Acf_Field {
 				(int) $m[1]
 			);
 		}
+		if ( 'services' === $context && preg_match( '/^row_(\d+)$/', $tab_id, $m ) ) {
+			return sprintf(
+				/* translators: %d: services row number */
+				__( 'Row %d', '360-hotelier' ),
+				(int) $m[1]
+			);
+		}
 
 		$labels = array(
 			'intro'    => __( 'Intro', '360-hotelier' ),
@@ -263,6 +289,7 @@ final class Hotelier_Context_Page_Image_Acf_Field {
 			'bio'      => __( 'Bio', '360-hotelier' ),
 			'tl'       => __( 'Experience', '360-hotelier' ),
 			'pendeli'  => __( 'Pendeli SVG', '360-hotelier' ),
+			'overview' => __( 'Overview', '360-hotelier' ),
 			'misc'     => __( 'Other', '360-hotelier' ),
 		);
 

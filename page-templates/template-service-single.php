@@ -38,6 +38,18 @@ get_template_part(
             <div class="fade-in fade-in-delay-0">
                 <h2 class="page-section__title"><?php echo esc_html( $content['overview_heading'] ); ?></h2>
                 <p class="page-service-single__lead"><?php echo esc_html( $content['intro'] ); ?></p>
+                <?php if ( ! empty( $content['overview_img'] ) ) : ?>
+                    <figure class="page-service-single__overview-media">
+                        <img
+                            src="<?php echo esc_url( $content['overview_img'] ); ?>"
+                            alt="<?php echo esc_attr( $content['overview_img_alt'] ); ?>"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800"
+                        />
+                    </figure>
+                <?php endif; ?>
             </div>
 
             <div class="page-service-single__deliverables-card card-border fade-in fade-in-delay-1">

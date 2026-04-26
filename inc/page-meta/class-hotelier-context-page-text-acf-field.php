@@ -1,6 +1,7 @@
 <?php
 /**
- * ACF local field groups: bilingual copy for About, Founder, and Portfolio templates.
+ * ACF local field groups: bilingual copy for inner page templates (About, Founder,
+ * Portfolio, Contact, Services, Service single).
  *
  * @package 360-hotelier
  */
@@ -15,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Hotelier_Context_Page_Text_Acf_Field {
 
 	/** @var string[] */
-	private const CONTEXTS = array( 'about', 'founder', 'portfolio' );
+	private const CONTEXTS = array( 'about', 'founder', 'portfolio', 'contact', 'services', 'service' );
 
 	/**
 	 * @var array<string, string> context => page template path
@@ -24,6 +25,9 @@ final class Hotelier_Context_Page_Text_Acf_Field {
 		'about'     => 'page-templates/template-about.php',
 		'founder'   => 'page-templates/template-founder.php',
 		'portfolio' => 'page-templates/template-portfolio.php',
+		'contact'   => 'page-templates/template-contact.php',
+		'services'  => 'page-templates/template-services.php',
+		'service'   => 'page-templates/template-service-single.php',
 	);
 
 	public static function register(): void {
@@ -167,6 +171,9 @@ final class Hotelier_Context_Page_Text_Acf_Field {
 			'about'     => __( 'About page — text (EN / EL)', '360-hotelier' ),
 			'founder'   => __( 'Founder page — text (EN / EL)', '360-hotelier' ),
 			'portfolio' => __( 'Portfolio page — text (EN / EL)', '360-hotelier' ),
+			'contact'   => __( 'Contact page — text (EN / EL)', '360-hotelier' ),
+			'services'  => __( 'Services page — text (EN / EL)', '360-hotelier' ),
+			'service'   => __( 'Service page — text (EN / EL)', '360-hotelier' ),
 		);
 
 		acf_add_local_field_group(
@@ -261,6 +268,54 @@ final class Hotelier_Context_Page_Text_Acf_Field {
 					return 'cta';
 				}
 				return 'misc';
+
+			case 'contact':
+				if ( 0 === strpos( $key, 'hero_' ) ) {
+					return 'hero';
+				}
+				if ( 0 === strpos( $key, 'card_' ) ) {
+					return 'details';
+				}
+				if ( 0 === strpos( $key, 'form_' ) ) {
+					return 'form';
+				}
+				if ( 0 === strpos( $key, 'cta_feat_' ) ) {
+					return 'cta';
+				}
+				return 'misc';
+
+			case 'services':
+				if ( 0 === strpos( $key, 'hero_' ) ) {
+					return 'hero';
+				}
+				if ( 0 === strpos( $key, 'offer_' ) ) {
+					return 'offer';
+				}
+				if ( preg_match( '/^row_([1-4])_/', $key, $m ) ) {
+					return 'row_' . $m[1];
+				}
+				if ( 'learn_more_text' === $key ) {
+					return 'row_4';
+				}
+				if ( 0 === strpos( $key, 'cta_feat_' ) ) {
+					return 'cta';
+				}
+				return 'misc';
+
+			case 'service':
+				if ( 0 === strpos( $key, 'hero_' ) ) {
+					return 'hero';
+				}
+				if ( 0 === strpos( $key, 'overview_' ) || 'intro' === $key ) {
+					return 'overview';
+				}
+				if ( 0 === strpos( $key, 'deliver_' ) ) {
+					return 'deliver';
+				}
+				if ( 0 === strpos( $key, 'cta_feat_' ) ) {
+					return 'cta';
+				}
+				return 'misc';
 		}
 
 		return 'misc';
@@ -298,6 +353,13 @@ final class Hotelier_Context_Page_Text_Acf_Field {
 				(int) $m[1]
 			);
 		}
+		if ( 'services' === $context && preg_match( '/^row_(\d+)$/', $tab_id, $m ) ) {
+			return sprintf(
+				/* translators: %d: services row number */
+				__( 'Row %d', '360-hotelier' ),
+				(int) $m[1]
+			);
+		}
 
 		$labels = array(
 			'hero'          => __( 'Hero', '360-hotelier' ),
@@ -309,6 +371,11 @@ final class Hotelier_Context_Page_Text_Acf_Field {
 			'gallery'       => __( 'Gallery (headings)', '360-hotelier' ),
 			'testimonials'  => __( 'Testimonials (headings)', '360-hotelier' ),
 			'pendeli'       => __( 'Pendeli', '360-hotelier' ),
+			'details'       => __( 'Details card', '360-hotelier' ),
+			'form'          => __( 'Form', '360-hotelier' ),
+			'offer'         => __( 'What we offer', '360-hotelier' ),
+			'overview'      => __( 'Overview', '360-hotelier' ),
+			'deliver'       => __( 'Deliverables', '360-hotelier' ),
 			'cta'           => __( 'Bottom CTA', '360-hotelier' ),
 			'misc'          => __( 'Other', '360-hotelier' ),
 		);

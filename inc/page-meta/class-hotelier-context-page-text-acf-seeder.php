@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Hotelier_Context_Page_Text_Acf_Seeder {
 
 	private const OPTION_KEY   = 'hotelier_context_page_text_acf_seed_version';
-	private const SEED_VERSION = 1;
+	private const SEED_VERSION = 3;
 
 	public static function register(): void {
 		add_action( 'acf/init', array( self::class, 'maybe_seed' ), 20 );
@@ -31,6 +31,10 @@ final class Hotelier_Context_Page_Text_Acf_Seeder {
 		}
 
 		foreach ( Hotelier_Context_Page_Text_Acf_Field::managed_contexts() as $context ) {
+			if ( 'service' === $context ) {
+				self::seed_service_pages_text();
+				continue;
+			}
 			foreach ( Hotelier_Context_Page_Text_Acf_Field::page_ids_for_context( $context ) as $page_id ) {
 				if ( $page_id <= 0 ) {
 					continue;
@@ -51,6 +55,43 @@ final class Hotelier_Context_Page_Text_Acf_Seeder {
 		}
 
 		update_option( self::OPTION_KEY, self::SEED_VERSION, true );
+	}
+
+	private static function seed_service_pages_text(): void {
+		if ( ! class_exists( 'Hotelier_Service_Single_Defaults' ) ) {
+			return;
+		}
+		foreach ( Hotelier_Context_Page_Text_Acf_Field::page_ids_for_context( 'service' ) as $page_id ) {
+			if ( $page_id <= 0 ) {
+				continue;
+			}
+			$slug = (string) get_post_field( 'post_name', $page_id, 'raw' );
+			$en   = Hotelier_Service_Single_Defaults::seed_text_fields_en( $slug );
+			$el   = Hotelier_Service_Single_Defaults::seed_text_fields_el( $slug );
+			if ( ! is_array( $en ) || ! is_array( $el ) ) {
+				continue;
+			}
+			foreach ( $en as $schema_key => $value ) {
+				if ( ! Hotelier_Context_Page_Text_Acf_Field::is_managed_text_field( 'service', (string) $schema_key ) ) {
+					continue;
+				}
+				self::seed_if_empty(
+					$page_id,
+					Hotelier_Context_Page_Text_Acf_Field::field_name( 'service', (string) $schema_key, 'en' ),
+					(string) $value
+				);
+			}
+			foreach ( $el as $schema_key => $value ) {
+				if ( ! Hotelier_Context_Page_Text_Acf_Field::is_managed_text_field( 'service', (string) $schema_key ) ) {
+					continue;
+				}
+				self::seed_if_empty(
+					$page_id,
+					Hotelier_Context_Page_Text_Acf_Field::field_name( 'service', (string) $schema_key, 'el' ),
+					(string) $value
+				);
+			}
+		}
 	}
 
 	private static function seed_if_empty( int $page_id, string $field_name, string $value ): void {
