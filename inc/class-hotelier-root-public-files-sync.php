@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Syncs sitemap.xml, sitemap.xsl (browser styling), and llms.txt to the web root.
+ * Syncs sitemap.xml, sitemap.xsl (browser styling), llms.txt, and Search Console HTML verification to the web root.
  */
 final class Hotelier_Root_Public_Files_Sync {
 
@@ -25,6 +25,7 @@ final class Hotelier_Root_Public_Files_Sync {
 		'sitemap.xml',
 		'sitemap.xsl',
 		'llms.txt',
+		'google4b0a92ea0098601d.html',
 	);
 
 	public static function register(): void {
