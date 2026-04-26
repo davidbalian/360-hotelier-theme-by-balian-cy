@@ -18,7 +18,7 @@ $services_url = hotelier_get_page_url_by_slug( 'services' );
             <?php for ( $i = 1; $i <= 4; $i++ ) : ?>
             <div class="front-services-overview__card card-border fade-in fade-in-delay-<?php echo esc_attr( (string) ( $i + 1 ) ); ?>">
                 <div class="front-services-overview__card-image">
-                    <img src="<?php echo esc_url( Hotelier_Page_Content::get_image_url( $hpage, $hctx, 'svc_' . $i . '_img' ) ); ?>" alt="<?php echo esc_attr( Hotelier_Page_Content::get_text( $hpage, $hctx, 'svc_' . $i . '_alt' ) ); ?>" width="1920" height="1081" loading="lazy" sizes="(max-width: 768px) calc(100vw - 64px), 696px" />
+                    <?php Hotelier_Front_Service_Card_Image::render( $hpage, $hctx, $i ); ?>
                 </div>
                 <div class="front-services-overview__card-content">
                     <h3 class="front-services-overview__card-title"><?php echo esc_html( Hotelier_Page_Content::get_text( $hpage, $hctx, 'svc_' . $i . '_title' ) ); ?></h3>

@@ -76,6 +76,8 @@ function hotelier_output_custom_logo_link(): void {
 			array(
 				'class'    => 'custom-logo',
 				'itemprop' => 'logo',
+				'loading'  => 'eager',
+				'decoding' => 'async',
 			)
 		)
 	);

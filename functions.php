@@ -53,6 +53,7 @@ Hotelier_Cookie_Consent::register();
 
 // Hardcoded page content + site-wide content options
 require_once HOTELIER_THEME_DIR . '/inc/page-meta/hotelier-page-meta.php';
+require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-front-service-card-image.php';
 require_once HOTELIER_THEME_DIR . '/inc/seo/hotelier-seo-bootstrap.php';
 Hotelier_Seo_Bootstrap::register();
 require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-site-content-options.php';

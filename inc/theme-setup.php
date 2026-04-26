@@ -23,6 +23,9 @@ function hotelier_theme_setup() {
     // Enable support for Post Thumbnails on posts and pages.
     add_theme_support( 'post-thumbnails' );
 
+    // Front-page service cards (~696px CSS max; 840px covers ~1.2× for sharpness on large phones).
+    add_image_size( 'hotelier-service-card', 840, 473, true );
+
     // Register navigation menus.
     register_nav_menus( array(
         'primary' => __( 'Primary Menu', '360-hotelier' ),

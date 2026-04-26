@@ -176,6 +176,19 @@ function hotelier_should_enqueue_portfolio_gallery_assets() {
 }
 
 /**
+ * Preload primary body font (reduces wait on CSS → font chain on first visit).
+ */
+function hotelier_preload_body_font() {
+    if ( is_admin() ) {
+        return;
+    }
+
+    $font_url = HOTELIER_THEME_URI . '/fonts/ppneuemontreal-book.otf';
+    echo '<link rel="preload" href="' . esc_url( $font_url ) . '" as="font" type="font/otf" crossorigin>' . "\n";
+}
+add_action( 'wp_head', 'hotelier_preload_body_font', 0 );
+
+/**
  * Preload the hero background image on the front page (meta description is output by Hotelier_Seo_Bootstrap).
  */
 function hotelier_front_page_head() {
