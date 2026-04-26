@@ -33,9 +33,6 @@ require_once HOTELIER_THEME_DIR . '/inc/i18n/hotelier-i18n-bootstrap.php';
 // Primary nav walker (Services submenu footer link)
 require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-primary-nav-walker.php';
 
-// Include schema markup
-require_once HOTELIER_THEME_DIR . '/inc/schema.php';
-
 // Lucide icon placeholders
 require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-lucide-icon.php';
 
@@ -59,6 +56,9 @@ require_once HOTELIER_THEME_DIR . '/inc/seo/hotelier-seo-bootstrap.php';
 Hotelier_Seo_Bootstrap::register();
 require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-site-content-options.php';
 require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-founder-card-contact.php';
+
+require_once HOTELIER_THEME_DIR . '/inc/seo/structured-data/class-hotelier-structured-data-bootstrap.php';
+Hotelier_Structured_Data_Bootstrap::register();
 
 // Portfolio gallery picker (admin meta box + postmeta-backed image list)
 require_once HOTELIER_THEME_DIR . '/inc/admin/portfolio-gallery/hotelier-portfolio-gallery-bootstrap.php';
