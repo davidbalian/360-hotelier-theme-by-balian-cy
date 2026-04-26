@@ -57,7 +57,6 @@ final class Hotelier_Cta_Feat_Image_Field {
 						'preview_size'  => 'medium',
 						'library'       => 'all',
 						'mime_types'    => 'jpg,jpeg,png,webp,avif',
-						'instructions'  => __( 'Full-bleed image behind the bottom CTA section. The same image is used on both the English and Greek versions of this page. On the All Services page, it is also used for the bottom CTA on every individual service sub-page.', '360-hotelier' ),
 					),
 				),
 				'location'              => Hotelier_Acf_Image_Location_Rules::build(),

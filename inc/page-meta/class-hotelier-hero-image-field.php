@@ -147,7 +147,6 @@ final class Hotelier_Hero_Image_Field {
 						'preview_size'  => 'medium',
 						'library'       => 'all',
 						'mime_types'    => 'jpg,jpeg,png,webp,avif',
-						'instructions'  => __( 'Used as the background image for this page\'s hero section. The same image is shown on both the English and Greek versions of this page. On the All Services page, the image is also reused as the hero on every individual service sub-page.', '360-hotelier' ),
 					),
 				),
 				'location'              => Hotelier_Acf_Image_Location_Rules::build(),

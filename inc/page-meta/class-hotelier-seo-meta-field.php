@@ -48,7 +48,6 @@ final class Hotelier_Seo_Meta_Field {
 						'type'         => 'textarea',
 						'rows'         => 3,
 						'new_lines'    => '',
-						'instructions' => __( 'Shown in search results for English URLs. Leave empty to use the theme default for this page.', '360-hotelier' ),
 					),
 					array(
 						'key'   => 'field_hotelier_seo_title_el',
@@ -63,7 +62,6 @@ final class Hotelier_Seo_Meta_Field {
 						'type'         => 'textarea',
 						'rows'         => 3,
 						'new_lines'    => '',
-						'instructions' => __( 'Shown for Greek (/el/) URLs. Same WordPress page as English; edit both languages here.', '360-hotelier' ),
 					),
 				),
 				'location'              => array(
