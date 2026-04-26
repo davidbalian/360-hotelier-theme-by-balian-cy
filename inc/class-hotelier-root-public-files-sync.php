@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Syncs sitemap.xml and llms.txt so they are reachable at /sitemap.xml and /llms.txt.
+ * Syncs sitemap.xml, sitemap.xsl (browser styling), and llms.txt to the web root.
  */
 final class Hotelier_Root_Public_Files_Sync {
 
@@ -23,6 +23,7 @@ final class Hotelier_Root_Public_Files_Sync {
 	 */
 	private static array $files = array(
 		'sitemap.xml',
+		'sitemap.xsl',
 		'llms.txt',
 	);
 

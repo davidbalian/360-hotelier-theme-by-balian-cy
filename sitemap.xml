@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Replace https://360hotelier.com with your canonical origin (https + non-www or www, consistently) before deploying. -->
+<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<!-- Replace https://360hotelier.com with your canonical origin before deploying. sitemap.xsl must sit next to this file (copied to site root by the theme). -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
