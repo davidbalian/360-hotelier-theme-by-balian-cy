@@ -57,9 +57,9 @@ final class Hotelier_Page_Content {
 	/**
 	 * Returns the image URL for a schema field.
 	 *
-	 * For `hero_bg` and `cta_feat_img`, ACF (post meta) is read first; only if
-	 * unset does the theme use the hardcoded `default_url` from the schema. All
-	 * other image fields remain schema-only.
+	 * For `hero_bg` and `cta_feat_img`, dedicated ACF fields are read first. For
+	 * other home images, {@see Hotelier_Home_Image_Acf_Field} on the static front
+	 * page is used before schema `default_url`.
 	 */
 	public static function get_image_url( int $post_id, string $context, string $field ): string {
 		if ( 'hero_bg' === $field && $post_id > 0 && class_exists( 'Hotelier_Hero_Image_Field' ) ) {
@@ -76,6 +76,15 @@ final class Hotelier_Page_Content {
 			}
 		}
 
+		if ( 'home' === $context
+			&& class_exists( 'Hotelier_Home_Image_Acf_Field' )
+			&& Hotelier_Home_Image_Acf_Field::is_managed_image_field( $field ) ) {
+			$from_acf = Hotelier_Home_Image_Acf_Field::resolve_url( $field );
+			if ( is_string( $from_acf ) && $from_acf !== '' ) {
+				return $from_acf;
+			}
+		}
+
 		$fields = Hotelier_Page_Meta_Schema::fields_for_context( $context );
 		if ( ! $fields || ! isset( $fields[ $field ] ) ) {
 			return '';
@@ -84,6 +93,14 @@ final class Hotelier_Page_Content {
 	}
 
 	public static function get_attachment_id( int $post_id, string $context, string $field ): int {
+		if ( 'home' === $context
+			&& class_exists( 'Hotelier_Home_Image_Acf_Field' )
+			&& Hotelier_Home_Image_Acf_Field::is_managed_image_field( $field ) ) {
+			$id = Hotelier_Home_Image_Acf_Field::attachment_id_for_field( $field );
+			if ( $id > 0 ) {
+				return $id;
+			}
+		}
 		return 0;
 	}
 
