@@ -18,12 +18,20 @@ final class Hotelier_Google_Analytics {
 
 	private const SCRIPT_HANDLE = 'hotelier-google-gtag';
 
+	public static function measurement_id(): string {
+		return self::MEASUREMENT_ID;
+	}
+
 	public static function register(): void {
 		add_action( 'wp_enqueue_scripts', array( self::class, 'enqueue' ), 5 );
 	}
 
 	public static function enqueue(): void {
 		if ( is_admin() ) {
+			return;
+		}
+
+		if ( ! Hotelier_Cookie_Consent::has_analytics_consent() ) {
 			return;
 		}
 

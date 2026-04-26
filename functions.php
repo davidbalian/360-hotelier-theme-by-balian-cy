@@ -28,11 +28,11 @@ require_once HOTELIER_THEME_DIR . '/inc/service-content.php';
 // Include menu fallback
 require_once HOTELIER_THEME_DIR . '/inc/menu-fallback.php';
 
+// Google Analytics (gtag) — loaded before cookie consent (measurement id for banner script).
+require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-google-analytics.php';
+
 // Cookie consent banner (assets + constants)
 require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-cookie-consent.php';
-
-// Google Analytics (gtag) — one enqueue for all public views
-require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-google-analytics.php';
 
 // Path-prefix locale (en default, Greek /el/)
 require_once HOTELIER_THEME_DIR . '/inc/i18n/hotelier-i18n-bootstrap.php';
