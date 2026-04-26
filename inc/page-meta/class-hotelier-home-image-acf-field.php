@@ -21,6 +21,7 @@ final class Hotelier_Home_Image_Acf_Field {
 
 	public static function register(): void {
 		add_action( 'acf/init', array( self::class, 'register_field_group' ) );
+		add_filter( 'acf/load_value', array( self::class, 'load_service_card_image_value' ), 10, 3 );
 	}
 
 	/**
@@ -56,6 +57,37 @@ final class Hotelier_Home_Image_Acf_Field {
 
 	public static function is_managed_image_field( string $field ): bool {
 		return in_array( $field, self::image_schema_keys(), true );
+	}
+
+	/**
+	 * When service-card image meta was never saved, use the attachment matching schema default_url.
+	 * If meta exists (even empty), respect it so a cleared field stays empty.
+	 *
+	 * @param mixed                $value   Stored value.
+	 * @param int|string           $post_id Post ID.
+	 * @param array<string, mixed> $field   ACF field array.
+	 * @return mixed
+	 */
+	public static function load_service_card_image_value( $value, $post_id, $field ) {
+		if ( ! is_array( $field ) || empty( $field['name'] ) ) {
+			return $value;
+		}
+
+		$name = (string) $field['name'];
+		if ( ! preg_match( '/^hotelier_home_svc_[1-4]_img$/', $name ) ) {
+			return $value;
+		}
+
+		$pid = (int) $post_id;
+		if ( $pid <= 0 || ! metadata_exists( 'post', $pid, $name ) ) {
+			$schema_key = (string) preg_replace( '/^hotelier_home_/', '', $name );
+			$default_id = self::default_attachment_id_for_service_card( $schema_key );
+			if ( $default_id > 0 ) {
+				return $default_id;
+			}
+		}
+
+		return $value;
 	}
 
 	/**
@@ -235,6 +267,28 @@ final class Hotelier_Home_Image_Acf_Field {
 	}
 
 	/**
+	 * Attachment ID for schema default_url (service cards only), or 0 if missing / not in media library.
+	 */
+	private static function default_attachment_id_for_service_card( string $schema_key ): int {
+		if ( ! preg_match( '/^svc_[1-4]_img$/', $schema_key ) ) {
+			return 0;
+		}
+
+		$home = Hotelier_Page_Meta_Schema::fields_for_context( 'home' );
+		if ( ! $home || ! isset( $home[ $schema_key ]['default_url'] ) ) {
+			return 0;
+		}
+
+		$url = (string) $home[ $schema_key ]['default_url'];
+		if ( '' === $url ) {
+			return 0;
+		}
+
+		$id = (int) attachment_url_to_postid( $url );
+		return $id > 0 ? $id : 0;
+	}
+
+	/**
 	 * @return array<string, mixed>
 	 */
 	private static function make_image_field( string $schema_key, string $label ): array {
@@ -243,7 +297,7 @@ final class Hotelier_Home_Image_Acf_Field {
 			$mimes .= ',svg';
 		}
 
-		return array(
+		$field = array(
 			'key'           => 'field_hot_home_img_' . $schema_key,
 			'label'         => $label,
 			'name'          => self::field_name( $schema_key ),
@@ -253,5 +307,12 @@ final class Hotelier_Home_Image_Acf_Field {
 			'library'       => 'all',
 			'mime_types'    => $mimes,
 		);
+
+		$default_id = self::default_attachment_id_for_service_card( $schema_key );
+		if ( $default_id > 0 ) {
+			$field['default_value'] = $default_id;
+		}
+
+		return $field;
 	}
 }
