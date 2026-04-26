@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$hero_default = 'https://www.360hotelier.com/staging/8979/wp-content/uploads/2026/04/serbellas-boutique-hotel-paphos-suite.webp';
+$hero_default = 'https://www.360hotelier.com/staging/8979/wp-content/uploads/2026/03/contact-360-hotelier.webp';
 
 return array(
 	'error_title'   => array(

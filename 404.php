@@ -39,8 +39,6 @@ $hero_bg = Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'error_hero_bg'
 					<p class="error-page__cta">
 						<a class="btn btn--primary" href="<?php echo esc_url( hotelier_get_localized_home_url() ); ?>"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'error_btn' ) ); ?></a>
 					</p>
-
-					<?php get_search_form(); ?>
 				</div>
 			</section>
 		</div>
