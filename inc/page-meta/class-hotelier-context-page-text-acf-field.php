@@ -339,12 +339,8 @@ final class Hotelier_Context_Page_Text_Acf_Field {
 	}
 
 	private static function tab_label( string $context, string $tab_id ): string {
-		if ( 'portfolio' === $context && preg_match( '/^hotel_(\d+)$/', $tab_id, $m ) ) {
-			return sprintf(
-				/* translators: %d: hotel slot number */
-				__( 'Hotel %d', '360-hotelier' ),
-				(int) $m[1]
-			);
+		if ( 'portfolio' === $context && preg_match( '/^hotel_\d+$/', $tab_id ) ) {
+			return Hotelier_Page_Meta_Schema::portfolio_hotel_tab_label( $tab_id );
 		}
 		if ( 'portfolio' === $context && preg_match( '/^testimonial_(\d+)$/', $tab_id, $m ) ) {
 			return sprintf(

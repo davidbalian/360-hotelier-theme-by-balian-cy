@@ -49,4 +49,27 @@ final class Hotelier_Page_Meta_Schema {
 		$all = self::all_contexts();
 		return isset( $all[ $context ] ) ? $all[ $context ] : null;
 	}
+
+	/**
+	 * ACF tab label for a portfolio hotel slot (e.g. hotel_1): schema default name or "Hotel N".
+	 */
+	public static function portfolio_hotel_tab_label( string $tab_id ): string {
+		if ( ! preg_match( '/^hotel_(\d+)$/', $tab_id, $m ) ) {
+			return $tab_id;
+		}
+		$n      = (int) $m[1];
+		$fields = self::fields_for_context( 'portfolio' );
+		$key    = 'hotel_' . $n . '_name';
+		if ( $fields && isset( $fields[ $key ]['default'] ) ) {
+			$name = trim( (string) $fields[ $key ]['default'] );
+			if ( $name !== '' ) {
+				return $name;
+			}
+		}
+		return sprintf(
+			/* translators: %d: hotel slot number */
+			__( 'Hotel %d', '360-hotelier' ),
+			$n
+		);
+	}
 }
