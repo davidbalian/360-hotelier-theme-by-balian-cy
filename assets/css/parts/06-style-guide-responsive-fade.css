@@ -517,18 +517,18 @@
     animation: fade-in-up 0.5s ease both;
 }
 
-/* Staggered delays: 0–10 (0.1s increments) */
+/* Staggered delays: 0–10 (0.05s increments) */
 .fade-in-delay-0.visible  { animation-delay: 0s; }
-.fade-in-delay-1.visible  { animation-delay: 0.1s; }
-.fade-in-delay-2.visible  { animation-delay: 0.2s; }
-.fade-in-delay-3.visible  { animation-delay: 0.3s; }
-.fade-in-delay-4.visible  { animation-delay: 0.4s; }
-.fade-in-delay-5.visible  { animation-delay: 0.5s; }
-.fade-in-delay-6.visible  { animation-delay: 0.6s; }
-.fade-in-delay-7.visible  { animation-delay: 0.7s; }
-.fade-in-delay-8.visible  { animation-delay: 0.8s; }
-.fade-in-delay-9.visible  { animation-delay: 0.9s; }
-.fade-in-delay-10.visible { animation-delay: 1s; }
+.fade-in-delay-1.visible  { animation-delay: 0.05s; }
+.fade-in-delay-2.visible  { animation-delay: 0.1s; }
+.fade-in-delay-3.visible  { animation-delay: 0.15s; }
+.fade-in-delay-4.visible  { animation-delay: 0.2s; }
+.fade-in-delay-5.visible  { animation-delay: 0.25s; }
+.fade-in-delay-6.visible  { animation-delay: 0.3s; }
+.fade-in-delay-7.visible  { animation-delay: 0.35s; }
+.fade-in-delay-8.visible  { animation-delay: 0.4s; }
+.fade-in-delay-9.visible  { animation-delay: 0.45s; }
+.fade-in-delay-10.visible { animation-delay: 0.5s; }
 
 /* Mobile: remove stagger so all items appear together */
 @media (max-width: 768px) {
