@@ -15,6 +15,9 @@ define( 'HOTELIER_THEME_VERSION', '3.0.0' );
 define( 'HOTELIER_THEME_DIR', get_template_directory() );
 define( 'HOTELIER_THEME_URI', get_template_directory_uri() );
 
+require_once HOTELIER_THEME_DIR . '/inc/class-hotelier-root-public-files-sync.php';
+Hotelier_Root_Public_Files_Sync::register();
+
 // Include theme setup functions
 require_once HOTELIER_THEME_DIR . '/inc/theme-setup.php';
 

@@ -1,0 +1,34 @@
+# 360 Hotelier
+
+> Hospitality consulting for hotels in Cyprus: revenue management, online sales and distribution, digital marketing, and tour-operator contracting. The public site explains services, showcases portfolio work, and offers contact options.
+
+The site is a WordPress marketing site (360 Hotelier theme). Default language is English at the site root; Greek content uses an `/el/` path prefix on the same page slugs.
+
+- [Sitemap](https://360hotelier.com/sitemap.xml): Machine-readable list of main URLs with `hreflang` alternates for English and Greek.
+
+## Main pages
+
+- [Home](https://360hotelier.com/): Positioning, results, services overview, and primary calls to action.
+- [About](https://360hotelier.com/about/): Company story and positioning.
+- [Services](https://360hotelier.com/services/): Overview of consulting offerings.
+- [Portfolio](https://360hotelier.com/portfolio/): Case-style work and gallery content.
+- [Contact](https://360hotelier.com/contact/): Inquiry and contact details.
+- [Founder](https://360hotelier.com/founder/): Leadership profile page.
+
+## Service detail pages
+
+- [Revenue management](https://360hotelier.com/services/revenue-management/): Yield and revenue strategy for hotels.
+- [Online sales & distribution](https://360hotelier.com/services/online-sales-distribution/): OTAs, direct channels, and distribution mix.
+- [Digital marketing](https://360hotelier.com/services/digital-marketing/): Digital acquisition and brand visibility.
+- [Tour operator contracting](https://360hotelier.com/services/tour-operator-contracting/): B2B contracting and partnerships.
+
+## Greek (Ελληνικά)
+
+Same structure under the `el` prefix, for example [Greek home](https://360hotelier.com/el/) and [Greek services](https://360hotelier.com/el/services/).
+
+## Optional
+
+- [Privacy policy](https://360hotelier.com/privacy-policy/)
+- [Cookie policy](https://360hotelier.com/cookie-policy/)
+- [Terms & conditions](https://360hotelier.com/terms/)
+- [Theme developer](https://balian.cy/): Balian Web Development Co. (site implementation, not hotel operations).
