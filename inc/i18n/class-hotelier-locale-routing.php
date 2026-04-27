@@ -70,6 +70,7 @@ final class Hotelier_Locale_Routing {
 				$query->is_page       = true;
 				$query->is_singular   = true;
 				$query->is_front_page = false;
+				$query->is_404        = false;
 				return;
 			}
 		}
