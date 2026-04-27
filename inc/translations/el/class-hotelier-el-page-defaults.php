@@ -216,6 +216,7 @@ final class Hotelier_El_Page_Defaults {
 			'error_404.error_btn'   => 'Επιστροφή στην αρχική',
 
 			// Founder page.
+			'founder.hero_title'          => 'Γιώργος Πεγιάζης',
 			'founder.hero_subtitle'       => 'Ιδρυτής & σύμβουλος φιλοξενίας · 15+ χρόνια σε έσοδα ξενοδοχείων, online πωλήσεις και ψηφιακή στρατηγική.',
 			'founder.bio_h2'              => 'Σχετικά με τον Γιώργο',
 			'founder.bio_photo_alt'       => 'Γιώργος Πεγιαζής, ιδρυτής της 360 Hotelier Consulting',

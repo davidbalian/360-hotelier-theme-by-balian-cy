@@ -128,6 +128,7 @@ function hotelier_create_default_pages() {
             'title'    => __( 'Portfolio', '360-hotelier' ),
             'slug'     => 'portfolio',
             'template' => 'page-templates/template-portfolio.php',
+            'parent'   => 'about',
         ),
         array(
             'title'    => __( 'Contact', '360-hotelier' ),
@@ -138,6 +139,7 @@ function hotelier_create_default_pages() {
             'title'    => __( 'Founder', '360-hotelier' ),
             'slug'     => 'founder',
             'template' => 'page-templates/template-founder.php',
+            'parent'   => 'about',
         ),
     );
 
@@ -301,3 +303,76 @@ function hotelier_migrate_about_slug() {
     update_option( 'hotelier_about_slug_migrated_v1', 1 );
 }
 add_action( 'after_setup_theme', 'hotelier_migrate_about_slug', 13 );
+
+/**
+ * Ensures Founder and Portfolio are nested under About for canonical URLs.
+ */
+function hotelier_migrate_about_child_pages() {
+    if ( get_option( 'hotelier_about_children_migrated_v1' ) ) {
+        return;
+    }
+
+    $about = get_page_by_path( 'about', OBJECT, 'page' );
+    if ( ! $about instanceof WP_Post ) {
+        update_option( 'hotelier_about_children_migrated_v1', 1 );
+        return;
+    }
+
+    $about_id     = (int) $about->ID;
+    $child_slugs  = array( 'founder', 'portfolio' );
+    $template_map = array(
+        'founder'   => 'page-templates/template-founder.php',
+        'portfolio' => 'page-templates/template-portfolio.php',
+    );
+
+    foreach ( $child_slugs as $slug ) {
+        $child = get_page_by_path( 'about/' . $slug, OBJECT, 'page' );
+        if ( $child instanceof WP_Post ) {
+            continue;
+        }
+
+        $candidate = get_page_by_path( $slug, OBJECT, 'page' );
+        if ( ! $candidate instanceof WP_Post ) {
+            $ids = get_posts(
+                array(
+                    'post_type'      => 'page',
+                    'post_status'    => 'any',
+                    'posts_per_page' => 1,
+                    'fields'         => 'ids',
+                    'meta_key'       => '_wp_page_template',
+                    'meta_value'     => $template_map[ $slug ],
+                )
+            );
+            if ( ! empty( $ids[0] ) ) {
+                $candidate = get_post( (int) $ids[0] );
+            }
+        }
+
+        if ( $candidate instanceof WP_Post ) {
+            wp_update_post(
+                array(
+                    'ID'          => (int) $candidate->ID,
+                    'post_parent' => $about_id,
+                    'post_name'   => $slug,
+                )
+            );
+            continue;
+        }
+
+        $page_id = wp_insert_post(
+            array(
+                'post_title'  => 'founder' === $slug ? __( 'Founder', '360-hotelier' ) : __( 'Portfolio', '360-hotelier' ),
+                'post_name'   => $slug,
+                'post_status' => 'publish',
+                'post_type'   => 'page',
+                'post_parent' => $about_id,
+            )
+        );
+        if ( $page_id && ! is_wp_error( $page_id ) ) {
+            update_post_meta( (int) $page_id, '_wp_page_template', $template_map[ $slug ] );
+        }
+    }
+
+    update_option( 'hotelier_about_children_migrated_v1', 1 );
+}
+add_action( 'after_setup_theme', 'hotelier_migrate_about_child_pages', 14 );

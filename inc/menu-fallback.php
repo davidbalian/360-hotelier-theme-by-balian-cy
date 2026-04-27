@@ -71,6 +71,9 @@ function hotelier_get_page_url_by_slug( $slug ) {
     if ( in_array( $slug, hotelier_get_service_child_slugs(), true ) ) {
         array_unshift( $candidates, 'services/' . $slug );
     }
+    if ( in_array( $slug, array( 'founder', 'portfolio' ), true ) ) {
+        array_unshift( $candidates, 'about/' . $slug );
+    }
 
     foreach ( $candidates as $path ) {
         $page = get_page_by_path( $path, OBJECT, 'page' );
@@ -82,6 +85,8 @@ function hotelier_get_page_url_by_slug( $slug ) {
 
     if ( in_array( $slug, hotelier_get_service_child_slugs(), true ) ) {
         $url = home_url( user_trailingslashit( 'services/' . $slug ) );
+    } elseif ( in_array( $slug, array( 'founder', 'portfolio' ), true ) ) {
+        $url = home_url( user_trailingslashit( 'about/' . $slug ) );
     } else {
         $url = home_url( user_trailingslashit( $slug ) );
     }

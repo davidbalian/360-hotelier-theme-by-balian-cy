@@ -58,9 +58,9 @@ final class Hotelier_Locale_Routing {
 		$page_id  = (int) get_query_var( 'page_id' );
 		$name     = (string) get_query_var( 'name' );
 
-		// Fallback: if /el/founder/ is requested but slug mapping is broken,
+		// Fallback: if Founder URL is requested but slug mapping is broken,
 		// route to whichever page is assigned the Founder template.
-		if ( 'founder' === trim( $pagename, '/' ) && $page_id <= 0 ) {
+		if ( in_array( trim( $pagename, '/' ), array( 'founder', 'about/founder' ), true ) && $page_id <= 0 ) {
 			$founder_page_id = self::founder_page_id_from_template();
 			if ( $founder_page_id > 0 ) {
 				$query->set( 'page_id', $founder_page_id );
