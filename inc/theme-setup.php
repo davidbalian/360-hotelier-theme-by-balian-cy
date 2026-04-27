@@ -217,6 +217,61 @@ function hotelier_ensure_legal_pages_exist() {
 add_action( 'after_setup_theme', 'hotelier_ensure_legal_pages_exist', 11 );
 
 /**
+ * Ensure Founder page exists on installs activated before it was introduced.
+ */
+function hotelier_ensure_founder_page_exists() {
+    if ( get_option( 'hotelier_founder_page_ensured_v1' ) ) {
+        return;
+    }
+
+    $founder_page = get_page_by_path( 'founder', OBJECT, 'page' );
+    if ( $founder_page instanceof WP_Post ) {
+        update_option( 'hotelier_founder_page_ensured_v1', 1 );
+        return;
+    }
+
+    $existing_template_page = get_posts(
+        array(
+            'post_type'      => 'page',
+            'post_status'    => 'any',
+            'posts_per_page' => 1,
+            'fields'         => 'ids',
+            'meta_key'       => '_wp_page_template',
+            'meta_value'     => 'page-templates/template-founder.php',
+        )
+    );
+
+    if ( ! empty( $existing_template_page[0] ) ) {
+        $page_id = (int) $existing_template_page[0];
+        wp_update_post(
+            array(
+                'ID'        => $page_id,
+                'post_name' => 'founder',
+            )
+        );
+        update_option( 'hotelier_founder_page_ensured_v1', 1 );
+        return;
+    }
+
+    $page_id = wp_insert_post(
+        array(
+            'post_title'   => __( 'Founder', '360-hotelier' ),
+            'post_name'    => 'founder',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'post_content' => '',
+        )
+    );
+
+    if ( $page_id && ! is_wp_error( $page_id ) ) {
+        update_post_meta( (int) $page_id, '_wp_page_template', 'page-templates/template-founder.php' );
+    }
+
+    update_option( 'hotelier_founder_page_ensured_v1', 1 );
+}
+add_action( 'after_setup_theme', 'hotelier_ensure_founder_page_exists', 12 );
+
+/**
  * Migrates About page slug from /about-us to /about on existing installs.
  */
 function hotelier_migrate_about_slug() {
@@ -245,4 +300,4 @@ function hotelier_migrate_about_slug() {
 
     update_option( 'hotelier_about_slug_migrated_v1', 1 );
 }
-add_action( 'after_setup_theme', 'hotelier_migrate_about_slug', 12 );
+add_action( 'after_setup_theme', 'hotelier_migrate_about_slug', 13 );

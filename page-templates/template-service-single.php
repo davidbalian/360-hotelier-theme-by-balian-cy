@@ -26,6 +26,7 @@ get_template_part(
 	null,
 	array(
 		'page_hero_image'   => $page_hero_image,
+		'page_hero_title'   => $content['hero_title'],
 		'page_hero_context' => 'service',
 	)
 );

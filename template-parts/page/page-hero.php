@@ -7,8 +7,9 @@
  * $wp_query->query_vars are extracted. This file extracts $args at the top; see
  * template-parts/page/portfolio-section-gallery.php.
  *
- *   H1 is always the current page's WordPress title (get_the_title); do not pass
- *   page_hero_title (ignored for singular pages). Homepage uses section-hero, not this.
+ *   H1 prefers page_hero_title or localized context hero_title when available,
+ *   then falls back to the current page's WordPress title (get_the_title).
+ *   Homepage uses section-hero, not this.
  *
  *   page_hero_image   (string) — Background image URL
  *   page_hero_bg_fit  (string) — Optional: pass 'contain' for background-size: contain (default: cover)
@@ -31,16 +32,26 @@ if ( ! isset( $page_hero_image ) || '' === $page_hero_image ) {
 }
 
 $hero_queried_id = (int) get_queried_object_id();
-if ( $hero_queried_id > 0 && is_singular( 'page' ) ) {
+$hero_context    = isset( $page_hero_context ) ? (string) $page_hero_context : '';
+$page_hero_title = isset( $page_hero_title ) ? (string) $page_hero_title : '';
+
+if ( '' === $page_hero_title
+	&& $hero_queried_id > 0
+	&& is_singular( 'page' )
+	&& '' !== $hero_context
+	&& class_exists( 'Hotelier_Page_Content' ) ) {
+	$localized_hero_title = Hotelier_Page_Content::get_text( $hero_queried_id, $hero_context, 'hero_title' );
+	if ( '' !== $localized_hero_title ) {
+		$page_hero_title = $localized_hero_title;
+	}
+}
+
+if ( '' === $page_hero_title && $hero_queried_id > 0 && is_singular() ) {
 	$page_hero_title = get_the_title( $hero_queried_id );
-} else {
-	$page_hero_title = isset( $page_hero_title ) ? (string) $page_hero_title : '';
-	if ( '' === $page_hero_title && $hero_queried_id > 0 && is_singular() ) {
-		$page_hero_title = get_the_title( $hero_queried_id );
-	}
-	if ( '' === $page_hero_title ) {
-		$page_hero_title = __( '360° Hotelier', '360-hotelier' );
-	}
+}
+
+if ( '' === $page_hero_title ) {
+	$page_hero_title = __( '360° Hotelier', '360-hotelier' );
 }
 
 $page_hero_bg_fit  = isset( $page_hero_bg_fit ) && 'contain' === $page_hero_bg_fit ? 'contain' : 'cover';
