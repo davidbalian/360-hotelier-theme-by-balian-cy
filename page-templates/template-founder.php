@@ -16,7 +16,6 @@ get_template_part(
 	null,
 	array(
 		'page_hero_image'   => $page_hero_image,
-		'page_hero_bg_fit'  => 'contain',
 		'page_hero_context' => $ctx,
 	)
 );
