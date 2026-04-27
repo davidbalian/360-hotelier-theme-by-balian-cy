@@ -49,13 +49,30 @@ final class Hotelier_Locale_Routing {
 			return;
 		}
 
-		if ( get_query_var( Hotelier_Locale_Registry::QUERY_VAR ) !== Hotelier_Locale_Registry::GREEK_LANG ) {
+		$current_lang = (string) get_query_var( Hotelier_Locale_Registry::QUERY_VAR );
+		if ( $current_lang !== Hotelier_Locale_Registry::GREEK_LANG ) {
 			return;
 		}
 
 		$pagename = (string) get_query_var( 'pagename' );
 		$page_id  = (int) get_query_var( 'page_id' );
 		$name     = (string) get_query_var( 'name' );
+
+		// Fallback: if /el/founder/ is requested but slug mapping is broken,
+		// route to whichever page is assigned the Founder template.
+		if ( 'founder' === trim( $pagename, '/' ) && $page_id <= 0 ) {
+			$founder_page_id = self::founder_page_id_from_template();
+			if ( $founder_page_id > 0 ) {
+				$query->set( 'page_id', $founder_page_id );
+				$query->set( 'pagename', '' );
+				$query->set( 'name', '' );
+				$query->is_home       = false;
+				$query->is_page       = true;
+				$query->is_singular   = true;
+				$query->is_front_page = false;
+				return;
+			}
+		}
 
 		if ( '' !== $pagename || $page_id > 0 || '' !== $name ) {
 			return;
@@ -73,6 +90,21 @@ final class Hotelier_Locale_Routing {
 		$query->is_page       = true;
 		$query->is_singular   = true;
 		$query->is_front_page = true;
+	}
+
+	private static function founder_page_id_from_template(): int {
+		$ids = get_posts(
+			array(
+				'post_type'      => 'page',
+				'post_status'    => 'publish',
+				'posts_per_page' => 1,
+				'fields'         => 'ids',
+				'meta_key'       => '_wp_page_template',
+				'meta_value'     => 'page-templates/template-founder.php',
+			)
+		);
+
+		return ! empty( $ids[0] ) ? (int) $ids[0] : 0;
 	}
 
 	/**

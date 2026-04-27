@@ -93,7 +93,7 @@ final class Hotelier_El_Page_Defaults {
 
 			// About.
 			'about.hero_kicker'           => 'Σχετικά με εμάς',
-			'about.hero_title'            => 'Η εξωτερική εμπορική ομάδα για ξενοδοχεία στην Κύπρο',
+			'about.hero_title'            => 'Σχετικά με εμάς',
 			'about.hero_tagline'          => '',
 			'about.hero_subtitle'         => '',
 			'about.intro_h2'              => 'Σχετικά με την 360° Hotelier Consulting',
