@@ -12,16 +12,18 @@ $pendeli_id    = Hotelier_Page_Content::get_attachment_id( $hpage, $hctx, 'resul
 $pendeli_svg   = Hotelier_Page_Content::get_svg_inline( $pendeli_id, 'uploads/2026/03/pendeli-resort-hotel-cyprus-logo-white.svg' );
 $pendeli_label = Hotelier_Page_Content::get_text( $hpage, $hctx, 'results_pendeli_label' );
 
-// Same order as portfolio page hotels 1–8 (Pendeli is inline SVG between Tsanotel and Petit Palais).
+// Same order as portfolio page hotels 1–10 (Pendeli is inline SVG at slot 7).
 $ticker_slots = array(
 	array( 'kind' => 'img', 'n' => 1 ),
 	array( 'kind' => 'img', 'n' => 2 ),
 	array( 'kind' => 'img', 'n' => 3 ),
 	array( 'kind' => 'img', 'n' => 4 ),
-	array( 'kind' => 'pendeli' ),
 	array( 'kind' => 'img', 'n' => 5 ),
 	array( 'kind' => 'img', 'n' => 6 ),
+	array( 'kind' => 'pendeli' ),
 	array( 'kind' => 'img', 'n' => 7 ),
+	array( 'kind' => 'img', 'n' => 8 ),
+	array( 'kind' => 'img', 'n' => 9 ),
 );
 ?>
 <section class="front-results card-border">

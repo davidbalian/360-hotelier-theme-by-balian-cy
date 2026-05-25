@@ -28,6 +28,7 @@ require_once __DIR__ . '/class-hotelier-context-page-text-acf-seeder.php';
 require_once __DIR__ . '/class-hotelier-context-page-image-acf-field.php';
 require_once __DIR__ . '/class-hotelier-context-page-image-acf-seeder.php';
 require_once __DIR__ . '/class-hotelier-portfolio-content-migrator.php';
+require_once __DIR__ . '/class-hotelier-home-results-ticker-migrator.php';
 
 Hotelier_Hero_Image_Field::register();
 Hotelier_Cta_Feat_Image_Field::register();
@@ -42,3 +43,4 @@ Hotelier_Context_Page_Text_Acf_Seeder::register();
 Hotelier_Context_Page_Image_Acf_Field::register();
 Hotelier_Context_Page_Image_Acf_Seeder::register();
 Hotelier_Portfolio_Content_Migrator::register();
+Hotelier_Home_Results_Ticker_Migrator::register();

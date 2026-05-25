@@ -9,7 +9,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$u = content_url( '/uploads/2026/03/' );
+$u     = content_url( '/uploads/2026/03/' );
+$u_may = content_url( '/uploads/2026/05/' );
+
+if ( ! defined( 'HOTELIER_HOME_RESULTS_TICKER_COUNT' ) ) {
+	define( 'HOTELIER_HOME_RESULTS_TICKER_COUNT', 9 );
+}
 
 return array(
 	'hero_title_line1'       => array(
@@ -99,20 +104,24 @@ return array(
 		'label'       => 'Results ticker — Pendeli logo (SVG attachment, optional)',
 		'default_url' => '',
 	),
-	'results_tick_1'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 1', 'default_url' => $u . 'cap-st-georges-resort-logo-hd.webp' ),
+	'results_tick_1'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 1 (Cap St. Georges)', 'default_url' => $u . 'cap-st-georges-resort-logo-hd.webp' ),
 	'results_tick_1_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 1 alt', 'default' => 'Cap St Georges Hotel & Resort Cyprus' ),
-	'results_tick_2'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 2', 'default_url' => $u . 'serbellas-boutique-hotel-logo-partner-hotel-of-360-Hotelier-Consulting.png' ),
+	'results_tick_2'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 2 (Serbellas)', 'default_url' => $u . 'serbellas-boutique-hotel-logo-partner-hotel-of-360-Hotelier-Consulting.png' ),
 	'results_tick_2_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 2 alt', 'default' => 'Serbellas Boutique Hotel' ),
-	'results_tick_3'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 3', 'default_url' => $u . 'mito-developers-paphos-logo-partner-hotel-of-360-Hotelier-Consulting.png' ),
+	'results_tick_3'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 3 (MITO Seaview)', 'default_url' => $u . 'mito-developers-paphos-logo-partner-hotel-of-360-Hotelier-Consulting.png' ),
 	'results_tick_3_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 3 alt', 'default' => 'MITO Seaview by Serbellas Paphos' ),
-	'results_tick_4'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 4', 'default_url' => $u . 'tsanotel-hd-logo.webp' ),
-	'results_tick_4_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 4 alt', 'default' => 'Tsanotel Cyprus' ),
-	'results_tick_5'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 5', 'default_url' => $u . 'petit-palais-platres-hotel-logo-color-cyprus.webp' ),
-	'results_tick_5_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 5 alt', 'default' => 'Petit Palais Hotel Platres Cyprus' ),
-	'results_tick_6'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 6', 'default_url' => $u . 'napa-jay-hotel-logo-cropped.png' ),
-	'results_tick_6_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 6 alt', 'default' => 'Napa Jay Hotel Ayia Napa Cyprus' ),
-	'results_tick_7'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 7', 'default_url' => $u . 'chic-centre-suites-athens-hotel-logo.webp' ),
-	'results_tick_7_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 7 alt', 'default' => 'Chic Centre Suites Athens' ),
+	'results_tick_4'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 4 (St Raphael)', 'default_url' => $u_may . 'st-raphael-resort-and-marina-limassol-logo-partner-hotel-of-360-Hotelier-Consulting-removebg-preview.png' ),
+	'results_tick_4_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 4 alt', 'default' => 'St Raphael Resort & Marina Limassol' ),
+	'results_tick_5'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 5 (The Tower)', 'default_url' => $u_may . 'the-tower-at-st-raphael-resort-and-marina-limassol-logo-partner-hotel-of-360-Hotelier-Consulting-removebg-preview.png' ),
+	'results_tick_5_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 5 alt', 'default' => 'The Tower at St Raphael Resort & Marina Limassol' ),
+	'results_tick_6'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 6 (TSANotel)', 'default_url' => $u . 'tsanotel-hd-logo.webp' ),
+	'results_tick_6_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 6 alt', 'default' => 'Tsanotel Cyprus' ),
+	'results_tick_7'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 7 (Petit Palais)', 'default_url' => $u . 'petit-palais-platres-hotel-logo-color-cyprus.webp' ),
+	'results_tick_7_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 7 alt', 'default' => 'Petit Palais Hotel Platres Cyprus' ),
+	'results_tick_8'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 8 (Napa Jay)', 'default_url' => $u . 'napa-jay-hotel-logo-cropped.png' ),
+	'results_tick_8_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 8 alt', 'default' => 'Napa Jay Hotel Ayia Napa Cyprus' ),
+	'results_tick_9'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 9 (Chic Centre Suites)', 'default_url' => $u . 'chic-centre-suites-athens-hotel-logo.webp' ),
+	'results_tick_9_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 9 alt', 'default' => 'Chic Centre Suites Athens' ),
 
 	'approach_title'         => array( 'type' => 'text', 'label' => 'How we work — title', 'default' => 'How We Work' ),
 	'approach_subtitle'      => array( 'type' => 'textarea', 'label' => 'How we work — subtitle', 'default' => 'Four steps, clearly laid out.' ),
