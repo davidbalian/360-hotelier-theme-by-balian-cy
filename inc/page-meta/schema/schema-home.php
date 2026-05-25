@@ -112,7 +112,7 @@ return array(
 	'results_tick_3_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 3 alt', 'default' => 'MITO Seaview by Serbellas Paphos' ),
 	'results_tick_4'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 4 (St Raphael)', 'default_url' => $u_may . 'st-raphael-resort-and-marina-limassol-logo-partner-hotel-of-360-Hotelier-Consulting-removebg-preview.png' ),
 	'results_tick_4_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 4 alt', 'default' => 'St Raphael Resort & Marina Limassol' ),
-	'results_tick_5'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 5 (The Tower)', 'default_url' => $u_may . 'the-tower-at-st-raphael-resort-and-marina-limassol-logo-partner-hotel-of-360-Hotelier-Consulting-removebg-preview.png' ),
+	'results_tick_5'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 5 (The Tower)', 'default_url' => $u_may . 'the-tower-at-st-raphael-resort-and-marina-limassol-logo-partner-hotel-of-360-Hotelier-Consulting-scaled-removebg-preview.png' ),
 	'results_tick_5_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 5 alt', 'default' => 'The Tower at St Raphael Resort & Marina Limassol' ),
 	'results_tick_6'         => array( 'type' => 'image', 'label' => 'Results ticker — logo 6 (TSANotel)', 'default_url' => $u . 'tsanotel-hd-logo.webp' ),
 	'results_tick_6_alt'     => array( 'type' => 'text', 'label' => 'Results ticker — logo 6 alt', 'default' => 'Tsanotel Cyprus' ),

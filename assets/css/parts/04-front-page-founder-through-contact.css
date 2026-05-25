@@ -307,7 +307,7 @@
   animation-play-state: paused;
 }
 
-.front-results__ticker-track > img {
+.front-results__ticker-track img {
   width: 148px;
   height: 105px;
   object-fit: contain;
@@ -320,32 +320,7 @@
   flex-shrink: 0;
 }
 
-.front-results__ticker-track > img:hover {
-  filter: none;
-}
-
-/* The Tower — white fill behind logo only; filter stays on img so bg is not darkened */
-.ticker-logo--tower {
-  width: 148px;
-  height: 105px;
-  padding-inline: 3.75rem;
-  box-sizing: content-box;
-  display: block;
-  flex-shrink: 0;
-  background-color: var(--color-white);
-}
-
-.ticker-logo--tower img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center center;
-  display: block;
-  filter: brightness(0) opacity(0.65);
-  transition: filter 150ms ease;
-}
-
-.ticker-logo--tower:hover img {
+.front-results__ticker-track img:hover {
   filter: none;
 }
 

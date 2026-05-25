@@ -327,9 +327,8 @@
         margin-inline: -1rem;
     }
 
-    .front-results__ticker-track > img,
-    .ticker-logo--pendeli,
-    .ticker-logo--tower {
+    .front-results__ticker-track img,
+    .ticker-logo--pendeli {
         width: 74px;
         height: 52px;
         padding-inline: 1.875rem;
