@@ -54,9 +54,9 @@ $ticker_slots = array(
                             $url = Hotelier_Page_Content::get_image_url( $hpage, $hctx, 'results_tick_' . $n );
                             ?>
                             <?php if ( ! $ticker_is_duplicate ) : ?>
-                                <img src="<?php echo esc_url( $url ); ?>" alt="<?php echo esc_attr( Hotelier_Page_Content::get_text( $hpage, $hctx, 'results_tick_' . $n . '_alt' ) ); ?>" loading="lazy" />
+                                <img<?php echo 5 === $n ? ' class="ticker-logo--tower"' : ''; ?> src="<?php echo esc_url( $url ); ?>" alt="<?php echo esc_attr( Hotelier_Page_Content::get_text( $hpage, $hctx, 'results_tick_' . $n . '_alt' ) ); ?>" loading="lazy" />
                             <?php else : ?>
-                                <img src="<?php echo esc_url( $url ); ?>" alt="" loading="lazy" aria-hidden="true" />
+                                <img<?php echo 5 === $n ? ' class="ticker-logo--tower"' : ''; ?> src="<?php echo esc_url( $url ); ?>" alt="" loading="lazy" aria-hidden="true" />
                             <?php endif; ?>
                         <?php endif; ?>
                     <?php endforeach; ?>

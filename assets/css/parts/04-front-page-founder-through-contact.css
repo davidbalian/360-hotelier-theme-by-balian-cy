@@ -324,6 +324,15 @@
   filter: none;
 }
 
+/* The Tower — full-color logo; opacity only (no brightness/grayscale) */
+.front-results__ticker-track img.ticker-logo--tower {
+  filter: opacity(0.65);
+}
+
+.front-results__ticker-track img.ticker-logo--tower:hover {
+  filter: none;
+}
+
 /* Pendeli — inline SVG, sized to match img logos */
 .ticker-logo--pendeli {
   width: 148px;
