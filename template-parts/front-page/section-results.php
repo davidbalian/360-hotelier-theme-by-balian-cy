@@ -53,10 +53,13 @@ $ticker_slots = array(
                             $n   = (int) $slot['n'];
                             $url = Hotelier_Page_Content::get_image_url( $hpage, $hctx, 'results_tick_' . $n );
                             ?>
+                            <?php
+                            $img_class = 5 === $n ? 'ticker-logo ticker-logo--tower' : '';
+                            ?>
                             <?php if ( ! $ticker_is_duplicate ) : ?>
-                                <img src="<?php echo esc_url( $url ); ?>" alt="<?php echo esc_attr( Hotelier_Page_Content::get_text( $hpage, $hctx, 'results_tick_' . $n . '_alt' ) ); ?>" loading="lazy" />
+                                <img class="<?php echo esc_attr( $img_class ); ?>" src="<?php echo esc_url( $url ); ?>" alt="<?php echo esc_attr( Hotelier_Page_Content::get_text( $hpage, $hctx, 'results_tick_' . $n . '_alt' ) ); ?>" loading="lazy" />
                             <?php else : ?>
-                                <img src="<?php echo esc_url( $url ); ?>" alt="" loading="lazy" aria-hidden="true" />
+                                <img class="<?php echo esc_attr( $img_class ); ?>" src="<?php echo esc_url( $url ); ?>" alt="" loading="lazy" aria-hidden="true" />
                             <?php endif; ?>
                         <?php endif; ?>
                     <?php endforeach; ?>

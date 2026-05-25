@@ -324,6 +324,11 @@
   filter: none;
 }
 
+/* The Tower — transparent text cutouts need a solid fill under brightness filter */
+.front-results__ticker-track img.ticker-logo--tower {
+  background-color: var(--color-white);
+}
+
 /* Pendeli — inline SVG, sized to match img logos */
 .ticker-logo--pendeli {
   width: 148px;
