@@ -13,8 +13,12 @@ $page_hero_image = Hotelier_Hero_Image_Field::resolve_url( $page_id, $ctx );
 $pendeli_id  = Hotelier_Page_Content::get_attachment_id( $page_id, $ctx, 'pendeli_svg' );
 $pendeli_svg = Hotelier_Page_Content::get_svg_inline( $pendeli_id, 'uploads/2026/03/pendeli-resort-hotel-cyprus-logo-white.svg' );
 
+if ( ! defined( 'HOTELIER_PORTFOLIO_HOTEL_COUNT' ) ) {
+	Hotelier_Page_Meta_Schema::fields_for_context( 'portfolio' );
+}
+
 $hotels = array();
-for ( $i = 1; $i <= 8; $i++ ) {
+for ( $i = 1; $i <= HOTELIER_PORTFOLIO_HOTEL_COUNT; $i++ ) {
 	$mode = Hotelier_Page_Content::get_select( $page_id, $ctx, 'hotel_' . $i . '_mode' );
 	$logo = array();
 	if ( 'pendeli' === $mode ) {
@@ -62,6 +66,7 @@ get_template_part(
                     <h2 class="page-section__title"><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'intro_h2' ) ); ?></h2>
                     <p><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'intro_p1' ) ); ?></p>
                     <p><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'intro_p2' ) ); ?></p>
+                    <p><?php echo esc_html( Hotelier_Page_Content::get_text( $page_id, $ctx, 'intro_p3' ) ); ?></p>
                 </div>
                 <div class="page-about__intro-image fade-in fade-in-delay-1" style="background-image: url('<?php echo esc_url( Hotelier_Page_Content::get_image_url( $page_id, $ctx, 'intro_side_img' ) ); ?>');" aria-hidden="true"></div>
             </div>
