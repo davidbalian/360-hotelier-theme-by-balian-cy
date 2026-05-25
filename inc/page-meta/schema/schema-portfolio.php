@@ -126,14 +126,14 @@ $out['hotel_3_alt']['default']       = 'MITO Seaview by Serbellas Paphos';
 $out['hotel_4_name']['default']      = 'St Raphael Resort & Marina';
 $out['hotel_4_location']['default']  = 'Limassol, Cyprus';
 $out['hotel_4_url']['default']       = 'https://www.straphael.com/';
-$out['hotel_4_logo']['default_url']  = $u_may . 'st-raphael-resort-and-marina-limassol-logo-partner-hotel-of-360-Hotelier-Consulting-scaled.webp';
+$out['hotel_4_logo']['default_url']  = $u_may . 'st-raphael-resort-and-marina-limassol-logo-partner-hotel-of-360-Hotelier-Consulting-removebg-preview.png';
 $out['hotel_4_photo']['default_url'] = $u_may . 'st-raphael-resort-and-marina-limassol-hotel-consulting.webp';
 $out['hotel_4_alt']['default']       = 'St Raphael Resort & Marina Limassol';
 
 $out['hotel_5_name']['default']      = 'The Tower at St Raphael Resort & Marina';
 $out['hotel_5_location']['default']  = 'Limassol, Cyprus';
 $out['hotel_5_url']['default']       = 'https://thetowerlimassol.com/';
-$out['hotel_5_logo']['default_url']  = $u_may . 'the-tower-at-st-raphael-resort-and-marina-limassol-logo-partner-hotel-of-360-Hotelier-Consulting-scaled.webp';
+$out['hotel_5_logo']['default_url']  = $u_may . 'the-tower-at-st-raphael-resort-and-marina-limassol-logo-partner-hotel-of-360-Hotelier-Consulting-removebg-preview.png';
 $out['hotel_5_photo']['default_url'] = $u_may . 'the-tower-at-st-raphael-resort-and-marina-limassol-hotel-consulting.webp';
 $out['hotel_5_alt']['default']       = 'The Tower at St Raphael Resort & Marina Limassol';
 

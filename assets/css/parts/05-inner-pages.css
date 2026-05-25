@@ -365,8 +365,8 @@
 
 .page-portfolio__row-media {
     width: 100%;
-    aspect-ratio: 4 / 3;
-    align-self: start;
+    align-self: stretch;
+    min-height: 0;
     border-radius: var(--radius-card);
     overflow: hidden;
     background: linear-gradient( 145deg, var(--color-section-gray) 0%, rgba( 0, 0, 0, 0.06 ) 100% );
@@ -376,13 +376,29 @@
 .page-portfolio__row-media:has( img ) {
     background: var(--color-section-gray);
     border: none;
+    position: relative;
 }
 
 .page-portfolio__row-media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
+}
+
+@media ( min-width: 769px ) {
+    .page-portfolio__row-media:has( img ) img {
+        position: absolute;
+        inset: 0;
+    }
+}
+
+@media ( max-width: 768px ) {
+    .page-portfolio__row-media {
+        aspect-ratio: 4 / 3;
+        align-self: start;
+    }
 }
 
 .page-services__row-media {

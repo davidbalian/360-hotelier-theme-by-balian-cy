@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Hotelier_Portfolio_Content_Migrator {
 
 	private const OPTION_KEY       = 'hotelier_portfolio_content_migrate_version';
-	private const MIGRATE_VERSION    = 1;
+	private const MIGRATE_VERSION    = 2;
 	private const CONTEXT            = 'portfolio';
 
 	/** @var string[] */
