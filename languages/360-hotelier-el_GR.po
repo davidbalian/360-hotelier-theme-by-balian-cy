@@ -956,7 +956,7 @@ msgstr "Υπηρεσίες"
 #. Template Name of the theme
 #: inc/menu-fallback.php:153 inc/theme-setup.php:125
 msgid "Portfolio"
-msgstr "Χαρτοφυλάκιο"
+msgstr "Συνεργάτες"
 
 #: inc/page-meta/class-hotelier-page-meta-registry.php:26
 msgid "Page content (360 Hotelier)"

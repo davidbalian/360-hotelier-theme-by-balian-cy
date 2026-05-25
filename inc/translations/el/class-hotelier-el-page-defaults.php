@@ -160,7 +160,7 @@ final class Hotelier_El_Page_Defaults {
 			'services.cta_feat_primary'   => 'Επικοινωνία',
 
 			// Portfolio.
-			'portfolio.hero_title'        => 'Χαρτοφυλάκιο',
+			'portfolio.hero_title'        => 'Συνεργάτες',
 			'portfolio.hero_subtitle'     => 'Boutique, ανεξάρτητα και resort ξενοδοχεία σε Κύπρο και εξωτερικό, με μετρήσιμα αποτελέσματα.',
 			'portfolio.intro_h2'          => 'Το Portfolio μας',
 			'portfolio.intro_p1'          => 'Στην 360° Hotelier Consulting συνεργαζόμαστε με ανεξάρτητα ξενοδοχεία, boutique μονάδες και τουριστικά θέρετρα στην Κύπρο, παρέχοντας υπηρεσίες revenue management, online πωλήσεων & B2B distribution, digital marketing και διαπραγμάτευσης συμβολαίων με tour operators.',

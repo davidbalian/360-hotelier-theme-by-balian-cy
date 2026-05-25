@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Hotelier_Portfolio_Content_Migrator {
 
 	private const OPTION_KEY     = 'hotelier_portfolio_content_migrate_version';
-	private const MIGRATE_VERSION  = 3;
+	private const MIGRATE_VERSION  = 4;
 	private const CONTEXT          = 'portfolio';
 
 	/** @var string[] */
@@ -55,11 +55,21 @@ final class Hotelier_Portfolio_Content_Migrator {
 	}
 
 	private static function migrate_page( int $page_id ): void {
+		self::migrate_hero_text( $page_id );
 		self::migrate_intro_text( $page_id );
 		self::migrate_hotel_text( $page_id );
 		self::clear_hotel_images( $page_id );
 		self::migrate_hotel_images( $page_id );
 		self::migrate_seo( $page_id );
+	}
+
+	private static function migrate_hero_text( int $page_id ): void {
+		self::force_text(
+			$page_id,
+			'hero_title',
+			'el',
+			Hotelier_Context_Page_Text_Acf_Field::greek_default_for_key( self::CONTEXT, 'hero_title' )
+		);
 	}
 
 	private static function migrate_intro_text( int $page_id ): void {

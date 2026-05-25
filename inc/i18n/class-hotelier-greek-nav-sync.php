@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 final class Hotelier_Greek_Nav_Sync {
 
-	public const SYNC_VERSION = 2;
+	public const SYNC_VERSION = 3;
 
 	private const MENU_PRIMARY_NAME = '360 Hotelier — Primary (Ελληνικά)';
 
@@ -36,7 +36,7 @@ final class Hotelier_Greek_Nav_Sync {
 			'home'                       => 'Αρχική',
 			'about-us'                   => 'Σχετικά με εμάς',
 			'services'                   => 'Υπηρεσίες',
-			'portfolio'                  => 'Χαρτοφυλάκιο',
+			'portfolio'                  => 'Συνεργάτες',
 			'contact'                    => 'Επικοινωνία',
 			'revenue-management'         => 'Διαχείριση εσόδων',
 			'online-sales-distribution'  => 'Online πωλήσεις & διανομή',
@@ -151,7 +151,7 @@ final class Hotelier_Greek_Nav_Sync {
 			}
 		}
 
-		$portfolio = get_page_by_path( 'portfolio', OBJECT, 'page' );
+		$portfolio = self::resolve_page_by_slug( 'portfolio' );
 		if ( $portfolio instanceof WP_Post ) {
 			self::add_page_item( $menu_id, (int) $portfolio->ID, $labels['portfolio'], 0 );
 		}
@@ -191,7 +191,7 @@ final class Hotelier_Greek_Nav_Sync {
 			self::add_page_item( $menu_id, (int) $services->ID, $labels['services'], 0 );
 		}
 
-		$portfolio = get_page_by_path( 'portfolio', OBJECT, 'page' );
+		$portfolio = self::resolve_page_by_slug( 'portfolio' );
 		if ( $portfolio instanceof WP_Post ) {
 			self::add_page_item( $menu_id, (int) $portfolio->ID, $labels['portfolio'], 0 );
 		}
@@ -202,6 +202,23 @@ final class Hotelier_Greek_Nav_Sync {
 		}
 
 		return $menu_id;
+	}
+
+	/**
+	 * Resolve a page by slug, including nested paths under About.
+	 */
+	private static function resolve_page_by_slug( string $slug ): ?WP_Post {
+		$candidates = array( $slug );
+		if ( in_array( $slug, array( 'founder', 'portfolio' ), true ) ) {
+			array_unshift( $candidates, 'about/' . $slug );
+		}
+		foreach ( $candidates as $path ) {
+			$page = get_page_by_path( $path, OBJECT, 'page' );
+			if ( $page instanceof WP_Post && 'publish' === $page->post_status ) {
+				return $page;
+			}
+		}
+		return null;
 	}
 
 	private static function get_or_create_menu( string $name ): int {
