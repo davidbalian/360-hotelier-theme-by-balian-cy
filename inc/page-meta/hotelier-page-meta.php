@@ -27,6 +27,7 @@ require_once __DIR__ . '/class-hotelier-context-page-text-acf-field.php';
 require_once __DIR__ . '/class-hotelier-context-page-text-acf-seeder.php';
 require_once __DIR__ . '/class-hotelier-context-page-image-acf-field.php';
 require_once __DIR__ . '/class-hotelier-context-page-image-acf-seeder.php';
+require_once __DIR__ . '/class-hotelier-attachment-lookup.php';
 require_once __DIR__ . '/class-hotelier-portfolio-content-migrator.php';
 require_once __DIR__ . '/class-hotelier-home-results-ticker-migrator.php';
 

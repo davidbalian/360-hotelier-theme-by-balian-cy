@@ -14,15 +14,18 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 final class Hotelier_Portfolio_Content_Migrator {
 
-	private const OPTION_KEY       = 'hotelier_portfolio_content_migrate_version';
-	private const MIGRATE_VERSION    = 2;
-	private const CONTEXT            = 'portfolio';
+	private const OPTION_KEY     = 'hotelier_portfolio_content_migrate_version';
+	private const MIGRATE_VERSION  = 3;
+	private const CONTEXT          = 'portfolio';
 
 	/** @var string[] */
 	private const INTRO_TEXT_KEYS = array( 'intro_h2', 'intro_p1', 'intro_p2', 'intro_p3' );
 
 	/** @var string[] */
 	private const HOTEL_TEXT_KEYS = array( 'name', 'location', 'url', 'alt', 'variant', 'tagline' );
+
+	/** @var string[] */
+	private const HOTEL_IMAGE_SUFFIXES = array( 'logo', 'photo' );
 
 	public static function register(): void {
 		add_action( 'acf/init', array( self::class, 'maybe_migrate' ), 25 );
@@ -54,6 +57,7 @@ final class Hotelier_Portfolio_Content_Migrator {
 	private static function migrate_page( int $page_id ): void {
 		self::migrate_intro_text( $page_id );
 		self::migrate_hotel_text( $page_id );
+		self::clear_hotel_images( $page_id );
 		self::migrate_hotel_images( $page_id );
 		self::migrate_seo( $page_id );
 	}
@@ -75,6 +79,37 @@ final class Hotelier_Portfolio_Content_Migrator {
 		}
 	}
 
+	private static function clear_hotel_images( int $page_id ): void {
+		for ( $i = 1; $i <= HOTELIER_PORTFOLIO_HOTEL_COUNT; $i++ ) {
+			foreach ( self::HOTEL_IMAGE_SUFFIXES as $suffix ) {
+				$field_name = Hotelier_Context_Page_Image_Acf_Field::field_name( self::CONTEXT, 'hotel_' . $i . '_' . $suffix );
+				if ( function_exists( 'delete_field' ) ) {
+					delete_field( $field_name, $page_id );
+				}
+			}
+		}
+
+		self::delete_orphaned_hotel_image_meta( $page_id );
+	}
+
+	private static function delete_orphaned_hotel_image_meta( int $page_id ): void {
+		global $wpdb;
+		if ( ! isset( $wpdb ) || $page_id <= 0 ) {
+			return;
+		}
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+		$wpdb->query(
+			$wpdb->prepare(
+				"DELETE FROM {$wpdb->postmeta}
+				WHERE post_id = %d
+				AND meta_key REGEXP %s",
+				$page_id,
+				'^hotelier_portfolio_hotel_(1[1-9]|[2-9][0-9]+)_(logo|photo)$'
+			)
+		);
+	}
+
 	private static function migrate_hotel_images( int $page_id ): void {
 		$fields = Hotelier_Page_Meta_Schema::fields_for_context( self::CONTEXT );
 		if ( ! $fields ) {
@@ -82,7 +117,7 @@ final class Hotelier_Portfolio_Content_Migrator {
 		}
 
 		for ( $i = 1; $i <= HOTELIER_PORTFOLIO_HOTEL_COUNT; $i++ ) {
-			foreach ( array( 'logo', 'photo' ) as $suffix ) {
+			foreach ( self::HOTEL_IMAGE_SUFFIXES as $suffix ) {
 				$schema_key = 'hotel_' . $i . '_' . $suffix;
 				if ( ! isset( $fields[ $schema_key ]['default_url'] ) ) {
 					continue;
@@ -91,10 +126,12 @@ final class Hotelier_Portfolio_Content_Migrator {
 				if ( '' === $url ) {
 					continue;
 				}
-				$attachment_id = attachment_url_to_postid( $url );
+
+				$attachment_id = Hotelier_Attachment_Lookup::id_from_url( $url );
 				if ( $attachment_id <= 0 ) {
 					continue;
 				}
+
 				update_field(
 					Hotelier_Context_Page_Image_Acf_Field::field_name( self::CONTEXT, $schema_key ),
 					$attachment_id,
